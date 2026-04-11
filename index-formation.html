@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation Télépilote de Drone — Dronexperts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dx-primary: #0E74DA;
+      --dx-gradient-start: #1E3A8A;
+      --dx-gradient-end: #04355D;
+      --dx-text-dark: #0F172A;
+      --dx-text-secondary: #475569;
+      --dx-text-muted: #94A3B8;
+      --dx-border: #E2E8F0;
+      --dx-bg-light: #F9FAFC;
+      --dx-success: #10B981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dx-bg-light); color: var(--dx-text-secondary); min-height: 100vh; }
+
+    .header {
+      background: linear-gradient(135deg, var(--dx-gradient-start), var(--dx-gradient-end));
+      color: white; text-align: center; padding: 48px 24px 40px;
+    }
+    .header img { height: 64px; filter: brightness(0) invert(1); margin-bottom: 16px; }
+    .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+    .header p { font-size: 15px; color: rgba(255,255,255,0.75); }
+
+    .container { max-width: 900px; margin: -32px auto 40px; padding: 0 20px; position: relative; z-index: 1; }
+
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 640px) { .card-grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: white; border: 1px solid var(--dx-border); border-radius: 12px;
+      padding: 24px; text-decoration: none; color: inherit;
+      transition: all 0.2s ease; display: block; position: relative; overflow: hidden;
+    }
+    .card:hover { border-color: var(--dx-primary); box-shadow: 0 4px 16px rgba(14,116,218,0.12); transform: translateY(-2px); }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+    .card.j1m::before { background: var(--dx-primary); }
+    .card.j1a::before { background: #7C3AED; }
+    .card.j2m::before { background: var(--dx-success); }
+    .card.j2a::before { background: #F59E0B; }
+    .card.j3m::before { background: #EF4444; }
+    .card.j3a::before { background: #0F172A; }
+
+    .card .day { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+    .card.j1m .day { color: var(--dx-primary); }
+    .card.j1a .day { color: #7C3AED; }
+    .card.j2m .day { color: var(--dx-success); }
+    .card.j2a .day { color: #F59E0B; }
+    .card.j3m .day { color: #EF4444; }
+    .card.j3a .day { color: #0F172A; }
+
+    .card h2 { font-size: 17px; font-weight: 700; color: var(--dx-text-dark); margin-bottom: 6px; }
+    .card p { font-size: 13px; line-height: 1.5; }
+    .card .meta { font-size: 11px; color: var(--dx-text-muted); margin-top: 10px; font-weight: 500; }
+
+    .section-title { font-size: 13px; font-weight: 700; color: var(--dx-text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 32px 0 12px; }
+
+    .doc-card {
+      background: white; border: 1px solid var(--dx-border); border-radius: 10px;
+      padding: 16px 20px; text-decoration: none; color: inherit;
+      display: flex; align-items: center; gap: 14px; transition: all 0.2s ease;
+    }
+    .doc-card:hover { border-color: var(--dx-primary); }
+    .doc-card .doc-icon { width: 40px; height: 40px; background: rgba(14,116,218,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .doc-card .doc-icon svg { width: 20px; height: 20px; stroke: var(--dx-primary); fill: none; stroke-width: 2; }
+    .doc-card h3 { font-size: 14px; font-weight: 600; color: var(--dx-text-dark); }
+    .doc-card p { font-size: 12px; color: var(--dx-text-muted); }
+
+    .footer { text-align: center; padding: 24px; font-size: 12px; color: var(--dx-text-muted); }
+    .footer a { color: var(--dx-primary); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts">
+    <h1>Formation Télépilote de Drone</h1>
+    <p>Référentiel RS6982 — 3 jours / 24 heures</p>
+  </div>
+
+  <div class="container">
+    <div class="section-title">Présentations de cours</div>
+    <div class="card-grid">
+      <a href="formation-jour1-matin.html" class="card j1m">
+        <div class="day">Jour 1 — Matin</div>
+        <h2>Fondamentaux & Réglementation Open</h2>
+        <p>Présentations, activités pro, catégories A1/A2/A3, signalement, vol en agglomération 2026.</p>
+        <div class="meta">25 slides · 9h00–12h30</div>
+      </a>
+      <a href="formation-jour1-aprem.html" class="card j1a">
+        <div class="day">Jour 1 — Après-midi</div>
+        <h2>Spécifique, Obligations & Premiers vols</h2>
+        <p>STS-01/02, obligations exploitant, matériel, batteries, premiers vols VLOS.</p>
+        <div class="meta">26 slides · 13h30–18h00</div>
+      </a>
+      <a href="formation-jour2-matin.html" class="card j2m">
+        <div class="day">Jour 2 — Matin</div>
+        <h2>Cartographie, Outils & TP</h2>
+        <p>Espaces aériens, SIA, AlphaTango, Cartes.gouv.fr, Clearance, 2 TP préparation mission.</p>
+        <div class="meta">22 slides · 9h00–12h30</div>
+      </a>
+      <a href="formation-jour2-aprem.html" class="card j2a">
+        <div class="day">Jour 2 — Après-midi</div>
+        <h2>Vol BVLOS & TP Mission</h2>
+        <p>Théorie BVLOS, paramétrage, Kit C6 ReClass, 2h vols, TP photogrammétrie carrière.</p>
+        <div class="meta">18 slides · 13h30–18h00</div>
+      </a>
+      <a href="formation-jour3-matin.html" class="card j3m">
+        <div class="day">Jour 3 — Matin</div>
+        <h2>Certification RS6982</h2>
+        <p>QCM théorique, vol de contrôle pratique, entretien oral (5 questions).</p>
+        <div class="meta">4 slides · 9h00–12h30</div>
+      </a>
+      <a href="formation-jour3-aprem.html" class="card j3a">
+        <div class="day">Jour 3 — Après-midi</div>
+        <h2>Facteur Humain & Clôture</h2>
+        <p>Stress, fatigue, mémoire, erreurs, 5 attitudes dangereuses, PFH, clôture administrative.</p>
+        <div class="meta">18 slides · 13h30–18h00</div>
+      </a>
+    </div>
+
+    <div class="section-title">Documents complémentaires</div>
+    <div style="display: grid; gap: 10px;">
+      <a href="livret-instructeur.html" class="doc-card">
+        <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div><h3>Livret d'Accueil Instructeur</h3><p>Guide de préparation et d'animation des sessions</p></div>
+      </a>
+      <a href="assets/img/checklist-prevol.pdf" class="doc-card">
+        <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div><h3>Checklist Visite Prévol</h3><p>Vérifications matérielles, paramétrage, zone et briefing</p></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 Dronexperts — Tous droits réservés · <a href="https://www.dronexperts.io">dronexperts.io</a> · <a href="https://formation.dronexperts.io">formation.dronexperts.io</a></p>
+  </div>
+
+</body>
+</html>

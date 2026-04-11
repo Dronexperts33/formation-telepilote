@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation Télépilote de Drone — Jour 2 Après-midi — Dronexperts</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Dronexperts Theme -->
+  <link rel="stylesheet" href="css/dronexperts-theme.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<!-- ============================================================
+     SLIDE 1 — TITRE DE FORMATION (Hero)
+     ============================================================ -->
+<section class="slide-title">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>Formation Télépilote de Drone</h1>
+  <p class="subtitle">Jour 2 Après-midi — Vol BVLOS &amp; Préparation avancée</p>
+  <span class="badge">1h théorie &rarr; 2h vols &rarr; 1h30 TP</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Télépilote</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 2 — MODULE SÉPARATEUR : BVLOS THÉORIE
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Bloc 1 — Théorie</div>
+  <h2>Vol BVLOS — Théorie &amp; Paramétrage</h2>
+  <p class="module-desc">Comprendre les types de vol, la réglementation BVLOS et le paramétrage des systèmes de sécurité.</p>
+  <!-- Eye-off icon -->
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>
+  </svg>
+  <div class="slide-footer">
+    <span>BVLOS — Théorie &amp; Paramétrage</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 3 — TYPES DE VOL : VLOS, BVLOS, FPV
+     ============================================================ -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Types de vol : VLOS, BVLOS, FPV</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon">
+        <!-- eye icon -->
+        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <div class="text">
+        <h4>VLOS — Vue directe</h4>
+        <p>Vol en vue directe, sans aide optique. Le télépilote voit le drone à l'oeil nu en permanence.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- eye-off icon -->
+        <svg viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+      </div>
+      <div class="text">
+        <h4>BVLOS — Hors vue</h4>
+        <p>Vol hors vue directe, piloté aux instruments et retour vidéo. Observateurs obligatoires.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- monitor icon (goggles) -->
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="text">
+        <h4>FPV — Lunettes vidéo</h4>
+        <p>Vol en immersion avec lunettes vidéo = considéré BVLOS, sauf si un observateur maintient le contact VLOS.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- navigation icon -->
+        <svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+      </div>
+      <div class="text">
+        <h4>Vol automatique vs autonome</h4>
+        <p>Vol automatique (waypoints, télépilote supervise) : autorisé. Vol autonome (décisions sans humain) : <strong>strictement interdit</strong>.</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>BVLOS — Types de vol</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 4 — RÉGLEMENTATION BVLOS — POINTS CLÉS
+     ============================================================ -->
+<section class="slide-highlight">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+
+  <h2 style="color: var(--dx-text-dark); font-size: 1.3em; margin-bottom: 24px;">Réglementation BVLOS — Points clés</h2>
+
+  <div class="highlight-box">
+    <div class="tag">Rappel</div>
+    <blockquote>STS-02 : BVLOS en zone faiblement peuplée, drone C6, 1-2 km max. PDRA-G02 : alternative sans marquage C6. Observateurs de l'espace aérien obligatoires au-delà de 1 km. Le télépilote doit pouvoir reprendre le contrôle à tout moment.</blockquote>
+    <p class="source">Règlement (UE) 2019/947 — Catégorie Spécifique</p>
+  </div>
+
+  <div class="slide-footer">
+    <span>BVLOS — Réglementation</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 5 — PARAMÉTRAGE RTH & FAILSAFE
+     ============================================================ -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Paramétrage RTH &amp; Failsafe</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon">
+        <!-- home icon -->
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="text">
+        <h4>RTH (Return-to-Home)</h4>
+        <p>Altitude de retour à définir au-dessus des obstacles. Vérifier la cohérence avec le terrain.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- wifi-off icon -->
+        <svg viewBox="0 0 24 24"><line x1="1" y1="1" x2="23" y2="23"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.56 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+      </div>
+      <div class="text">
+        <h4>Perte signal RC</h4>
+        <p>Comportement à configurer : RTH / atterrissage / stationnaire selon le contexte de mission.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- battery icon -->
+        <svg viewBox="0 0 24 24"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
+      </div>
+      <div class="text">
+        <h4>Batterie faible</h4>
+        <p>RTH automatique à X% — seuil à définir en fonction de la distance et du vent.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- arrow-up icon -->
+        <svg viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+      </div>
+      <div class="text">
+        <h4>Hauteur maximale de vol</h4>
+        <p>Cohérence avec la préparation de mission et le volume opérationnel déclaré.</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>BVLOS — RTH &amp; Failsafe</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 6 — PLANIFICATION DE VOL (WAYPOINTS)
+     ============================================================ -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Planification de vol (Waypoints)</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon">
+        <!-- monitor icon -->
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="text">
+        <h4>DJI Pilot 2 : interface de planification</h4>
+        <p>Application de vol intégrée pour les drones DJI Enterprise, avec planification de missions.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- map-pin icon -->
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="text">
+        <h4>Points de passage</h4>
+        <p>Coordonnées (latitude/longitude), hauteur et vitesse pour chaque waypoint.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- square icon (corridor) -->
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+      </div>
+      <div class="text">
+        <h4>Couloir de vol et limites géographiques</h4>
+        <p>Définition du volume opérationnel et des zones de contingence sur la carte.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- zap icon -->
+        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
+      <div class="text">
+        <h4>Vitesse et actions automatiques</h4>
+        <p>Vitesse de croisière, vitesse aux waypoints, prise de vue et rotation caméra programmées.</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>BVLOS — Planification waypoints</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 7 — BRIEFING ÉQUIPE & OBSERVATEURS
+     ============================================================ -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Briefing équipe &amp; Observateurs</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon">
+        <!-- users icon -->
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="text">
+        <h4>Rôles définis</h4>
+        <p>Télépilote, observateur(s) de l'espace aérien, assistant au sol. Chaque personne connaît sa mission exacte.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- message-circle icon -->
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      </div>
+      <div class="text">
+        <h4>Communication standardisée</h4>
+        <p>Phraséologie claire, collationnement systématique entre télépilote et observateurs.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- alert-circle icon -->
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="text">
+        <h4>ERP — Plan d'urgence</h4>
+        <p>Numéros d'urgence, zone d'atterrissage de secours, procédures de récupération.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- clipboard icon -->
+        <svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+      </div>
+      <div class="text">
+        <h4>Briefing complet</h4>
+        <p>Chaque membre de l'équipe connaît sa mission, les fréquences radio et les procédures d'urgence.</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>BVLOS — Briefing équipe</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 8 — ANALYSE DES RISQUES BVLOS
+     ============================================================ -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Analyse des risques BVLOS</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>GRC (risque sol)</strong> : densité de population, zone tampon, parachute</li>
+        <li><strong>ARC (risque air)</strong> : trafic aérien, altitude, espace contrôlé</li>
+        <li><strong>Obstacles</strong> : arbres, bâtiments, lignes électriques</li>
+        <li><strong>Météo</strong> : vent max, visibilité, plafond nuageux</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <!-- SVG: Risk matrix GRC x ARC → SAIL -->
+      <svg viewBox="0 0 360 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:400px;">
+        <!-- Title -->
+        <text x="180" y="24" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Matrice de risque SORA</text>
+        <!-- Vertical axis label -->
+        <text x="16" y="170" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#EF4444" transform="rotate(-90, 16, 170)">GRC (Risque sol)</text>
+        <!-- Horizontal axis label -->
+        <text x="210" y="286" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#0E74DA">ARC (Risque air)</text>
+        <!-- GRC labels -->
+        <text x="48" y="82" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#475569">Élevé</text>
+        <text x="48" y="132" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#475569">Moyen</text>
+        <text x="48" y="182" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#475569">Faible</text>
+        <!-- ARC labels -->
+        <text x="110" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569">Faible</text>
+        <text x="210" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569">Moyen</text>
+        <text x="310" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569">Élevé</text>
+        <!-- Grid cells -->
+        <!-- Row 1 (GRC Élevé) -->
+        <rect x="60" y="48" width="100" height="50" rx="6" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-width="1.5"/>
+        <text x="110" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#D97706">SAIL IV</text>
+        <rect x="160" y="48" width="100" height="50" rx="6" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
+        <text x="210" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EF4444">SAIL V</text>
+        <rect x="260" y="48" width="100" height="50" rx="6" fill="rgba(239,68,68,0.2)" stroke="#EF4444" stroke-width="1.5"/>
+        <text x="310" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#DC2626">SAIL VI</text>
+        <!-- Row 2 (GRC Moyen) -->
+        <rect x="60" y="108" width="100" height="50" rx="6" fill="rgba(14,116,218,0.1)" stroke="#0E74DA" stroke-width="1.5"/>
+        <text x="110" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0E74DA">SAIL II</text>
+        <rect x="160" y="108" width="100" height="50" rx="6" fill="rgba(245,158,11,0.12)" stroke="#F59E0B" stroke-width="1.5"/>
+        <text x="210" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#D97706">SAIL IV</text>
+        <rect x="260" y="108" width="100" height="50" rx="6" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
+        <text x="310" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EF4444">SAIL V</text>
+        <!-- Row 3 (GRC Faible) -->
+        <rect x="60" y="168" width="100" height="50" rx="6" fill="rgba(16,185,129,0.12)" stroke="#10B981" stroke-width="1.5"/>
+        <text x="110" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#059669">SAIL I</text>
+        <rect x="160" y="168" width="100" height="50" rx="6" fill="rgba(14,116,218,0.1)" stroke="#0E74DA" stroke-width="1.5"/>
+        <text x="210" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0E74DA">SAIL II</text>
+        <rect x="260" y="168" width="100" height="50" rx="6" fill="rgba(245,158,11,0.12)" stroke="#F59E0B" stroke-width="1.5"/>
+        <text x="310" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#D97706">SAIL IV</text>
+        <!-- Center label -->
+        <rect x="130" y="225" width="160" height="28" rx="8" fill="rgba(14,116,218,0.08)" stroke="#0E74DA" stroke-width="1.5"/>
+        <text x="210" y="244" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#0E74DA">GRC &times; ARC &rarr; SAIL</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>BVLOS — Analyse des risques</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 9 — KIT C6 & RECLASS
+     ============================================================ -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Kit C6 & ReClass — Voler en BVLOS</h2>
+
+  <div class="two-col">
+    <div class="col-text" style="font-size: 0.82em;">
+      <div class="info-card" style="margin-bottom: 12px; padding: 10px 14px; border-left: 4px solid var(--dx-primary);">
+        <p style="margin: 0; font-size: 0.7em;"><strong style="color: var(--dx-primary);">ReClass C6</strong> : kit de certification permettant d'obtenir le marquage de classe C6 sur un drone existant pour voler en <strong>STS-02 (BVLOS)</strong>.</p>
+      </div>
+      <h3 style="font-size: 0.7em; margin-bottom: 6px;">Le kit comprend :</h3>
+      <ul>
+        <li><strong>Parachute Manti 3</strong> : système de récupération actif (temps de déclenchement 100 ms)</li>
+        <li><strong>Marquage C6</strong> : certification du drone après installation et audit en ligne</li>
+        <li>Compatible : Mavic 3 Pro, Air 2S, Mavic Pro 2/3, Phantom 3/4, Matrice 4 RTK</li>
+      </ul>
+      <h3 style="font-size: 0.7em; margin-top: 10px; margin-bottom: 6px;">Procédure en 5 étapes :</h3>
+      <ul>
+        <li>1. Check → 2. Commande → 3. Installation → 4. Audit en ligne → 5. <strong>Fly C6 !</strong></li>
+      </ul>
+      <p style="margin-top: 8px; font-size: 0.5em;">
+        ▶ <a href="https://www.youtube.com/watch?v=JCcMLBQv9TY" target="_blank" style="color: var(--dx-primary); text-decoration: none;">Vidéo présentation ReClass</a> ·
+        <a href="https://dronereclass.com" target="_blank" style="color: var(--dx-primary); text-decoration: none;">dronereclass.com</a>
+      </p>
+    </div>
+    <div class="col-visual">
+      <img src="assets/img/Drone ReCLASS.webp" alt="Logo Drone ReClass" style="max-width: 180px; margin: 0 auto 16px; display: block;">
+      <!-- SVG: 5 steps ReClass process -->
+      <svg viewBox="0 0 300 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:280px;">
+        <!-- Step 1 -->
+        <circle cx="40" cy="40" r="22" fill="rgba(14,116,218,0.1)" stroke="#0E74DA" stroke-width="2"/>
+        <text x="40" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#0E74DA">1</text>
+        <text x="80" y="38" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#0F172A">CHECK</text>
+        <text x="80" y="52" font-family="Inter, sans-serif" font-size="8" fill="#475569">Vérifier compatibilité</text>
+        <!-- Arrow -->
+        <line x1="40" y1="65" x2="40" y2="80" stroke="#E2E8F0" stroke-width="2"/>
+        <!-- Step 2 -->
+        <circle cx="40" cy="105" r="22" fill="rgba(14,116,218,0.1)" stroke="#0E74DA" stroke-width="2"/>
+        <text x="40" y="110" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#0E74DA">2</text>
+        <text x="80" y="103" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#0F172A">COMMANDE</text>
+        <text x="80" y="117" font-family="Inter, sans-serif" font-size="8" fill="#475569">Kit Manti + ReClass</text>
+        <line x1="40" y1="130" x2="40" y2="145" stroke="#E2E8F0" stroke-width="2"/>
+        <!-- Step 3 -->
+        <circle cx="40" cy="170" r="22" fill="rgba(14,116,218,0.1)" stroke="#0E74DA" stroke-width="2"/>
+        <text x="40" y="175" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#0E74DA">3</text>
+        <text x="80" y="168" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#0F172A">INSTALLATION</text>
+        <text x="80" y="182" font-family="Inter, sans-serif" font-size="8" fill="#475569">Parachute Manti sur drone</text>
+        <line x1="40" y1="195" x2="40" y2="210" stroke="#E2E8F0" stroke-width="2"/>
+        <!-- Step 4 -->
+        <circle cx="40" cy="235" r="22" fill="rgba(14,116,218,0.1)" stroke="#0E74DA" stroke-width="2"/>
+        <text x="40" y="240" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#0E74DA">4</text>
+        <text x="80" y="233" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#0F172A">AUDIT</text>
+        <text x="80" y="247" font-family="Inter, sans-serif" font-size="8" fill="#475569">Procédure en ligne</text>
+        <line x1="40" y1="260" x2="40" y2="275" stroke="#E2E8F0" stroke-width="2"/>
+        <!-- Step 5 -->
+        <circle cx="40" cy="300" r="22" fill="#10B981" stroke="#10B981" stroke-width="2"/>
+        <text x="40" y="305" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="white">5</text>
+        <text x="80" y="298" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="#10B981">FLY C6 !</text>
+        <text x="80" y="312" font-family="Inter, sans-serif" font-size="8" fill="#475569">Vol BVLOS STS-02</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>BVLOS — Kit C6 & ReClass</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 10 — MODULE SÉPARATEUR : PRATIQUE BVLOS
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">Bloc 2 — Pratique</div>
+  <h2>Pratique — Vols BVLOS</h2>
+  <p class="module-desc">2 heures de vol hors vue avec simulation de pannes et gestion d'urgence.</p>
+  <!-- Send icon (flight) -->
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Pratique — Vols BVLOS</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 10 — PRÉPARATION DU VOL BVLOS TERRAIN
+     ============================================================ -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Préparation du vol BVLOS terrain</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon">
+        <!-- check-square icon -->
+        <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      </div>
+      <div class="text">
+        <h4>Check-list spécifique BVLOS</h4>
+        <p>Vérification matériel et administratif : MANEX, attestation de vol, autorisations.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- alert-triangle icon -->
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <div class="text">
+        <h4>Zone contrôlée au sol</h4>
+        <p>Mise en place de cônes, rubalise et balisage de la zone de décollage et d'atterrissage.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- users icon -->
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="text">
+        <h4>Positionnement des observateurs</h4>
+        <p>Observateurs placés de manière à couvrir l'ensemble du couloir de vol.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- monitor icon -->
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="text">
+        <h4>Retour vidéo et télémétrie</h4>
+        <p>Vérification de la qualité du retour vidéo et de la réception télémétrie avant décollage.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- clipboard icon -->
+        <svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+      </div>
+      <div class="text">
+        <h4>Briefing final</h4>
+        <p>Briefing complet avec toute l'équipe avant le premier décollage BVLOS.</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Pratique — Préparation terrain</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 11 — EXERCICES DE VOL BVLOS
+     ============================================================ -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Exercices de vol BVLOS</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Vol progressif hors vue</strong> : 50 m, 100 m, 200 m, 500 m</li>
+        <li><strong>Suivi écran exclusivement</strong> : pas de vue directe sur le drone</li>
+        <li><strong>Gestion des waypoints en vol</strong> : suivi et modification du plan</li>
+        <li><strong>Communication continue</strong> avec l'observateur de l'espace aérien</li>
+        <li><strong>Retour RTH sur ordre</strong> : déclenchement manuel du retour</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <!-- SVG: Vol progressif VLOS → BVLOS -->
+      <svg viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:440px;">
+        <!-- Terrain -->
+        <rect x="10" y="240" width="400" height="35" rx="4" fill="#E2E8F0"/>
+        <text x="210" y="263" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#94A3B8">TERRAIN</text>
+        <!-- Télépilote -->
+        <circle cx="40" cy="225" r="9" fill="#0F172A"/>
+        <line x1="40" y1="234" x2="40" y2="250" stroke="#0F172A" stroke-width="2.5"/>
+        <text x="40" y="290" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#475569">Télépilote</text>
+        <!-- VLOS zone (triangle vert clair) -->
+        <path d="M45 220 L155 155 L155 220 Z" fill="rgba(16,185,129,0.08)" stroke="#10B981" stroke-width="1.5" stroke-dasharray="5 3"/>
+        <text x="105" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#059669" font-weight="500">VLOS</text>
+        <!-- Hauteur 50m flèche -->
+        <line x1="155" y1="220" x2="155" y2="155" stroke="#10B981" stroke-width="1.5" stroke-dasharray="4 2"/>
+        <text x="165" y="192" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#059669">50 m</text>
+        <!-- Trajectoire principale (pointillés bleus épais) -->
+        <path d="M55 210 L145 160 L245 120 L330 90 L390 60" stroke="#1E3A8A" stroke-width="3.5" stroke-dasharray="8 5" stroke-linecap="round"/>
+        <!-- Points de distance -->
+        <!-- 50m -->
+        <circle cx="145" cy="160" r="6" fill="#10B981"/>
+        <!-- 200m -->
+        <circle cx="245" cy="120" r="6" fill="#0E74DA"/>
+        <text x="245" y="110" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#0E74DA">200 m</text>
+        <!-- 500m -->
+        <circle cx="330" cy="90" r="6" fill="#F59E0B"/>
+        <text x="330" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#D97706">500 m</text>
+        <!-- Drone (forme simplifiée) -->
+        <polygon points="390,52 400,60 395,60 395,68 385,68 385,60 380,60" fill="#1E3A8A"/>
+        <line x1="375" y1="60" x2="405" y2="60" stroke="#1E3A8A" stroke-width="2"/>
+        <text x="390" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0E74DA">Drone</text>
+        <!-- BVLOS label (encadré rouge) -->
+        <rect x="220" y="30" width="100" height="26" rx="6" fill="rgba(239,68,68,0.08)" stroke="#EF4444" stroke-width="1.5"/>
+        <text x="270" y="48" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EF4444">BVLOS</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Pratique — Exercices BVLOS</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 12 — SIMULATION DE PANNES EN VOL
+     ============================================================ -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Simulation de pannes en vol</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Perte retour vidéo</strong> &rarr; procédure de récupération</li>
+        <li><strong>Perte liaison RC</strong> &rarr; comportement failsafe activé</li>
+        <li><strong>Batterie critique</strong> &rarr; atterrissage d'urgence</li>
+        <li><strong>Intrusion de tiers</strong> &rarr; interruption immédiate de vol</li>
+        <li>Chaque stagiaire doit gérer <strong>au moins 2 pannes</strong></li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <!-- SVG: Drone with warning icons and procedures -->
+      <svg viewBox="0 0 360 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:400px;">
+        <!-- Drone body -->
+        <rect x="140" y="80" width="80" height="25" rx="12" fill="#0E74DA"/>
+        <!-- Arms -->
+        <line x1="140" y1="92" x2="100" y2="65" stroke="#0E74DA" stroke-width="3" stroke-linecap="round"/>
+        <line x1="220" y1="92" x2="260" y2="65" stroke="#0E74DA" stroke-width="3" stroke-linecap="round"/>
+        <line x1="140" y1="92" x2="100" y2="120" stroke="#0E74DA" stroke-width="3" stroke-linecap="round"/>
+        <line x1="220" y1="92" x2="260" y2="120" stroke="#0E74DA" stroke-width="3" stroke-linecap="round"/>
+        <!-- Propellers -->
+        <ellipse cx="100" cy="65" rx="20" ry="4" fill="rgba(14,116,218,0.3)"/>
+        <ellipse cx="260" cy="65" rx="20" ry="4" fill="rgba(14,116,218,0.3)"/>
+        <ellipse cx="100" cy="120" rx="20" ry="4" fill="rgba(14,116,218,0.3)"/>
+        <ellipse cx="260" cy="120" rx="20" ry="4" fill="rgba(14,116,218,0.3)"/>
+        <!-- Warning icon top-left -->
+        <circle cx="60" cy="40" r="16" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
+        <text x="60" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#EF4444">!</text>
+        <text x="60" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#EF4444">Vidéo</text>
+        <!-- Warning icon top-right -->
+        <circle cx="300" cy="40" r="16" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
+        <text x="300" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#EF4444">!</text>
+        <text x="300" y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#EF4444">Liaison RC</text>
+        <!-- Warning icon bottom-left -->
+        <circle cx="60" cy="150" r="16" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-width="1.5"/>
+        <text x="60" y="155" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#D97706">!</text>
+        <text x="60" y="180" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#D97706">Batterie</text>
+        <!-- Warning icon bottom-right -->
+        <circle cx="300" cy="150" r="16" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-width="1.5"/>
+        <text x="300" y="155" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#D97706">!</text>
+        <text x="300" y="180" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#D97706">Intrusion</text>
+        <!-- Procedure boxes -->
+        <rect x="30" y="200" width="130" height="50" rx="8" fill="rgba(239,68,68,0.06)" stroke="#EF4444" stroke-width="1"/>
+        <text x="95" y="218" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#EF4444">Procédure d'urgence</text>
+        <text x="95" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#475569">RTH / Atterrissage /</text>
+        <text x="95" y="244" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#475569">Interruption</text>
+        <rect x="200" y="200" width="130" height="50" rx="8" fill="rgba(16,185,129,0.06)" stroke="#10B981" stroke-width="1"/>
+        <text x="265" y="218" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#059669">Récupération</text>
+        <text x="265" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#475569">Failsafe / Stationnaire /</text>
+        <text x="265" y="244" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#475569">Reprise manuelle</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Pratique — Simulation de pannes</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 13 — DÉBRIEFING DES VOLS BVLOS
+     ============================================================ -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>Débriefing des vols BVLOS</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon">
+        <!-- message-square icon -->
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div class="text">
+        <h4>Retour d'expérience</h4>
+        <p>Retour individuel et collectif sur chaque vol BVLOS réalisé.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- activity icon -->
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div class="text">
+        <h4>Analyse des réactions face aux pannes</h4>
+        <p>Évaluation des décisions prises lors des pannes simulées : temps de réaction, pertinence.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- trending-up icon -->
+        <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </div>
+      <div class="text">
+        <h4>Points d'amélioration</h4>
+        <p>Communication, anticipation, gestion du stress et coordination avec les observateurs.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- award icon -->
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+      </div>
+      <div class="text">
+        <h4>Évaluation des compétences BVLOS</h4>
+        <p>Évaluation de la maîtrise des procédures BVLOS par chaque stagiaire.</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>Pratique — Débriefing BVLOS</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 14 — MODULE SÉPARATEUR : TP PHOTOGRAMMÉTRIE
+     ============================================================ -->
+<section class="slide-module">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <div class="module-number">TP</div>
+  <h2>Cartographie & Photogrammétrie BVLOS</h2>
+  <p class="module-desc">Mission de photogrammétrie sur un cas réel : cartographie d'une carrière à Champagné (72).</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>
+  </svg>
+  <div class="slide-footer">
+    <span>TP — Photogrammétrie BVLOS</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 15 — TP CONSIGNE : CARTOGRAPHIE CARRIÈRE
+     ============================================================ -->
+<section class="slide-two-col">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>TP : Cartographie d'une carrière</h2>
+
+  <div class="two-col">
+    <div class="col-text" style="font-size: 0.82em;">
+      <div class="info-card" style="margin-bottom: 12px; padding: 10px 14px;">
+        <p style="margin: 0; font-size: 0.7em;">
+          <strong>Lieu</strong> : Carrière de Champagné (72470)<br>
+          <strong>Coordonnées</strong> : 48.016588, 0.351560<br>
+          <strong>Type</strong> : Mission photogrammétrie BVLOS
+        </p>
+      </div>
+      <ul>
+        <li><strong>Objectif</strong> : réaliser une orthophoto et un modèle 3D de la carrière</li>
+        <li><strong>Préparation</strong> : vérifier espaces aériens, NOTAM, météo, déclaration AlphaTango</li>
+        <li><strong>Paramétrage</strong> : définir la zone sur DJI Pilot 2, recouvrement 75%/65%, altitude de vol</li>
+        <li><strong>Exécution</strong> : lancement mission auto, suivi écran, gestion observateur</li>
+        <li><strong>Livrable</strong> : nuage de points, orthophoto, MNS</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <div style="background: #1a1a2e; border-radius: var(--dx-radius); overflow: hidden;">
+        <img src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/15/11478/16400" alt="Vue satellite carrière Champagné" style="width: 100%; display: block; opacity: 0.9;">
+        <div style="padding: 8px 12px; text-align: center;">
+          <p style="margin: 0; font-size: 0.5em; color: rgba(255,255,255,0.7);">48.0166°N, 0.3516°E — Champagné (72)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>TP — Cartographie carrière</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 16 — TP EXERCICE : ÉTAPES DE LA MISSION
+     ============================================================ -->
+<section class="slide-content">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2>TP : Étapes de la mission</h2>
+
+  <div class="process-steps" style="background: var(--dx-bg-light); border-radius: 12px; padding: 24px 16px; margin: 24px 0;">
+    <div class="process-step">
+      <div class="step-number">1</div>
+      <div class="step-label">Analyse</div>
+      <div class="step-desc">Espaces aériens<br>NOTAM + météo</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">2</div>
+      <div class="step-label">Déclaration</div>
+      <div class="step-desc">AlphaTango<br>Briefing équipe</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">3</div>
+      <div class="step-label">Paramétrage</div>
+      <div class="step-desc">DJI Pilot 2<br>Zone + overlap</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">4</div>
+      <div class="step-label">Vol</div>
+      <div class="step-desc">Mission auto<br>Suivi écran</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">5</div>
+      <div class="step-label">Traitement</div>
+      <div class="step-desc">Orthophoto<br>Modèle 3D</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>TP — Étapes mission</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 17 — DÉBRIEFING J2 & ÉMARGEMENT
+     ============================================================ -->
+<section class="slide-content" style="display: flex !important; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+  <img src="assets/img/logo-dronexperts.svg" alt="" class="slide-logo">
+  <h2 style="display: block; text-align: center; border-bottom: none;">Débriefing J2 &amp; Émargement</h2>
+
+  <div style="max-width: 600px; margin: 0 auto;">
+    <ul style="text-align: left; font-size: 0.75em;">
+      <li>Correction collective du TP photogrammétrie</li>
+      <li>Retour d'expérience sur les vols BVLOS</li>
+      <li>Points à réviser pour la <strong>certification J3</strong></li>
+    </ul>
+    <div class="info-card" style="margin-top: 16px; text-align: center; padding: 20px;">
+      <p style="margin: 0; font-size: 0.9em; font-weight: 600; color: var(--dx-text-dark);">Émargement sur</p>
+      <p style="margin: 8px 0 0; font-size: 1.1em;">
+        <a href="https://formation.dronexperts.io" target="_blank" style="color: var(--dx-primary); font-weight: 700; text-decoration: none;">formation.dronexperts.io</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Débriefing — Jour 2</span>
+    <span>Jour 2 Après-midi</span>
+  </div>
+</section>
+
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<!-- Reveal.js -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    // Display
+    width: 1280,
+    height: 720,
+    margin: 0,
+    minScale: 0.2,
+    maxScale: 2.0,
+
+    // Navigation
+    hash: true,
+    history: true,
+    slideNumber: false,
+    showSlideNumber: 'all',
+
+    // Transitions
+    transition: 'slide',
+    transitionSpeed: 'default',
+    backgroundTransition: 'fade',
+
+    // Controls
+    controls: true,
+    controlsLayout: 'bottom-right',
+    controlsTutorial: false,
+    progress: true,
+
+    // Behavior
+    center: false,
+    embedded: false,
+    help: true,
+    autoPlayMedia: null,
+
+    // Touch
+    touch: true,
+
+    // Loop
+    loop: false,
+  });
+</script>
+</body>
+</html>
