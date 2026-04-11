@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formation Télépilote de Drone — Dronexperts</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --dx-primary: #0E74DA;
@@ -14,142 +14,281 @@
       --dx-text-secondary: #475569;
       --dx-text-muted: #94A3B8;
       --dx-border: #E2E8F0;
-      --dx-bg-light: #F9FAFC;
+      --dx-bg-light: #F8FAFC;
       --dx-success: #10B981;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--dx-bg-light); color: var(--dx-text-secondary); min-height: 100vh; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: white; color: var(--dx-text-secondary); }
 
-    .header {
-      background: linear-gradient(135deg, var(--dx-gradient-start), var(--dx-gradient-end));
-      color: white; text-align: center; padding: 48px 24px 40px;
+    /* ---- HERO ---- */
+    .hero {
+      background: linear-gradient(135deg, var(--dx-gradient-start) 0%, var(--dx-gradient-end) 100%);
+      color: white; text-align: center; padding: 56px 24px 72px; position: relative; overflow: hidden;
     }
-    .header img { height: 64px; filter: brightness(0) invert(1); margin-bottom: 16px; }
-    .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
-    .header p { font-size: 15px; color: rgba(255,255,255,0.75); }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(14,116,218,0.15) 0%, transparent 70%); border-radius: 50%;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -40%; left: -10%; width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(16,185,129,0.1) 0%, transparent 70%); border-radius: 50%;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero img { height: 56px; filter: brightness(0) invert(1); margin-bottom: 20px; }
+    .hero h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .hero .subtitle { font-size: 16px; color: rgba(255,255,255,0.7); font-weight: 400; }
+    .hero .badges { display: flex; gap: 12px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+    .hero .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;
+      backdrop-filter: blur(8px);
+    }
 
-    .container { max-width: 900px; margin: -32px auto 40px; padding: 0 20px; position: relative; z-index: 1; }
+    /* ---- CONTAINER ---- */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
 
-    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    @media (max-width: 640px) { .card-grid { grid-template-columns: 1fr; } }
+    /* ---- TIMELINE ---- */
+    .timeline { margin-top: -40px; position: relative; z-index: 2; }
+
+    .day-block { margin-bottom: 32px; }
+    .day-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--dx-text-muted); margin-bottom: 12px; padding-left: 4px;
+    }
+    .day-label .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    .day-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 640px) { .day-cards { grid-template-columns: 1fr; } }
 
     .card {
-      background: white; border: 1px solid var(--dx-border); border-radius: 12px;
-      padding: 24px; text-decoration: none; color: inherit;
-      transition: all 0.2s ease; display: block; position: relative; overflow: hidden;
+      background: white; border-radius: 14px; padding: 0; text-decoration: none; color: inherit;
+      transition: all 0.25s ease; display: flex; flex-direction: column; overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid rgba(226,232,240,0.8);
     }
-    .card:hover { border-color: var(--dx-primary); box-shadow: 0 4px 16px rgba(14,116,218,0.12); transform: translateY(-2px); }
-    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
-    .card.j1m::before { background: var(--dx-primary); }
-    .card.j1a::before { background: #7C3AED; }
-    .card.j2m::before { background: var(--dx-success); }
-    .card.j2a::before { background: #F59E0B; }
-    .card.j3m::before { background: #EF4444; }
-    .card.j3a::before { background: #0F172A; }
+    .card:hover {
+      box-shadow: 0 8px 30px rgba(14,116,218,0.12), 0 2px 8px rgba(0,0,0,0.04);
+      transform: translateY(-3px); border-color: var(--dx-primary);
+    }
+    .card-top { height: 5px; }
+    .card-body { padding: 20px 22px 18px; flex: 1; }
+    .card-time {
+      display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.05em;
+      padding: 3px 10px; border-radius: 6px; margin-bottom: 10px;
+    }
+    .card h2 { font-size: 16px; font-weight: 700; color: var(--dx-text-dark); margin-bottom: 6px; line-height: 1.3; }
+    .card p { font-size: 13px; line-height: 1.5; color: var(--dx-text-secondary); }
+    .card-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 22px; border-top: 1px solid var(--dx-border); font-size: 11px; color: var(--dx-text-muted);
+    }
+    .card-footer .slides { font-weight: 600; }
+    .card-footer .arrow { color: var(--dx-primary); font-weight: 600; font-size: 13px; }
 
-    .card .day { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
-    .card.j1m .day { color: var(--dx-primary); }
-    .card.j1a .day { color: #7C3AED; }
-    .card.j2m .day { color: var(--dx-success); }
-    .card.j2a .day { color: #F59E0B; }
-    .card.j3m .day { color: #EF4444; }
-    .card.j3a .day { color: #0F172A; }
+    /* Colors per session */
+    .j1m .card-top { background: var(--dx-primary); }
+    .j1m .card-time { background: rgba(14,116,218,0.08); color: var(--dx-primary); }
+    .j1a .card-top { background: #7C3AED; }
+    .j1a .card-time { background: rgba(124,58,237,0.08); color: #7C3AED; }
+    .j2m .card-top { background: var(--dx-success); }
+    .j2m .card-time { background: rgba(16,185,129,0.08); color: #059669; }
+    .j2a .card-top { background: #F59E0B; }
+    .j2a .card-time { background: rgba(245,158,11,0.08); color: #D97706; }
+    .j3m .card-top { background: #EF4444; }
+    .j3m .card-time { background: rgba(239,68,68,0.08); color: #EF4444; }
+    .j3a .card-top { background: var(--dx-text-dark); }
+    .j3a .card-time { background: rgba(15,23,42,0.06); color: var(--dx-text-dark); }
 
-    .card h2 { font-size: 17px; font-weight: 700; color: var(--dx-text-dark); margin-bottom: 6px; }
-    .card p { font-size: 13px; line-height: 1.5; }
-    .card .meta { font-size: 11px; color: var(--dx-text-muted); margin-top: 10px; font-weight: 500; }
-
-    .section-title { font-size: 13px; font-weight: 700; color: var(--dx-text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 32px 0 12px; }
+    /* ---- DOCS SECTION ---- */
+    .docs-section {
+      background: var(--dx-bg-light); border-radius: 16px; padding: 28px; margin-top: 8px; margin-bottom: 40px;
+      border: 1px solid var(--dx-border);
+    }
+    .docs-title {
+      font-size: 14px; font-weight: 700; color: var(--dx-text-dark); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .docs-title svg { width: 18px; height: 18px; stroke: var(--dx-primary); fill: none; stroke-width: 2; }
+    .docs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 640px) { .docs-grid { grid-template-columns: 1fr; } }
 
     .doc-card {
       background: white; border: 1px solid var(--dx-border); border-radius: 10px;
-      padding: 16px 20px; text-decoration: none; color: inherit;
-      display: flex; align-items: center; gap: 14px; transition: all 0.2s ease;
+      padding: 14px 16px; text-decoration: none; color: inherit;
+      display: flex; align-items: center; gap: 12px; transition: all 0.2s ease;
     }
-    .doc-card:hover { border-color: var(--dx-primary); }
-    .doc-card .doc-icon { width: 40px; height: 40px; background: rgba(14,116,218,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .doc-card .doc-icon svg { width: 20px; height: 20px; stroke: var(--dx-primary); fill: none; stroke-width: 2; }
-    .doc-card h3 { font-size: 14px; font-weight: 600; color: var(--dx-text-dark); }
-    .doc-card p { font-size: 12px; color: var(--dx-text-muted); }
+    .doc-card:hover { border-color: var(--dx-primary); background: rgba(14,116,218,0.02); }
+    .doc-icon {
+      width: 36px; height: 36px; background: rgba(14,116,218,0.08); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .doc-icon svg { width: 18px; height: 18px; stroke: var(--dx-primary); fill: none; stroke-width: 2; }
+    .doc-icon.red { background: rgba(239,68,68,0.08); }
+    .doc-icon.red svg { stroke: #EF4444; }
+    .doc-icon.green { background: rgba(16,185,129,0.08); }
+    .doc-icon.green svg { stroke: #059669; }
+    .doc-icon.blue { background: rgba(14,116,218,0.08); }
+    .doc-card h3 { font-size: 13px; font-weight: 600; color: var(--dx-text-dark); line-height: 1.3; }
+    .doc-card span { font-size: 11px; color: var(--dx-text-muted); }
 
-    .footer { text-align: center; padding: 24px; font-size: 12px; color: var(--dx-text-muted); }
-    .footer a { color: var(--dx-primary); text-decoration: none; }
+    /* ---- FOOTER ---- */
+    .footer {
+      text-align: center; padding: 28px 24px; font-size: 12px; color: var(--dx-text-muted);
+      border-top: 1px solid var(--dx-border);
+    }
+    .footer a { color: var(--dx-primary); text-decoration: none; font-weight: 500; }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts">
-    <h1>Formation Télépilote de Drone</h1>
-    <p>Référentiel RS6982 — 3 jours / 24 heures</p>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts">
+      <h1>Formation Télépilote de Drone</h1>
+      <p class="subtitle">Référentiel RS6982 — 3 jours / 24 heures</p>
+      <div class="badges">
+        <span class="badge">🎓 Certification RS6982</span>
+        <span class="badge">📍 Bordeaux</span>
+        <span class="badge">✈️ VLOS + BVLOS</span>
+      </div>
+    </div>
   </div>
 
+  <!-- TIMELINE -->
   <div class="container">
-    <div class="section-title">Présentations de cours</div>
-    <div class="card-grid">
-      <a href="formation-jour1-matin.html" class="card j1m">
-        <div class="day">Jour 1 — Matin</div>
-        <h2>Fondamentaux & Réglementation Open</h2>
-        <p>Présentations, activités pro, catégories A1/A2/A3, signalement, vol en agglomération 2026.</p>
-        <div class="meta">25 slides · 9h00–12h30</div>
-      </a>
-      <a href="formation-jour1-aprem.html" class="card j1a">
-        <div class="day">Jour 1 — Après-midi</div>
-        <h2>Spécifique, Obligations & Premiers vols</h2>
-        <p>STS-01/02, obligations exploitant, matériel, batteries, premiers vols VLOS.</p>
-        <div class="meta">26 slides · 13h30–18h00</div>
-      </a>
-      <a href="formation-jour2-matin.html" class="card j2m">
-        <div class="day">Jour 2 — Matin</div>
-        <h2>Cartographie, Outils & TP</h2>
-        <p>Espaces aériens, SIA, AlphaTango, Cartes.gouv.fr, Clearance, 2 TP préparation mission.</p>
-        <div class="meta">22 slides · 9h00–12h30</div>
-      </a>
-      <a href="formation-jour2-aprem.html" class="card j2a">
-        <div class="day">Jour 2 — Après-midi</div>
-        <h2>Vol BVLOS & TP Mission</h2>
-        <p>Théorie BVLOS, paramétrage, Kit C6 ReClass, 2h vols, TP photogrammétrie carrière.</p>
-        <div class="meta">18 slides · 13h30–18h00</div>
-      </a>
-      <a href="formation-jour3-matin.html" class="card j3m">
-        <div class="day">Jour 3 — Matin</div>
-        <h2>Certification RS6982</h2>
-        <p>QCM théorique, vol de contrôle pratique, entretien oral (5 questions).</p>
-        <div class="meta">4 slides · 9h00–12h30</div>
-      </a>
-      <a href="formation-jour3-aprem.html" class="card j3a">
-        <div class="day">Jour 3 — Après-midi</div>
-        <h2>Facteur Humain & Clôture</h2>
-        <p>Stress, fatigue, mémoire, erreurs, 5 attitudes dangereuses, PFH, clôture administrative.</p>
-        <div class="meta">18 slides · 13h30–18h00</div>
-      </a>
+    <div class="timeline">
+
+      <!-- JOUR 1 -->
+      <div class="day-block">
+        <div class="day-label"><span class="dot" style="background: var(--dx-primary);"></span> Jour 1 — Fondamentaux & Réglementation</div>
+        <div class="day-cards">
+          <a href="formation-jour1-matin.html" class="card j1m">
+            <div class="card-top"></div>
+            <div class="card-body">
+              <span class="card-time">9h00 – 12h30</span>
+              <h2>Fondamentaux & Réglementation Open</h2>
+              <p>Présentations, activités professionnelles, catégories A1/A2/A3, signalement électronique, vol en agglomération 2026.</p>
+            </div>
+            <div class="card-footer">
+              <span class="slides">25 slides</span>
+              <span class="arrow">Ouvrir →</span>
+            </div>
+          </a>
+          <a href="formation-jour1-aprem.html" class="card j1a">
+            <div class="card-top"></div>
+            <div class="card-body">
+              <span class="card-time">13h30 – 18h00</span>
+              <h2>Spécifique, Obligations & Premiers vols</h2>
+              <p>STS-01/02, obligations exploitant, matériel, batteries, check-lists, premiers vols VLOS.</p>
+            </div>
+            <div class="card-footer">
+              <span class="slides">26 slides</span>
+              <span class="arrow">Ouvrir →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- JOUR 2 -->
+      <div class="day-block">
+        <div class="day-label"><span class="dot" style="background: var(--dx-success);"></span> Jour 2 — Cartographie & Vol BVLOS</div>
+        <div class="day-cards">
+          <a href="formation-jour2-matin.html" class="card j2m">
+            <div class="card-top"></div>
+            <div class="card-body">
+              <span class="card-time">9h00 – 12h30</span>
+              <h2>Cartographie, Outils & TP</h2>
+              <p>Espaces aériens (CTR, TMA, P, R, D), SIA, AlphaTango, Cartes.gouv.fr, Clearance, 2 TP préparation mission.</p>
+            </div>
+            <div class="card-footer">
+              <span class="slides">22 slides</span>
+              <span class="arrow">Ouvrir →</span>
+            </div>
+          </a>
+          <a href="formation-jour2-aprem.html" class="card j2a">
+            <div class="card-top"></div>
+            <div class="card-body">
+              <span class="card-time">13h30 – 18h00</span>
+              <h2>Vol BVLOS & TP Mission</h2>
+              <p>Théorie BVLOS, paramétrage, Kit C6 ReClass, 2h de vols, TP photogrammétrie carrière Champagné.</p>
+            </div>
+            <div class="card-footer">
+              <span class="slides">18 slides</span>
+              <span class="arrow">Ouvrir →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- JOUR 3 -->
+      <div class="day-block">
+        <div class="day-label"><span class="dot" style="background: #EF4444;"></span> Jour 3 — Certification & Facteur Humain</div>
+        <div class="day-cards">
+          <a href="formation-jour3-matin.html" class="card j3m">
+            <div class="card-top"></div>
+            <div class="card-body">
+              <span class="card-time">9h00 – 12h30</span>
+              <h2>Certification RS6982</h2>
+              <p>QCM théorique (30 min, 75%), vol de contrôle pratique, entretien oral (5 questions).</p>
+            </div>
+            <div class="card-footer">
+              <span class="slides">4 slides</span>
+              <span class="arrow">Ouvrir →</span>
+            </div>
+          </a>
+          <a href="formation-jour3-aprem.html" class="card j3a">
+            <div class="card-top"></div>
+            <div class="card-body">
+              <span class="card-time">13h30 – 18h00</span>
+              <h2>Facteur Humain & Clôture</h2>
+              <p>Stress, fatigue, mémoire, 5 erreurs, prise de décision, 5 attitudes dangereuses, PFH, clôture administrative.</p>
+            </div>
+            <div class="card-footer">
+              <span class="slides">18 slides</span>
+              <span class="arrow">Ouvrir →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
     </div>
 
-    <div class="section-title">Documents complémentaires</div>
-    <div style="display: grid; gap: 10px;">
-      <a href="livret-instructeur.html" class="doc-card">
-        <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div><h3>Livret d'Accueil Instructeur</h3><p>Guide de préparation et d'animation des sessions</p></div>
-      </a>
-      <a href="assets/img/checklist-prevol.pdf" class="doc-card">
-        <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-        <div><h3>Checklist Visite Prévol</h3><p>Vérifications matérielles, paramétrage, zone et briefing</p></div>
-      </a>
-      <a href="assets/img/checklist-avant-apres-vol.pdf" class="doc-card">
-        <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-        <div><h3>Checklist Avant / Après Vol</h3><p>Messages d'avertissement, satellites, décollage, atterrissage</p></div>
-      </a>
-      <a href="assets/img/checklist-zone-de-vol.pdf" class="doc-card">
-        <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div><h3>Checklist Étude de la Zone de Vol</h3><p>Carte OACI, espaces aériens, NOTAM, autorisations, repérage</p></div>
-      </a>
-      <a href="assets/img/checklist-veille-vol.pdf" class="doc-card">
-        <div class="doc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-        <div><h3>Checklist Veille de Vol (J-1)</h3><p>Mises à jour, batteries, matériel, météo, autorisations</p></div>
-      </a>
+    <!-- DOCUMENTS -->
+    <div class="docs-section">
+      <div class="docs-title">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Documents & Check-lists
+      </div>
+      <div class="docs-grid">
+        <a href="livret-instructeur.html" class="doc-card">
+          <div class="doc-icon blue"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div><h3>Livret d'Accueil Instructeur</h3><span>Guide de préparation des sessions</span></div>
+        </a>
+        <a href="assets/img/checklist-prevol.pdf" class="doc-card">
+          <div class="doc-icon red"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div><h3>Visite Prévol</h3><span>Vérifications matérielles & paramétrage</span></div>
+        </a>
+        <a href="assets/img/checklist-avant-apres-vol.pdf" class="doc-card">
+          <div class="doc-icon red"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div><h3>Avant / Après Vol</h3><span>Décollage, atterrissage, contrôles</span></div>
+        </a>
+        <a href="assets/img/checklist-zone-de-vol.pdf" class="doc-card">
+          <div class="doc-icon green"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h3>Étude de la Zone de Vol</h3><span>Carte OACI, espaces, NOTAM, autorisations</span></div>
+        </a>
+        <a href="assets/img/checklist-veille-vol.pdf" class="doc-card">
+          <div class="doc-icon blue"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div><h3>Veille de Vol (J-1)</h3><span>Mises à jour, batteries, météo</span></div>
+        </a>
+      </div>
     </div>
+
   </div>
 
+  <!-- FOOTER -->
   <div class="footer">
     <p>© 2026 Dronexperts — Tous droits réservés · <a href="https://www.dronexperts.io">dronexperts.io</a> · <a href="https://formation.dronexperts.io">formation.dronexperts.io</a></p>
   </div>
