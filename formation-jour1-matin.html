@@ -121,13 +121,16 @@
       <ul>
         <li><strong>Salles équipées</strong> : Vidéoprojection, simulateurs et matériel pédagogique moderne</li>
         <li><strong>Terrains de vol sécurisés</strong> : Zones dédiées à la pratique en conditions réelles</li>
-        <li><strong>Instructeurs qualifiés</strong> : Pilotes professionnels expérimentés et certifiés DGAC</li>
+        <li><strong>Instructeurs qualifiés</strong> : Pilotes professionnels expérimentés et centre déclaré à la DGAC</li>
       </ul>
       <p style="margin-top: 16px; font-size: 0.7em;">
-        <a href="https://www.youtube.com/watch?v=TNuHUVla9Wo" target="_blank" style="color: var(--dx-primary); text-decoration: none; font-weight: 500;">
+        <a href="https://www.youtube.com/watch?v=QXm1171flVY" target="_blank" style="color: var(--dx-primary); text-decoration: none; font-weight: 500;">
           ▶ Voir la vidéo de présentation du centre
         </a>
       </p>
+      <div style="margin-top: 12px; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 0.55em; font-weight: 600; color: var(--dx-text-dark); background: var(--dx-bg-light); padding: 4px 10px; border-radius: 6px; border: 1px solid var(--dx-border);">🏅 Certifié Qualiopi — Processus certifié République Française</span>
+      </div>
     </div>
     <div class="col-visual">
       <img src="assets/img/photos/salle-formation.jpg" alt="Salle de formation Dronexperts" style="object-fit: cover;">
@@ -845,17 +848,22 @@
     <div class="col-text">
       <h3 style="font-size: 0.75em; margin-bottom: 8px;">🇫🇷 Signalement français</h3>
       <ul>
-        <li>Obligatoire pour les drones de masse ≥ <strong>800 g</strong></li>
-        <li>Émission d'un signal <strong>Wi-Fi</strong> contenant l'identifiant du drone</li>
-        <li>Intégré d'origine ou via une <strong>balise externe</strong> homologuée</li>
+        <li>Obligatoire pour les drones de masse ≥ <strong>800 g</strong> (décret du 3/12/2020)</li>
+        <li>Signal <strong>Wi-Fi 2,4 GHz</strong> — portée ~500 m à 1 km</li>
+        <li>Données : n° d'enregistrement, position drone, altitude, position télépilote</li>
+        <li>Destinataires : <strong>forces de l'ordre uniquement</strong></li>
         <li>Textes : articles L6214-2 et R6214-2 du Code des transports</li>
       </ul>
-      <h3 style="font-size: 0.75em; margin-top: 16px; margin-bottom: 8px;">🇪🇺 Remote ID européen</h3>
+      <h3 style="font-size: 0.75em; margin-top: 14px; margin-bottom: 8px;">🇪🇺 Remote ID européen</h3>
       <ul>
-        <li>Obligatoire pour les classes <strong>C1, C2 et C3</strong></li>
-        <li>Diffuse le numéro d'exploitant, position drone et position télépilote</li>
-        <li>Système d'<strong>identification directe à distance</strong> (Direct Remote ID)</li>
+        <li>Obligatoire pour les classes <strong>C1, C2 et C3</strong> (règlement UE 2019/945)</li>
+        <li>Technologies : <strong>Wi-Fi Direct et/ou Bluetooth</strong> — portée ~300 m à 1 km</li>
+        <li>Données : n° de série UAS, coordonnées GPS, altitude, cap</li>
+        <li>Destinataires : <strong>tout le monde</strong> (apps mobiles standard)</li>
       </ul>
+      <div class="info-card" style="margin-top: 10px; padding: 8px 12px; border-left: 3px solid var(--dx-warning);">
+        <p style="margin: 0; font-size: 0.52em; line-height: 1.5;"><strong style="color: #D97706;">⚠️ 2 systèmes distincts</strong> — Un drone ≥ 800 g de classe C2 doit avoir les <strong>deux</strong> : signalement FR + Remote ID EU. Les formats sont incompatibles.</p>
+      </div>
     </div>
     <div class="col-visual">
       <!-- SVG inline: drone emitting Wi-Fi signal -->
@@ -913,15 +921,19 @@
     <div class="col-text">
       <ul>
         <li><strong>VLOS</strong> (Visual Line of Sight) : vue directe à l'oeil nu, sans aide optique</li>
-        <li><strong>ALOS</strong> (Adjusted Line of Sight) : distance maximale théorique = 327 &times; envergure du drone</li>
+        <li><strong>ALOS</strong> (Attitude Line of Sight) : distance maximale pour distinguer l'orientation du drone<br>
+          <span style="font-size: 0.85em;">• Multirotors : <strong>ALOS = 327 × CD + 20 m</strong><br>
+          • Voilure fixe : <strong>ALOS = 490 × CD + 30 m</strong><br>
+          <em style="color: var(--dx-text-muted);">CD = dimension caractéristique de l'UA</em></span>
+        </li>
         <li><strong>DLOS</strong> (Direct Line of Sight) : distance maximale à laquelle le drone est discernable</li>
       </ul>
       <div class="info-card" style="margin-top: 12px;">
         <p style="margin:0; font-size:0.65em;">
           <strong>Exemples de calcul ALOS :</strong><br>
-          Mini 4 Pro (31 cm) &rarr; ~100 m<br>
-          Mavic 3 (40 cm) &rarr; ~130 m<br>
-          Matrice 350 RTK (100 cm) &rarr; ~330 m
+          Mini 4 Pro (CD ≈ 0,31 m) → ALOS ≈ 327 × 0,31 + 20 = <strong>121 m</strong><br>
+          Mavic 3 (CD ≈ 0,40 m) → ALOS ≈ 327 × 0,40 + 20 = <strong>151 m</strong><br>
+          Matrice 350 RTK (CD ≈ 1,00 m) → ALOS ≈ 327 × 1,00 + 20 = <strong>347 m</strong>
         </p>
       </div>
     </div>
@@ -961,8 +973,8 @@
         <text x="190" y="304" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#475569">Distance croissante</text>
         <!-- Formula box -->
         <rect x="200" y="190" width="160" height="45" rx="8" fill="rgba(245,158,11,0.08)" stroke="#F59E0B" stroke-width="1.5"/>
-        <text x="280" y="208" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#D97706">ALOS = 327 &times; envergure</text>
-        <text x="280" y="224" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#475569">(distance maximale théorique)</text>
+        <text x="280" y="208" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#D97706">ALOS = 327 × CD + 20 m</text>
+        <text x="280" y="224" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#475569">(multirotors — CD = dim. caractéristique)</text>
       </svg>
     </div>
   </div>
