@@ -618,39 +618,221 @@
 </section>
 
 
+<!-- QCM interactif — Style & Script -->
+<style>
+.qcm-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 90%; margin: 0 auto; }
+.qcm-opt { background: var(--dx-bg-light); border: 2px solid var(--dx-border); border-radius: 10px; padding: 14px 18px; font-size: 0.68em; color: var(--dx-text-dark); cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 10px; }
+.qcm-opt:hover { border-color: var(--dx-primary); background: rgba(14,116,218,0.03); }
+.qcm-opt .letter { flex-shrink: 0; width: 30px; height: 30px; background: white; border: 2px solid var(--dx-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85em; color: var(--dx-text-muted); }
+.qcm-opt.reveal-correct { border-color: var(--dx-success); background: rgba(16,185,129,0.06); }
+.qcm-opt.reveal-correct .letter { background: var(--dx-success); color: white; border-color: var(--dx-success); }
+.qcm-opt.reveal-wrong { border-color: var(--dx-error); background: rgba(239,68,68,0.04); opacity: 0.6; }
+.qcm-answer { text-align: center; margin-top: 14px; font-size: 0.6em; color: var(--dx-primary); font-weight: 600; cursor: pointer; }
+.qcm-answer:hover { text-decoration: underline; }
+</style>
+<script>
+function revealAnswer(slideId) {
+  var el = document.getElementById(slideId);
+  el.querySelectorAll('.qcm-opt').forEach(function(opt) {
+    if (opt.dataset.correct === 'true') opt.classList.add('reveal-correct');
+    else opt.classList.add('reveal-wrong');
+  });
+  var btn = el.querySelector('.qcm-answer');
+  if (btn) btn.style.display = 'none';
+}
+</script>
+
+
 <!-- ============================================================
-     SLIDE 15 — QUIZ
+     SLIDE 15 — QCM 1 : FATIGUE 12h
      ============================================================ -->
-<section class="slide-quiz">
+<section class="slide-quiz" id="qcm-1">
   <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
   <h2>
     <svg style="width:28px; height:28px; vertical-align:middle; margin-right:8px; stroke:var(--dx-primary); fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-    Question
+    QCM — Question 1/5
   </h2>
 
   <p class="quiz-question">Après combien d'heures d'éveil le risque d'erreur est-il considérablement multiplié ?</p>
 
-  <div class="quiz-options">
-    <div class="quiz-option">
-      <span class="option-letter">A</span>
+  <div class="qcm-options">
+    <div class="qcm-opt" onclick="revealAnswer('qcm-1')">
+      <span class="letter">A</span>
       <span>8 heures</span>
     </div>
-    <div class="quiz-option correct">
-      <span class="option-letter">B</span>
+    <div class="qcm-opt" data-correct="true" onclick="revealAnswer('qcm-1')">
+      <span class="letter">B</span>
       <span>12 heures</span>
     </div>
-    <div class="quiz-option">
-      <span class="option-letter">C</span>
+    <div class="qcm-opt" onclick="revealAnswer('qcm-1')">
+      <span class="letter">C</span>
       <span>16 heures</span>
     </div>
-    <div class="quiz-option">
-      <span class="option-letter">D</span>
+    <div class="qcm-opt" onclick="revealAnswer('qcm-1')">
+      <span class="letter">D</span>
       <span>24 heures</span>
     </div>
   </div>
+  <div class="qcm-answer" onclick="revealAnswer('qcm-1')">Afficher la réponse</div>
 
   <div class="slide-footer">
-    <span>Module 6 — Quiz</span>
+    <span>Module 6 — QCM 1/5</span>
+    <span>Jour 3 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 15b — QCM 2 : ATTITUDE INVULNÉRABLE
+     ============================================================ -->
+<section class="slide-quiz" id="qcm-2">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>
+    <svg style="width:28px; height:28px; vertical-align:middle; margin-right:8px; stroke:var(--dx-primary); fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    QCM — Question 2/5
+  </h2>
+
+  <p class="quiz-question">Quelle est l'attitude dangereuse du pilote qui dit « Les accidents, ça n'arrive qu'aux autres » ?</p>
+
+  <div class="qcm-options">
+    <div class="qcm-opt" onclick="revealAnswer('qcm-2')">
+      <span class="letter">A</span>
+      <span>Le Macho</span>
+    </div>
+    <div class="qcm-opt" onclick="revealAnswer('qcm-2')">
+      <span class="letter">B</span>
+      <span>L'Impulsif</span>
+    </div>
+    <div class="qcm-opt" data-correct="true" onclick="revealAnswer('qcm-2')">
+      <span class="letter">C</span>
+      <span>L'Invulnérable</span>
+    </div>
+    <div class="qcm-opt" onclick="revealAnswer('qcm-2')">
+      <span class="letter">D</span>
+      <span>Le Résigné</span>
+    </div>
+  </div>
+  <div class="qcm-answer" onclick="revealAnswer('qcm-2')">Afficher la réponse</div>
+
+  <div class="slide-footer">
+    <span>Module 6 — QCM 2/5</span>
+    <span>Jour 3 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 15c — QCM 3 : ALCOOLÉMIE
+     ============================================================ -->
+<section class="slide-quiz" id="qcm-3">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>
+    <svg style="width:28px; height:28px; vertical-align:middle; margin-right:8px; stroke:var(--dx-primary); fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    QCM — Question 3/5
+  </h2>
+
+  <p class="quiz-question">Le taux d'alcoolémie autorisé pour un télépilote en service est de :</p>
+
+  <div class="qcm-options">
+    <div class="qcm-opt" onclick="revealAnswer('qcm-3')">
+      <span class="letter">A</span>
+      <span>0,2 g/l</span>
+    </div>
+    <div class="qcm-opt" onclick="revealAnswer('qcm-3')">
+      <span class="letter">B</span>
+      <span>0,5 g/l</span>
+    </div>
+    <div class="qcm-opt" data-correct="true" onclick="revealAnswer('qcm-3')">
+      <span class="letter">C</span>
+      <span>0,0 g/l</span>
+    </div>
+    <div class="qcm-opt" onclick="revealAnswer('qcm-3')">
+      <span class="letter">D</span>
+      <span>0,8 g/l</span>
+    </div>
+  </div>
+  <div class="qcm-answer" onclick="revealAnswer('qcm-3')">Afficher la réponse</div>
+
+  <div class="slide-footer">
+    <span>Module 6 — QCM 3/5</span>
+    <span>Jour 3 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 15d — QCM 4 : REMÈDE FATIGUE
+     ============================================================ -->
+<section class="slide-quiz" id="qcm-4">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>
+    <svg style="width:28px; height:28px; vertical-align:middle; margin-right:8px; stroke:var(--dx-primary); fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    QCM — Question 4/5
+  </h2>
+
+  <p class="quiz-question">Quel est le seul vrai remède contre la fatigue ?</p>
+
+  <div class="qcm-options">
+    <div class="qcm-opt" onclick="revealAnswer('qcm-4')">
+      <span class="letter">A</span>
+      <span>Le café</span>
+    </div>
+    <div class="qcm-opt" onclick="revealAnswer('qcm-4')">
+      <span class="letter">B</span>
+      <span>Les boissons énergisantes</span>
+    </div>
+    <div class="qcm-opt" data-correct="true" onclick="revealAnswer('qcm-4')">
+      <span class="letter">C</span>
+      <span>Le sommeil</span>
+    </div>
+    <div class="qcm-opt" onclick="revealAnswer('qcm-4')">
+      <span class="letter">D</span>
+      <span>La micro-sieste de 5 minutes</span>
+    </div>
+  </div>
+  <div class="qcm-answer" onclick="revealAnswer('qcm-4')">Afficher la réponse</div>
+
+  <div class="slide-footer">
+    <span>Module 6 — QCM 4/5</span>
+    <span>Jour 3 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 15e — QCM 5 : ERREUR HUMAINE %
+     ============================================================ -->
+<section class="slide-quiz" id="qcm-5">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>
+    <svg style="width:28px; height:28px; vertical-align:middle; margin-right:8px; stroke:var(--dx-primary); fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    QCM — Question 5/5
+  </h2>
+
+  <p class="quiz-question">Quel pourcentage des accidents de drone a pour cause une erreur humaine ?</p>
+
+  <div class="qcm-options">
+    <div class="qcm-opt" onclick="revealAnswer('qcm-5')">
+      <span class="letter">A</span>
+      <span>50%</span>
+    </div>
+    <div class="qcm-opt" onclick="revealAnswer('qcm-5')">
+      <span class="letter">B</span>
+      <span>65%</span>
+    </div>
+    <div class="qcm-opt" data-correct="true" onclick="revealAnswer('qcm-5')">
+      <span class="letter">C</span>
+      <span>Plus de 80%</span>
+    </div>
+    <div class="qcm-opt" onclick="revealAnswer('qcm-5')">
+      <span class="letter">D</span>
+      <span>95%</span>
+    </div>
+  </div>
+  <div class="qcm-answer" onclick="revealAnswer('qcm-5')">Afficher la réponse</div>
+
+  <div class="slide-footer">
+    <span>Module 6 — QCM 5/5</span>
     <span>Jour 3 Après-midi</span>
   </div>
 </section>
@@ -675,7 +857,56 @@
 
 
 <!-- ============================================================
-     SLIDE 17 — CLÔTURE ADMINISTRATIVE
+     SLIDE 17 — VOL / TP OPTIONNEL
+     ============================================================ -->
+<section class="slide-content" style="display: flex !important; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2 style="display: block; text-align: center; border-bottom: none;">Vol complémentaire ou TP (si météo favorable)</h2>
+  <div style="max-width: 650px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px;">
+      <div class="info-card" style="text-align: center; padding: 20px; border-left: 4px solid var(--dx-primary);">
+        <p style="margin: 0 0 6px; font-weight: 700; color: var(--dx-primary); font-size: 0.7em;">Option 1 : Vol libre</p>
+        <p style="margin: 0; font-size: 0.55em;">Exercices de pilotage au choix : figures, photographie aérienne, entraînement vol de nuit si applicable.</p>
+      </div>
+      <div class="info-card" style="text-align: center; padding: 20px; border-left: 4px solid var(--dx-success);">
+        <p style="margin: 0 0 6px; font-weight: 700; color: var(--dx-success); font-size: 0.7em;">Option 2 : TP Préparation mission</p>
+        <p style="margin: 0; font-size: 0.55em;">Nouveau cas pratique de préparation de mission sur un lieu choisi par les stagiaires.</p>
+      </div>
+    </div>
+    <p style="margin-top: 16px; font-size: 0.6em; color: var(--dx-text-muted);">Activité adaptée en fonction de la météo et de l'avancement du groupe.</p>
+  </div>
+  <div class="slide-footer"><span>Activité complémentaire</span><span>Jour 3 Après-midi</span></div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 18 — OFFRE MATÉRIEL & TOUR DE TABLE
+     ============================================================ -->
+<section class="slide-content" style="display: flex !important; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2 style="display: block; text-align: center; border-bottom: none;">Dronexperts — Vente de matériel & Tour de table</h2>
+  <div style="max-width: 650px; margin: 0 auto;">
+    <div class="info-card" style="text-align: center; padding: 24px; border-left: 4px solid var(--dx-primary); margin-bottom: 16px;">
+      <p style="margin: 0 0 8px; font-size: 0.8em; font-weight: 700; color: var(--dx-text-dark);">🛒 Dronexperts est revendeur officiel DJI</p>
+      <p style="margin: 0; font-size: 0.65em;">En tant qu'élève Dronexperts, bénéficiez de <strong style="color: var(--dx-primary); font-size: 1.3em;">-5%</strong> sur le tarif public de tout le catalogue DJI.</p>
+      <p style="margin: 8px 0 0; font-size: 0.55em; color: var(--dx-text-muted);">DJI Mavic, Matrice, Mini, Air, FPV, accessoires, batteries... Contactez-nous pour un devis.</p>
+    </div>
+    <div style="text-align: left;">
+      <h3 style="font-size: 0.75em; margin-bottom: 8px; text-align: center;">🎤 Tour de table final</h3>
+      <ul style="font-size: 0.62em;">
+        <li>Retour d'expérience sur les <strong>3 jours de formation</strong></li>
+        <li>Vos <strong>projets professionnels</strong> avec le drone</li>
+        <li>Questions ouvertes et <strong>conseils personnalisés</strong></li>
+        <li>Échange de contacts entre stagiaires</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Dronexperts — Matériel & Tour de table</span><span>Jour 3 Après-midi</span></div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 19 — CLÔTURE ADMINISTRATIVE
      ============================================================ -->
 <section class="slide-content" style="display: flex !important; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
   <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
@@ -713,7 +944,7 @@
 
 
 <!-- ============================================================
-     SLIDE 18 — CONCLUSION / CONTACT
+     SLIDE 20 — CONCLUSION / CONTACT
      ============================================================ -->
 <section class="slide-conclusion">
   <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
