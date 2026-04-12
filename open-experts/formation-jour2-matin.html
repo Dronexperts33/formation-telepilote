@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation Open Experts — Jour 2 Matin — Dronexperts</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Dronexperts Theme -->
+  <link rel="stylesheet" href="../css/dronexperts-theme.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<!-- ============================================================
+     SLIDE 1 — TITRE DE FORMATION (Hero)
+     ============================================================ -->
+<section class="slide-title">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>Formation Open Experts</h1>
+  <p class="subtitle">Jour 2 Matin — Cartographie &amp; Outils (Visio)</p>
+  <span class="badge">Référentiel RS6699 — 3 jours / 24h</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Open Experts</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 2 — MODULE 6 SÉPARATEUR
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <div class="module-number">Module 6</div>
+  <h2>Cartographie &amp; Espaces aériens</h2>
+  <p class="module-desc">Maîtriser la lecture des cartes aéronautiques et comprendre l'organisation de l'espace aérien français pour préparer vos missions drone en toute sécurité.</p>
+  <!-- Map icon -->
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 6 — Cartographie &amp; Espaces aériens</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- SLIDE — VUE GLOBALE DES ESPACES AÉRIENS -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Vue globale des espaces aériens</h2>
+
+  <div class="two-col">
+    <div class="col-text" style="font-size: 0.82em;">
+      <ul>
+        <li><strong>Espaces contrôlés</strong> : CTR (autour aérodromes), TMA (en altitude), AWY (voies aériennes)</li>
+        <li><strong>Zones réglementées</strong> : P (interdites), R (réglementées), D (dangereuses)</li>
+        <li><strong>Zones temporaires</strong> : ZRT, ZIT (publiées par NOTAM)</li>
+        <li><strong>Zones militaires</strong> : VOLTAC, SETBA, RTBA (basse altitude)</li>
+        <li><strong>Zones spéciales</strong> : ZICAD (captation interdite), zones naturelles protégées</li>
+      </ul>
+      <div class="info-card" style="margin-top: 10px; padding: 10px 14px;">
+        <p style="margin: 0; font-size: 0.6em;"><strong>Principe</strong> : vérifier TOUS les espaces aériens avant chaque vol via la carte OACI + NOTAM + Cartes.gouv.fr</p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <svg viewBox="0 0 360 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:380px;">
+        <!-- Sky -->
+        <rect x="0" y="0" width="360" height="300" rx="8" fill="#F0F7FF"/>
+        <!-- Ground -->
+        <rect x="0" y="250" width="360" height="50" rx="0" fill="#E2E8F0"/>
+        <text x="180" y="278" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#94A3B8" font-weight="500">SOL</text>
+        <!-- Airport -->
+        <rect x="140" y="240" width="80" height="12" rx="2" fill="#94A3B8"/>
+        <text x="180" y="248" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="white" font-weight="600">AÉRODROME</text>
+        <!-- CTR -->
+        <rect x="100" y="180" width="160" height="70" rx="6" fill="rgba(14,116,218,0.08)" stroke="#0E74DA" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <text x="180" y="195" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0E74DA">CTR</text>
+        <text x="180" y="207" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#0E74DA">SFC → plafond</text>
+        <!-- TMA -->
+        <rect x="60" y="100" width="240" height="80" rx="8" fill="rgba(30,58,138,0.06)" stroke="#1E3A8A" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <text x="180" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#1E3A8A">TMA</text>
+        <text x="180" y="132" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#1E3A8A">Plancher → plafond</text>
+        <!-- AWY -->
+        <rect x="20" y="30" width="320" height="50" rx="6" fill="rgba(148,163,184,0.1)" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3"/>
+        <text x="180" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#94A3B8">AWY (voies aériennes en croisière)</text>
+        <!-- Zone P on side -->
+        <rect x="305" y="200" width="45" height="40" rx="4" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
+        <text x="327" y="225" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EF4444">P</text>
+        <!-- Zone R on other side -->
+        <rect x="10" y="200" width="45" height="40" rx="4" fill="rgba(14,116,218,0.1)" stroke="#0E74DA" stroke-width="1.5"/>
+        <text x="32" y="225" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0E74DA">R</text>
+        <!-- 120m drone line -->
+        <line x1="0" y1="188" x2="360" y2="188" stroke="#10B981" stroke-width="2" stroke-dasharray="6 3"/>
+        <rect x="250" y="176" width="100" height="14" rx="3" fill="white" opacity="0.85"/>
+        <text x="300" y="187" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#10B981">120 m max drone</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 6 — Vue globale espaces aériens</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 3 — CTR — Zone de contrôle d'aérodrome
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>CTR — Zone de contrôle d'aérodrome</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Protège les arrivées et départs</strong> : espace critique autour des aérodromes contrôlés</li>
+        <li><strong>Plancher à la surface (SFC)</strong> : la zone commence au sol, tout vol est concerné</li>
+        <li><strong>Vol très réglementé</strong> : accord obligatoire de la tour de contrôle (TWR)</li>
+        <li><strong>Impact drone</strong> : restrictions fortes, voire interdiction totale selon l'activité</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <img src="../assets/img/screenshots/CTR Bergerac.png" alt="CTR Bergerac sur carte OACI" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 6 — CTR</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 4 — TMA — Région de contrôle terminale
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>TMA — Région de contrôle terminale</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Au-dessus de la CTR</strong> : englobe la zone terminale d'approche et de départ</li>
+        <li><strong>Plancher jamais au sol</strong> : commence en altitude (ex : 1000 ft AMSL)</li>
+        <li><strong>Moins contraignant sous le plancher</strong> : vol possible sous la TMA si hors CTR</li>
+        <li><strong>Avions en approche</strong> : trafic aérien dense, procédures d'entrée et de sortie</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <img src="../assets/img/screenshots/Cartes.gouv_OACI.png" alt="Carte OACI sur Cartes.gouv.fr" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 6 — TMA</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 5 — Zone P — Zones interdites
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Zone P — Zones interdites</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Strictement interdit</strong> : aucune pénétration autorisée sans dérogation exceptionnelle</li>
+        <li><strong>Centrales nucléaires</strong> : périmètre de protection renforcé</li>
+        <li><strong>Bases militaires sensibles</strong> : zones de défense nationale</li>
+        <li><strong>P23 Paris</strong> : zone interdite au-dessus de la capitale</li>
+        <li><strong>Poursuites pénales</strong> : sanctions lourdes en cas de violation</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <img src="../assets/img/screenshots/Zone P (P3).png" alt="Zone P3 sur carte OACI" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 6 — Zone P</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 6 — Zone R — Zones réglementées
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Zone R — Zones réglementées</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Conditions spécifiques ou autorisation</strong> : pénétration possible sous conditions</li>
+        <li><strong>Parcs nationaux</strong> : restrictions environnementales supplémentaires</li>
+        <li><strong>Zones militaires</strong> : activité encadrée par les armées</li>
+        <li><strong>Contacter le gestionnaire</strong> : identification du gestionnaire via la carte OACI</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <img src="../assets/img/screenshots/Zone R.png" alt="Zone R sur carte OACI" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 6 — Zone R</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 7 — Zone D — Zones dangereuses
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Zone D — Zones dangereuses</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Non interdit mais danger</strong> : pénétration à vos risques et périls</li>
+        <li><strong>Zones de tirs</strong> : exercices militaires avec munitions réelles</li>
+        <li><strong>Zones de largages</strong> : parachutisme, largage de matériel</li>
+        <li><strong>Responsabilité du télépilote</strong> : vérifier l'activité avant de pénétrer</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <img src="../assets/img/screenshots/Zone D.png" alt="Zone D sur carte OACI" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 6 — Zone D</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 8 — Zones temporaires (ZRT/ZIT)
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Zones temporaires (ZRT/ZIT)</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>ZRT</strong> : zone réglementée temporaire (conditions d'accès)</li>
+        <li><strong>ZIT</strong> : zone interdite temporaire (aucune pénétration)</li>
+        <li><strong>Événements concernés</strong> : 14 juillet, feux d'artifice, sommets diplomatiques</li>
+        <li><strong>Publiées par NOTAM / SUP AIP</strong> : information aéronautique officielle</li>
+        <li><strong>Vérifier avant chaque vol</strong> : ces zones changent quotidiennement</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <!-- SVG: Dashed zone with clock icon and NOTAM label -->
+      <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:300px;">
+        <!-- Background -->
+        <rect x="0" y="0" width="300" height="300" rx="12" fill="#F8FAFC"/>
+        <!-- Dashed temporary zone -->
+        <rect x="40" y="50" width="220" height="160" rx="12" fill="rgba(139,92,246,0.06)" stroke="#8B5CF6" stroke-width="2.5" stroke-dasharray="12 6"/>
+        <!-- Clock icon -->
+        <circle cx="150" cy="110" r="30" fill="none" stroke="#8B5CF6" stroke-width="2.5"/>
+        <line x1="150" y1="95" x2="150" y2="110" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="150" y1="110" x2="163" y2="118" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- NOTAM label -->
+        <rect x="95" y="155" width="110" height="30" rx="6" fill="#8B5CF6"/>
+        <text x="150" y="175" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="white">NOTAM</text>
+        <!-- ZRT / ZIT labels -->
+        <rect x="40" y="235" width="100" height="32" rx="8" fill="rgba(14,116,218,0.1)"/>
+        <text x="90" y="255" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0E74DA">ZRT</text>
+        <rect x="160" y="235" width="100" height="32" rx="8" fill="rgba(239,68,68,0.1)"/>
+        <text x="210" y="255" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EF4444">ZIT</text>
+        <!-- Subtitle -->
+        <text x="150" y="288" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569">Temporaire — Vérifier chaque jour</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 6 — Zones temporaires</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 9 — Zones militaires basse altitude
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Zones militaires basse altitude</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul class="icon-list">
+        <li>
+          <div class="icon">
+            <!-- helicopter icon -->
+            <svg viewBox="0 0 24 24"><path d="M4 15h16"/><path d="M12 15v4"/><path d="M8 19h8"/><circle cx="12" cy="10" r="4"/><path d="M12 6V2"/><path d="M6 2h12"/></svg>
+          </div>
+          <div class="text">
+            <h4>VOLTAC — Vols tactiques hélicoptères</h4>
+            <p>Zones dédiées aux hélicoptères militaires en transport tactique à très basse altitude.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">
+            <!-- zap icon -->
+            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="text">
+            <h4>SETBA — Secteurs d'entraînement très basse altitude</h4>
+            <p>Entraînement chasse à très basse altitude. Vitesse élevée, danger extrême pour les drones.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">
+            <!-- git-branch icon (network) -->
+            <svg viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+          </div>
+          <div class="text">
+            <h4>RTBA — Réseau de routes très basse altitude</h4>
+            <p>Réseau de routes aériennes militaires. Interdit si actif. Vérifier l'activation quotidienne.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">
+            <!-- calendar icon -->
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="text">
+            <h4>AZBA — Activité des zones basse altitude</h4>
+            <p>Carte publiée quotidiennement par le SIA. Consulter les horaires d'activation avant chaque vol.</p>
+          </div>
+        </li>
+      </ul>
+      <p style="margin-top: 8px; font-size: 0.5em;">📄 <a href="https://dvmfnwwovrzxlhmgdaey.supabase.co/storage/v1/object/public/public-resources/57a0b199-05bf-4af4-8ebc-3ee43823e243/VOLTAC___SETBA_1773069748401.pdf" target="_blank" style="color: var(--dx-primary); text-decoration: none;">Carte VOLTAC / SETBA (PDF)</a></p>
+    </div>
+    <div class="col-visual">
+      <img src="../assets/img/screenshots/Carte AZBA.png" alt="Carte AZBA — activations RTBA" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 6 — Zones militaires basse altitude</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 10 — ZICAD & Zones naturelles
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>ZICAD &amp; Zones naturelles</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <h3 style="font-size: 0.75em; margin-bottom: 8px;">ZICAD — Zones interdites de captation aérienne</h3>
+      <ul>
+        <li><strong>Survol possible</strong> mais captation photo/vidéo/thermique strictement interdite</li>
+        <li>Sites sensibles : installations militaires, prisons, sites gouvernementaux</li>
+        <li><strong>Sanctions pénales</strong> : délit passible de poursuites judiciaires</li>
+      </ul>
+      <h3 style="font-size: 0.75em; margin-top: 16px; margin-bottom: 8px;">Zones naturelles protégées</h3>
+      <ul>
+        <li>Parcs nationaux et réserves naturelles</li>
+        <li>Zones Natura 2000 et sites de nidification</li>
+        <li>Interdiction de survol à moins de 150-300 m selon les arrêtés</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <img src="../assets/img/photos/parc-national.jpg" alt="Parc national protégé" style="object-fit: cover;">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 6 — ZICAD &amp; Zones naturelles</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 11 — OUTILS SÉPARATEUR
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <div class="module-number">Outils</div>
+  <h2>Outils de préparation de mission</h2>
+  <p class="module-desc">Les plateformes et ressources indispensables pour préparer chaque vol dans le respect de la réglementation.</p>
+  <!-- Monitor icon -->
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+  </svg>
+  <div class="slide-footer">
+    <span>Outils — Préparation de mission</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 12 — Le SIA & Les NOTAM
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Le SIA &amp; Les NOTAM</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>SIA</strong> : Service de l'Information Aéronautique officielle</li>
+        <li><strong>Site</strong> : <a href="https://www.sia.aviation-civile.gouv.fr" target="_blank" style="color: var(--dx-primary);">sia.aviation-civile.gouv.fr</a></li>
+        <li><strong>AIP</strong> : recueil permanent des informations aéronautiques</li>
+        <li><strong>NOTAM</strong> : message urgent temporaire (Notice to Airmen)</li>
+        <li><strong>Lecture obligatoire avant chaque vol</strong> : vérification systématique</li>
+        <li><strong>SUP AIP</strong> : modifications de longue durée publiées en supplément</li>
+        <li><strong>Sofia Briefing</strong> : portail de consultation des NOTAM en temps réel</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <img src="../assets/img/screenshots/site du SIA.png" alt="Site du SIA" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Outils — SIA &amp; NOTAM</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 13 — AlphaTango — Le portail DGAC
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>AlphaTango — Le portail DGAC</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Enregistrement des drones &gt; 250 g</strong> : numéro unique obligatoire</li>
+        <li><strong>Déclaration d'activité exploitant</strong> : formalité administrative en ligne</li>
+        <li><strong>Gestion télépilotes et scénarios</strong> : suivi des qualifications</li>
+        <li><strong>Bilan annuel</strong> : déclaration des heures de vol et incidents</li>
+      </ul>
+      <div class="info-card" style="margin-top: 12px; font-size: 0.7em;">
+        <strong>Site :</strong> <a href="https://alphatango.aviation-civile.gouv.fr" target="_blank" style="color: var(--dx-primary);">alphatango.aviation-civile.gouv.fr</a>
+      </div>
+    </div>
+    <div class="col-visual">
+      <img src="../assets/img/screenshots/alphatango - aéronefs.png" alt="AlphaTango — gestion des aéronefs" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Outils — AlphaTango</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 14 — Cartes.gouv.fr — Carte des restrictions drone
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Cartes.gouv.fr — Restrictions drone</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Remplace Géoportail</strong> pour les cartes de restrictions drone</li>
+        <li><strong>Code couleur hauteur autorisée :</strong></li>
+      </ul>
+      <div style="margin: 8px 0 8px 16px; font-size: 0.75em;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+          <span style="display:inline-block; width:16px; height:16px; background:#EF4444; border-radius:3px;"></span> <strong>Rouge</strong> — Interdit
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+          <span style="display:inline-block; width:16px; height:16px; background:#F97316; border-radius:3px;"></span> <strong>Orange</strong> — 30 m max
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+          <span style="display:inline-block; width:16px; height:16px; background:#EAB308; border-radius:3px;"></span> <strong>Jaune</strong> — 50 m max
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+          <span style="display:inline-block; width:16px; height:16px; background:#84CC16; border-radius:3px;"></span> <strong>Vert clair</strong> — 60 m max
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+          <span style="display:inline-block; width:16px; height:16px; background:#22C55E; border-radius:3px;"></span> <strong>Vert</strong> — 120 m max
+        </div>
+      </div>
+      <ul>
+        <li><strong>Vérification rapide avant vol</strong> : indispensable en complément du SIA</li>
+      </ul>
+      <div class="info-card" style="margin-top: 8px; font-size: 0.7em;">
+        <strong>Site :</strong> <a href="https://cartes.gouv.fr" target="_blank" style="color: var(--dx-primary);">cartes.gouv.fr</a>
+      </div>
+    </div>
+    <div class="col-visual">
+      <img src="../assets/img/screenshots/Cartes.gouv_UAS.png" alt="Cartes.gouv.fr — restrictions UAS" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Outils — Cartes.gouv.fr</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 15 — Clearance — Demande d'accès
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Clearance — Demande d'accès</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Préparation de missions drone pro</strong> : outil dédié aux exploitants</li>
+        <li><strong>Analyse réglementaire automatisée</strong> : identification des contraintes en temps réel</li>
+        <li><strong>Autorisations en 1 clic</strong> : accès simplifié pour 117 zones</li>
+        <li><strong>Contacts gestionnaires à jour</strong> : coordonnées des autorités compétentes</li>
+      </ul>
+      <div class="info-card" style="margin-top: 12px; font-size: 0.7em;">
+        <strong>Site :</strong> <a href="https://clearance.aero" target="_blank" style="color: var(--dx-primary);">clearance.aero</a>
+      </div>
+    </div>
+    <div class="col-visual">
+      <img src="../assets/img/screenshots/Clearance général.png" alt="Clearance — vue générale" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Outils — Clearance</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 16 — Altitude, Hauteur et Niveau de vol
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Altitude, Hauteur et Niveau de vol</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <ul>
+        <li><strong>Hauteur (AGL)</strong> : distance mesurée par rapport au sol (Above Ground Level)</li>
+        <li><strong>Altitude (AMSL)</strong> : distance mesurée par rapport au niveau de la mer (Above Mean Sea Level)</li>
+        <li><strong>AAL</strong> : hauteur par rapport à l'aérodrome (Above Aerodrome Level)</li>
+        <li><strong>FL (Flight Level)</strong> : niveau de vol exprimé en centaines de pieds, calé sur 1013,25 hPa</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <!-- SVG: Terrain diagram with AGL/AMSL/FL labels -->
+      <svg viewBox="0 0 420 350" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:440px;">
+        <!-- Sky -->
+        <rect x="0" y="0" width="420" height="270" rx="8" fill="#F0F7FF"/>
+        <!-- Sea level -->
+        <rect x="0" y="270" width="420" height="80" fill="#DBEAFE"/>
+        <text x="40" y="310" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#3B82F6">Niveau de la mer (MSL)</text>
+        <!-- Terrain -->
+        <path d="M0 270 L60 270 L120 220 L200 200 L280 230 L340 210 L420 270 L420 270 L0 270 Z" fill="#E2E8F0"/>
+        <path d="M0 270 L60 270 L120 220 L200 200 L280 230 L340 210 L420 270" fill="none" stroke="#94A3B8" stroke-width="2"/>
+        <!-- Drone -->
+        <circle cx="170" cy="70" r="6" fill="#0E74DA"/>
+        <line x1="158" y1="70" x2="182" y2="70" stroke="#0E74DA" stroke-width="2"/>
+        <line x1="170" y1="58" x2="170" y2="82" stroke="#0E74DA" stroke-width="2"/>
+        <text x="188" y="65" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0E74DA">Drone</text>
+        <!-- AGL arrow (green) — drone to terrain -->
+        <line x1="170" y1="85" x2="170" y2="198" stroke="#10B981" stroke-width="2.5" stroke-dasharray="6 3"/>
+        <polygon points="170,85 166,95 174,95" fill="#10B981"/>
+        <polygon points="170,198 166,188 174,188" fill="#10B981"/>
+        <!-- AGL label LEFT of arrow -->
+        <rect x="80" y="125" width="55" height="30" rx="4" fill="white" opacity="0.9"/>
+        <text x="107" y="140" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#10B981">AGL</text>
+        <text x="107" y="152" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#10B981">(hauteur)</text>
+        <!-- AMSL arrow (blue) — drone to sea level -->
+        <line x1="310" y1="80" x2="310" y2="268" stroke="#3B82F6" stroke-width="2.5" stroke-dasharray="6 3"/>
+        <polygon points="310,80 306,90 314,90" fill="#3B82F6"/>
+        <polygon points="310,268 306,258 314,258" fill="#3B82F6"/>
+        <!-- AMSL label RIGHT of arrow -->
+        <rect x="325" y="160" width="60" height="30" rx="4" fill="white" opacity="0.9"/>
+        <text x="355" y="175" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#3B82F6">AMSL</text>
+        <text x="355" y="187" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#3B82F6">(altitude)</text>
+        <!-- FL line (top) -->
+        <line x1="20" y1="25" x2="400" y2="25" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="8 4"/>
+        <rect x="160" y="12" width="100" height="22" rx="6" fill="rgba(148,163,184,0.15)"/>
+        <text x="210" y="27" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#64748B">FL (1013 hPa)</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Outils — Altitude, Hauteur &amp; FL</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 17 — TP SÉPARATEUR
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <div class="module-number">Travaux Pratiques</div>
+  <h2>TP — Préparation de mission</h2>
+  <p class="module-desc">Mettre en pratique les connaissances acquises sur les espaces aériens et les outils de préparation de vol.</p>
+  <!-- Clipboard icon -->
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+  </svg>
+  <div class="slide-footer">
+    <span>TP — Préparation de mission</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 18 — TP1 Consigne : Mission photogrammétrie Creysse
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>TP1 : Photogrammétrie — Carrière de Creysse</h2>
+
+  <div class="two-col">
+    <div class="col-text" style="font-size: 0.78em;">
+      <div class="info-card" style="margin-bottom: 10px; padding: 8px 12px;">
+        <p style="margin: 0; font-size: 0.85em;">
+          <strong>📍 Lieu</strong> : 15 rue Porte de la Dordogne, 24100 Creysse<br>
+          <strong>📐 Coordonnées</strong> : 44.847684, 0.536311<br>
+          <strong>🎯 Mission</strong> : Réaliser une orthophoto pour calculer une cubature
+        </p>
+      </div>
+      <h3 style="font-size: 0.8em; margin-bottom: 4px;">Objectifs :</h3>
+      <ol style="font-size: 0.88em; padding-left: 1.2em; margin: 0;">
+        <li>Déterminer le <strong>scénario</strong> (A1/A2/A3/STS-01/STS-02)</li>
+        <li>Choisir le <strong>matériel</strong> (drone, classe, capteur)</li>
+        <li>Analyser la <strong>zone</strong> (OACI, NOTAM, Cartes.gouv.fr)</li>
+        <li>Définir le <strong>point de décollage</strong> et les contraintes</li>
+        <li>Préparer le <strong>plan de vol</strong> (altitude, recouvrement)</li>
+        <li><strong>Déclaration</strong> AlphaTango si nécessaire</li>
+      </ol>
+    </div>
+    <div class="col-visual">
+      <img src="../assets/img/photos/tp1.jpg" alt="Carrière de Creysse — site du TP1" style="max-width: 100%; max-height: 350px; object-fit: cover; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+      <p style="text-align: center; font-size: 0.45em; color: var(--dx-text-muted); margin-top: 4px;">44.8477°N, 0.5363°E — Creysse (24)</p>
+
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>TP — Photogrammétrie Creysse</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 19 — TP1 Exercice : Étapes de la préparation
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>TP1 Exercice : Étapes de la préparation</h2>
+
+  <div class="process-steps" style="background: var(--dx-bg-light); border-radius: 12px; padding: 24px 8px; margin: 16px 0; flex-wrap: wrap;">
+    <div class="process-step">
+      <div class="step-number">1</div>
+      <div class="step-label">Carte OACI</div>
+      <div class="step-desc">Identifier<br>les zones</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">2</div>
+      <div class="step-label">Cartes.gouv.fr</div>
+      <div class="step-desc">Vérifier hauteur<br>autorisée</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">3</div>
+      <div class="step-label">SIA</div>
+      <div class="step-desc">Lire les NOTAM<br>du jour</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">4</div>
+      <div class="step-label">Météo</div>
+      <div class="step-desc">Vent, visibilité<br>&amp; plafond</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">5</div>
+      <div class="step-label">AlphaTango</div>
+      <div class="step-desc">Déclarer<br>le vol</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">6</div>
+      <div class="step-label">Checklist</div>
+      <div class="step-desc">Finaliser<br>pré-mission</div>
+    </div>
+  </div>
+
+  <ol style="font-size: 0.72em; margin-top: 20px;">
+    <li><strong>Carte OACI</strong> — identifier les zones (CTR, TMA, P, R, D)</li>
+    <li><strong>Cartes.gouv.fr</strong> — vérifier la hauteur autorisée par le code couleur</li>
+    <li><strong>SIA</strong> — lire les NOTAM du jour (ZRT, ZIT, activités)</li>
+    <li><strong>Météo</strong> — vérifier vent, visibilité et plafond nuageux</li>
+    <li><strong>AlphaTango</strong> — déclarer le vol et le scénario retenu</li>
+    <li><strong>Checklist pré-mission</strong> — finaliser la préparation et valider</li>
+  </ol>
+
+  <div class="slide-footer">
+    <span>TP — Étapes de préparation</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 20 — TP2 : Inspection stade Valence (autonomie)
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>TP2 : Mission en autonomie — Stade de Valence</h2>
+
+  <div class="two-col">
+    <div class="col-text" style="font-size: 0.78em;">
+      <div class="info-card" style="margin-bottom: 10px; padding: 8px 12px;">
+        <p style="margin: 0; font-size: 0.85em;">
+          <strong>📍 Lieu</strong> : Stade Evelyne Jean Baylet, 82400 Valence d'Agen<br>
+          <strong>📐 Coordonnées</strong> : 44.095376, 0.890803<br>
+          <strong>🎯 Mission</strong> : Filmer un match de football sur le stade
+        </p>
+      </div>
+      <h3 style="font-size: 0.8em; margin-bottom: 4px;">Travail individuel (30 min) :</h3>
+      <ol style="font-size: 0.88em; padding-left: 1.2em; margin: 0;">
+        <li>Déterminer le <strong>scénario</strong> (A1/A2/A3/STS-01/STS-02)</li>
+        <li>Choisir le <strong>matériel</strong> (drone, classe, capteur)</li>
+        <li>Analyser la <strong>zone</strong> (OACI, NOTAM, Cartes.gouv.fr)</li>
+        <li>Définir <strong>point de décollage</strong> et contraintes</li>
+        <li>Préparer le <strong>plan de vol</strong> (trajectoire, altitude)</li>
+        <li><strong>Présentation orale</strong> du dossier au groupe</li>
+      </ol>
+    </div>
+    <div class="col-visual">
+      <img src="../assets/img/photos/tp2.jpg" alt="Stade Evelyne Jean Baylet — Valence d'Agen" style="max-width: 100%; max-height: 350px; object-fit: cover; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+      <p style="text-align: center; font-size: 0.45em; color: var(--dx-text-muted); margin-top: 6px;">44.0954°N, 0.8908°E — Valence d'Agen (82)</p>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>TP — Mission autonomie Valence</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 21 — TP2 Correction collective
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>TP2 Correction collective</h2>
+
+  <ul class="icon-list">
+    <li>
+      <div class="icon">
+        <!-- users icon -->
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="text">
+        <h4>Tour de table des résultats</h4>
+        <p>Chaque stagiaire présente son dossier de préparation de mission.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- alert-triangle icon -->
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <div class="text">
+        <h4>Erreurs courantes à identifier</h4>
+        <p>Oubli de NOTAM, mauvaise lecture de carte, confusion hauteur/altitude, zone non vérifiée.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- check-circle icon -->
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div class="text">
+        <h4>Bonnes pratiques de préparation</h4>
+        <p>Méthodologie rigoureuse, double vérification, documentation complète du vol.</p>
+      </div>
+    </li>
+    <li>
+      <div class="icon">
+        <!-- award icon -->
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+      </div>
+      <div class="text">
+        <h4>Validation par l'instructeur</h4>
+        <p>Retour personnalisé et validation des compétences de préparation de mission.</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="slide-footer">
+    <span>TP — Correction collective</span>
+    <span>Jour 2 Matin (Visio)</span>
+  </div>
+</section>
+
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<!-- Reveal.js -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    // Display
+    width: 1280,
+    height: 720,
+    margin: 0,
+    minScale: 0.2,
+    maxScale: 2.0,
+
+    // Navigation
+    hash: true,
+    history: true,
+    slideNumber: false,
+    showSlideNumber: 'all',
+
+    // Transitions
+    transition: 'slide',
+    transitionSpeed: 'default',
+    backgroundTransition: 'fade',
+
+    // Controls
+    controls: true,
+    controlsLayout: 'bottom-right',
+    controlsTutorial: false,
+    progress: true,
+
+    // Behavior
+    center: false,
+    embedded: false,
+    help: true,
+    autoPlayMedia: null,
+
+    // Touch
+    touch: true,
+
+    // Loop
+    loop: false,
+  });
+</script>
+</body>
+</html>
