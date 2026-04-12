@@ -590,22 +590,26 @@
         <path d="M0 270 L60 270 L120 220 L200 200 L280 230 L340 210 L420 270 L420 270 L0 270 Z" fill="#E2E8F0"/>
         <path d="M0 270 L60 270 L120 220 L200 200 L280 230 L340 210 L420 270" fill="none" stroke="#94A3B8" stroke-width="2"/>
         <!-- Drone -->
-        <circle cx="200" cy="70" r="6" fill="#0E74DA"/>
-        <line x1="188" y1="70" x2="212" y2="70" stroke="#0E74DA" stroke-width="2"/>
-        <line x1="200" y1="58" x2="200" y2="82" stroke="#0E74DA" stroke-width="2"/>
-        <text x="218" y="65" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0E74DA">Drone</text>
-        <!-- AGL arrow (green) -->
-        <line x1="200" y1="80" x2="200" y2="198" stroke="#10B981" stroke-width="2.5" stroke-dasharray="6 3"/>
-        <polygon points="200,80 196,90 204,90" fill="#10B981"/>
-        <polygon points="200,198 196,188 204,188" fill="#10B981"/>
-        <text x="155" y="130" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#10B981">AGL</text>
-        <text x="155" y="145" font-family="Inter, sans-serif" font-size="9" fill="#10B981">(hauteur)</text>
-        <!-- AMSL arrow (blue) -->
-        <line x1="280" y1="80" x2="280" y2="268" stroke="#3B82F6" stroke-width="2.5" stroke-dasharray="6 3"/>
-        <polygon points="280,80 276,90 284,90" fill="#3B82F6"/>
-        <polygon points="280,268 276,258 284,258" fill="#3B82F6"/>
-        <text x="295" y="180" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#3B82F6">AMSL</text>
-        <text x="295" y="195" font-family="Inter, sans-serif" font-size="9" fill="#3B82F6">(altitude)</text>
+        <circle cx="170" cy="70" r="6" fill="#0E74DA"/>
+        <line x1="158" y1="70" x2="182" y2="70" stroke="#0E74DA" stroke-width="2"/>
+        <line x1="170" y1="58" x2="170" y2="82" stroke="#0E74DA" stroke-width="2"/>
+        <text x="188" y="65" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0E74DA">Drone</text>
+        <!-- AGL arrow (green) — drone to terrain -->
+        <line x1="170" y1="85" x2="170" y2="198" stroke="#10B981" stroke-width="2.5" stroke-dasharray="6 3"/>
+        <polygon points="170,85 166,95 174,95" fill="#10B981"/>
+        <polygon points="170,198 166,188 174,188" fill="#10B981"/>
+        <!-- AGL label LEFT of arrow -->
+        <rect x="80" y="125" width="55" height="30" rx="4" fill="white" opacity="0.9"/>
+        <text x="107" y="140" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#10B981">AGL</text>
+        <text x="107" y="152" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#10B981">(hauteur)</text>
+        <!-- AMSL arrow (blue) — drone to sea level -->
+        <line x1="310" y1="80" x2="310" y2="268" stroke="#3B82F6" stroke-width="2.5" stroke-dasharray="6 3"/>
+        <polygon points="310,80 306,90 314,90" fill="#3B82F6"/>
+        <polygon points="310,268 306,258 314,258" fill="#3B82F6"/>
+        <!-- AMSL label RIGHT of arrow -->
+        <rect x="325" y="160" width="60" height="30" rx="4" fill="white" opacity="0.9"/>
+        <text x="355" y="175" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#3B82F6">AMSL</text>
+        <text x="355" y="187" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#3B82F6">(altitude)</text>
         <!-- FL line (top) -->
         <line x1="20" y1="25" x2="400" y2="25" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="8 4"/>
         <rect x="160" y="12" width="100" height="22" rx="6" fill="rgba(148,163,184,0.15)"/>
