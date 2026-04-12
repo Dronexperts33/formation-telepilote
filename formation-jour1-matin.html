@@ -1128,6 +1128,118 @@
 </section>
 
 
+<!-- ============================================================
+     SLIDE 27 — CARTE UAS CATÉGORIE OUVERTE
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Carte UAS — Zones de protection aérodrome</h2>
+
+  <div class="two-col">
+    <div class="col-text">
+      <p style="font-size: 0.75em; margin-bottom: 8px;"><strong>Code couleur des zones :</strong></p>
+      <table style="font-size: 0.68em; border-collapse: collapse; width: 100%;">
+        <tr>
+          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#DC2626;border-radius:3px;vertical-align:middle;"></span></td>
+          <td style="padding: 3px 8px;"><strong>Rouge</strong> — Vol interdit</td>
+        </tr>
+        <tr>
+          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#F97316;border-radius:3px;vertical-align:middle;"></span></td>
+          <td style="padding: 3px 8px;"><strong>Orange</strong> — 30 m max</td>
+        </tr>
+        <tr>
+          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#EAB308;border-radius:3px;vertical-align:middle;"></span></td>
+          <td style="padding: 3px 8px;"><strong>Jaune</strong> — 50 m max</td>
+        </tr>
+        <tr>
+          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#84CC16;border-radius:3px;vertical-align:middle;"></span></td>
+          <td style="padding: 3px 8px;"><strong>Vert clair</strong> — 60 m max</td>
+        </tr>
+        <tr>
+          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#22C55E;border-radius:3px;vertical-align:middle;"></span></td>
+          <td style="padding: 3px 8px;"><strong>Vert</strong> — 80 m max</td>
+        </tr>
+        <tr>
+          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#15803D;border-radius:3px;vertical-align:middle;"></span></td>
+          <td style="padding: 3px 8px;"><strong>Vert foncé</strong> — 100 m max</td>
+        </tr>
+      </table>
+
+      <div class="info-card" style="margin-top: 10px; font-size: 0.62em; background: rgba(239,68,68,0.06); border-left: 3px solid #EF4444;">
+        <p style="margin: 0;"><strong>⚠️ Référence de hauteur :</strong> les hauteurs maximales sont mesurées par rapport au <strong>point le plus haut de la piste de l'aérodrome</strong>, pas par rapport à votre point de décollage !</p>
+        <p style="margin: 6px 0 0;">
+          <strong>Calcul :</strong> H<sub>utilisable</sub> = H<sub>zone</sub> − (Alt<sub>décollage</sub> − Alt<sub>piste</sub>)<br>
+          <em>Ex : zone 50 m, piste à 50 m AMSL, décollage à 80 m AMSL<br>
+          → H<sub>max</sub> = 50 − (80 − 50) = <strong style="color:#DC2626;">20 m AGL seulement !</strong></em>
+        </p>
+      </div>
+    </div>
+    <div class="col-visual" style="display:flex; flex-direction:column; gap:12px;">
+      <img src="assets/img/screenshots/Cartes.gouv_UAS.png" alt="Carte UAS catégorie ouverte — zones de protection aérodrome" style="max-width: 100%; max-height: 200px; object-fit: contain; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+
+      <!-- SVG: Profil altimétrique — décollage PLUS HAUT que la piste -->
+      <svg viewBox="0 0 420 195" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:420px; flex-shrink:0;">
+
+        <!-- Terrain fill + outline -->
+        <path d="M0,125 L30,118 Q70,86 130,82 Q170,78 195,90 Q230,115 275,140 L350,140 L420,152 L420,195 L0,195 Z" fill="#F1F5F9"/>
+        <path d="M0,125 L30,118 Q70,86 130,82 Q170,78 195,90 Q230,115 275,140 L350,140 L420,152" fill="none" stroke="#94A3B8" stroke-width="2"/>
+
+        <!-- ===== PLAFOND ZONE (y=28) ===== -->
+        <line x1="15" y1="28" x2="405" y2="28" stroke="#EAB308" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <rect x="260" y="10" width="148" height="16" rx="3" fill="white" stroke="#EAB308" stroke-width="1"/>
+        <text x="334" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#B45309">Plafond zone (100 m AMSL)</text>
+
+        <!-- ===== DÉCOLLAGE sur la colline (y=78) ===== -->
+        <circle cx="130" cy="78" r="5" fill="#0E74DA"/>
+        <rect x="5" y="70" width="108" height="16" rx="3" fill="white" opacity="0.9"/>
+        <text x="59" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#0E74DA">Décollage (80 m AMSL)</text>
+
+        <!-- ===== PISTE en contrebas (y=133) ===== -->
+        <rect x="285" y="133" width="55" height="8" rx="2" fill="#475569"/>
+        <rect x="258" y="118" width="108" height="14" rx="3" fill="white" opacity="0.9"/>
+        <text x="312" y="129" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#475569">Piste (50 m AMSL)</text>
+
+        <!-- ===== FLÈCHE 50 m : piste → plafond (droite) ===== -->
+        <line x1="390" y1="137" x2="390" y2="28" stroke="#EAB308" stroke-width="1.5"/>
+        <polygon points="390,137 387,131 393,131" fill="#EAB308"/>
+        <polygon points="390,28 387,34 393,34" fill="#EAB308"/>
+        <text x="398" y="86" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#B45309">50 m</text>
+
+        <!-- ===== FLÈCHE 20 m : décollage → plafond (rouge, courte !) ===== -->
+        <line x1="130" y1="73" x2="130" y2="33" stroke="#DC2626" stroke-width="2"/>
+        <polygon points="130,73 127,67 133,67" fill="#DC2626"/>
+        <polygon points="130,33 127,39 133,39" fill="#DC2626"/>
+
+        <!-- Drone au plafond -->
+        <circle cx="130" cy="28" r="3" fill="#0E74DA"/>
+        <line x1="123" y1="28" x2="137" y2="28" stroke="#0E74DA" stroke-width="1.5"/>
+
+        <!-- Encart rouge "Seulement 20 m AGL" -->
+        <rect x="140" y="40" width="74" height="24" rx="5" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="177" y="51" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" font-weight="700" fill="#DC2626">Seulement</text>
+        <text x="177" y="61" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#DC2626">20 m AGL !</text>
+
+        <!-- ===== DELTA 30 m entre décollage et piste ===== -->
+        <line x1="230" y1="82" x2="230" y2="137" stroke="#64748B" stroke-width="1" stroke-dasharray="3 2"/>
+        <polygon points="230,82 227,88 233,88" fill="#64748B"/>
+        <polygon points="230,137 227,131 233,131" fill="#64748B"/>
+        <rect x="236" y="101" width="40" height="14" rx="3" fill="white" opacity="0.85"/>
+        <text x="256" y="112" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#64748B">Δ 30 m</text>
+
+        <!-- Lignes de référence horizontales -->
+        <line x1="125" y1="78" x2="225" y2="78" stroke="#0E74DA" stroke-width="0.7" stroke-dasharray="3 3" opacity="0.3"/>
+        <line x1="275" y1="137" x2="225" y2="137" stroke="#475569" stroke-width="0.7" stroke-dasharray="3 3" opacity="0.3"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Module 3 — Carte UAS &amp; Zones aérodrome</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
 </div><!-- .slides -->
 </div><!-- .reveal -->
 
