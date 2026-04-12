@@ -1321,40 +1321,182 @@
 
 
 <!-- ============================================================
-     SLIDE 25 — QCM JOUR 1
+     QCM JOUR 1 — 10 questions (clic pour révéler la réponse)
      ============================================================ -->
-<section class="slide-quiz">
+
+<!-- Style QCM interactif -->
+<style>
+.qcm-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 90%; margin: 0 auto; }
+.qcm-opt { background: var(--dx-bg-light); border: 2px solid var(--dx-border); border-radius: 10px; padding: 14px 18px; font-size: 0.68em; color: var(--dx-text-dark); cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 10px; }
+.qcm-opt:hover { border-color: var(--dx-primary); background: rgba(14,116,218,0.03); }
+.qcm-opt .letter { flex-shrink: 0; width: 30px; height: 30px; background: white; border: 2px solid var(--dx-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85em; color: var(--dx-text-muted); }
+.qcm-opt.reveal-correct { border-color: var(--dx-success); background: rgba(16,185,129,0.06); }
+.qcm-opt.reveal-correct .letter { background: var(--dx-success); color: white; border-color: var(--dx-success); }
+.qcm-opt.reveal-wrong { border-color: var(--dx-error); background: rgba(239,68,68,0.04); opacity: 0.6; }
+.qcm-answer { text-align: center; margin-top: 14px; font-size: 0.6em; color: var(--dx-primary); font-weight: 600; cursor: pointer; }
+.qcm-answer:hover { text-decoration: underline; }
+</style>
+
+<script>
+function revealAnswer(slideId) {
+  var el = document.getElementById(slideId);
+  el.querySelectorAll('.qcm-opt').forEach(function(opt) {
+    if (opt.dataset.correct === 'true') opt.classList.add('reveal-correct');
+    else opt.classList.add('reveal-wrong');
+  });
+  var btn = el.querySelector('.qcm-answer');
+  if (btn) btn.style.display = 'none';
+}
+</script>
+
+<!-- Q1 -->
+<section class="slide-quiz" id="q1">
   <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>
-    <svg style="width:28px; height:28px; vertical-align:middle; margin-right:8px; stroke:var(--dx-primary); fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-    QCM — Jour 1
-  </h2>
-
-  <p class="quiz-question">En catégorie Ouverte, quelle est la hauteur maximale de vol autorisée ?</p>
-
-  <div class="quiz-options">
-    <div class="quiz-option">
-      <span class="option-letter">A</span>
-      <span>50 mètres au-dessus du sol</span>
-    </div>
-    <div class="quiz-option correct">
-      <span class="option-letter">B</span>
-      <span>120 mètres au-dessus du point le plus proche du sol</span>
-    </div>
-    <div class="quiz-option">
-      <span class="option-letter">C</span>
-      <span>120 mètres au-dessus du point de décollage</span>
-    </div>
-    <div class="quiz-option">
-      <span class="option-letter">D</span>
-      <span>150 mètres au-dessus du sol</span>
-    </div>
+  <h2 style="border-bottom:none; text-align:center; display:block;">QCM — Question 1/10</h2>
+  <p class="quiz-question">En catégorie Ouverte, la hauteur maximale de vol est mesurée par rapport à :</p>
+  <div class="qcm-options">
+    <div class="qcm-opt"><span class="letter">A</span><span>Le point de décollage</span></div>
+    <div class="qcm-opt" data-correct="true"><span class="letter">B</span><span>Le point le plus proche de la surface de la terre</span></div>
+    <div class="qcm-opt"><span class="letter">C</span><span>Le niveau de la mer (AMSL)</span></div>
+    <div class="qcm-opt"><span class="letter">D</span><span>L'altitude de l'aérodrome le plus proche</span></div>
   </div>
+  <p class="qcm-answer" onclick="revealAnswer('q1')">👆 Cliquez pour révéler la réponse</p>
+  <div class="slide-footer"><span>QCM 1/10</span><span>Jour 1 Après-midi</span></div>
+</section>
 
-  <div class="slide-footer">
-    <span>QCM — Jour 1</span>
-    <span>Jour 1 Après-midi</span>
+<!-- Q2 -->
+<section class="slide-quiz" id="q2">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2 style="border-bottom:none; text-align:center; display:block;">QCM — Question 2/10</h2>
+  <p class="quiz-question">À partir de quelle masse le signalement électronique français est-il obligatoire ?</p>
+  <div class="qcm-options">
+    <div class="qcm-opt"><span class="letter">A</span><span>250 g</span></div>
+    <div class="qcm-opt"><span class="letter">B</span><span>500 g</span></div>
+    <div class="qcm-opt" data-correct="true"><span class="letter">C</span><span>800 g</span></div>
+    <div class="qcm-opt"><span class="letter">D</span><span>2 kg</span></div>
   </div>
+  <p class="qcm-answer" onclick="revealAnswer('q2')">👆 Cliquez pour révéler la réponse</p>
+  <div class="slide-footer"><span>QCM 2/10</span><span>Jour 1 Après-midi</span></div>
+</section>
+
+<!-- Q3 -->
+<section class="slide-quiz" id="q3">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2 style="border-bottom:none; text-align:center; display:block;">QCM — Question 3/10</h2>
+  <p class="quiz-question">Quel est le délai de déclaration pour un vol professionnel sur espace public en zone peuplée (depuis 01/01/2026) ?</p>
+  <div class="qcm-options">
+    <div class="qcm-opt"><span class="letter">A</span><span>J-5 (5 jours ouvrés)</span></div>
+    <div class="qcm-opt" data-correct="true"><span class="letter">B</span><span>J-10 (10 jours) à la Préfecture</span></div>
+    <div class="qcm-opt"><span class="letter">C</span><span>J-30 (30 jours)</span></div>
+    <div class="qcm-opt"><span class="letter">D</span><span>Aucune déclaration nécessaire</span></div>
+  </div>
+  <p class="qcm-answer" onclick="revealAnswer('q3')">👆 Cliquez pour révéler la réponse</p>
+  <div class="slide-footer"><span>QCM 3/10</span><span>Jour 1 Après-midi</span></div>
+</section>
+
+<!-- Q4 -->
+<section class="slide-quiz" id="q4">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2 style="border-bottom:none; text-align:center; display:block;">QCM — Question 4/10</h2>
+  <p class="quiz-question">La Distance Minimale d'Approche (DMA) d'une ligne électrique ≥ 50 kV est de :</p>
+  <div class="qcm-options">
+    <div class="qcm-opt"><span class="letter">A</span><span>1 mètre</span></div>
+    <div class="qcm-opt"><span class="letter">B</span><span>3 mètres</span></div>
+    <div class="qcm-opt" data-correct="true"><span class="letter">C</span><span>5 mètres</span></div>
+    <div class="qcm-opt"><span class="letter">D</span><span>10 mètres</span></div>
+  </div>
+  <p class="qcm-answer" onclick="revealAnswer('q4')">👆 Cliquez pour révéler la réponse</p>
+  <div class="slide-footer"><span>QCM 4/10</span><span>Jour 1 Après-midi</span></div>
+</section>
+
+<!-- Q5 -->
+<section class="slide-quiz" id="q5">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2 style="border-bottom:none; text-align:center; display:block;">QCM — Question 5/10</h2>
+  <p class="quiz-question">En STS-01, quelle est la taille minimale du volume de contingence au-delà de la géographie de vol ?</p>
+  <div class="qcm-options">
+    <div class="qcm-opt"><span class="letter">A</span><span>5 mètres</span></div>
+    <div class="qcm-opt" data-correct="true"><span class="letter">B</span><span>10 mètres</span></div>
+    <div class="qcm-opt"><span class="letter">C</span><span>20 mètres</span></div>
+    <div class="qcm-opt"><span class="letter">D</span><span>50 mètres</span></div>
+  </div>
+  <p class="qcm-answer" onclick="revealAnswer('q5')">👆 Cliquez pour révéler la réponse</p>
+  <div class="slide-footer"><span>QCM 5/10</span><span>Jour 1 Après-midi</span></div>
+</section>
+
+<!-- Q6 -->
+<section class="slide-quiz" id="q6">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2 style="border-bottom:none; text-align:center; display:block;">QCM — Question 6/10</h2>
+  <p class="quiz-question">Quel drone nécessite à la fois le signalement FR et le Remote ID EU ?</p>
+  <div class="qcm-options">
+    <div class="qcm-opt"><span class="letter">A</span><span>DJI Mini 4 Pro (C0, 249 g)</span></div>
+    <div class="qcm-opt"><span class="letter">B</span><span>DJI Air 3 (C1, 720 g)</span></div>
+    <div class="qcm-opt" data-correct="true"><span class="letter">C</span><span>DJI Mavic 3 Pro (C2, &gt; 900 g)</span></div>
+    <div class="qcm-opt"><span class="letter">D</span><span>Aucun des trois</span></div>
+  </div>
+  <p class="qcm-answer" onclick="revealAnswer('q6')">👆 Cliquez pour révéler la réponse</p>
+  <div class="slide-footer"><span>QCM 6/10</span><span>Jour 1 Après-midi</span></div>
+</section>
+
+<!-- Q7 -->
+<section class="slide-quiz" id="q7">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2 style="border-bottom:none; text-align:center; display:block;">QCM — Question 7/10</h2>
+  <p class="quiz-question">Dans quel délai un événement de sécurité (CRESUS) doit-il être déclaré ?</p>
+  <div class="qcm-options">
+    <div class="qcm-opt"><span class="letter">A</span><span>24 heures</span></div>
+    <div class="qcm-opt"><span class="letter">B</span><span>48 heures</span></div>
+    <div class="qcm-opt" data-correct="true"><span class="letter">C</span><span>72 heures</span></div>
+    <div class="qcm-opt"><span class="letter">D</span><span>7 jours</span></div>
+  </div>
+  <p class="qcm-answer" onclick="revealAnswer('q7')">👆 Cliquez pour révéler la réponse</p>
+  <div class="slide-footer"><span>QCM 7/10</span><span>Jour 1 Après-midi</span></div>
+</section>
+
+<!-- Q8 -->
+<section class="slide-quiz" id="q8">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2 style="border-bottom:none; text-align:center; display:block;">QCM — Question 8/10</h2>
+  <p class="quiz-question">Quelle est la validité du numéro d'exploitant FRA ?</p>
+  <div class="qcm-options">
+    <div class="qcm-opt"><span class="letter">A</span><span>1 an</span></div>
+    <div class="qcm-opt"><span class="letter">B</span><span>2 ans</span></div>
+    <div class="qcm-opt" data-correct="true"><span class="letter">C</span><span>5 ans</span></div>
+    <div class="qcm-opt"><span class="letter">D</span><span>10 ans</span></div>
+  </div>
+  <p class="qcm-answer" onclick="revealAnswer('q8')">👆 Cliquez pour révéler la réponse</p>
+  <div class="slide-footer"><span>QCM 8/10</span><span>Jour 1 Après-midi</span></div>
+</section>
+
+<!-- Q9 -->
+<section class="slide-quiz" id="q9">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2 style="border-bottom:none; text-align:center; display:block;">QCM — Question 9/10</h2>
+  <p class="quiz-question">En STS-02, quelle est la distance maximale de vol BVLOS avec observateurs ?</p>
+  <div class="qcm-options">
+    <div class="qcm-opt"><span class="letter">A</span><span>500 mètres</span></div>
+    <div class="qcm-opt"><span class="letter">B</span><span>1 km</span></div>
+    <div class="qcm-opt" data-correct="true"><span class="letter">C</span><span>2 km</span></div>
+    <div class="qcm-opt"><span class="letter">D</span><span>5 km</span></div>
+  </div>
+  <p class="qcm-answer" onclick="revealAnswer('q9')">👆 Cliquez pour révéler la réponse</p>
+  <div class="slide-footer"><span>QCM 9/10</span><span>Jour 1 Après-midi</span></div>
+</section>
+
+<!-- Q10 -->
+<section class="slide-quiz" id="q10">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2 style="border-bottom:none; text-align:center; display:block;">QCM — Question 10/10</h2>
+  <p class="quiz-question">Ne jamais descendre en dessous de quel pourcentage de charge batterie ?</p>
+  <div class="qcm-options">
+    <div class="qcm-opt"><span class="letter">A</span><span>5 %</span></div>
+    <div class="qcm-opt"><span class="letter">B</span><span>10 %</span></div>
+    <div class="qcm-opt" data-correct="true"><span class="letter">C</span><span>20 %</span></div>
+    <div class="qcm-opt"><span class="letter">D</span><span>30 %</span></div>
+  </div>
+  <p class="qcm-answer" onclick="revealAnswer('q10')">👆 Cliquez pour révéler la réponse</p>
+  <div class="slide-footer"><span>QCM 10/10</span><span>Jour 1 Après-midi</span></div>
 </section>
 
 
