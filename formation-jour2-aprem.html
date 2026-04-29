@@ -188,63 +188,6 @@
 
 
 <!-- ============================================================
-     SLIDE 6 — PLANIFICATION DE VOL (WAYPOINTS)
-     ============================================================ -->
-<section class="slide-content">
-  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>Planification de vol (Waypoints)</h2>
-
-  <ul class="icon-list">
-    <li>
-      <div class="icon">
-        <!-- monitor icon -->
-        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-      </div>
-      <div class="text">
-        <h4>DJI Pilot 2 : interface de planification</h4>
-        <p>Application de vol intégrée pour les drones DJI Enterprise, avec planification de missions.</p>
-      </div>
-    </li>
-    <li>
-      <div class="icon">
-        <!-- map-pin icon -->
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      </div>
-      <div class="text">
-        <h4>Points de passage</h4>
-        <p>Coordonnées (latitude/longitude), hauteur et vitesse pour chaque waypoint.</p>
-      </div>
-    </li>
-    <li>
-      <div class="icon">
-        <!-- square icon (corridor) -->
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
-      </div>
-      <div class="text">
-        <h4>Couloir de vol et limites géographiques</h4>
-        <p>Définition du volume opérationnel et des zones de contingence sur la carte.</p>
-      </div>
-    </li>
-    <li>
-      <div class="icon">
-        <!-- zap icon -->
-        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-      </div>
-      <div class="text">
-        <h4>Vitesse et actions automatiques</h4>
-        <p>Vitesse de croisière, vitesse aux waypoints, prise de vue et rotation caméra programmées.</p>
-      </div>
-    </li>
-  </ul>
-
-  <div class="slide-footer">
-    <span>BVLOS — Planification waypoints</span>
-    <span>Jour 2 Après-midi</span>
-  </div>
-</section>
-
-
-<!-- ============================================================
      SLIDE 7 — BRIEFING ÉQUIPE & OBSERVATEURS
      ============================================================ -->
 <section class="slide-content">
@@ -460,68 +403,6 @@
 
 
 <!-- ============================================================
-     SLIDE 11 — EXERCICES DE VOL BVLOS
-     ============================================================ -->
-<section class="slide-two-col">
-  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>Exercices de vol BVLOS</h2>
-
-  <div class="two-col">
-    <div class="col-text">
-      <ul>
-        <li><strong>Vol progressif hors vue</strong> : 50 m, 100 m, 200 m, 500 m</li>
-        <li><strong>Suivi écran exclusivement</strong> : pas de vue directe sur le drone</li>
-        <li><strong>Gestion des waypoints en vol</strong> : suivi et modification du plan</li>
-        <li><strong>Communication continue</strong> avec l'observateur de l'espace aérien</li>
-        <li><strong>Retour RTH sur ordre</strong> : déclenchement manuel du retour</li>
-      </ul>
-    </div>
-    <div class="col-visual">
-      <!-- SVG: Vol progressif VLOS → BVLOS -->
-      <svg viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:440px;">
-        <!-- Terrain -->
-        <rect x="10" y="240" width="400" height="35" rx="4" fill="#E2E8F0"/>
-        <text x="210" y="263" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#94A3B8">TERRAIN</text>
-        <!-- Télépilote -->
-        <circle cx="40" cy="225" r="9" fill="#0F172A"/>
-        <line x1="40" y1="234" x2="40" y2="250" stroke="#0F172A" stroke-width="2.5"/>
-        <text x="40" y="290" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#475569">Télépilote</text>
-        <!-- VLOS zone (triangle vert clair) -->
-        <path d="M45 220 L155 155 L155 220 Z" fill="rgba(16,185,129,0.08)" stroke="#10B981" stroke-width="1.5" stroke-dasharray="5 3"/>
-        <text x="105" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#059669" font-weight="500">VLOS</text>
-        <!-- Hauteur 50m flèche -->
-        <line x1="155" y1="220" x2="155" y2="155" stroke="#10B981" stroke-width="1.5" stroke-dasharray="4 2"/>
-        <text x="165" y="192" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#059669">50 m</text>
-        <!-- Trajectoire principale (pointillés bleus épais) -->
-        <path d="M55 210 L145 160 L245 120 L330 90 L390 60" stroke="#1E3A8A" stroke-width="3.5" stroke-dasharray="8 5" stroke-linecap="round"/>
-        <!-- Points de distance -->
-        <!-- 50m -->
-        <circle cx="145" cy="160" r="6" fill="#10B981"/>
-        <!-- 200m -->
-        <circle cx="245" cy="120" r="6" fill="#0E74DA"/>
-        <text x="245" y="110" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#0E74DA">200 m</text>
-        <!-- 500m -->
-        <circle cx="330" cy="90" r="6" fill="#F59E0B"/>
-        <text x="330" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#D97706">500 m</text>
-        <!-- Drone (forme simplifiée) -->
-        <polygon points="390,52 400,60 395,60 395,68 385,68 385,60 380,60" fill="#1E3A8A"/>
-        <line x1="375" y1="60" x2="405" y2="60" stroke="#1E3A8A" stroke-width="2"/>
-        <text x="390" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0E74DA">Drone</text>
-        <!-- BVLOS label (encadré rouge) -->
-        <rect x="220" y="30" width="100" height="26" rx="6" fill="rgba(239,68,68,0.08)" stroke="#EF4444" stroke-width="1.5"/>
-        <text x="270" y="48" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EF4444">BVLOS</text>
-      </svg>
-    </div>
-  </div>
-
-  <div class="slide-footer">
-    <span>Pratique — Exercices BVLOS</span>
-    <span>Jour 2 Après-midi</span>
-  </div>
-</section>
-
-
-<!-- ============================================================
      SLIDE 12 — SIMULATION DE PANNES EN VOL
      ============================================================ -->
 <section class="slide-two-col">
@@ -703,48 +584,6 @@
 
   <div class="slide-footer">
     <span>TP — Cartographie carrière</span>
-    <span>Jour 2 Après-midi</span>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     SLIDE 16 — TP EXERCICE : ÉTAPES DE LA MISSION
-     ============================================================ -->
-<section class="slide-content">
-  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>TP : Étapes de la mission</h2>
-
-  <div class="process-steps" style="background: var(--dx-bg-light); border-radius: 12px; padding: 24px 16px; margin: 24px 0;">
-    <div class="process-step">
-      <div class="step-number">1</div>
-      <div class="step-label">Analyse</div>
-      <div class="step-desc">Espaces aériens<br>NOTAM + météo</div>
-    </div>
-    <div class="process-step">
-      <div class="step-number">2</div>
-      <div class="step-label">Déclaration</div>
-      <div class="step-desc">AlphaTango<br>Briefing équipe</div>
-    </div>
-    <div class="process-step">
-      <div class="step-number">3</div>
-      <div class="step-label">Paramétrage</div>
-      <div class="step-desc">DJI Pilot 2<br>Zone + overlap</div>
-    </div>
-    <div class="process-step">
-      <div class="step-number">4</div>
-      <div class="step-label">Vol</div>
-      <div class="step-desc">Mission auto<br>Suivi écran</div>
-    </div>
-    <div class="process-step">
-      <div class="step-number">5</div>
-      <div class="step-label">Traitement</div>
-      <div class="step-desc">Orthophoto<br>Modèle 3D</div>
-    </div>
-  </div>
-
-  <div class="slide-footer">
-    <span>TP — Étapes mission</span>
     <span>Jour 2 Après-midi</span>
   </div>
 </section>
