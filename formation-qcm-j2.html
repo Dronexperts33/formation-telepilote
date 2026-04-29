@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCM Jour 2 — Formation Télépilote — Dronexperts</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Dronexperts Theme -->
+  <link rel="stylesheet" href="css/dronexperts-theme.css">
+
+  <style>
+    .qcm-question {
+      font-size: 0.95em;
+      font-weight: 600;
+      color: var(--dx-text-dark);
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .qcm-options { list-style: none; padding: 0; margin: 0; }
+    .qcm-options li {
+      padding: 10px 16px;
+      margin-bottom: 8px;
+      background: var(--dx-bg-light, #F8FAFC);
+      border-left: 3px solid var(--dx-border);
+      border-radius: 6px;
+      font-size: 0.78em;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .qcm-options li .letter {
+      font-weight: 700;
+      color: var(--dx-success, #10B981);
+      flex-shrink: 0;
+      width: 22px;
+    }
+    .qcm-answer {
+      margin-top: 18px;
+      padding: 14px 18px;
+      background: rgba(16,185,129,0.08);
+      border-left: 4px solid #10B981;
+      border-radius: 6px;
+      font-size: 0.78em;
+    }
+    .qcm-answer .answer-tag {
+      display: inline-block;
+      background: #10B981;
+      color: white;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      margin-right: 8px;
+      letter-spacing: 0.05em;
+    }
+    .qcm-question-num {
+      display: inline-block;
+      background: #10B981;
+      color: white;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.7em;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<!-- ============================================================
+     SLIDE 1 — TITRE QCM J2
+     ============================================================ -->
+<section class="slide-title">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>QCM — Jour 2</h1>
+  <p class="subtitle">Validation des acquis — Cartographie, espaces aériens &amp; vol BVLOS</p>
+  <span class="badge">17 questions · ~25 min</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Télépilote</span>
+    <span>QCM Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 2 — CONSIGNES
+     ============================================================ -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Consignes du QCM</h2>
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="text"><h4>Durée indicative : 25 minutes</h4><p>Soit ~1 min 30 par question. Modulez selon le temps disponible.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="text"><h4>Une seule bonne réponse par question</h4><p>Sauf indication contraire dans l'énoncé.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div class="text"><h4>Correction collective immédiate</h4><p>La réponse + l'explication s'affichent au clic suivant après chaque question.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <div class="text"><h4>Objectif pédagogique</h4><p>Préparer la certification de J3 matin. Identifier les notions à reprendre.</p></div>
+    </li>
+  </ul>
+  <aside class="notes">
+    Ce QCM J2 est une trame modulaire. Conseillé en fin de J2 pour valider les acquis cartographiques avant le QCM officiel de certification J3 matin. Encourager les stagiaires à expliquer leur raisonnement avant de révéler la réponse.
+  </aside>
+  <div class="slide-footer">
+    <span>QCM J2 — Consignes</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- Q1 — CTR -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 1 / 17</span>
+  <p class="qcm-question">Une CTR (Control Zone) est :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Une zone interdite par décret ministériel</li>
+    <li><span class="letter">B.</span> Une zone de contrôle d'aérodrome, autour des grands aéroports, du sol jusqu'à un plafond donné</li>
+    <li><span class="letter">C.</span> Une zone temporaire activée par NOTAM</li>
+    <li><span class="letter">D.</span> Une zone exclusivement militaire</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> <strong>CTR = Control Zone</strong> autour d'un aérodrome contrôlé, du sol au plafond défini par l'AIP. Vol drone très restrictif, autorisation préalable du gestionnaire (tour de contrôle) obligatoire.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q1</span><span>CTR</span></div>
+</section>
+
+
+<!-- Q2 — Zone P -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 2 / 17</span>
+  <p class="qcm-question">Quelle est la caractéristique principale d'une zone P (Prohibited) ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Vol autorisé sous conditions</li>
+    <li><span class="letter">B.</span> Zone d'entraînement militaire activée par NOTAM</li>
+    <li><span class="letter">C.</span> Strictement interdite, aucune pénétration sans dérogation exceptionnelle</li>
+    <li><span class="letter">D.</span> Vol autorisé jusqu'à 50 m AGL</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> Zone P = <strong>Prohibited</strong>, strictement interdite. Centrales nucléaires, P23 Paris, sites de défense sensibles. Sanctions pénales lourdes en cas de violation.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q2</span><span>Zone P</span></div>
+</section>
+
+
+<!-- Q3 — Zone R -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 3 / 17</span>
+  <p class="qcm-question">Une zone R (Restricted) :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Est strictement interdite comme une zone P</li>
+    <li><span class="letter">B.</span> Inclut systématiquement les parcs nationaux</li>
+    <li><span class="letter">C.</span> Permet la pénétration sous conditions définies par le gestionnaire</li>
+    <li><span class="letter">D.</span> Est uniquement active en semaine</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> Zone R = <strong>Restricted</strong>, pénétration possible sous <strong>conditions spécifiques</strong> (horaires, plafond, autorisation gestionnaire). À ne pas confondre : les <strong>parcs nationaux ne sont pas des zones R</strong>, ils relèvent du Code de l'environnement.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q3</span><span>Zone R</span></div>
+</section>
+
+
+<!-- Q4 — Zone D -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 4 / 17</span>
+  <p class="qcm-question">Une zone D (Dangerous) est :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Toujours interdite en permanence</li>
+    <li><span class="letter">B.</span> Toujours autorisée, à vos risques et périls</li>
+    <li><span class="letter">C.</span> Potentiellement interdite si active : vérifier le statut (NOTAM / AZBA) avant chaque vol</li>
+    <li><span class="letter">D.</span> Réservée aux vols pédagogiques</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> Zone D = <strong>Dangerous</strong>. Zone potentiellement interdite si elle est active. Activités à risque (tirs militaires, parachutisme). Vérifier l'activation via NOTAM, SUP AIP ou SIA avant tout vol.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q4</span><span>Zone D</span></div>
+</section>
+
+
+<!-- Q5 — Parcs nationaux -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 5 / 17</span>
+  <p class="qcm-question">Les parcs nationaux (cœur de parc) imposent quel régime de survol motorisé ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Survol libre — ce sont des zones R activables</li>
+    <li><span class="letter">B.</span> Survol interdit en dessous de 1 000 m AGL (Code de l'environnement)</li>
+    <li><span class="letter">C.</span> Survol autorisé uniquement avec dérogation DGAC</li>
+    <li><span class="letter">D.</span> Survol autorisé sans condition jusqu'à 120 m AGL</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> <strong>Survol motorisé interdit en dessous de 1 000 m AGL</strong> dans le cœur des parcs nationaux (art. L331-4-1 du Code de l'environnement). Demande à adresser au gestionnaire (parc + Office Français de la Biodiversité), pas à la DGAC.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q5</span><span>Parcs nationaux</span></div>
+</section>
+
+
+<!-- Q6 — ZRT/ZIT -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 6 / 17</span>
+  <p class="qcm-question">Les ZRT (zones réglementées temporaires) et ZIT (zones interdites temporaires) sont publiées :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Au Journal officiel chaque semaine</li>
+    <li><span class="letter">B.</span> Par NOTAM / SUP AIP, à consulter avant chaque vol</li>
+    <li><span class="letter">C.</span> Dans le manuel du drone</li>
+    <li><span class="letter">D.</span> Sur les réseaux sociaux de la DGAC</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> Publiées par <strong>NOTAM</strong> (court terme) ou <strong>SUP AIP</strong> (durée plus longue). Activées pour : 14 juillet, sommets diplomatiques, événements à risque. Consulter le SIA quotidiennement.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q6</span><span>ZRT/ZIT</span></div>
+</section>
+
+
+<!-- Q7 — RTBA -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 7 / 17</span>
+  <p class="qcm-question">Le RTBA est :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Un Réseau Temporaire de Briefing Aérien</li>
+    <li><span class="letter">B.</span> Un Réseau de routes Très Basse Altitude utilisé par la chasse militaire</li>
+    <li><span class="letter">C.</span> Un Registre Topographique des Bases Aériennes</li>
+    <li><span class="letter">D.</span> Un Référentiel Technique des Bases Aériennes</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> <strong>RTBA = Réseau Très Basse Altitude</strong> : couloirs militaires permanents pour entraînement chasse à très basse altitude. <strong>Vol drone interdit si actif</strong>. Vérifier la carte AZBA quotidienne du SIA.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q7</span><span>RTBA</span></div>
+</section>
+
+
+<!-- Q8 — AZBA -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 8 / 17</span>
+  <p class="qcm-question">La carte AZBA doit être consultée :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Une fois par semaine</li>
+    <li><span class="letter">B.</span> Une fois par mois</li>
+    <li><span class="letter">C.</span> Avant chaque vol (carte publiée quotidiennement par le SIA)</li>
+    <li><span class="letter">D.</span> Uniquement avant les vols BVLOS</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> La carte <strong>AZBA</strong> (Activité des Zones Basse Altitude) est <strong>publiée quotidiennement</strong> sur sia.aviation-civile.gouv.fr. Elle indique les RTBA actives le jour même. Consultation obligatoire avant chaque vol.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q8</span><span>AZBA</span></div>
+</section>
+
+
+<!-- Q9 — ZICAD -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 9 / 17</span>
+  <p class="qcm-question">Une ZICAD interdit :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Tout vol drone, en toutes circonstances</li>
+    <li><span class="letter">B.</span> La captation aérienne (photo, vidéo, thermique) — le survol reste possible</li>
+    <li><span class="letter">C.</span> Les vols de nuit uniquement</li>
+    <li><span class="letter">D.</span> Le décollage à moins de 500 m d'un site</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> <strong>ZICAD = Zone Interdite de Captation Aérienne de Données</strong>. Le <strong>survol est autorisé</strong> mais la <strong>captation</strong> (photo, vidéo, thermique, lidar, radar) est interdite. Sanctions : 1 an de prison, 75 000 € d'amende.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q9</span><span>ZICAD</span></div>
+</section>
+
+
+<!-- Q10 — NOTAM -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 10 / 17</span>
+  <p class="qcm-question">NOTAM signifie :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Notice for Aviation Tactical Maps</li>
+    <li><span class="letter">B.</span> Notice to Airmen (ou « Air Mission » dans la nouvelle terminologie OACI)</li>
+    <li><span class="letter">C.</span> National Order of Tactical Air Movement</li>
+    <li><span class="letter">D.</span> Notification to Aviation Manager</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> <strong>NOTAM = Notice to Airmen</strong> (nouvelle terminologie OACI : Notice to Air Mission). Information urgente temporaire sur l'état de l'espace aérien. Consultation obligatoire avant chaque vol via le SIA.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q10</span><span>NOTAM</span></div>
+</section>
+
+
+<!-- Q11 — SIA -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 11 / 17</span>
+  <p class="qcm-question">Le SIA (Service de l'Information Aéronautique) publie notamment :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Les autorisations préfectorales pour le vol de nuit</li>
+    <li><span class="letter">B.</span> L'AIP, les NOTAM, la carte AZBA et les SUP AIP</li>
+    <li><span class="letter">C.</span> Les fiches techniques des drones DJI</li>
+    <li><span class="letter">D.</span> Les bilans annuels des télépilotes</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> Le SIA est l'organisme officiel français qui publie : <strong>AIP</strong> (publication permanente), <strong>NOTAM</strong> (urgent temporaire), <strong>SUP AIP</strong> (modifications longue durée), <strong>AZBA</strong> (carte des RTBA actives). Site : sia.aviation-civile.gouv.fr.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q11</span><span>SIA</span></div>
+</section>
+
+
+<!-- Q12 — Cartes.gouv.fr code couleur -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 12 / 17</span>
+  <p class="qcm-question">Sur cartes.gouv.fr, à quelle hauteur maximale correspond la couleur <strong>jaune</strong> ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 30 m</li>
+    <li><span class="letter">B.</span> 50 m</li>
+    <li><span class="letter">C.</span> 60 m</li>
+    <li><span class="letter">D.</span> 100 m</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> <strong>Jaune = 60 m max</strong>. Rappel des paliers : Rouge (interdit) / Orange foncé (30 m) / Orange clair (50 m) / Jaune (60 m) / Jaune clair (100 m) / Sans couleur (120 m max). Hauteur mesurée par rapport à l'altitude de la piste.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q12</span><span>Code couleur</span></div>
+</section>
+
+
+<!-- Q13 — Autorisation obligatoire -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 13 / 17</span>
+  <p class="qcm-question">En catégorie Ouverte, l'autorisation préalable de vol est obligatoire :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Pour tous les vols, en toutes circonstances</li>
+    <li><span class="letter">B.</span> Uniquement pour les vols à plus de 50 m de hauteur et/ou hors vue (BVLOS)</li>
+    <li><span class="letter">C.</span> Uniquement les week-ends</li>
+    <li><span class="letter">D.</span> Uniquement pour les drones &gt; 4 kg</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> En cat. Ouverte, l'autorisation préalable est obligatoire <strong>uniquement</strong> pour : (1) les vols <strong>&gt; 50 m AGL</strong>, et (2) les vols <strong>hors vue</strong>. En dehors de ces deux cas, aucune autorisation préalable nécessaire (sous réserve du respect des règles cat. Ouverte).
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q13</span><span>Autorisation</span></div>
+</section>
+
+
+<!-- Q14 — AGL vs AMSL -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 14 / 17</span>
+  <p class="qcm-question">La différence entre AGL et AMSL :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> AGL = altitude mesurée par radar / AMSL = altitude estimée</li>
+    <li><span class="letter">B.</span> AGL = hauteur par rapport au sol / AMSL = altitude par rapport au niveau moyen de la mer</li>
+    <li><span class="letter">C.</span> AGL = au-dessus du télépilote / AMSL = au-dessus du drone</li>
+    <li><span class="letter">D.</span> AGL = en mètres / AMSL = en pieds</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> <strong>AGL = Above Ground Level</strong> (hauteur au-dessus du sol — varie avec le terrain). <strong>AMSL = Above Mean Sea Level</strong> (altitude par rapport au niveau moyen de la mer — référence absolue). Les hauteurs cat. Ouverte sont en AGL.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q14</span><span>AGL/AMSL</span></div>
+</section>
+
+
+<!-- Q15 — FPV -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 15 / 17</span>
+  <p class="qcm-question">Le vol FPV (avec lunettes vidéo) est considéré comme :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Du vol BVLOS systématiquement</li>
+    <li><span class="letter">B.</span> Du vol VLOS car un observateur est obligatoire et maintient le contact visuel</li>
+    <li><span class="letter">C.</span> Un vol autonome interdit</li>
+    <li><span class="letter">D.</span> Un vol simulateur sans réglementation</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> Le vol FPV n'est <strong>pas considéré comme du BVLOS</strong> car un <strong>observateur est obligatoire</strong> et maintient en permanence le contact visuel direct (VLOS) avec le drone. Le télépilote doit pouvoir reprendre le contrôle visuel à tout moment.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q15</span><span>FPV</span></div>
+</section>
+
+
+<!-- Q16 — RTH -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 16 / 17</span>
+  <p class="qcm-question">Quel paramètre doit-on systématiquement vérifier sur le RTH (Return-to-Home) avant un vol ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> La couleur du voyant</li>
+    <li><span class="letter">B.</span> La hauteur de retour, qui doit dépasser le plus haut obstacle entre le drone et le point d'atterrissage</li>
+    <li><span class="letter">C.</span> La marque du drone</li>
+    <li><span class="letter">D.</span> Le poids des hélices</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> La <strong>hauteur de retour</strong> (RTH altitude) doit être supérieure au plus haut obstacle (arbres, lignes, bâtiments) sur la trajectoire de retour. À régler à chaque mission selon le terrain. Bien fixer aussi le point Home après prise de GPS.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q16</span><span>RTH</span></div>
+</section>
+
+
+<!-- Q17 — Observateurs BVLOS -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 17 / 17</span>
+  <p class="qcm-question">En STS-02, à partir de quelle distance les observateurs de l'espace aérien sont-ils obligatoires ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Au-delà de 500 m</li>
+    <li><span class="letter">B.</span> Au-delà de 1 km</li>
+    <li><span class="letter">C.</span> Au-delà de 2 km</li>
+    <li><span class="letter">D.</span> Jamais, ils sont facultatifs</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> En STS-02, les <strong>observateurs de l'espace aérien</strong> sont obligatoires <strong>au-delà de 1 km</strong> du télépilote, jusqu'à 2 km maximum. Ils sont reliés en phonie au télépilote pour signaler tout trafic aérien.
+  </div>
+  <div class="slide-footer"><span>QCM J2 — Q17</span><span>Observateurs</span></div>
+</section>
+
+
+<!-- SLIDE FINALE — DÉBRIEF -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Débrief du QCM Jour 2</h2>
+  <ul class="icon-list">
+    <li>
+      <div class="icon" style="background: rgba(16,185,129,0.1); color: #10B981;"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="text"><h4>Cartographie acquise</h4><p>CTR, P, R, D, ZRT/ZIT, RTBA/AZBA, ZICAD, zones naturelles : prêt pour la certification J3.</p></div>
+    </li>
+    <li>
+      <div class="icon" style="background: rgba(245,158,11,0.1); color: var(--dx-warning);"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <div class="text"><h4>Pièges classiques</h4><p>Confusion zone R / parcs nationaux, FPV vs BVLOS, AGL vs AMSL, distinction NOTAM / SUP AIP.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+      <div class="text"><h4>J3 matin — Certification</h4><p>QCM officiel (30 min, 75% requis), vol de contrôle pratique, entretien oral (5 questions).</p></div>
+    </li>
+  </ul>
+  <aside class="notes">
+    Repérer les questions ratées par la majorité du groupe. Les retravailler en début de J3 avant l'examen officiel. Encourager les stagiaires à réviser le tableau récapitulatif des hauteurs et zones (J1 aprem) le soir.
+  </aside>
+  <div class="slide-footer"><span>QCM J2 — Débrief</span><span>Jour 2</span></div>
+</section>
+
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<!-- Reveal.js -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280,
+    height: 720,
+    margin: 0,
+    minScale: 0.2,
+    maxScale: 2.0,
+    hash: true,
+    history: true,
+    slideNumber: false,
+    showSlideNumber: 'all',
+    transition: 'slide',
+    transitionSpeed: 'default',
+    backgroundTransition: 'fade',
+    controls: true,
+    controlsLayout: 'bottom-right',
+    controlsTutorial: false,
+    progress: true,
+    center: false,
+    embedded: false,
+    help: true,
+    autoPlayMedia: null,
+    touch: true,
+    loop: false,
+  });
+</script>
+</body>
+</html>

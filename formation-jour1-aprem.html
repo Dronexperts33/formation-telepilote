@@ -433,6 +433,115 @@
 
 
 <!-- ============================================================
+     SLIDE 7d — TABLEAU RÉCAPITULATIF HAUTEURS & ZONES TAMPON
+     ============================================================ -->
+<section class="slide-table">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Récapitulatif — Hauteurs autorisées &amp; zones tampon</h2>
+
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.7em; margin-top: 8px;">
+    <thead>
+      <tr style="background: var(--dx-primary); color: white;">
+        <th style="padding: 8px 10px; text-align: left; border: 1px solid var(--dx-border);">Catégorie / Zone</th>
+        <th style="padding: 8px 10px; text-align: center; border: 1px solid var(--dx-border);">Hauteur max</th>
+        <th style="padding: 8px 10px; text-align: center; border: 1px solid var(--dx-border);">Distance latérale tiers</th>
+        <th style="padding: 8px 10px; text-align: left; border: 1px solid var(--dx-border);">Zone tampon / contingence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">A1 — drone &lt; 250 g</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);">120 m AGL</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);">Survol toléré (sauf rassemblements)</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">—</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">A2 — drone &lt; 4 kg (C2)</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);">120 m AGL</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);"><strong>30 m</strong> (5 m mode basse vitesse)</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">—</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">A3 — drone &lt; 25 kg</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);">120 m AGL</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);"><strong>150 m</strong> de zones résidentielles / commerciales / industrielles</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">—</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">Règle du 1:1 (cat. Ouverte VLOS)</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);">—</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);"><strong>≥ hauteur de vol</strong></td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Distance horizontale aux tiers ≥ hauteur</td>
+      </tr>
+      <tr style="background: rgba(14,116,218,0.06);">
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600; color: var(--dx-primary);">STS-01 — VLOS zone peuplée</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);">120 m AGL</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);">Hors aire opérationnelle (zone matérialisée)</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">+ Volume de contingence + GRB <strong>fixe</strong> (10 m)</td>
+      </tr>
+      <tr style="background: rgba(14,116,218,0.06);">
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600; color: var(--dx-primary);">STS-02 — BVLOS faiblement peuplé</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);">120 m AGL</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);">Couloir 1 km (2 km avec observateurs)</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">+ Volume de contingence + GRB <strong>variable</strong> (FTS constructeur)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.7em; margin-top: 14px;">
+    <thead>
+      <tr style="background: var(--dx-text-dark); color: white;">
+        <th colspan="3" style="padding: 8px 10px; text-align: left; border: 1px solid var(--dx-border);">Zones de protection aérodrome — code couleur cartes.gouv.fr</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 6px 10px; border: 1px solid var(--dx-border); width: 30%;"><span style="display:inline-block;width:14px;height:14px;background:#E57373;border-radius:3px;vertical-align:middle;"></span> <strong>Rouge</strong></td>
+        <td style="padding: 6px 10px; text-align: center; border: 1px solid var(--dx-border); width: 30%;">Vol interdit</td>
+        <td style="padding: 6px 10px; border: 1px solid var(--dx-border);">Zone très proche aérodrome / installations critiques</td>
+      </tr>
+      <tr>
+        <td style="padding: 6px 10px; border: 1px solid var(--dx-border);"><span style="display:inline-block;width:14px;height:14px;background:#F4A261;border-radius:3px;vertical-align:middle;"></span> Orange foncé</td>
+        <td style="padding: 6px 10px; text-align: center; border: 1px solid var(--dx-border);"><strong>30 m max</strong></td>
+        <td style="padding: 6px 10px; border: 1px solid var(--dx-border);">Hauteur mesurée par rapport à l'altitude de la piste</td>
+      </tr>
+      <tr>
+        <td style="padding: 6px 10px; border: 1px solid var(--dx-border);"><span style="display:inline-block;width:14px;height:14px;background:#F8B788;border-radius:3px;vertical-align:middle;"></span> Orange clair</td>
+        <td style="padding: 6px 10px; text-align: center; border: 1px solid var(--dx-border);"><strong>50 m max</strong></td>
+        <td style="padding: 6px 10px; border: 1px solid var(--dx-border);">Au-delà de 50 m → autorisation préalable obligatoire</td>
+      </tr>
+      <tr>
+        <td style="padding: 6px 10px; border: 1px solid var(--dx-border);"><span style="display:inline-block;width:14px;height:14px;background:#F9D77E;border-radius:3px;vertical-align:middle;"></span> Jaune</td>
+        <td style="padding: 6px 10px; text-align: center; border: 1px solid var(--dx-border);"><strong>60 m max</strong></td>
+        <td style="padding: 6px 10px; border: 1px solid var(--dx-border);">—</td>
+      </tr>
+      <tr>
+        <td style="padding: 6px 10px; border: 1px solid var(--dx-border);"><span style="display:inline-block;width:14px;height:14px;background:#FCE588;border-radius:3px;vertical-align:middle;"></span> Jaune clair</td>
+        <td style="padding: 6px 10px; text-align: center; border: 1px solid var(--dx-border);"><strong>100 m max</strong></td>
+        <td style="padding: 6px 10px; border: 1px solid var(--dx-border);">—</td>
+      </tr>
+      <tr>
+        <td style="padding: 6px 10px; border: 1px solid var(--dx-border);"><span style="display:inline-block;width:14px;height:14px;background:#FFFFFF;border:1px solid #CBD5E1;border-radius:3px;vertical-align:middle;"></span> Sans couleur</td>
+        <td style="padding: 6px 10px; text-align: center; border: 1px solid var(--dx-border);"><strong>120 m max</strong></td>
+        <td style="padding: 6px 10px; border: 1px solid var(--dx-border);">Plafond cat. Ouverte — au-dessus interdit</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size: 0.55em; color: var(--dx-text-secondary); margin: 6px 0 0 0; font-style: italic;">* Sauf conditions particulières publiées à l'arrêté « espaces » du 3 décembre 2020. Hauteur dans les zones colorées mesurée par rapport au point le plus haut de la piste, pas au point de décollage.</p>
+
+  <aside class="notes">
+    Slide-clé à projeter régulièrement comme référence. Insister sur la règle du 1:1 (souvent oubliée) : si je vole à 60 m, je dois être à au moins 60 m horizontalement de tout tiers. Pour les zones aérodrome, rappeler le calcul de hauteur réel en fonction du dénivelé piste/décollage.
+  </aside>
+
+  <div class="slide-footer">
+    <span>Module 4 — Récapitulatif hauteurs &amp; zones</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
      SLIDE 8 — ZONE AU SOL, PHRASÉOLOGIE & ERP (icon-list)
      ============================================================ -->
 <section class="slide-content">
@@ -498,17 +607,17 @@
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
       </div>
       <div class="text">
-        <h4>Interdit en catégorie Ouverte</h4>
-        <p>Le vol de nuit (entre coucher et lever du soleil) est strictement interdit en Open.</p>
+        <h4>Interdit par défaut en catégorie Ouverte</h4>
+        <p>Le vol de nuit (entre la fin du crépuscule civil du soir et le début du crépuscule civil du matin) est <strong>interdit par défaut</strong> en catégorie Ouverte.</p>
       </div>
     </li>
     <li>
-      <div class="icon">
-        <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <div class="icon" style="background: rgba(245,158,11,0.1); color: var(--dx-warning);">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
       </div>
       <div class="text">
-        <h4>Autorisé en STS-01 uniquement</h4>
-        <p>Vol en vue directe de nuit. Hauteur limitée à <strong>50 m</strong>. Masse du drone &lt; <strong>8 kg</strong>.</p>
+        <h4>Possible sur dérogation préfectorale</h4>
+        <p>Le vol de nuit en cat. Ouverte est <strong>désormais possible sur dérogation préfectorale</strong> (demande préalable auprès de la préfecture du lieu de vol). Justification opérationnelle obligatoire.</p>
       </div>
     </li>
     <li>
@@ -517,19 +626,22 @@
       </div>
       <div class="text">
         <h4>Dispositif lumineux vert clignotant</h4>
-        <p>Le drone doit être équipé d'un feu vert clignotant visible de nuit, permettant son identification.</p>
+        <p>Le drone doit être équipé d'un <strong>feu vert clignotant</strong> visible à 1 km au moins, permettant son identification de nuit.</p>
       </div>
     </li>
     <li>
-      <div class="icon" style="background: rgba(245,158,11,0.1); color: var(--dx-warning);">
-        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </div>
       <div class="text">
-        <h4>Dérogation préfectorale</h4>
-        <p>Si conditions hors cadre (vol &gt; 50 m ou drone &gt; 8 kg), une dérogation préfectorale spécifique est obligatoire.</p>
+        <h4>Autorisé de plein droit en STS-01 / STS-02</h4>
+        <p>En catégorie Spécifique (STS-01 / STS-02), le vol de nuit est autorisé sans dérogation supplémentaire, sous réserve du respect du scénario (hauteur, masse, équipement).</p>
       </div>
     </li>
   </ul>
+  <aside class="notes">
+    Préciser que la réglementation a évolué : avant, le vol de nuit en catégorie Ouverte était strictement interdit. Désormais, une dérogation préfectorale est possible. La demande se fait via le formulaire CERFA dédié, à déposer au moins 5 jours ouvrés avant le vol. Le télépilote doit justifier l'intérêt opérationnel (sécurité, urgence, mission de nuit nécessaire). Donner un exemple concret : inspection thermique de toiture nécessitant une nuit froide.
+  </aside>
 
   <div class="slide-footer">
     <span>Module 4 — Vol de nuit</span>
@@ -728,11 +840,15 @@
         <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
       </div>
       <div class="text">
-        <h4>S'assurer que chaque stagiaire a créé son compte AlphaTango</h4>
-        <p>Vérification impérative durant la formation. Le compte est nécessaire pour toute activité drone.</p>
+        <h4>Compte AlphaTango personnel obligatoire</h4>
+        <p>Chaque télépilote doit disposer de son propre compte AlphaTango : il est nécessaire pour toute activité drone et pour la validation administrative en fin de formation.</p>
       </div>
     </li>
   </ul>
+
+  <aside class="notes">
+    Vérification instructeur : s'assurer que chaque stagiaire a bien créé son compte AlphaTango pendant la formation. Réserver 10 min en début de Module 5 pour faire l'inscription si besoin (apporter justificatifs d'identité). Consigner dans le livret d'accueil.
+  </aside>
 
   <div class="slide-footer">
     <span>Module 5 — Déclaration exploitant</span>
@@ -1082,13 +1198,16 @@
      ============================================================ -->
 <section class="slide-module">
   <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <div class="module-number">Pratique</div>
+  <div class="module-number">Pratique <span style="font-size: 0.55em; opacity: 0.85; padding: 4px 10px; background: rgba(255,255,255,0.15); border-radius: 12px; margin-left: 8px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">⏱ Optionnel selon temps</span></div>
   <h2>Premiers vols VLOS</h2>
-  <p class="module-desc">Mise en application des connaissances théoriques : check-lists, paramétrage et exercices de pilotage.</p>
+  <p class="module-desc">Mise en application des connaissances théoriques : check-lists, paramétrage et exercices de pilotage.<br><em style="font-size: 0.85em; opacity: 0.85;">Bloc à moduler selon le temps disponible : si la théorie a pris l'après-midi, le premier vol à vue peut être reporté en début de J2 matin.</em></p>
   <!-- Navigation / drone icon -->
   <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <polygon points="3 11 22 2 13 21 11 13 3 11"/>
   </svg>
+  <aside class="notes">
+    Vérifier le timing avant d'enchaîner sur ce bloc : si la théorie a débordé, mieux vaut faire un débrief court J1 et reporter le premier vol à vue en début de J2 matin pour garder du temps de vol effectif aux stagiaires (au moins 30 min par binôme). Sinon, risque de finir J1 sans avoir volé.
+  </aside>
   <div class="slide-footer">
     <span>Pratique — Premiers vols VLOS</span>
     <span>Jour 1 Après-midi</span>

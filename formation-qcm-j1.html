@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCM Jour 1 — Formation Télépilote — Dronexperts</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Dronexperts Theme -->
+  <link rel="stylesheet" href="css/dronexperts-theme.css">
+
+  <style>
+    .qcm-question {
+      font-size: 0.95em;
+      font-weight: 600;
+      color: var(--dx-text-dark);
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .qcm-options { list-style: none; padding: 0; margin: 0; }
+    .qcm-options li {
+      padding: 10px 16px;
+      margin-bottom: 8px;
+      background: var(--dx-bg-light, #F8FAFC);
+      border-left: 3px solid var(--dx-border);
+      border-radius: 6px;
+      font-size: 0.78em;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .qcm-options li .letter {
+      font-weight: 700;
+      color: var(--dx-primary);
+      flex-shrink: 0;
+      width: 22px;
+    }
+    .qcm-answer {
+      margin-top: 18px;
+      padding: 14px 18px;
+      background: rgba(16,185,129,0.08);
+      border-left: 4px solid #10B981;
+      border-radius: 6px;
+      font-size: 0.78em;
+    }
+    .qcm-answer .answer-tag {
+      display: inline-block;
+      background: #10B981;
+      color: white;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      margin-right: 8px;
+      letter-spacing: 0.05em;
+    }
+    .qcm-question-num {
+      display: inline-block;
+      background: var(--dx-primary);
+      color: white;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.7em;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<!-- ============================================================
+     SLIDE 1 — TITRE QCM J1
+     ============================================================ -->
+<section class="slide-title">
+  <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>QCM — Jour 1</h1>
+  <p class="subtitle">Validation des acquis — Réglementation, catégories Open &amp; Spécifique, obligations</p>
+  <span class="badge">17 questions · ~25 min</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Télépilote</span>
+    <span>QCM Jour 1</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 2 — CONSIGNES
+     ============================================================ -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Consignes du QCM</h2>
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="text"><h4>Durée indicative : 25 minutes</h4><p>Soit ~1 min 30 par question. Modulez selon le temps disponible.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="text"><h4>Une seule bonne réponse par question</h4><p>Sauf indication contraire dans l'énoncé.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div class="text"><h4>Correction collective immédiate</h4><p>La réponse + l'explication s'affichent au clic suivant après chaque question.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <div class="text"><h4>Objectif pédagogique</h4><p>Reformuler les notions-clés avant la cartographie de J2. Pas de note finale.</p></div>
+    </li>
+  </ul>
+  <aside class="notes">
+    Ce QCM est une trame modulaire. Il peut être joué intégralement (25 min) ou en partie (sélectionner 8-10 questions ciblées) selon le temps. Conseillé en fin de J1 pour ancrer les acquis avant la cartographie. Encourager le débat sur chaque question avant de révéler la réponse.
+  </aside>
+  <div class="slide-footer">
+    <span>QCM J1 — Consignes</span>
+    <span>Jour 1</span>
+  </div>
+</section>
+
+
+<!-- Q1 — Hauteur max cat. Ouverte -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 1 / 17</span>
+  <p class="qcm-question">Quelle est la hauteur maximale de vol autorisée en catégorie Ouverte (hors zones colorées sur la carte UAS) ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 50 m AGL</li>
+    <li><span class="letter">B.</span> 100 m AGL</li>
+    <li><span class="letter">C.</span> 120 m AGL</li>
+    <li><span class="letter">D.</span> 150 m AGL</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> <strong>120 m AGL</strong> — mesurés par rapport au point le plus proche de la surface de la terre, pas par rapport au point de décollage. Au-dessus de 120 m, le vol est interdit en cat. Ouverte.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q1</span><span>Hauteur max</span></div>
+</section>
+
+
+<!-- Q2 — Distance A2 -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 2 / 17</span>
+  <p class="qcm-question">En sous-catégorie A2 (drone classe C2, &lt; 4 kg), quelle est la distance latérale minimale aux tiers en mode de vol normal ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 5 m</li>
+    <li><span class="letter">B.</span> 30 m</li>
+    <li><span class="letter">C.</span> 50 m</li>
+    <li><span class="letter">D.</span> 150 m</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> <strong>30 m</strong> en mode normal. Le mode <em>basse vitesse</em> (low-speed) permet de descendre à <strong>5 m</strong> minimum.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q2</span><span>Sous-cat A2</span></div>
+</section>
+
+
+<!-- Q3 — A1 drones autorisés -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 3 / 17</span>
+  <p class="qcm-question">En sous-catégorie A1 (peut survoler des personnes isolées), quels drones sont autorisés ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Tous les drones &lt; 25 kg</li>
+    <li><span class="letter">B.</span> Drones classes C0 et C1 (&lt; 900 g)</li>
+    <li><span class="letter">C.</span> Drones classe C2 uniquement</li>
+    <li><span class="letter">D.</span> Drones classe C3 et C4</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> Sous-cat A1 = <strong>C0</strong> (&lt; 250 g, jouet ou drone légal) et <strong>C1</strong> (&lt; 900 g). Le survol de personnes isolées est toléré, jamais de rassemblements.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q3</span><span>Sous-cat A1</span></div>
+</section>
+
+
+<!-- Q4 — A3 distance -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 4 / 17</span>
+  <p class="qcm-question">En sous-catégorie A3 (drone &lt; 25 kg), quelle est la distance minimale à respecter par rapport aux zones résidentielles, commerciales ou industrielles ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 30 m</li>
+    <li><span class="letter">B.</span> 50 m</li>
+    <li><span class="letter">C.</span> 100 m</li>
+    <li><span class="letter">D.</span> 150 m</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE D</span> <strong>150 m</strong> de toute zone résidentielle, commerciale, industrielle ou récréative. La sous-cat A3 est réservée aux zones non peuplées (campagne, friche, terrain isolé).
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q4</span><span>Sous-cat A3</span></div>
+</section>
+
+
+<!-- Q5 — Règle 1:1 -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 5 / 17</span>
+  <p class="qcm-question">La règle du 1:1 en agglomération impose que :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Le drone vole à la même vitesse que le vent</li>
+    <li><span class="letter">B.</span> La distance horizontale aux tiers soit au moins égale à la hauteur de vol</li>
+    <li><span class="letter">C.</span> La masse du drone soit égale à la charge utile</li>
+    <li><span class="letter">D.</span> L'autonomie soit divisée par deux</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> Si je vole à <strong>50 m de hauteur</strong>, je dois être à <strong>au moins 50 m horizontalement</strong> de tout tiers non impliqué. C'est une règle clé en agglomération.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q5</span><span>Règle 1:1</span></div>
+</section>
+
+
+<!-- Q6 — Signalement français -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 6 / 17</span>
+  <p class="qcm-question">Le signalement électronique français est obligatoire pour :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Tous les drones &gt; 250 g</li>
+    <li><span class="letter">B.</span> Tous les drones &gt; 800 g (sauf jouets &lt; 250 g)</li>
+    <li><span class="letter">C.</span> Uniquement les drones professionnels</li>
+    <li><span class="letter">D.</span> Uniquement les vols de nuit</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> Tout drone <strong>&gt; 800 g</strong> doit émettre un signal électronique conforme à la réglementation française (arrêté du 27 décembre 2019). Le Remote ID européen (UE 2019/945) prend le relais à partir de la classe C1.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q6</span><span>Signalement</span></div>
+</section>
+
+
+<!-- Q7 — Remote ID -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 7 / 17</span>
+  <p class="qcm-question">Le Remote ID européen est obligatoire à partir de quelle classe de drone ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> C0</li>
+    <li><span class="letter">B.</span> C1</li>
+    <li><span class="letter">C.</span> C3</li>
+    <li><span class="letter">D.</span> Aucun, il est facultatif</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> Le Remote ID européen est obligatoire à partir de la classe <strong>C1</strong> (et C2, C3, C5, C6). Il diffuse en temps réel position, altitude, vitesse et numéro exploitant du drone.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q7</span><span>Remote ID</span></div>
+</section>
+
+
+<!-- Q8 — VLOS -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 8 / 17</span>
+  <p class="qcm-question">VLOS signifie :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Very Low Obstacle Survey</li>
+    <li><span class="letter">B.</span> Visual Line Of Sight (vue directe sans aide optique)</li>
+    <li><span class="letter">C.</span> Vertical Long-range Observation System</li>
+    <li><span class="letter">D.</span> Variable Light Optical Sensor</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> <strong>Visual Line Of Sight</strong> : le télépilote voit le drone en permanence à l'oeil nu, sans aide optique (jumelles, lunettes FPV…). C'est le mode de vol par défaut en cat. Ouverte.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q8</span><span>VLOS</span></div>
+</section>
+
+
+<!-- Q9 — ARP -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 9 / 17</span>
+  <p class="qcm-question">L'ARP (Aerodrome Reference Point) est :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Le point le plus haut de la piste</li>
+    <li><span class="letter">B.</span> Le point géographique officiel d'un aérodrome, utilisé pour positionner ses zones de protection</li>
+    <li><span class="letter">C.</span> L'altitude moyenne de l'aérodrome</li>
+    <li><span class="letter">D.</span> La position de la tour de contrôle</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> L'ARP est le <strong>point géographique central officiel</strong> de l'aérodrome. Il sert à délimiter les zones colorées (cercles de protection). Pour le calcul de hauteur drone, c'est l'<strong>altitude de la piste</strong> (point le plus haut) qui sert de référence.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q9</span><span>ARP</span></div>
+</section>
+
+
+<!-- Q10 — Couleur cartes.gouv.fr -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 10 / 17</span>
+  <p class="qcm-question">Sur cartes.gouv.fr (carte UAS catégorie ouverte), quelle couleur indique une <strong>zone de vol interdit</strong> ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Vert</li>
+    <li><span class="letter">B.</span> Jaune</li>
+    <li><span class="letter">C.</span> Orange</li>
+    <li><span class="letter">D.</span> Rouge</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE D</span> <strong>Rouge</strong> = vol interdit. Les autres paliers : orange foncé (30 m), orange clair (50 m), jaune (60 m), jaune clair (100 m), sans couleur (120 m). Au-dessus de 120 m → interdit en cat. Ouverte.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q10</span><span>Code couleur UAS</span></div>
+</section>
+
+
+<!-- Q11 — STS-01 -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 11 / 17</span>
+  <p class="qcm-question">Le scénario STS-01 correspond à :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Un vol BVLOS en zone faiblement peuplée</li>
+    <li><span class="letter">B.</span> Un vol VLOS en zone peuplée</li>
+    <li><span class="letter">C.</span> Un vol de nuit uniquement</li>
+    <li><span class="letter">D.</span> Un vol en cat. Ouverte uniquement</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> <strong>STS-01 = VLOS en zone peuplée</strong> (cat. Spécifique). Drone classe C5, hauteur max 120 m, zone matérialisée au sol, observateurs si nécessaire. À ne pas confondre avec STS-02 (BVLOS faiblement peuplé).
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q11</span><span>STS-01</span></div>
+</section>
+
+
+<!-- Q12 — STS-02 couloir -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 12 / 17</span>
+  <p class="qcm-question">En STS-02 (BVLOS faiblement peuplé), quelle est la distance maximale du drone par rapport au télépilote sans observateur ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 500 m</li>
+    <li><span class="letter">B.</span> 1 km</li>
+    <li><span class="letter">C.</span> 2 km</li>
+    <li><span class="letter">D.</span> 5 km</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> <strong>1 km</strong> sans observateur, <strong>2 km</strong> avec observateurs de l'espace aérien postés en relais. Le drone doit être classe C6 (ou kit C6 ReClass).
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q12</span><span>STS-02</span></div>
+</section>
+
+
+<!-- Q13 — Vol de nuit -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 13 / 17</span>
+  <p class="qcm-question">Le vol de nuit en catégorie Ouverte est :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Strictement interdit en toutes circonstances</li>
+    <li><span class="letter">B.</span> Autorisé sans formalité avec un feu vert clignotant</li>
+    <li><span class="letter">C.</span> Possible sur dérogation préfectorale, avec feu vert clignotant</li>
+    <li><span class="letter">D.</span> Autorisé uniquement le 14 juillet</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> Le vol de nuit en cat. Ouverte est <strong>interdit par défaut</strong>, mais <strong>possible sur dérogation préfectorale</strong>. Le drone doit être équipé d'un <strong>feu vert clignotant</strong> visible à 1 km. En catégorie Spécifique (STS-01/02), il est autorisé sans dérogation.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q13</span><span>Vol de nuit</span></div>
+</section>
+
+
+<!-- Q14 — AlphaTango -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 14 / 17</span>
+  <p class="qcm-question">Sur quelle plateforme un télépilote déclare-t-il son numéro d'exploitant et enregistre-t-il ses drones ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Cartes.gouv.fr</li>
+    <li><span class="letter">B.</span> Sofia Briefing</li>
+    <li><span class="letter">C.</span> AlphaTango</li>
+    <li><span class="letter">D.</span> Clearance.aero</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> <strong>AlphaTango</strong> est le portail officiel DGAC pour : déclaration d'exploitant, enregistrement des drones &gt; 250 g, déclaration des télépilotes, bilan annuel. Compte gratuit obligatoire.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q14</span><span>AlphaTango</span></div>
+</section>
+
+
+<!-- Q15 — ERP -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 15 / 17</span>
+  <p class="qcm-question">Dans le cadre d'un vol en catégorie Spécifique, l'ERP désigne :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> L'établissement recevant du public</li>
+    <li><span class="letter">B.</span> Le plan d'urgence (Emergency Response Plan)</li>
+    <li><span class="letter">C.</span> L'enregistrement réglementaire préalable</li>
+    <li><span class="letter">D.</span> Un type de drone européen</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> ERP = <strong>Emergency Response Plan</strong> (plan d'urgence). Doit prévoir : numéros d'urgence, trousse de secours, extincteur, procédure d'évacuation, matérialisation de la zone, briefing signé.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q15</span><span>ERP</span></div>
+</section>
+
+
+<!-- Q16 — Rassemblements -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 16 / 17</span>
+  <p class="qcm-question">Le survol d'un rassemblement de personnes (concert, manifestation sportive, marché) en catégorie Ouverte est :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Autorisé en sous-cat A1 sans condition</li>
+    <li><span class="letter">B.</span> Autorisé en sous-cat A2 avec drone &lt; 4 kg</li>
+    <li><span class="letter">C.</span> Strictement interdit en cat. Ouverte (toutes sous-cat. confondues)</li>
+    <li><span class="letter">D.</span> Autorisé si l'organisateur donne son accord</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE C</span> <strong>Strictement interdit en cat. Ouverte</strong>. Pour survoler un rassemblement, il faut une autorisation spécifique en cat. Spécifique (PDRA, SORA) avec drone certifié C6 et procédures dédiées.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q16</span><span>Rassemblements</span></div>
+</section>
+
+
+<!-- Q17 — Batterie LiPo -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <span class="qcm-question-num">Question 17 / 17</span>
+  <p class="qcm-question">Que faire si une batterie LiPo de drone présente un gonflement (boursouflure) ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> La recharger doucement et l'utiliser jusqu'à décharge complète</li>
+    <li><span class="letter">B.</span> La mettre en quarantaine dans un sac LiPo / bac à sable et la faire recycler</li>
+    <li><span class="letter">C.</span> La percer pour évacuer la pression</li>
+    <li><span class="letter">D.</span> La conserver pour le vol mais en réduire l'autonomie</li>
+  </ul>
+  <div class="fragment qcm-answer">
+    <span class="answer-tag">RÉPONSE B</span> Batterie gonflée = <strong>danger d'emballement thermique</strong>. Ne plus la charger, ne plus l'utiliser, la stocker en sac LiPo ou bac à sable et la déposer en déchèterie agréée (filière D3E). Ne jamais la percer.
+  </div>
+  <div class="slide-footer"><span>QCM J1 — Q17</span><span>Batterie LiPo</span></div>
+</section>
+
+
+<!-- SLIDE FINALE — DÉBRIEF -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Débrief du QCM Jour 1</h2>
+  <ul class="icon-list">
+    <li>
+      <div class="icon" style="background: rgba(16,185,129,0.1); color: #10B981;"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="text"><h4>Bonnes réponses majoritaires</h4><p>Notions acquises : passer à J2 (cartographie &amp; espaces aériens).</p></div>
+    </li>
+    <li>
+      <div class="icon" style="background: rgba(245,158,11,0.1); color: var(--dx-warning);"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <div class="text"><h4>Erreurs récurrentes</h4><p>Reprendre les notions ratées : règle 1:1, distinction A2/A3, vol de nuit (dérogation), STS-01 vs STS-02.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+      <div class="text"><h4>Pour J2</h4><p>Espaces aériens (CTR, P, R, D), zones temporaires, zones militaires, ZICAD, outils SIA / AlphaTango / cartes.gouv.fr / Clearance.</p></div>
+    </li>
+  </ul>
+  <aside class="notes">
+    Garder en tête les questions ratées par la majorité des stagiaires : revenir dessus en J2 ou en début de J3 avant la certification. Ne pas attribuer de note formelle, l'exercice est purement pédagogique.
+  </aside>
+  <div class="slide-footer"><span>QCM J1 — Débrief</span><span>Jour 1</span></div>
+</section>
+
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<!-- Reveal.js -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280,
+    height: 720,
+    margin: 0,
+    minScale: 0.2,
+    maxScale: 2.0,
+    hash: true,
+    history: true,
+    slideNumber: false,
+    showSlideNumber: 'all',
+    transition: 'slide',
+    transitionSpeed: 'default',
+    backgroundTransition: 'fade',
+    controls: true,
+    controlsLayout: 'bottom-right',
+    controlsTutorial: false,
+    progress: true,
+    center: false,
+    embedded: false,
+    help: true,
+    autoPlayMedia: null,
+    touch: true,
+    loop: false,
+  });
+</script>
+</body>
+</html>

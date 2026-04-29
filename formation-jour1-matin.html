@@ -1078,9 +1078,12 @@
       <ul>
         <li><strong>Limite 120 m AGL</strong> : hauteur maximale mesurée par rapport au <strong>point le plus proche de la surface de la terre</strong>, pas par rapport au point de décollage</li>
         <li><strong>Survol d'obstacle</strong> : si un obstacle dépasse 105 m, survol autorisé à +15 m au-dessus avec accord de l'exploitant</li>
-        <li><strong>Proximité aérodrome</strong> : la hauteur autorisée dépend du calcul de dénivelé par rapport à l'ARP (point de référence)</li>
-        <li><strong>Code couleur Géoportail</strong> : Interdit (rouge) / 30 m (orange) / 50 m (jaune) / 60 m (vert clair) / 120 m (vert)</li>
+        <li><strong>Proximité aérodrome</strong> : la hauteur autorisée dépend de l'altitude de la <strong>piste</strong> (point le plus haut), pas de votre point de décollage. L'<strong>ARP</strong> (Aerodrome Reference Point) est le point géographique officiel de l'aérodrome ; il sert à délimiter les zones de protection circulaires (cercles colorés sur la carte UAS)</li>
+        <li><strong>Code couleur cartes.gouv.fr</strong> : Interdit (rouge) / 30 m (orange foncé) / 50 m (orange clair) / 60 m (jaune) / 100 m (jaune clair) / au-dessus de 120 m → vol interdit</li>
       </ul>
+      <aside class="notes">
+        Insister sur la confusion fréquente : l'ARP n'est PAS le point de référence pour le calcul de hauteur. C'est l'altitude de la piste qui sert de référence. L'ARP sert uniquement à positionner les cercles de protection (les zones colorées de la carte UAS). Faire dessiner au tableau si nécessaire.
+      </aside>
     </div>
     <div class="col-visual">
       <!-- SVG: 120m point le plus proche concept with terrain -->
@@ -1140,28 +1143,28 @@
       <p style="font-size: 0.75em; margin-bottom: 8px;"><strong>Code couleur des zones :</strong></p>
       <table style="font-size: 0.68em; border-collapse: collapse; width: 100%;">
         <tr>
-          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#DC2626;border-radius:3px;vertical-align:middle;"></span></td>
+          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#E57373;border-radius:3px;vertical-align:middle;"></span></td>
           <td style="padding: 3px 8px;"><strong>Rouge</strong> — Vol interdit</td>
         </tr>
         <tr>
-          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#F97316;border-radius:3px;vertical-align:middle;"></span></td>
-          <td style="padding: 3px 8px;"><strong>Orange</strong> — 30 m max</td>
+          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#F4A261;border-radius:3px;vertical-align:middle;"></span></td>
+          <td style="padding: 3px 8px;"><strong>Orange foncé</strong> — 30 m max</td>
         </tr>
         <tr>
-          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#EAB308;border-radius:3px;vertical-align:middle;"></span></td>
-          <td style="padding: 3px 8px;"><strong>Jaune</strong> — 50 m max</td>
+          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#F8B788;border-radius:3px;vertical-align:middle;"></span></td>
+          <td style="padding: 3px 8px;"><strong>Orange clair</strong> — 50 m max</td>
         </tr>
         <tr>
-          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#84CC16;border-radius:3px;vertical-align:middle;"></span></td>
-          <td style="padding: 3px 8px;"><strong>Vert clair</strong> — 60 m max</td>
+          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#F9D77E;border-radius:3px;vertical-align:middle;"></span></td>
+          <td style="padding: 3px 8px;"><strong>Jaune</strong> — 60 m max</td>
         </tr>
         <tr>
-          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#22C55E;border-radius:3px;vertical-align:middle;"></span></td>
-          <td style="padding: 3px 8px;"><strong>Vert</strong> — 80 m max</td>
+          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#FCE588;border-radius:3px;vertical-align:middle;"></span></td>
+          <td style="padding: 3px 8px;"><strong>Jaune clair</strong> — 100 m max</td>
         </tr>
         <tr>
-          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#15803D;border-radius:3px;vertical-align:middle;"></span></td>
-          <td style="padding: 3px 8px;"><strong>Vert foncé</strong> — 100 m max</td>
+          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#FFFFFF;border:1px solid #CBD5E1;border-radius:3px;vertical-align:middle;"></span></td>
+          <td style="padding: 3px 8px;"><strong>Sans couleur</strong> — 120 m max (au-dessus interdit)</td>
         </tr>
       </table>
 

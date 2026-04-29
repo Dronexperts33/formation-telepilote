@@ -87,7 +87,7 @@
       </div>
       <div class="text">
         <h4>FPV — Lunettes vidéo</h4>
-        <p>Vol en immersion avec lunettes vidéo = considéré BVLOS, sauf si un observateur maintient le contact VLOS.</p>
+        <p>Vol en immersion avec lunettes vidéo. <strong>N'est pas considéré comme du vol hors vue (BVLOS)</strong> car un <strong>observateur est obligatoire</strong> et maintient en permanence le contact VLOS avec le drone. Le télépilote doit pouvoir reprendre le contrôle visuel à tout moment.</p>
       </div>
     </li>
     <li>
@@ -302,76 +302,7 @@
 
 
 <!-- ============================================================
-     SLIDE 8 — ANALYSE DES RISQUES BVLOS
-     ============================================================ -->
-<section class="slide-two-col">
-  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>Analyse des risques BVLOS</h2>
-
-  <div class="two-col">
-    <div class="col-text">
-      <ul>
-        <li><strong>GRC (risque sol)</strong> : densité de population, zone tampon, parachute</li>
-        <li><strong>ARC (risque air)</strong> : trafic aérien, altitude, espace contrôlé</li>
-        <li><strong>Obstacles</strong> : arbres, bâtiments, lignes électriques</li>
-        <li><strong>Météo</strong> : vent max, visibilité, plafond nuageux</li>
-      </ul>
-    </div>
-    <div class="col-visual">
-      <!-- SVG: Risk matrix GRC x ARC → SAIL -->
-      <svg viewBox="0 0 360 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:400px;">
-        <!-- Title -->
-        <text x="180" y="24" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Matrice de risque SORA</text>
-        <!-- Vertical axis label -->
-        <text x="16" y="170" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#EF4444" transform="rotate(-90, 16, 170)">GRC (Risque sol)</text>
-        <!-- Horizontal axis label -->
-        <text x="210" y="286" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#0E74DA">ARC (Risque air)</text>
-        <!-- GRC labels -->
-        <text x="48" y="82" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#475569">Élevé</text>
-        <text x="48" y="132" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#475569">Moyen</text>
-        <text x="48" y="182" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#475569">Faible</text>
-        <!-- ARC labels -->
-        <text x="110" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569">Faible</text>
-        <text x="210" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569">Moyen</text>
-        <text x="310" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569">Élevé</text>
-        <!-- Grid cells -->
-        <!-- Row 1 (GRC Élevé) -->
-        <rect x="60" y="48" width="100" height="50" rx="6" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-width="1.5"/>
-        <text x="110" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#D97706">SAIL IV</text>
-        <rect x="160" y="48" width="100" height="50" rx="6" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
-        <text x="210" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EF4444">SAIL V</text>
-        <rect x="260" y="48" width="100" height="50" rx="6" fill="rgba(239,68,68,0.2)" stroke="#EF4444" stroke-width="1.5"/>
-        <text x="310" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#DC2626">SAIL VI</text>
-        <!-- Row 2 (GRC Moyen) -->
-        <rect x="60" y="108" width="100" height="50" rx="6" fill="rgba(14,116,218,0.1)" stroke="#0E74DA" stroke-width="1.5"/>
-        <text x="110" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0E74DA">SAIL II</text>
-        <rect x="160" y="108" width="100" height="50" rx="6" fill="rgba(245,158,11,0.12)" stroke="#F59E0B" stroke-width="1.5"/>
-        <text x="210" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#D97706">SAIL IV</text>
-        <rect x="260" y="108" width="100" height="50" rx="6" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
-        <text x="310" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EF4444">SAIL V</text>
-        <!-- Row 3 (GRC Faible) -->
-        <rect x="60" y="168" width="100" height="50" rx="6" fill="rgba(16,185,129,0.12)" stroke="#10B981" stroke-width="1.5"/>
-        <text x="110" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#059669">SAIL I</text>
-        <rect x="160" y="168" width="100" height="50" rx="6" fill="rgba(14,116,218,0.1)" stroke="#0E74DA" stroke-width="1.5"/>
-        <text x="210" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0E74DA">SAIL II</text>
-        <rect x="260" y="168" width="100" height="50" rx="6" fill="rgba(245,158,11,0.12)" stroke="#F59E0B" stroke-width="1.5"/>
-        <text x="310" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#D97706">SAIL IV</text>
-        <!-- Center label -->
-        <rect x="130" y="225" width="160" height="28" rx="8" fill="rgba(14,116,218,0.08)" stroke="#0E74DA" stroke-width="1.5"/>
-        <text x="210" y="244" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#0E74DA">GRC &times; ARC &rarr; SAIL</text>
-      </svg>
-    </div>
-  </div>
-
-  <div class="slide-footer">
-    <span>BVLOS — Analyse des risques</span>
-    <span>Jour 2 Après-midi</span>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     SLIDE 9 — KIT C6 & RECLASS
+     SLIDE 8 — KIT C6 & RECLASS
      ============================================================ -->
 <section class="slide-two-col">
   <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
@@ -604,8 +535,11 @@
         <li><strong>Perte liaison RC</strong> &rarr; comportement failsafe activé</li>
         <li><strong>Batterie critique</strong> &rarr; atterrissage d'urgence</li>
         <li><strong>Intrusion de tiers</strong> &rarr; interruption immédiate de vol</li>
-        <li>Chaque stagiaire doit gérer <strong>au moins 2 pannes</strong></li>
+        <li><strong>Mise en situation</strong> &rarr; chaque type de panne déclenche une décision rapide du télépilote</li>
       </ul>
+      <aside class="notes">
+        Consigne instructeur : chaque stagiaire doit gérer au moins 2 pannes différentes pendant la session. Tirer au sort les pannes pour éviter qu'ils anticipent. Chronométrer la prise de décision (objectif : moins de 5 secondes pour activer le failsafe).
+      </aside>
     </div>
     <div class="col-visual">
       <!-- SVG: Drone with warning icons and procedures -->

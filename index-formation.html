@@ -101,6 +101,31 @@
     .j3a .card-top { background: var(--dx-text-dark); }
     .j3a .card-time { background: rgba(15,23,42,0.06); color: var(--dx-text-dark); }
 
+    /* QCM badge */
+    .qcm-section {
+      background: linear-gradient(135deg, rgba(14,116,218,0.06) 0%, rgba(16,185,129,0.06) 100%);
+      border: 1px solid var(--dx-border);
+      border-radius: 16px; padding: 24px 28px; margin: 20px 0 8px;
+    }
+    .qcm-title {
+      font-size: 14px; font-weight: 700; color: var(--dx-text-dark); margin-bottom: 6px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .qcm-subtitle { font-size: 12px; color: var(--dx-text-secondary); margin-bottom: 14px; }
+    .qcm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 640px) { .qcm-grid { grid-template-columns: 1fr; } }
+    .qcm-card {
+      background: white; border: 1px solid var(--dx-border); border-radius: 10px;
+      padding: 14px 18px; text-decoration: none; color: inherit;
+      transition: all 0.2s ease; display: flex; flex-direction: column; gap: 4px;
+    }
+    .qcm-card:hover { border-color: var(--dx-primary); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(14,116,218,0.08); }
+    .qcm-card .qcm-day { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+    .qcm-card.j1 .qcm-day { color: var(--dx-primary); }
+    .qcm-card.j2 .qcm-day { color: #059669; }
+    .qcm-card h3 { font-size: 13px; font-weight: 700; color: var(--dx-text-dark); }
+    .qcm-card span { font-size: 11px; color: var(--dx-text-muted); }
+
     /* ---- DOCS SECTION ---- */
     .docs-section {
       background: var(--dx-bg-light); border-radius: 16px; padding: 28px; margin-top: 8px; margin-bottom: 40px;
@@ -254,6 +279,27 @@
         </div>
       </div>
 
+    </div>
+
+    <!-- QCM DE VALIDATION -->
+    <div class="qcm-section">
+      <div class="qcm-title">
+        <svg viewBox="0 0 24 24" style="width:18px; height:18px; stroke: var(--dx-primary); fill: none; stroke-width: 2;"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        QCM de validation des acquis
+      </div>
+      <p class="qcm-subtitle">Modulables selon le temps disponible — à projeter en fin de J1 et J2 ou à reporter en début de J3.</p>
+      <div class="qcm-grid">
+        <a href="formation-qcm-j1.html" class="qcm-card j1">
+          <span class="qcm-day">QCM Jour 1</span>
+          <h3>Réglementation, catégories Open &amp; Spécifique</h3>
+          <span>17 questions · ~25 min</span>
+        </a>
+        <a href="formation-qcm-j2.html" class="qcm-card j2">
+          <span class="qcm-day">QCM Jour 2</span>
+          <h3>Cartographie, espaces aériens &amp; vol BVLOS</h3>
+          <span>17 questions · ~25 min</span>
+        </a>
+      </div>
     </div>
 
     <!-- DOCUMENTS -->
