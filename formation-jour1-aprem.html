@@ -34,152 +34,6 @@
 
 
 <!-- ============================================================
-     SLIDE 2 — LES DANGERS EN VOL (deux colonnes)
-     ============================================================ -->
-<section class="slide-two-col">
-  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>Les dangers en vol</h2>
-
-  <div class="two-col">
-    <div class="col-text" style="font-size: 0.82em;">
-      <h3 style="font-size:0.75em; margin-bottom:8px;">Types de pannes</h3>
-      <ul>
-        <li><strong>Mineures</strong> : perte du retour vidéo, perte du signal GPS (passage en mode ATTI)</li>
-        <li><strong>Majeures</strong> : perte de la liaison radio (RC), panne moteur, chute brutale de tension batterie</li>
-        <li><strong>Facteur humain</strong> : désorientation spatiale, erreur d'appréciation des distances, fatigue</li>
-      </ul>
-      <h3 style="font-size:0.75em; margin-top:14px; margin-bottom:8px;">Fly-Away</h3>
-      <ul>
-        <li><strong>Définition</strong> : perte de contrôle totale, le drone s'éloigne de manière autonome</li>
-        <li><strong>Causes</strong> : interférences magnétiques, perte simultanée boussole + GPS</li>
-        <li><strong>Prévention</strong> : paramétrage correct du RTH (Return To Home)</li>
-      </ul>
-    </div>
-    <div class="col-visual">
-      <!-- SVG drone avec indicateurs d'alerte -->
-      <svg viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:420px;">
-        <!-- Fond ciel -->
-        <rect x="0" y="0" width="400" height="340" rx="12" fill="#F0F7FF"/>
-        <!-- Drone body -->
-        <rect x="170" y="145" width="60" height="30" rx="8" fill="#0E74DA"/>
-        <!-- Bras -->
-        <line x1="175" y1="155" x2="120" y2="110" stroke="#475569" stroke-width="3"/>
-        <line x1="225" y1="155" x2="280" y2="110" stroke="#475569" stroke-width="3"/>
-        <line x1="175" y1="170" x2="120" y2="215" stroke="#475569" stroke-width="3"/>
-        <line x1="225" y1="170" x2="280" y2="215" stroke="#475569" stroke-width="3"/>
-        <!-- Hélices -->
-        <ellipse cx="120" cy="110" rx="30" ry="6" fill="rgba(14,116,218,0.2)" stroke="#0E74DA" stroke-width="1.5"/>
-        <ellipse cx="280" cy="110" rx="30" ry="6" fill="rgba(14,116,218,0.2)" stroke="#0E74DA" stroke-width="1.5"/>
-        <ellipse cx="120" cy="215" rx="30" ry="6" fill="rgba(14,116,218,0.2)" stroke="#0E74DA" stroke-width="1.5"/>
-        <ellipse cx="280" cy="215" rx="30" ry="6" fill="rgba(14,116,218,0.2)" stroke="#0E74DA" stroke-width="1.5"/>
-        <!-- Moteurs -->
-        <circle cx="120" cy="110" r="6" fill="#475569"/>
-        <circle cx="280" cy="110" r="6" fill="#475569"/>
-        <circle cx="120" cy="215" r="6" fill="#475569"/>
-        <circle cx="280" cy="215" r="6" fill="#475569"/>
-        <!-- Warning: perte vidéo (haut gauche) -->
-        <rect x="28" y="60" width="70" height="28" rx="6" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-width="1.5"/>
-        <text x="63" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#D97706">Perte vidéo</text>
-        <line x1="98" y1="74" x2="118" y2="105" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4 3"/>
-        <!-- Warning: perte GPS (haut droite) -->
-        <rect x="302" y="60" width="70" height="28" rx="6" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-width="1.5"/>
-        <text x="337" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#D97706">Perte GPS</text>
-        <line x1="302" y1="74" x2="282" y2="105" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4 3"/>
-        <!-- Danger: perte RC (bas gauche) -->
-        <rect x="18" y="245" width="80" height="28" rx="6" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
-        <text x="58" y="263" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#EF4444">Perte RC</text>
-        <line x1="98" y1="259" x2="118" y2="220" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4 3"/>
-        <!-- Danger: batterie (bas droite) -->
-        <rect x="302" y="245" width="80" height="28" rx="6" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
-        <text x="342" y="263" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#EF4444">Batterie !</text>
-        <line x1="302" y1="259" x2="282" y2="220" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4 3"/>
-        <!-- Fly-away arrow -->
-        <path d="M230 155 L350 30" stroke="#EF4444" stroke-width="2" stroke-dasharray="6 3"/>
-        <polygon points="350,30 340,38 346,42" fill="#EF4444"/>
-        <text x="330" y="22" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#EF4444">Fly-Away</text>
-      </svg>
-    </div>
-  </div>
-
-  <div class="slide-footer">
-    <span>Module 3 — Les dangers en vol</span>
-    <span>Jour 1 Après-midi</span>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     SLIDE 3 — LIGNES ÉLECTRIQUES / DMA (highlight-error)
-     ============================================================ -->
-<section class="slide-highlight">
-  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-
-  <div class="highlight-box highlight-error">
-    <div class="tag">Danger majeur</div>
-    <blockquote>Lignes électriques — Distance Minimale d'Approche (DMA)</blockquote>
-    <div style="display: flex; gap: 24px; margin-top: 16px; font-size: 0.72em; align-items: flex-start;">
-      <div style="flex: 1;">
-        <div style="line-height: 2.2;">
-          <p style="margin: 0;"><strong style="color: var(--dx-error);">DMA 3 m</strong> — Lignes &lt; 50 kV</p>
-          <p style="margin: 0;"><strong style="color: var(--dx-error);">DMA 5 m</strong> — Lignes &ge; 50 kV</p>
-          <p style="margin: 0;"><strong>Arc électrique</strong> — Peut se créer <strong>SANS contact direct</strong></p>
-        </div>
-      </div>
-      <div style="flex: 1;">
-        <!-- SVG lignes électriques avec zones DMA -->
-        <svg viewBox="0 0 340 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:340px;">
-          <!-- Sol -->
-          <rect x="0" y="185" width="340" height="30" rx="4" fill="#E2E8F0"/>
-          <!-- Pylône gauche -->
-          <line x1="60" y1="55" x2="60" y2="185" stroke="#475569" stroke-width="4"/>
-          <line x1="35" y1="65" x2="85" y2="65" stroke="#475569" stroke-width="3"/>
-          <line x1="40" y1="95" x2="80" y2="95" stroke="#475569" stroke-width="3"/>
-          <!-- Pylône droit -->
-          <line x1="280" y1="55" x2="280" y2="185" stroke="#475569" stroke-width="4"/>
-          <line x1="255" y1="65" x2="305" y2="65" stroke="#475569" stroke-width="3"/>
-          <line x1="260" y1="95" x2="300" y2="95" stroke="#475569" stroke-width="3"/>
-          <!-- Câble HT (haut) -->
-          <path d="M85 65 Q170 85 255 65" stroke="#0F172A" stroke-width="2.5" fill="none"/>
-          <!-- Câble BT (bas) -->
-          <path d="M80 95 Q170 115 260 95" stroke="#0F172A" stroke-width="2" fill="none"/>
-          <!-- Zone DMA 5m haute tension (rouge pointillés) -->
-          <path d="M85 55 Q170 75 255 55" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="5 3" fill="none"/>
-          <path d="M85 75 Q170 95 255 75" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="5 3" fill="none"/>
-          <!-- Label DMA 5m à droite -->
-          <text x="310" y="62" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#EF4444">5 m</text>
-          <text x="310" y="72" font-family="Inter, sans-serif" font-size="7" fill="#EF4444">≥ 50 kV</text>
-          <!-- Zone DMA 3m basse tension (orange pointillés) -->
-          <path d="M80 87 Q170 107 260 87" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5 3" fill="none"/>
-          <path d="M80 103 Q170 123 260 103" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5 3" fill="none"/>
-          <!-- Label DMA 3m à droite -->
-          <text x="310" y="96" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#D97706">3 m</text>
-          <text x="310" y="106" font-family="Inter, sans-serif" font-size="7" fill="#D97706">&lt; 50 kV</text>
-          <!-- Drone -->
-          <rect x="155" y="78" width="30" height="8" rx="4" fill="#0E74DA"/>
-          <line x1="155" y1="82" x2="145" y2="75" stroke="#0E74DA" stroke-width="1.5"/>
-          <line x1="185" y1="82" x2="195" y2="75" stroke="#0E74DA" stroke-width="1.5"/>
-          <!-- Arc électrique (zig-zag) -->
-          <path d="M170 86 L167 93 L174 96 L168 104" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <circle cx="168" cy="106" r="2.5" fill="#F59E0B"/>
-          <!-- Label arc -->
-          <rect x="100" y="130" width="140" height="28" rx="6" fill="rgba(239,68,68,0.08)" stroke="#EF4444" stroke-width="1"/>
-          <text x="170" y="147" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#EF4444">Arc électrique SANS contact</text>
-          <!-- HT label sur pylône -->
-          <text x="60" y="48" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#94A3B8" font-weight="500">HT</text>
-        </svg>
-      </div>
-    </div>
-    <p class="source">Normes RTE / Enedis — DLVR &amp; DLVS</p>
-  </div>
-
-  <div class="slide-footer">
-    <span>Module 3 — Lignes électriques</span>
-    <span>Jour 1 Après-midi</span>
-  </div>
-</section>
-
-
-<!-- ============================================================
      SLIDE 4 — MODULE 4 SÉPARATEUR
      ============================================================ -->
 <section class="slide-module">
@@ -1088,6 +942,152 @@
 
   <div class="slide-footer">
     <span>Matériel — Batteries</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 17b — LES DANGERS EN VOL (deux colonnes)
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Les dangers en vol</h2>
+
+  <div class="two-col">
+    <div class="col-text" style="font-size: 0.82em;">
+      <h3 style="font-size:0.75em; margin-bottom:8px;">Types de pannes</h3>
+      <ul>
+        <li><strong>Mineures</strong> : perte du retour vidéo, perte du signal GPS (passage en mode ATTI)</li>
+        <li><strong>Majeures</strong> : perte de la liaison radio (RC), panne moteur, chute brutale de tension batterie</li>
+        <li><strong>Facteur humain</strong> : désorientation spatiale, erreur d'appréciation des distances, fatigue</li>
+      </ul>
+      <h3 style="font-size:0.75em; margin-top:14px; margin-bottom:8px;">Fly-Away</h3>
+      <ul>
+        <li><strong>Définition</strong> : perte de contrôle totale, le drone s'éloigne de manière autonome</li>
+        <li><strong>Causes</strong> : interférences magnétiques, perte simultanée boussole + GPS</li>
+        <li><strong>Prévention</strong> : paramétrage correct du RTH (Return To Home)</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <!-- SVG drone avec indicateurs d'alerte -->
+      <svg viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:420px;">
+        <!-- Fond ciel -->
+        <rect x="0" y="0" width="400" height="340" rx="12" fill="#F0F7FF"/>
+        <!-- Drone body -->
+        <rect x="170" y="145" width="60" height="30" rx="8" fill="#0E74DA"/>
+        <!-- Bras -->
+        <line x1="175" y1="155" x2="120" y2="110" stroke="#475569" stroke-width="3"/>
+        <line x1="225" y1="155" x2="280" y2="110" stroke="#475569" stroke-width="3"/>
+        <line x1="175" y1="170" x2="120" y2="215" stroke="#475569" stroke-width="3"/>
+        <line x1="225" y1="170" x2="280" y2="215" stroke="#475569" stroke-width="3"/>
+        <!-- Hélices -->
+        <ellipse cx="120" cy="110" rx="30" ry="6" fill="rgba(14,116,218,0.2)" stroke="#0E74DA" stroke-width="1.5"/>
+        <ellipse cx="280" cy="110" rx="30" ry="6" fill="rgba(14,116,218,0.2)" stroke="#0E74DA" stroke-width="1.5"/>
+        <ellipse cx="120" cy="215" rx="30" ry="6" fill="rgba(14,116,218,0.2)" stroke="#0E74DA" stroke-width="1.5"/>
+        <ellipse cx="280" cy="215" rx="30" ry="6" fill="rgba(14,116,218,0.2)" stroke="#0E74DA" stroke-width="1.5"/>
+        <!-- Moteurs -->
+        <circle cx="120" cy="110" r="6" fill="#475569"/>
+        <circle cx="280" cy="110" r="6" fill="#475569"/>
+        <circle cx="120" cy="215" r="6" fill="#475569"/>
+        <circle cx="280" cy="215" r="6" fill="#475569"/>
+        <!-- Warning: perte vidéo (haut gauche) -->
+        <rect x="28" y="60" width="70" height="28" rx="6" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-width="1.5"/>
+        <text x="63" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#D97706">Perte vidéo</text>
+        <line x1="98" y1="74" x2="118" y2="105" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <!-- Warning: perte GPS (haut droite) -->
+        <rect x="302" y="60" width="70" height="28" rx="6" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-width="1.5"/>
+        <text x="337" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#D97706">Perte GPS</text>
+        <line x1="302" y1="74" x2="282" y2="105" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <!-- Danger: perte RC (bas gauche) -->
+        <rect x="18" y="245" width="80" height="28" rx="6" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
+        <text x="58" y="263" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#EF4444">Perte RC</text>
+        <line x1="98" y1="259" x2="118" y2="220" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <!-- Danger: batterie (bas droite) -->
+        <rect x="302" y="245" width="80" height="28" rx="6" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
+        <text x="342" y="263" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#EF4444">Batterie !</text>
+        <line x1="302" y1="259" x2="282" y2="220" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <!-- Fly-away arrow -->
+        <path d="M230 155 L350 30" stroke="#EF4444" stroke-width="2" stroke-dasharray="6 3"/>
+        <polygon points="350,30 340,38 346,42" fill="#EF4444"/>
+        <text x="330" y="22" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#EF4444">Fly-Away</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Matériel — Les dangers en vol</span>
+    <span>Jour 1 Après-midi</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 17c — LIGNES ÉLECTRIQUES / DMA (highlight-error)
+     ============================================================ -->
+<section class="slide-highlight">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+
+  <div class="highlight-box highlight-error">
+    <div class="tag">Danger majeur</div>
+    <blockquote>Lignes électriques — Distance Minimale d'Approche (DMA)</blockquote>
+    <div style="display: flex; gap: 24px; margin-top: 16px; font-size: 0.72em; align-items: flex-start;">
+      <div style="flex: 1;">
+        <div style="line-height: 2.2;">
+          <p style="margin: 0;"><strong style="color: var(--dx-error);">DMA 3 m</strong> — Lignes &lt; 50 kV</p>
+          <p style="margin: 0;"><strong style="color: var(--dx-error);">DMA 5 m</strong> — Lignes &ge; 50 kV</p>
+          <p style="margin: 0;"><strong>Arc électrique</strong> — Peut se créer <strong>SANS contact direct</strong></p>
+        </div>
+      </div>
+      <div style="flex: 1;">
+        <!-- SVG lignes électriques avec zones DMA -->
+        <svg viewBox="0 0 340 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:340px;">
+          <!-- Sol -->
+          <rect x="0" y="185" width="340" height="30" rx="4" fill="#E2E8F0"/>
+          <!-- Pylône gauche -->
+          <line x1="60" y1="55" x2="60" y2="185" stroke="#475569" stroke-width="4"/>
+          <line x1="35" y1="65" x2="85" y2="65" stroke="#475569" stroke-width="3"/>
+          <line x1="40" y1="95" x2="80" y2="95" stroke="#475569" stroke-width="3"/>
+          <!-- Pylône droit -->
+          <line x1="280" y1="55" x2="280" y2="185" stroke="#475569" stroke-width="4"/>
+          <line x1="255" y1="65" x2="305" y2="65" stroke="#475569" stroke-width="3"/>
+          <line x1="260" y1="95" x2="300" y2="95" stroke="#475569" stroke-width="3"/>
+          <!-- Câble HT (haut) -->
+          <path d="M85 65 Q170 85 255 65" stroke="#0F172A" stroke-width="2.5" fill="none"/>
+          <!-- Câble BT (bas) -->
+          <path d="M80 95 Q170 115 260 95" stroke="#0F172A" stroke-width="2" fill="none"/>
+          <!-- Zone DMA 5m haute tension (rouge pointillés) -->
+          <path d="M85 55 Q170 75 255 55" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="5 3" fill="none"/>
+          <path d="M85 75 Q170 95 255 75" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="5 3" fill="none"/>
+          <!-- Label DMA 5m à droite -->
+          <text x="310" y="62" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#EF4444">5 m</text>
+          <text x="310" y="72" font-family="Inter, sans-serif" font-size="7" fill="#EF4444">≥ 50 kV</text>
+          <!-- Zone DMA 3m basse tension (orange pointillés) -->
+          <path d="M80 87 Q170 107 260 87" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5 3" fill="none"/>
+          <path d="M80 103 Q170 123 260 103" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5 3" fill="none"/>
+          <!-- Label DMA 3m à droite -->
+          <text x="310" y="96" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#D97706">3 m</text>
+          <text x="310" y="106" font-family="Inter, sans-serif" font-size="7" fill="#D97706">&lt; 50 kV</text>
+          <!-- Drone -->
+          <rect x="155" y="78" width="30" height="8" rx="4" fill="#0E74DA"/>
+          <line x1="155" y1="82" x2="145" y2="75" stroke="#0E74DA" stroke-width="1.5"/>
+          <line x1="185" y1="82" x2="195" y2="75" stroke="#0E74DA" stroke-width="1.5"/>
+          <!-- Arc électrique (zig-zag) -->
+          <path d="M170 86 L167 93 L174 96 L168 104" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="168" cy="106" r="2.5" fill="#F59E0B"/>
+          <!-- Label arc -->
+          <rect x="100" y="130" width="140" height="28" rx="6" fill="rgba(239,68,68,0.08)" stroke="#EF4444" stroke-width="1"/>
+          <text x="170" y="147" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#EF4444">Arc électrique SANS contact</text>
+          <!-- HT label sur pylône -->
+          <text x="60" y="48" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#94A3B8" font-weight="500">HT</text>
+        </svg>
+      </div>
+    </div>
+    <p class="source">Normes RTE / Enedis — DLVR &amp; DLVS</p>
+  </div>
+
+  <div class="slide-footer">
+    <span>Matériel — Lignes électriques</span>
     <span>Jour 1 Après-midi</span>
   </div>
 </section>
