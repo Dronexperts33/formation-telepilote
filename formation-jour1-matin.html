@@ -753,33 +753,66 @@
 
 
 <!-- ============================================================
-     SLIDE 21 — VOL EN AGGLOMÉRATION & RÈGLE DU 1:1
+     SLIDE 21a — VOL EN AGGLOMÉRATION : DÉFINITIONS DSAC
+     ============================================================ -->
+<section class="slide-content">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Vol en agglomération — Définitions DSAC</h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; font-size: 0.78em;">
+    <div class="info-card" style="border-left: 4px solid var(--dx-text-dark); padding: 12px 16px;">
+      <p style="margin: 0 0 6px; font-weight: 700; color: var(--dx-text-dark); font-size: 1em;">Agglomération</p>
+      <p style="margin: 0 0 6px; font-size: 0.78em; color: var(--dx-text-secondary); font-style: italic;">Article R. 110-2 du Code de la route</p>
+      <p style="margin: 0; font-size: 0.92em;">« Espace sur lequel sont groupés des immeubles bâtis rapprochés et dont l'<strong>entrée et la sortie sont signalées par des panneaux</strong> placés le long de la route qui le traverse ou qui le borde. »</p>
+      <p style="margin: 8px 0 0; font-size: 0.82em; color: var(--dx-text-secondary);">→ Panneaux <strong>EB10</strong> (entrée) / <strong>EB20</strong> (sortie).</p>
+    </div>
+    <div class="info-card" style="border-left: 4px solid var(--dx-primary); padding: 12px 16px;">
+      <p style="margin: 0 0 6px; font-weight: 700; color: var(--dx-primary); font-size: 1em;">Zone peuplée (réglementation drone)</p>
+      <p style="margin: 0 0 6px; font-size: 0.78em; color: var(--dx-text-secondary); font-style: italic;">Définition DSAC — réglementation aéronautique</p>
+      <p style="margin: 0 0 6px; font-size: 0.92em;">Un aéronef évolue en zone peuplée lorsqu'il vole :</p>
+      <ul style="margin: 0; padding-left: 18px; font-size: 0.92em;">
+        <li>Au sein ou à moins de <strong>50 m horizontal</strong> d'une <strong>agglomération figurant sur les cartes aéronautiques</strong></li>
+        <li>À moins de <strong>150 m</strong> d'un <strong>rassemblement de personnes</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-card" style="margin-top: 14px; padding: 10px 16px; font-size: 0.7em; background: rgba(239,68,68,0.06); border-left: 4px solid #EF4444;">
+    <strong style="color: #DC2626;">⚠️ Articulation des deux notions.</strong> La « zone peuplée » drone <strong>s'appuie sur les agglomérations portées sur les cartes aéronautiques</strong> (zones jaunes OACI), elles-mêmes calquées sur les agglomérations Code de la route. <strong>Mais la carte aéronautique fait foi</strong> : le télépilote doit la consulter (SIA / cartes.gouv.fr), pas seulement se fier aux panneaux EB10/EB20 sur le terrain. Buffer de 50 m à appliquer en plus.
+  </div>
+
+  <aside class="notes">
+    Bien faire la chronologie : 1) le Code de la route définit l'agglomération via les panneaux ; 2) ces agglomérations sont reportées sur les cartes aéronautiques par le SIA en tant que zones jaunes OACI ; 3) la réglementation drone ajoute un buffer de 50 m horizontal autour de ces zones jaunes pour définir la « zone peuplée ». Insister : ne JAMAIS juger une zone peuplée avec ses yeux ou les panneaux routiers — toujours ouvrir la carte aéronautique.
+  </aside>
+
+  <div class="slide-footer">
+    <span>Module 3 — Définitions agglo / zone peuplée</span>
+    <span>Jour 1 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 21b — VOL EN AGGLOMÉRATION : RÈGLES & RÈGLE DU 1:1
      ============================================================ -->
 <section class="slide-two-col">
   <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>Vol en agglomération &amp; Règle du 1:1</h2>
+  <h2>Vol en agglomération — Règles &amp; règle du 1:1</h2>
 
   <div class="two-col">
-    <div class="col-text" style="font-size: 0.72em;">
-      <div class="info-card" style="margin-bottom: 8px; padding: 6px 10px; border-left: 3px solid var(--dx-warning); background: rgba(245,158,11,0.06);">
-        <p style="margin: 0; font-size: 0.85em;"><strong style="color: #D97706;">Mise à jour 01/01/2026</strong> — Arrêté du 23/12/2025 modifiant l'arrêté « espace » du 03/12/2020</p>
+    <div class="col-text" style="font-size: 0.82em;">
+      <div class="info-card" style="margin-bottom: 10px; padding: 6px 12px; border-left: 3px solid var(--dx-warning); background: rgba(245,158,11,0.06);">
+        <p style="margin: 0; font-size: 0.78em;"><strong style="color: #D97706;">Mise à jour 01/01/2026</strong> — Arrêté du 23/12/2025 modifiant l'arrêté « espace » du 03/12/2020</p>
       </div>
 
-      <h3 style="font-size: 0.85em; margin-bottom: 4px;">Définition « Zone peuplée »</h3>
-      <p style="font-size: 0.85em; margin-bottom: 6px;">Agglomération <strong>OACI</strong> (zone jaune carte aéro) + buffer <strong>50 m</strong>, ou à moins de <strong>150 m</strong> d'un rassemblement.</p>
-
-      <div class="info-card" style="margin-bottom: 8px; padding: 6px 10px; font-size: 0.78em; background: rgba(239,68,68,0.06); border-left: 3px solid #EF4444;">
-        <strong style="color: #DC2626;">⚠️ ≠ Agglomération Code de la route.</strong> Les panneaux <strong>EB10 / EB20</strong> ne définissent <strong>pas</strong> la zone peuplée aérienne. Seule fait foi la <strong>zone jaune OACI</strong> publiée par le SIA.
-      </div>
-
-      <ul style="font-size: 0.92em;">
-        <li><strong>Terrain privé</strong> : OK avec accord du propriétaire, aucune déclaration</li>
-        <li><strong>Espace public, zone peuplée</strong> : exploitants déclarés, déclaration <strong>J-10</strong> Préfecture (Cerfa)</li>
-        <li><strong>Espace public, hors zone peuplée</strong> : OK, aucune déclaration</li>
-        <li><strong>Règle 1:1</strong> : distance horizontale aux tiers ≥ hauteur de vol</li>
+      <ul>
+        <li><strong>Terrain privé</strong> : autorisé avec accord du propriétaire, aucune déclaration</li>
+        <li><strong>Espace public en zone peuplée</strong> : autorisé pour les <strong>exploitants déclarés</strong>, déclaration <strong>J-10</strong> à la Préfecture (formulaire Cerfa)</li>
+        <li><strong>Espace public hors zone peuplée</strong> : autorisé, aucune déclaration</li>
+        <li><strong>Règle du 1:1</strong> : la distance horizontale aux tiers doit être au moins égale à la hauteur de vol</li>
       </ul>
       <aside class="notes">
-        Confusion fréquente : « je suis sorti du panneau d'agglomération, je peux voler en zone peuplée librement ». FAUX. Code de la route et réglementation aérienne sont deux mondes distincts. Toujours vérifier la zone jaune OACI sur le SIA ou cartes.gouv.fr. Exemple concret : sortie d'un village en pleine campagne — la zone jaune OACI peut continuer plusieurs centaines de mètres au-delà du panneau routier. Un hameau peut être hors agglomération routière mais en zone peuplée aérienne, et inversement.
+        Bien insister sur la règle 1:1 — souvent oubliée. Si je vole à 50 m de hauteur, je dois être à au moins 50 m horizontalement de tout tiers non impliqué. Donner un exemple chiffré au tableau. Pour la déclaration J-10, expliquer le formulaire Cerfa 15476 (Préfecture du lieu de vol).
       </aside>
     </div>
     <div class="col-visual">
