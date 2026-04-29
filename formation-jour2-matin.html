@@ -120,18 +120,30 @@
   <h2>CTR — Zone de contrôle d'aérodrome</h2>
 
   <div class="two-col">
-    <div class="col-text">
+    <div class="col-text" style="font-size: 0.82em;">
       <ul>
         <li><strong>Protège les arrivées et départs</strong> : espace critique autour des aérodromes contrôlés</li>
-        <li><strong>Plancher à la surface (SFC)</strong> : la zone commence au sol, tout vol est concerné</li>
-        <li><strong>Vol très réglementé</strong> : accord obligatoire de la tour de contrôle (TWR)</li>
-        <li><strong>Impact drone</strong> : restrictions fortes, voire interdiction totale selon l'activité</li>
+        <li><strong>Plancher à la surface (SFC)</strong> : la zone commence au sol</li>
+        <li><strong>Hors CTR</strong> : les règles de distance aux pistes (carte UAS) <strong>ne s'appliquent plus</strong></li>
       </ul>
+
+      <div class="info-card" style="margin-top: 10px; padding: 8px 12px; font-size: 0.82em; background: rgba(14,116,218,0.06); border-left: 3px solid var(--dx-primary);">
+        <p style="margin: 0 0 4px; font-weight: 700; color: var(--dx-primary);">Dans une CTR — Accord préalable :</p>
+        <ul style="margin: 0; padding-left: 18px;">
+          <li><strong>CTR civile</strong> (organisme civil) : accord requis pour tout vol <strong>&gt; 50 m</strong> par rapport à la surface de décollage <strong>ou</strong> tout vol <strong>hors vue</strong></li>
+          <li><strong>CTR militaire</strong> (ministère des Armées) : accord requis pour <strong>tout vol</strong>, sans seuil</li>
+        </ul>
+        <p style="margin: 6px 0 0; font-size: 0.85em; font-style: italic; color: var(--dx-text-secondary);">Dans ces cas, l'accord peut être conditionné à un protocole.</p>
+      </div>
     </div>
     <div class="col-visual">
       <img src="assets/img/screenshots/CTR Bergerac.png" alt="CTR Bergerac sur carte OACI" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
     </div>
   </div>
+
+  <aside class="notes">
+    Distinction clé pour les vols proches d'aérodromes : civil vs militaire. En CTR civile, on retient le seuil 50 m / hors vue (logique cohérente avec la règle générale d'autorisation cat. Ouverte). En CTR militaire, c'est plus strict : accord pour tout vol. Identifier la nature de la CTR sur la carte OACI (ex : Bergerac = civile, Cazaux = militaire). L'accord prend la forme d'un protocole entre l'exploitant et l'organisme contrôleur (durée généralement 1 an, à renouveler).
+  </aside>
 
   <div class="slide-footer">
     <span>Module 6 — CTR</span>
