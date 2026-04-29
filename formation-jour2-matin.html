@@ -689,7 +689,7 @@
   <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
   <div class="module-number">Travaux Pratiques</div>
   <h2>TP — Préparation de mission</h2>
-  <p class="module-desc">Mettre en pratique les connaissances acquises sur les espaces aériens et les outils de préparation de vol.</p>
+  <p class="module-desc">Mettre en pratique les connaissances acquises sur les espaces aériens et les outils de préparation de vol — TP photogrammétrie carrière de Creysse (consigne / exercice / correction).</p>
   <!-- Clipboard icon -->
   <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
@@ -807,11 +807,11 @@
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; font-size: 0.72em;">
     <div class="info-card" style="border-left: 4px solid var(--dx-primary); padding: 10px 14px;">
       <p style="margin: 0 0 4px; font-weight: 700; color: var(--dx-primary);">1. Scénario retenu</p>
-      <p style="margin: 0; font-size: 0.92em;"><strong>A3</strong> (zone non peuplée, carrière) ou <strong>STS-01</strong> si proximité d'habitations. Carrière de Creysse = zone industrielle isolée → A3 suffit.</p>
+      <p style="margin: 0; font-size: 0.92em;"><strong>A2 ou A1</strong> selon le drone utilisé. Carrière isolée + drone léger : pas besoin de basculer en cat. Spécifique.</p>
     </div>
     <div class="info-card" style="border-left: 4px solid #10B981; padding: 10px 14px;">
       <p style="margin: 0 0 4px; font-weight: 700; color: #10B981;">2. Matériel</p>
-      <p style="margin: 0; font-size: 0.92em;">Drone <strong>classe C2</strong> avec capteur RGB 20 Mpx (ex: Mavic 3 Enterprise, Phantom 4 RTK). Recouvrement 80% frontal / 70% latéral.</p>
+      <p style="margin: 0; font-size: 0.92em;">Drone léger <strong>classe C0/C1</strong> (ex : DJI Mini 5 Pro) ou <strong>C2</strong> (Mavic 3) avec capteur RGB. Recouvrement 80% frontal / 70% latéral.</p>
     </div>
     <div class="info-card" style="border-left: 4px solid #F59E0B; padding: 10px 14px;">
       <p style="margin: 0 0 4px; font-weight: 700; color: #D97706;">3. Analyse zone</p>
@@ -819,11 +819,11 @@
     </div>
     <div class="info-card" style="border-left: 4px solid var(--dx-text-dark); padding: 10px 14px;">
       <p style="margin: 0 0 4px; font-weight: 700; color: var(--dx-text-dark);">4. Plan de vol</p>
-      <p style="margin: 0; font-size: 0.92em;">Décollage en bordure carrière, grille en damier, altitude <strong>50 m AGL</strong>, vitesse 5 m/s. Durée estimée : 2 batteries (35 min).</p>
+      <p style="margin: 0; font-size: 0.92em;">Décollage en bordure carrière, grille en damier, hauteur <strong>50 m AGL</strong>, vitesse <strong>3 m/s</strong>. Durée estimée : <strong>1 batterie (10 min)</strong>.</p>
     </div>
     <div class="info-card" style="border-left: 4px solid #EF4444; padding: 10px 14px;">
       <p style="margin: 0 0 4px; font-weight: 700; color: #EF4444;">⚠️ Erreurs fréquentes</p>
-      <p style="margin: 0; font-size: 0.92em;">Oubli de la hauteur réelle (zone colorée), confusion AGL/AMSL, plan de vol non sauvegardé, batteries insuffisantes.</p>
+      <p style="margin: 0; font-size: 0.92em;">Oubli de la hauteur réelle (zone colorée), confusion AGL/AMSL, plan de vol non sauvegardé, batterie insuffisante.</p>
     </div>
     <div class="info-card" style="border-left: 4px solid #10B981; padding: 10px 14px;">
       <p style="margin: 0 0 4px; font-weight: 700; color: #10B981;">✅ Livrables</p>
@@ -832,7 +832,7 @@
   </div>
 
   <aside class="notes">
-    Faire venir un stagiaire au tableau pour qu'il présente sa réponse. Comparer les choix de scénario (A3 vs STS-01) — discuter selon les conditions réelles. Insister sur le calcul de hauteur réel en proximité aérodrome (Bergerac n'est pas loin). Si le stagiaire a oublié les NOTAM, c'est un point bloquant à débattre.
+    Faire venir un stagiaire au tableau pour qu'il présente sa réponse. Discuter le choix de sous-catégorie (A1 vs A2) selon le drone disponible et la proximité d'éventuels tiers. Insister sur le calcul de hauteur réel en proximité aérodrome (Bergerac n'est pas loin). Si le stagiaire a oublié les NOTAM, c'est un point bloquant à débattre.
   </aside>
 
   <div class="slide-footer">
@@ -842,100 +842,6 @@
 </section>
 
 
-<!-- ============================================================
-     SLIDE 20 — TP2 : Inspection stade Valence (autonomie)
-     ============================================================ -->
-<section class="slide-two-col">
-  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>TP2 : Mission en autonomie — Stade de Valence</h2>
-
-  <div class="two-col">
-    <div class="col-text" style="font-size: 0.78em;">
-      <div class="info-card" style="margin-bottom: 10px; padding: 8px 12px;">
-        <p style="margin: 0; font-size: 0.85em;">
-          <strong>📍 Lieu</strong> : Stade Evelyne Jean Baylet, 82400 Valence d'Agen<br>
-          <strong>📐 Coordonnées</strong> : 44.095376, 0.890803<br>
-          <strong>🎯 Mission</strong> : Filmer un match de football sur le stade
-        </p>
-      </div>
-      <h3 style="font-size: 0.8em; margin-bottom: 4px;">Travail individuel (30 min) :</h3>
-      <ol style="font-size: 0.88em; padding-left: 1.2em; margin: 0;">
-        <li>Déterminer le <strong>scénario</strong> (A1/A2/A3/STS-01/STS-02)</li>
-        <li>Choisir le <strong>matériel</strong> (drone, classe, capteur)</li>
-        <li>Analyser la <strong>zone</strong> (OACI, NOTAM, Cartes.gouv.fr)</li>
-        <li>Définir <strong>point de décollage</strong> et contraintes</li>
-        <li>Préparer le <strong>plan de vol</strong> (trajectoire, altitude)</li>
-        <li><strong>Présentation orale</strong> du dossier au groupe</li>
-      </ol>
-    </div>
-    <div class="col-visual">
-      <img src="assets/img/photos/tp2.jpg" alt="Stade Evelyne Jean Baylet — Valence d'Agen" style="max-width: 100%; max-height: 350px; object-fit: cover; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
-      <p style="text-align: center; font-size: 0.45em; color: var(--dx-text-muted); margin-top: 6px;">44.0954°N, 0.8908°E — Valence d'Agen (82)</p>
-    </div>
-  </div>
-
-  <div class="slide-footer">
-    <span>TP — Mission autonomie Valence</span>
-    <span>Jour 2 Matin</span>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     SLIDE 21 — TP2 Correction collective
-     ============================================================ -->
-<section class="slide-content">
-  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>TP2 Correction collective</h2>
-
-  <ul class="icon-list">
-    <li>
-      <div class="icon">
-        <!-- users icon -->
-        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      </div>
-      <div class="text">
-        <h4>Tour de table des résultats</h4>
-        <p>Chaque stagiaire présente son dossier de préparation de mission.</p>
-      </div>
-    </li>
-    <li>
-      <div class="icon">
-        <!-- alert-triangle icon -->
-        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      </div>
-      <div class="text">
-        <h4>Erreurs courantes à identifier</h4>
-        <p>Oubli de NOTAM, mauvaise lecture de carte, confusion hauteur/altitude, zone non vérifiée.</p>
-      </div>
-    </li>
-    <li>
-      <div class="icon">
-        <!-- check-circle icon -->
-        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      </div>
-      <div class="text">
-        <h4>Bonnes pratiques de préparation</h4>
-        <p>Méthodologie rigoureuse, double vérification, documentation complète du vol.</p>
-      </div>
-    </li>
-    <li>
-      <div class="icon">
-        <!-- award icon -->
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-      </div>
-      <div class="text">
-        <h4>Validation par l'instructeur</h4>
-        <p>Retour personnalisé et validation des compétences de préparation de mission.</p>
-      </div>
-    </li>
-  </ul>
-
-  <div class="slide-footer">
-    <span>TP — Correction collective</span>
-    <span>Jour 2 Matin</span>
-  </div>
-</section>
 
 
 </div><!-- .slides -->
