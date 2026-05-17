@@ -472,10 +472,14 @@
 <section class="slide-module">
   <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
   <div class="module-number">Module 3</div>
-  <h2>Réglementation Open</h2>
+  <h2>Réglementation Open &amp; Spécifique</h2>
   <p class="module-desc">Les règles européennes et françaises encadrant l'exploitation des drones civils.<br>
     <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_categorie_Ouverte.pdf" target="_blank" style="color: var(--dx-primary); font-size: 0.85em; font-weight: 500; margin-top: 8px; display: inline-block;">
       📄 Guide DSAC — Catégorie Ouverte (PDF)
+    </a>
+    &nbsp;·&nbsp;
+    <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_categorie_Specifique.pdf" target="_blank" style="color: var(--dx-primary); font-size: 0.85em; font-weight: 500; display: inline-block;">
+      📄 Guide DSAC — Catégorie Spécifique (PDF)
     </a>
   </p>
   <!-- Book-open icon -->
@@ -483,7 +487,7 @@
     <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
   </svg>
   <div class="slide-footer">
-    <span>Module 3 — Réglementation Open</span>
+    <span>Module 3 — Réglementation Open &amp; Spécifique</span>
     <span>Jour 1 Matin</span>
   </div>
 </section>
@@ -497,58 +501,72 @@
   <h2>Le cadre réglementaire</h2>
 
   <div class="two-col">
-    <div class="col-text">
-      <h3 style="font-size:0.8em; margin-bottom:8px;">EASA — Niveau européen</h3>
+    <div class="col-text" style="font-size: 0.85em;">
+      <h3 style="font-size:0.8em; margin-bottom:6px;">EASA — Niveau européen</h3>
       <ul>
         <li>Règlement (UE) 2019/947 sur l'exploitation des drones</li>
-        <li>Harmonisation entre les États membres</li>
-        <li>Marquage CE et classes C0 à C6</li>
+        <li>Harmonisation entre les États membres · classes C0 à C6</li>
       </ul>
-      <h3 style="font-size:0.8em; margin-top:16px; margin-bottom:8px;">DGAC — Niveau français</h3>
+      <h3 style="font-size:0.8em; margin-top:10px; margin-bottom:6px;">DGAC — Niveau français (stratégie &amp; réglementation)</h3>
       <ul>
         <li>Application nationale du règlement européen</li>
-        <li>Gestion des zones et restrictions de vol</li>
-        <li>Portail AlphaTango (déclarations et enregistrement)</li>
-        <li><strong>Arrêté « espace »</strong> du 3/12/2020, modifié le 23/12/2025 (01/01/2026)</li>
+        <li><strong>Arrêté « espace »</strong> du 3/12/2020, modifié le 23/12/2025</li>
       </ul>
-      <p style="margin-top: 4px; font-size: 0.48em;">
+      <h3 style="font-size:0.8em; margin-top:10px; margin-bottom:6px;">DSAC — Niveau opérationnel (autorité de surveillance)</h3>
+      <ul>
+        <li>Direction de la Sécurité de l'Aviation Civile — bras opérationnel de la DGAC</li>
+        <li>Délivre autorisations, agréments exploitants, dérogations</li>
+        <li>Publie les <strong>guides DSAC</strong> Open / Spécifique</li>
+        <li>Portail <strong>AlphaTango</strong> (enregistrement drones &amp; télépilotes)</li>
+      </ul>
+      <p style="margin-top: 4px; font-size: 0.5em;">
         📄 <a href="https://dvmfnwwovrzxlhmgdaey.supabase.co/storage/v1/object/public/public-resources/f368693d-d4a0-46c6-8592-0fe7c05ce7aa/D0593E_2024_07_10_06_26_37_EAR_for_Unmanned_Aircraft_Systems__2__1770715831164.pdf" target="_blank" style="color: var(--dx-primary); text-decoration: none;">UE 2019/947</a> · 📄 <a href="https://dvmfnwwovrzxlhmgdaey.supabase.co/storage/v1/object/public/public-resources/f368693d-d4a0-46c6-8592-0fe7c05ce7aa/joe_20251226_0302_0128_1769003314171.pdf" target="_blank" style="color: var(--dx-primary); text-decoration: none;">Arrêté espace 23/12/2025</a>
       </p>
     </div>
     <div class="col-visual">
-      <!-- SVG schema EASA → DGAC -->
-      <svg viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:400px;">
+      <!-- SVG schema EASA → DGAC → DSAC -->
+      <svg viewBox="0 0 400 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:400px;">
         <defs>
           <marker id="arrowD15" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
             <path d="M0,0 L8,4 L0,8 Z" fill="#0E74DA"/>
           </marker>
         </defs>
         <!-- EASA Box -->
-        <rect x="40" y="30" width="320" height="110" rx="12" fill="rgba(14,116,218,0.08)" stroke="#0E74DA" stroke-width="2"/>
+        <rect x="40" y="20" width="320" height="100" rx="12" fill="rgba(14,116,218,0.08)" stroke="#0E74DA" stroke-width="2"/>
         <!-- EU flag — 12 stars on blue -->
-        <rect x="68" y="38" width="44" height="30" rx="4" fill="#003399"/>
-        <g transform="translate(90,53)" fill="#FFCC00">
+        <rect x="68" y="32" width="44" height="30" rx="4" fill="#003399"/>
+        <g transform="translate(90,47)" fill="#FFCC00">
           <circle cx="0" cy="-11" r="1.8"/><circle cx="5.5" cy="-9.5" r="1.8"/><circle cx="9.5" cy="-5.5" r="1.8"/>
           <circle cx="11" cy="0" r="1.8"/><circle cx="9.5" cy="5.5" r="1.8"/><circle cx="5.5" cy="9.5" r="1.8"/>
           <circle cx="0" cy="11" r="1.8"/><circle cx="-5.5" cy="9.5" r="1.8"/><circle cx="-9.5" cy="5.5" r="1.8"/>
           <circle cx="-11" cy="0" r="1.8"/><circle cx="-9.5" cy="-5.5" r="1.8"/><circle cx="-5.5" cy="-9.5" r="1.8"/>
         </g>
-        <text x="180" y="56" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#0E74DA">EASA</text>
-        <text x="180" y="88" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">Règlement (UE) 2019/947</text>
-        <text x="180" y="106" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">Classes C0 — C6</text>
-        <!-- Arrow -->
-        <line x1="200" y1="140" x2="200" y2="200" stroke="#0E74DA" stroke-width="2.5" marker-end="url(#arrowD15)"/>
-        <text x="220" y="178" font-family="Inter, sans-serif" font-size="10" fill="#94A3B8" font-weight="500">Transposition</text>
+        <text x="180" y="48" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#0E74DA">EASA</text>
+        <text x="180" y="78" font-family="Inter, sans-serif" font-size="10" fill="#475569">Règlement (UE) 2019/947</text>
+        <text x="180" y="94" font-family="Inter, sans-serif" font-size="10" fill="#475569">Classes C0 — C6</text>
+        <!-- Arrow EASA → DGAC -->
+        <line x1="200" y1="122" x2="200" y2="158" stroke="#0E74DA" stroke-width="2.5" marker-end="url(#arrowD15)"/>
+        <text x="218" y="146" font-family="Inter, sans-serif" font-size="9.5" fill="#94A3B8" font-weight="500">Transposition</text>
         <!-- DGAC Box -->
-        <rect x="40" y="210" width="320" height="120" rx="12" fill="rgba(30,58,138,0.08)" stroke="#1E3A8A" stroke-width="2"/>
-        <!-- FR flag simplified -->
-        <rect x="82" y="232" width="12" height="30" rx="2" fill="#002395"/>
-        <rect x="94" y="232" width="12" height="30" rx="0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.5"/>
-        <rect x="106" y="232" width="12" height="30" rx="2" fill="#ED2939"/>
-        <text x="180" y="245" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#1E3A8A">DGAC</text>
-        <text x="180" y="268" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">Application en France</text>
-        <text x="180" y="286" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">Portail AlphaTango</text>
-        <text x="180" y="304" font-family="Inter, sans-serif" font-size="10.5" fill="#475569">Arrêté « espace » 2025</text>
+        <rect x="40" y="165" width="320" height="105" rx="12" fill="rgba(30,58,138,0.08)" stroke="#1E3A8A" stroke-width="2"/>
+        <!-- FR flag -->
+        <rect x="82" y="180" width="12" height="30" rx="2" fill="#002395"/>
+        <rect x="94" y="180" width="12" height="30" rx="0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.5"/>
+        <rect x="106" y="180" width="12" height="30" rx="2" fill="#ED2939"/>
+        <text x="180" y="192" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#1E3A8A">DGAC</text>
+        <text x="180" y="218" font-family="Inter, sans-serif" font-size="10" fill="#475569">Stratégie &amp; réglementation</text>
+        <text x="180" y="234" font-family="Inter, sans-serif" font-size="10" fill="#475569">Arrêté « espace » 2025</text>
+        <text x="180" y="250" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8" font-style="italic">Ministère de la Transition écologique</text>
+        <!-- Arrow DGAC → DSAC -->
+        <line x1="200" y1="272" x2="200" y2="308" stroke="#0E74DA" stroke-width="2.5" marker-end="url(#arrowD15)"/>
+        <text x="218" y="296" font-family="Inter, sans-serif" font-size="9.5" fill="#94A3B8" font-weight="500">Mise en œuvre</text>
+        <!-- DSAC Box -->
+        <rect x="40" y="315" width="320" height="110" rx="12" fill="rgba(16,185,129,0.08)" stroke="#059669" stroke-width="2"/>
+        <text x="180" y="345" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#059669">DSAC</text>
+        <text x="180" y="365" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8" font-style="italic">Direction de la Sécurité de l'Aviation Civile</text>
+        <text x="180" y="385" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569">Autorisations · Agréments · Guides</text>
+        <text x="180" y="401" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569">Portail AlphaTango</text>
+        <text x="180" y="417" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#475569">Surveillance &amp; contrôle terrain</text>
       </svg>
     </div>
   </div>
@@ -574,8 +592,8 @@
         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
       </div>
       <h3>Ouverte (Open)</h3>
-      <span class="tag tag-success" style="margin-bottom: 10px;">Faible risque</span>
-      <p>Vol en vue directe (VLOS) obligatoire. Hauteur max 120 m. Drones &lt; 25 kg. Pas d'autorisation préalable (sauf dans certains cas en France depuis le 01/01/2026).</p>
+      <span class="tag tag-success" style="margin-bottom: 10px;">Risque maîtrisé</span>
+      <p>Vol en vue directe (VLOS) obligatoire. Hauteur max 120 m. Drones &lt; 25 kg. Pas d'autorisation préalable (sauf cas spécifiques depuis 01/01/2026).</p>
     </div>
 
     <div class="diagram-card card-blue">
@@ -584,7 +602,7 @@
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
       </div>
       <h3>Spécifique (Specific)</h3>
-      <span class="tag tag-primary" style="margin-bottom: 10px;">Risque moyen</span>
+      <span class="tag tag-primary" style="margin-bottom: 10px;">Risque modéré</span>
       <p>Scénarios STS-01 / STS-02, PDRA. Vol BVLOS possible. Déclaration ou autorisation requise. MANEX obligatoire.</p>
     </div>
 
@@ -598,6 +616,14 @@
       <p>Transport de personnes, marchandises dangereuses. Certification EASA du drone et de l'exploitant.</p>
     </div>
   </div>
+
+  <div class="info-card" style="margin-top: 14px; padding: 10px 16px; font-size: 0.7em; background: rgba(239,68,68,0.06); border-left: 4px solid #EF4444;">
+    <strong style="color: #DC2626;">⚠️ Attention :</strong> ces niveaux décrivent le <em>cadre réglementaire</em>, pas le risque opérationnel. <strong>En agglomération, le risque reste élevé même en cat. Ouverte</strong> (tiers, voies, infrastructures). Toujours évaluer le risque réel de chaque mission.
+  </div>
+
+  <aside class="notes">
+    Bien insister : la catégorie Ouverte ne veut PAS dire « sans risque ». C'est juste un cadre réglementaire à risque limité par construction (drones légers, hauteur 120 m, VLOS, distances aux tiers). En agglomération, sur un toit ou près d'une route, les conséquences d'un crash restent graves. Une bonne pratique : évaluer chaque mission avec une mini-analyse de risque (tiers, biens, environnement) même en cat. Ouverte. La catégorisation administrative ne dispense jamais du jugement opérationnel.
+  </aside>
 
   <div class="slide-footer">
     <span>Module 3 — Catégories d'exploitation</span>
@@ -629,6 +655,10 @@
       </div>
     </div>
   </div>
+
+  <aside class="notes">
+    Tracer en même temps sur le tableau : 3 cercles concentriques (drone au centre, zone tiers autour). Visualiser la « personne isolée » (tolérée) vs « rassemblement » (interdit). Faire la distinction avec A2 (30 m) et A3 (150 m) au moment où on passera dessus, pour ancrer la progression. Insister sur le fait que A1 = drones légers, donc dégâts limités en cas de chute, mais survol de personnes isolées seulement (jamais de foule).
+  </aside>
 
   <div class="slide-footer">
     <span>Module 3 — Sous-catégorie A1</span>
@@ -884,96 +914,141 @@
 
 
 <!-- ============================================================
-     SLIDE 23 — SIGNALEMENT FRANÇAIS 🇫🇷
+     SLIDE 22b — SURVOL DES VOIES (autoroutes, ferrées, navigables)
      ============================================================ -->
-<section class="slide-content">
+<section class="slide-table">
   <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>🇫🇷 Signalement électronique français</h2>
+  <h2>Survol des voies — Règles &amp; autorités</h2>
 
-  <p style="font-size: 0.6em; color: var(--dx-text-muted); margin-bottom: 20px;">Loi 2016-1428 · Décret 2019-1114 · Arrêté du 27/12/2019</p>
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.7em; margin-top: 8px;">
+    <thead>
+      <tr style="background: var(--dx-primary); color: white;">
+        <th style="padding: 8px 10px; text-align: left; border: 1px solid var(--dx-border);">Type de voie</th>
+        <th style="padding: 8px 10px; text-align: center; border: 1px solid var(--dx-border);">Cat. Ouverte</th>
+        <th style="padding: 8px 10px; text-align: left; border: 1px solid var(--dx-border);">Règle / Autorité à contacter</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">🚗 Route départementale / nationale</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border); color: #D97706;">⚠️ Toléré</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Pas d'interdiction systématique. Mairie ou Préfecture si gêne ou risque (chute sur la chaussée). Règle du 1:1 vis-à-vis des véhicules (= tiers).</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">🛣️ Autoroute</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border); color: #DC2626;">🚫 Interdit</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Survol et abords <strong>interdits</strong> sans autorisation du <strong>concessionnaire</strong> (Vinci, APRR, Sanef, ASF…) + Préfecture. Chute = risque vital pour les usagers.</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">🚆 Voie ferrée (SNCF)</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border); color: #DC2626;">🚫 Interdit</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Bande de <strong>50 m de chaque côté</strong> des voies = interdite sans accord <strong>SNCF Réseau</strong>. Protocole obligatoire pour vol BVLOS ou proximité voie active.</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">⚓ Voie navigable / canal</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border); color: #D97706;">⚠️ Encadré</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Autorité gestionnaire : <strong>VNF</strong> (Voies Navigables de France) pour canaux/fleuves, gestionnaire portuaire pour les ports. Hauteurs et distances à négocier.</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">⚡ Lignes électriques HT</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border); color: #D97706;">⚠️ DMA</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Distance Minimale d'Approche : <strong>3 m</strong> (&lt; 50 kV) ou <strong>5 m</strong> (≥ 50 kV). Gestionnaires : <strong>RTE / Enedis</strong>. Risque d'<strong>arc électrique</strong> sans contact direct.</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">📡 Pylônes / antennes télécom</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border); color: #D97706;">⚠️ Encadré</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Accord opérateur (Orange, Free, Bouygues…). Interférences possibles GPS/RC à proximité immédiate.</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <ul class="icon-list">
-    <li>
-      <div class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-      <div class="text">
-        <h4>Qui est concerné ?</h4>
-        <p>Tous les drones de masse <strong>≥ 800 g</strong> opérés en France</p>
-      </div>
-    </li>
-    <li>
-      <div class="icon"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
-      <div class="text">
-        <h4>Technologie : Wi-Fi 2,4 GHz (~1 km)</h4>
-        <p>Signal émis toutes les 3 secondes ou tous les 30 mètres</p>
-      </div>
-    </li>
-    <li>
-      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-      <div class="text">
-        <h4>Données émises</h4>
-        <p><strong>N° de série du drone</strong> (et non le N° d'enregistrement), position drone, point de décollage, vitesse sol, route</p>
-      </div>
-    </li>
-    <li>
-      <div class="icon" style="background: rgba(239,68,68,0.1); color: var(--dx-error);"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-      <div class="text">
-        <h4>Lecture : 🔒 forces de l'ordre uniquement</h4>
-        <p>Finalité : détecter et identifier les vols illicites sur le territoire français</p>
-      </div>
-    </li>
-  </ul>
+  <div class="info-card" style="margin-top: 12px; padding: 8px 14px; font-size: 0.65em; background: rgba(14,116,218,0.06); border-left: 3px solid var(--dx-primary);">
+    <strong>📌 Bon réflexe :</strong> avant chaque vol au-dessus ou à proximité d'une voie, identifier le <strong>gestionnaire</strong> et obtenir l'<strong>autorisation écrite</strong>. La Préfecture peut imposer un arrêté complémentaire selon le contexte local.
+  </div>
 
-  <p style="font-size: 0.55em; color: var(--dx-primary); font-weight: 600; margin-top: 12px;">💡 Mémo : « 800 grammes = drapeau français 🇫🇷 »</p>
+  <aside class="notes">
+    Slide ajoutée pour répondre à une question récurrente des stagiaires : « est-ce que je peux survoler l'autoroute ? la voie ferrée ? un canal ? ». Réponse courte : non, sauf accord du gestionnaire. Insister sur le contact préalable : SNCF Réseau, concessionnaires autoroutiers, VNF, RTE/Enedis. Donner des exemples concrets de protocoles déjà signés par Dronexperts si disponibles.
+  </aside>
 
   <div class="slide-footer">
-    <span>Module 3 — Signalement français</span>
+    <span>Module 3 — Survol des voies</span>
     <span>Jour 1 Matin</span>
   </div>
 </section>
 
 
 <!-- ============================================================
-     SLIDE 23b — REMOTE ID EUROPÉEN 🇪🇺
+     SLIDE 23 — IDENTIFICATIONS : SIGNALEMENT 🇫🇷 vs REMOTE ID 🇪🇺
      ============================================================ -->
-<section class="slide-content">
+<section class="slide-table">
   <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>🇪🇺 Remote ID — Identification directe à distance</h2>
+  <h2>Identification du drone — Signalement 🇫🇷 vs Remote ID 🇪🇺</h2>
 
-  <p style="font-size: 0.6em; color: var(--dx-text-muted); margin-bottom: 20px;">Règlements UE 2019/945 &amp; 2019/947 · Norme EN 4709-002 · En vigueur depuis le 01/01/2024</p>
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.68em; margin-top: 8px;">
+    <thead>
+      <tr style="background: var(--dx-text-dark); color: white;">
+        <th style="padding: 8px 10px; text-align: left; border: 1px solid var(--dx-border); width: 20%;">Critère</th>
+        <th style="padding: 8px 10px; text-align: left; border: 1px solid var(--dx-border); width: 40%; background: #1E3A8A;">🇫🇷 Signalement français</th>
+        <th style="padding: 8px 10px; text-align: left; border: 1px solid var(--dx-border); width: 40%; background: #003399;">🇪🇺 Remote ID européen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">Cadre légal</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Loi 2016-1428 · Décret 2019-1114 · Arrêté 27/12/2019</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Règlements UE 2019/945 &amp; 2019/947 · Norme EN 4709-002</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">En vigueur depuis</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">2020</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">01/01/2024</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">Drones concernés</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Tous drones <strong>≥ 800 g</strong> opérés en France</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Classes <strong>C1, C2, C3</strong> en Ouverte<br>+ <strong>tous</strong> les drones en Spécifique</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">Technologie</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Wi-Fi 2,4 GHz (~1 km)</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Wi-Fi Direct et/ou Bluetooth (~300 m – 1 km)</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">Fréquence émission</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Toutes les 3 s ou tous les 30 m</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Continue (1 fois / seconde)</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">Identifiant émis</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);"><strong>N° de série du drone</strong></td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);"><strong>N° d'exploitant</strong> AlphaTango (format <code>FRAxxx-xxx</code>)</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">Données émises</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Position drone, point de décollage, vitesse sol, route</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">N° série, position GPS, altitude, cap, vitesse, position pilote, statut d'urgence</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">Lecture</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">🔒 Forces de l'ordre uniquement</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">🌍 Tout le monde (apps : Drone Scanner, OpenDroneID)</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 600;">Finalité</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Détection des vols illicites en France</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Transparence de l'espace aérien européen</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <ul class="icon-list">
-    <li>
-      <div class="icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <div class="text">
-        <h4>Qui est concerné ?</h4>
-        <p>Drones <strong>classes C1, C2, C3</strong> en Ouverte + <strong>tous les drones en Spécifique</strong> (quelle que soit la masse)</p>
-      </div>
-    </li>
-    <li>
-      <div class="icon"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
-      <div class="text">
-        <h4>Technologie : Wi-Fi Direct et/ou Bluetooth</h4>
-        <p>Portée ~300 m (Bluetooth) à ~1 km (Wi-Fi Direct)</p>
-      </div>
-    </li>
-    <li>
-      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-      <div class="text">
-        <h4>Données émises</h4>
-        <p>N° d'exploitant suivi des 3 caractères de vérification disponibles sur AlphaTango — format <strong>FRAxxxxxxxxxxxxx-xxx</strong>, n° de série, position GPS, altitude, cap, vitesse, position pilote, statut d'urgence</p>
-      </div>
-    </li>
-    <li>
-      <div class="icon" style="background: rgba(16,185,129,0.1); color: var(--dx-success);"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-      <div class="text">
-        <h4>Lecture : 🌍 tout le monde</h4>
-        <p>Applications mobiles : Drone Scanner, OpenDroneID… Transparence de l'espace aérien</p>
-      </div>
-    </li>
-  </ul>
+  <p style="font-size: 0.6em; color: var(--dx-primary); font-weight: 600; margin-top: 10px; text-align: center;">💡 Mémo : « 800 g 🇫🇷 (national) » · « Classe C 🇪🇺 (européen) » · les deux peuvent se cumuler.</p>
+
+  <aside class="notes">
+    Bien faire ressortir que les deux systèmes coexistent et peuvent se cumuler pour un même drone. Exemple : un DJI Mavic 3 (C2, ~900 g) doit émettre à la fois le signalement français (≥ 800 g) ET le Remote ID européen (classe C2). En pratique, les drones DJI récents émettent les deux simultanément. Les drones plus anciens (avant 2024) sont en signalement français uniquement. Insister sur le mémo : 800 g = France, Classe C = Europe.
+  </aside>
 
   <div class="slide-footer">
-    <span>Module 3 — Remote ID européen · 💡 « Classe C = 🇪🇺 »</span>
+    <span>Module 3 — Identifications électroniques</span>
     <span>Jour 1 Matin</span>
   </div>
 </section>
