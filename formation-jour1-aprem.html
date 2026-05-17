@@ -249,29 +249,71 @@
       </ul>
     </div>
     <div class="col-visual">
-      <svg viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:440px;">
+      <!-- SVG amélioré : vue en coupe latérale claire, 3 couches concentriques distinctes + GRB latéral -->
+      <svg viewBox="0 0 460 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:480px;">
+        <defs>
+          <pattern id="grbHatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="6" stroke="#EF4444" stroke-width="0.8" opacity="0.4"/>
+          </pattern>
+        </defs>
+
         <!-- Sol -->
-        <rect x="60" y="285" width="330" height="38" rx="4" fill="#E2E8F0"/>
-        <text x="225" y="309" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#94A3B8">SOL</text>
-        <!-- Zone au sol (GRB) -->
-        <rect x="50" y="248" width="350" height="37" rx="6" fill="rgba(239,68,68,0.08)" stroke="#EF4444" stroke-width="2" stroke-dasharray="6 4"/>
-        <text x="225" y="271" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#EF4444">Zone contrôlée au sol (exclusion tiers)</text>
-        <!-- Volume de contingence -->
-        <rect x="75" y="55" width="300" height="193" rx="12" fill="rgba(245,158,11,0.06)" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="8 4"/>
-        <text x="225" y="75" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#D97706">Volume de contingence (min 10 m)</text>
-        <!-- Géographie de vol -->
-        <rect x="115" y="92" width="220" height="125" rx="10" fill="rgba(14,116,218,0.08)" stroke="#0E74DA" stroke-width="2.5"/>
-        <text x="225" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#0E74DA">Géographie de vol</text>
-        <!-- Drone icon -->
-        <circle cx="225" cy="138" r="5" fill="#0E74DA"/>
-        <line x1="215" y1="138" x2="235" y2="138" stroke="#0E74DA" stroke-width="1.5"/>
-        <line x1="225" y1="128" x2="225" y2="148" stroke="#0E74DA" stroke-width="1.5"/>
-        <!-- GRB bracket on side -->
-        <line x1="390" y1="248" x2="390" y2="55" stroke="#EF4444" stroke-width="1" stroke-dasharray="3 2"/>
-        <text x="398" y="155" font-family="Inter, sans-serif" font-size="8" fill="#EF4444" font-weight="500">GRB</text>
-        <!-- 10m annotation -->
-        <line x1="115" y1="88" x2="75" y2="88" stroke="#D97706" stroke-width="1"/>
-        <text x="95" y="84" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#D97706" font-weight="600">≥10m</text>
+        <rect x="10" y="300" width="440" height="50" rx="4" fill="#94A3B8"/>
+        <text x="230" y="328" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white">SOL</text>
+
+        <!-- Zone contrôlée au sol (la plus large, en bas) -->
+        <rect x="20" y="270" width="420" height="32" rx="4" fill="url(#grbHatch)" stroke="#EF4444" stroke-width="2"/>
+        <text x="230" y="290" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#DC2626">Zone contrôlée au sol — exclusion tiers</text>
+
+        <!-- Volume de contingence (zone tampon autour) -->
+        <rect x="50" y="50" width="360" height="220" rx="14" fill="rgba(245,158,11,0.10)" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="9 4"/>
+        <text x="230" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#D97706">Volume de contingence (≥ 10 m)</text>
+
+        <!-- Géographie de vol (zone centrale, là où le drone évolue) -->
+        <rect x="120" y="100" width="220" height="150" rx="10" fill="rgba(14,116,218,0.10)" stroke="#0E74DA" stroke-width="3"/>
+        <text x="230" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0E74DA">Géographie de vol</text>
+        <text x="230" y="134" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#0E74DA" opacity="0.8">Espace où le drone évolue</text>
+
+        <!-- Drone évoluant dans la géographie de vol -->
+        <g transform="translate(230,180)">
+          <rect x="-12" y="-3" width="24" height="6" rx="3" fill="#0E74DA"/>
+          <line x1="-16" y1="-3" x2="-26" y2="-12" stroke="#0E74DA" stroke-width="2"/>
+          <line x1="16" y1="-3" x2="26" y2="-12" stroke="#0E74DA" stroke-width="2"/>
+          <line x1="-16" y1="3" x2="-26" y2="12" stroke="#0E74DA" stroke-width="2"/>
+          <line x1="16" y1="3" x2="26" y2="12" stroke="#0E74DA" stroke-width="2"/>
+          <ellipse cx="-26" cy="-12" rx="6" ry="1.8" fill="#0E74DA" opacity="0.45"/>
+          <ellipse cx="26" cy="-12" rx="6" ry="1.8" fill="#0E74DA" opacity="0.45"/>
+          <ellipse cx="-26" cy="12" rx="6" ry="1.8" fill="#0E74DA" opacity="0.45"/>
+          <ellipse cx="26" cy="12" rx="6" ry="1.8" fill="#0E74DA" opacity="0.45"/>
+        </g>
+        <!-- Trajectoire pointillée pour le drone -->
+        <path d="M 170 200 Q 200 160 230 180 T 290 200" stroke="#0E74DA" stroke-width="1.5" stroke-dasharray="4 3" fill="none" opacity="0.5"/>
+
+        <!-- Annotation "≥ 10 m" sur le côté gauche (volume contingence) -->
+        <line x1="60" y1="175" x2="115" y2="175" stroke="#D97706" stroke-width="1.2" stroke-dasharray="3 2"/>
+        <polygon points="60,175 65,171 65,179" fill="#D97706"/>
+        <polygon points="115,175 110,171 110,179" fill="#D97706"/>
+        <rect x="68" y="166" width="42" height="18" rx="3" fill="white" stroke="#D97706" stroke-width="1"/>
+        <text x="89" y="178" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#D97706">≥ 10 m</text>
+
+        <!-- GRB côté droit avec flèche -->
+        <line x1="345" y1="265" x2="345" y2="105" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3 2"/>
+        <rect x="350" y="170" width="36" height="32" rx="4" fill="white" stroke="#EF4444" stroke-width="1.5"/>
+        <text x="368" y="184" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#EF4444">GRB</text>
+        <text x="368" y="195" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#EF4444">Ground</text>
+        <text x="368" y="203" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#EF4444">Risk Buffer</text>
+
+        <!-- Légende (haut) -->
+        <g transform="translate(15,10)">
+          <rect x="0" y="0" width="14" height="14" rx="3" fill="rgba(14,116,218,0.15)" stroke="#0E74DA" stroke-width="1.5"/>
+          <text x="20" y="11" font-family="Inter, sans-serif" font-size="9" fill="#475569" font-weight="600">Géographie de vol</text>
+
+          <rect x="120" y="0" width="14" height="14" rx="3" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-width="1.5"/>
+          <text x="140" y="11" font-family="Inter, sans-serif" font-size="9" fill="#475569" font-weight="600">Contingence</text>
+
+          <rect x="220" y="0" width="14" height="14" rx="3" fill="url(#grbHatch)" stroke="#EF4444" stroke-width="1.5"/>
+          <text x="240" y="11" font-family="Inter, sans-serif" font-size="9" fill="#475569" font-weight="600">Zone au sol (GRB)</text>
+        </g>
       </svg>
     </div>
   </div>
@@ -1186,47 +1228,82 @@
       </ul>
     </div>
     <div class="col-visual">
-      <!-- SVG drone avec indicateurs d'alerte -->
-      <svg viewBox="0 0 400 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:420px;">
+      <!-- SVG amélioré : 4 quadrants de pannes hiérarchisés par criticité autour du drone -->
+      <svg viewBox="0 0 440 380" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:460px;">
+        <defs>
+          <radialGradient id="droneGlow" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%" stop-color="#0E74DA" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#0E74DA" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
         <!-- Fond ciel -->
-        <rect x="0" y="0" width="400" height="340" rx="12" fill="#F0F7FF"/>
-        <!-- Drone body -->
-        <rect x="170" y="145" width="60" height="30" rx="8" fill="#0E74DA"/>
+        <rect x="0" y="0" width="440" height="380" rx="12" fill="#F0F7FF"/>
+
+        <!-- Halo autour du drone -->
+        <circle cx="220" cy="190" r="80" fill="url(#droneGlow)"/>
+
+        <!-- DRONE central (vue de dessus, plus détaillé) -->
+        <!-- Corps -->
+        <rect x="195" y="172" width="50" height="36" rx="10" fill="#1E3A8A"/>
+        <!-- Caméra dessous -->
+        <circle cx="220" cy="195" r="6" fill="#0F172A"/>
+        <circle cx="220" cy="195" r="3" fill="#0E74DA"/>
         <!-- Bras -->
-        <line x1="175" y1="155" x2="120" y2="110" stroke="#475569" stroke-width="3"/>
-        <line x1="225" y1="155" x2="280" y2="110" stroke="#475569" stroke-width="3"/>
-        <line x1="175" y1="170" x2="120" y2="215" stroke="#475569" stroke-width="3"/>
-        <line x1="225" y1="170" x2="280" y2="215" stroke="#475569" stroke-width="3"/>
-        <!-- Hélices -->
-        <ellipse cx="120" cy="110" rx="30" ry="6" fill="rgba(14,116,218,0.2)" stroke="#0E74DA" stroke-width="1.5"/>
-        <ellipse cx="280" cy="110" rx="30" ry="6" fill="rgba(14,116,218,0.2)" stroke="#0E74DA" stroke-width="1.5"/>
-        <ellipse cx="120" cy="215" rx="30" ry="6" fill="rgba(14,116,218,0.2)" stroke="#0E74DA" stroke-width="1.5"/>
-        <ellipse cx="280" cy="215" rx="30" ry="6" fill="rgba(14,116,218,0.2)" stroke="#0E74DA" stroke-width="1.5"/>
+        <line x1="200" y1="180" x2="160" y2="148" stroke="#475569" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="240" y1="180" x2="280" y2="148" stroke="#475569" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="200" y1="202" x2="160" y2="232" stroke="#475569" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="240" y1="202" x2="280" y2="232" stroke="#475569" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- Hélices (rotation effect) -->
+        <ellipse cx="160" cy="148" rx="22" ry="4" fill="#0E74DA" opacity="0.3"/>
+        <ellipse cx="280" cy="148" rx="22" ry="4" fill="#0E74DA" opacity="0.3"/>
+        <ellipse cx="160" cy="232" rx="22" ry="4" fill="#0E74DA" opacity="0.3"/>
+        <ellipse cx="280" cy="232" rx="22" ry="4" fill="#0E74DA" opacity="0.3"/>
         <!-- Moteurs -->
-        <circle cx="120" cy="110" r="6" fill="#475569"/>
-        <circle cx="280" cy="110" r="6" fill="#475569"/>
-        <circle cx="120" cy="215" r="6" fill="#475569"/>
-        <circle cx="280" cy="215" r="6" fill="#475569"/>
-        <!-- Warning: perte vidéo (haut gauche) -->
-        <rect x="28" y="60" width="70" height="28" rx="6" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-width="1.5"/>
-        <text x="63" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#D97706">Perte vidéo</text>
-        <line x1="98" y1="74" x2="118" y2="105" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4 3"/>
-        <!-- Warning: perte GPS (haut droite) -->
-        <rect x="302" y="60" width="70" height="28" rx="6" fill="rgba(245,158,11,0.15)" stroke="#F59E0B" stroke-width="1.5"/>
-        <text x="337" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#D97706">Perte GPS</text>
-        <line x1="302" y1="74" x2="282" y2="105" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4 3"/>
-        <!-- Danger: perte RC (bas gauche) -->
-        <rect x="18" y="245" width="80" height="28" rx="6" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
-        <text x="58" y="263" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#EF4444">Perte RC</text>
-        <line x1="98" y1="259" x2="118" y2="220" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4 3"/>
-        <!-- Danger: batterie (bas droite) -->
-        <rect x="302" y="245" width="80" height="28" rx="6" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
-        <text x="342" y="263" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#EF4444">Batterie !</text>
-        <line x1="302" y1="259" x2="282" y2="220" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4 3"/>
-        <!-- Fly-away arrow -->
-        <path d="M230 155 L350 30" stroke="#EF4444" stroke-width="2" stroke-dasharray="6 3"/>
-        <polygon points="350,30 340,38 346,42" fill="#EF4444"/>
-        <text x="330" y="22" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#EF4444">Fly-Away</text>
+        <circle cx="160" cy="148" r="6" fill="#0F172A"/>
+        <circle cx="280" cy="148" r="6" fill="#0F172A"/>
+        <circle cx="160" cy="232" r="6" fill="#0F172A"/>
+        <circle cx="280" cy="232" r="6" fill="#0F172A"/>
+
+        <!-- 4 cartes danger autour du drone -->
+
+        <!-- HAUT-GAUCHE : Perte vidéo (mineur, jaune) -->
+        <rect x="15" y="25" width="120" height="58" rx="8" fill="white" stroke="#F59E0B" stroke-width="2"/>
+        <rect x="15" y="25" width="120" height="18" rx="8" fill="#F59E0B"/>
+        <text x="75" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="white">⚠️ MINEUR</text>
+        <text x="75" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#D97706">Perte vidéo</text>
+        <text x="75" y="73" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#475569">Pilotage aux instruments</text>
+        <line x1="135" y1="60" x2="170" y2="135" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3 2"/>
+
+        <!-- HAUT-DROITE : Perte GPS (mineur, jaune) -->
+        <rect x="305" y="25" width="120" height="58" rx="8" fill="white" stroke="#F59E0B" stroke-width="2"/>
+        <rect x="305" y="25" width="120" height="18" rx="8" fill="#F59E0B"/>
+        <text x="365" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="white">⚠️ MINEUR</text>
+        <text x="365" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#D97706">Perte GPS</text>
+        <text x="365" y="73" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#475569">Passage en mode ATTI</text>
+        <line x1="305" y1="60" x2="270" y2="135" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3 2"/>
+
+        <!-- BAS-GAUCHE : Perte RC (MAJEUR, rouge) -->
+        <rect x="15" y="295" width="120" height="58" rx="8" fill="white" stroke="#EF4444" stroke-width="2"/>
+        <rect x="15" y="295" width="120" height="18" rx="8" fill="#EF4444"/>
+        <text x="75" y="308" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="white">🚨 MAJEUR</text>
+        <text x="75" y="328" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#DC2626">Perte RC</text>
+        <text x="75" y="343" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#475569">Failsafe → RTH / atterrissage</text>
+        <line x1="135" y1="320" x2="170" y2="245" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3 2"/>
+
+        <!-- BAS-DROITE : Batterie critique (MAJEUR, rouge) -->
+        <rect x="305" y="295" width="120" height="58" rx="8" fill="white" stroke="#EF4444" stroke-width="2"/>
+        <rect x="305" y="295" width="120" height="18" rx="8" fill="#EF4444"/>
+        <text x="365" y="308" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="white">🚨 MAJEUR</text>
+        <text x="365" y="328" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#DC2626">Batterie critique</text>
+        <text x="365" y="343" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#475569">Atterrissage d'urgence</text>
+        <line x1="305" y1="320" x2="270" y2="245" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3 2"/>
+
+        <!-- FLY-AWAY : flèche partant du drone (le pire) -->
+        <path d="M 250 165 Q 320 100 395 30" stroke="#DC2626" stroke-width="3" stroke-dasharray="7 4" fill="none"/>
+        <polygon points="395,30 380,30 387,42" fill="#DC2626"/>
+        <rect x="155" y="265" width="130" height="22" rx="6" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="220" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#DC2626">⚡ FLY-AWAY = perte totale</text>
       </svg>
     </div>
   </div>

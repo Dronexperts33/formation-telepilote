@@ -52,6 +52,86 @@
 </section>
 
 
+<!-- ============================================================
+     SLIDE — PRÉSENTATION DE L'OACI
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>L'OACI — Organisation de l'Aviation Civile Internationale</h2>
+
+  <div class="two-col">
+    <div class="col-text" style="font-size: 0.82em;">
+      <ul>
+        <li><strong>Agence spécialisée de l'ONU</strong> créée en 1944 par la <strong>Convention de Chicago</strong></li>
+        <li><strong>193 États membres</strong> · siège à <strong>Montréal</strong> (Canada)</li>
+        <li>Mission : <strong>harmoniser la réglementation aérienne mondiale</strong> et garantir la sécurité de l'aviation civile internationale</li>
+        <li>Publie des <strong>Annexes</strong> (Annexe 2 = règles de l'air, Annexe 4 = cartes aéronautiques, Annexe 11 = services circulation aérienne…)</li>
+        <li>Définit les <strong>classes d'espace aérien</strong> (A à G), la <strong>phraséologie</strong> standard et les <strong>codes aéroports</strong> (LFBD = Bordeaux)</li>
+      </ul>
+      <div class="info-card" style="margin-top: 10px; padding: 8px 12px; font-size: 0.82em; background: rgba(14,116,218,0.06); border-left: 4px solid var(--dx-primary);">
+        <strong style="color: var(--dx-primary);">🗺️ La carte OACI France</strong> est le document officiel publié par le <strong>SIA</strong> à l'échelle <strong>1:500 000</strong>, utilisé par tous les pilotes (avions, hélicos, ULM, drones). C'est la <strong>référence cartographique</strong> pour identifier les espaces aériens.
+      </div>
+    </div>
+    <div class="col-visual">
+      <!-- SVG : globe stylisé + repère OACI -->
+      <svg viewBox="0 0 360 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:380px;">
+        <defs>
+          <radialGradient id="globeGrad" cx="0.35" cy="0.3" r="0.7">
+            <stop offset="0%" stop-color="#60A5FA"/>
+            <stop offset="60%" stop-color="#1E3A8A"/>
+            <stop offset="100%" stop-color="#04355D"/>
+          </radialGradient>
+        </defs>
+        <!-- Fond -->
+        <rect x="0" y="0" width="360" height="340" rx="10" fill="#F0F7FF"/>
+
+        <!-- Globe -->
+        <circle cx="180" cy="155" r="105" fill="url(#globeGrad)"/>
+        <!-- Méridiens -->
+        <ellipse cx="180" cy="155" rx="40" ry="105" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+        <ellipse cx="180" cy="155" rx="80" ry="105" fill="none" stroke="white" stroke-width="0.8" opacity="0.3"/>
+        <ellipse cx="180" cy="155" rx="105" ry="105" fill="none" stroke="white" stroke-width="0.8" opacity="0.3"/>
+        <!-- Parallèles -->
+        <ellipse cx="180" cy="155" rx="105" ry="35" fill="none" stroke="white" stroke-width="0.8" opacity="0.4"/>
+        <ellipse cx="180" cy="155" rx="105" ry="70" fill="none" stroke="white" stroke-width="0.8" opacity="0.3"/>
+        <!-- Continents stylisés (Europe + Afrique) -->
+        <path d="M 165 100 Q 175 95 185 105 Q 195 115 192 130 Q 188 138 175 138 Q 162 130 158 115 Z" fill="#10B981" opacity="0.85"/>
+        <path d="M 175 145 Q 200 145 210 175 Q 220 210 200 230 Q 175 240 170 220 Q 165 195 168 170 Z" fill="#10B981" opacity="0.85"/>
+        <!-- Amériques stylisées -->
+        <path d="M 110 110 Q 125 105 130 130 Q 128 150 118 165 Q 105 175 100 155 Q 100 130 105 115 Z" fill="#10B981" opacity="0.85"/>
+        <path d="M 115 180 Q 125 185 128 210 Q 122 230 115 230 Q 108 220 110 200 Z" fill="#10B981" opacity="0.85"/>
+        <!-- Asie/Australie -->
+        <path d="M 220 115 Q 240 110 250 130 Q 245 145 230 145 Q 220 135 220 125 Z" fill="#10B981" opacity="0.85"/>
+
+        <!-- Étoiles autour (193 États membres) -->
+        <g fill="#0E74DA" opacity="0.5">
+          <circle cx="40" cy="50" r="2"/>
+          <circle cx="320" cy="60" r="2"/>
+          <circle cx="60" cy="200" r="2"/>
+          <circle cx="310" cy="220" r="2"/>
+          <circle cx="50" cy="280" r="2"/>
+          <circle cx="320" cy="290" r="2"/>
+        </g>
+
+        <!-- Bannière OACI -->
+        <rect x="60" y="280" width="240" height="45" rx="8" fill="white" stroke="#0E74DA" stroke-width="2"/>
+        <text x="180" y="299" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="800" fill="#0E74DA">OACI · ICAO</text>
+        <text x="180" y="316" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#475569">193 États · Convention de Chicago (1944)</text>
+      </svg>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Slide d'introduction pour donner le cadre international avant d'entrer dans les espaces aériens français. Insister sur la portée internationale : un pilote français qui vole en Espagne retrouve la même structure d'espaces (CTR, TMA, classes A-G) parce que tout le monde suit l'OACI. Mentionner que les drones, bien que récents, sont progressivement intégrés à ce cadre (notamment via les Annexes 6, 13, 19). La phraséologie radio « Roger », « Wilco », « Cleared » vient de l'OACI.
+  </aside>
+
+  <div class="slide-footer">
+    <span>Module 6 — OACI</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
 <!-- SLIDE — VUE GLOBALE DES ESPACES AÉRIENS -->
 <section class="slide-two-col">
   <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
@@ -60,50 +140,94 @@
   <div class="two-col">
     <div class="col-text" style="font-size: 0.82em;">
       <ul>
-        <li><strong>Espaces contrôlés</strong> : CTR (autour aérodromes), TMA (en altitude), AWY (voies aériennes)</li>
+        <li><strong>Espaces contrôlés</strong> : CTR (autour aérodromes), AWY (voies aériennes en croisière)</li>
         <li><strong>Zones réglementées</strong> : P (interdites), R (réglementées), D (dangereuses)</li>
         <li><strong>Zones temporaires</strong> : ZRT, ZIT (publiées par NOTAM)</li>
         <li><strong>Zones militaires</strong> : VOLTAC, SETBA, RTBA (basse altitude)</li>
         <li><strong>Zones spéciales</strong> : ZICAD (captation interdite), zones naturelles protégées</li>
       </ul>
       <div class="info-card" style="margin-top: 10px; padding: 10px 14px;">
-        <p style="margin: 0; font-size: 0.6em;"><strong>Principe</strong> : vérifier TOUS les espaces aériens avant chaque vol via la carte OACI + NOTAM + Cartes.gouv.fr</p>
+        <p style="margin: 0; font-size: 0.7em;"><strong>Principe</strong> : vérifier <strong>TOUS</strong> les espaces aériens avant chaque vol via la <strong>carte OACI</strong> + <strong>NOTAM (SIA)</strong> + <strong>cartes.gouv.fr</strong>.</p>
       </div>
     </div>
     <div class="col-visual">
-      <svg viewBox="0 0 360 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:380px;">
-        <!-- Sky -->
-        <rect x="0" y="0" width="360" height="300" rx="8" fill="#F0F7FF"/>
+      <!-- SVG amélioré : vue en coupe verticale avec drone, avions, zones latérales -->
+      <svg viewBox="0 0 420 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:440px;">
+        <defs>
+          <linearGradient id="skyGradEsp" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#DBEAFE"/>
+            <stop offset="100%" stop-color="#F0F7FF"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Sky background -->
+        <rect x="0" y="0" width="420" height="320" rx="8" fill="url(#skyGradEsp)"/>
         <!-- Ground -->
-        <rect x="0" y="250" width="360" height="50" rx="0" fill="#E2E8F0"/>
-        <text x="180" y="278" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#94A3B8" font-weight="500">SOL</text>
-        <!-- Airport -->
-        <rect x="140" y="240" width="80" height="12" rx="2" fill="#94A3B8"/>
-        <text x="180" y="248" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="white" font-weight="600">AÉRODROME</text>
-        <!-- CTR -->
-        <rect x="100" y="180" width="160" height="70" rx="6" fill="rgba(14,116,218,0.08)" stroke="#0E74DA" stroke-width="1.5" stroke-dasharray="6 3"/>
-        <text x="180" y="195" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0E74DA">CTR</text>
-        <text x="180" y="207" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#0E74DA">SFC → plafond</text>
-        <!-- TMA -->
-        <rect x="60" y="100" width="240" height="80" rx="8" fill="rgba(30,58,138,0.06)" stroke="#1E3A8A" stroke-width="1.5" stroke-dasharray="6 3"/>
-        <text x="180" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#1E3A8A">TMA</text>
-        <text x="180" y="132" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#1E3A8A">Plancher → plafond</text>
-        <!-- AWY -->
-        <rect x="20" y="30" width="320" height="50" rx="6" fill="rgba(148,163,184,0.1)" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3"/>
-        <text x="180" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#94A3B8">AWY (voies aériennes en croisière)</text>
-        <!-- Zone P on side -->
-        <rect x="305" y="200" width="45" height="40" rx="4" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5"/>
-        <text x="327" y="225" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EF4444">P</text>
-        <!-- Zone R on other side -->
-        <rect x="10" y="200" width="45" height="40" rx="4" fill="rgba(14,116,218,0.1)" stroke="#0E74DA" stroke-width="1.5"/>
-        <text x="32" y="225" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#0E74DA">R</text>
-        <!-- 120m drone line -->
-        <line x1="0" y1="188" x2="360" y2="188" stroke="#10B981" stroke-width="2" stroke-dasharray="6 3"/>
-        <rect x="250" y="176" width="100" height="14" rx="3" fill="white" opacity="0.85"/>
-        <text x="300" y="187" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#10B981">120 m max drone</text>
+        <rect x="0" y="320" width="420" height="40" fill="#94A3B8"/>
+        <text x="210" y="345" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white">SOL (SFC)</text>
+
+        <!-- Aérodrome au sol -->
+        <rect x="170" y="312" width="80" height="10" rx="2" fill="#475569"/>
+        <line x1="178" y1="317" x2="240" y2="317" stroke="white" stroke-width="1" stroke-dasharray="4 2"/>
+        <text x="210" y="335" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#0F172A" font-weight="700">Piste</text>
+
+        <!-- AWY tout en haut (voies aériennes) -->
+        <rect x="15" y="25" width="390" height="40" rx="6" fill="rgba(148,163,184,0.15)" stroke="#64748B" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <text x="210" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#475569">AWY — Voies aériennes (FL haut)</text>
+        <text x="210" y="56" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#64748B">Avions de ligne en croisière</text>
+
+        <!-- Avion en croisière en haut -->
+        <g transform="translate(310,42)">
+          <path d="M -10 0 L 10 0 L 12 -2 L 14 0 L 12 2 L 10 0 M 0 0 L -2 -6 M 0 0 L -2 6" stroke="#475569" stroke-width="1.5" fill="#475569"/>
+        </g>
+
+        <!-- CTR centrale (sol → plafond) -->
+        <path d="M 150 100 L 270 100 L 270 320 L 150 320 Z" fill="rgba(14,116,218,0.12)" stroke="#0E74DA" stroke-width="2" stroke-dasharray="6 3"/>
+        <text x="210" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="#0E74DA">CTR</text>
+        <text x="210" y="135" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#0E74DA">SFC → plafond</text>
+
+        <!-- Avion en approche dans CTR -->
+        <g transform="translate(200,200)">
+          <path d="M -8 0 L 8 0 L 10 -1.5 L 12 0 L 10 1.5 L 8 0 M 0 0 L -2 -5 M 0 0 L -2 5" stroke="#0E74DA" stroke-width="1.2" fill="#0E74DA"/>
+        </g>
+        <text x="200" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#0E74DA" font-style="italic">approche</text>
+
+        <!-- Zone P à droite (centrale nucléaire, etc.) -->
+        <path d="M 360 200 L 410 200 L 410 320 L 360 320 Z" fill="rgba(239,68,68,0.18)" stroke="#EF4444" stroke-width="2"/>
+        <text x="385" y="240" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#EF4444">P</text>
+        <text x="385" y="258" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#EF4444">Interdit</text>
+
+        <!-- Zone R à gauche -->
+        <path d="M 10 220 L 60 220 L 60 320 L 10 320 Z" fill="rgba(14,116,218,0.12)" stroke="#0E74DA" stroke-width="2" stroke-dasharray="3 2"/>
+        <text x="35" y="250" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#0E74DA">R</text>
+        <text x="35" y="268" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#0E74DA">Condit.</text>
+
+        <!-- Zone D entre R et CTR -->
+        <path d="M 80 270 L 135 270 L 135 320 L 80 320 Z" fill="rgba(245,158,11,0.18)" stroke="#F59E0B" stroke-width="2" stroke-dasharray="3 2"/>
+        <text x="107" y="295" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="800" fill="#D97706">D</text>
+        <text x="107" y="310" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#D97706">Danger</text>
+
+        <!-- Ligne 120m drone (jaune fluo, sur fond cat. ouverte) -->
+        <line x1="0" y1="240" x2="420" y2="240" stroke="#10B981" stroke-width="2.5" stroke-dasharray="8 3"/>
+        <rect x="280" y="226" width="135" height="20" rx="4" fill="white" stroke="#10B981" stroke-width="1.5"/>
+        <text x="347" y="240" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#10B981">120 m max DRONE (Open)</text>
+
+        <!-- Drone au sol côté droit (au-dessus aérodrome - simulant l'usage) -->
+        <g transform="translate(75,255)">
+          <rect x="-10" y="-2.5" width="20" height="5" rx="2" fill="#10B981"/>
+          <line x1="-13" y1="-2.5" x2="-19" y2="-7" stroke="#10B981" stroke-width="1.5"/>
+          <line x1="13" y1="-2.5" x2="19" y2="-7" stroke="#10B981" stroke-width="1.5"/>
+          <line x1="-13" y1="2.5" x2="-19" y2="7" stroke="#10B981" stroke-width="1.5"/>
+          <line x1="13" y1="2.5" x2="19" y2="7" stroke="#10B981" stroke-width="1.5"/>
+        </g>
+        <text x="75" y="278" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#059669">drone</text>
       </svg>
     </div>
   </div>
+
+  <aside class="notes">
+    Slide à dessiner en parallèle au tableau : projeter ce schéma puis le redessiner étape par étape au tableau blanc. Commencer par le sol, puis ajouter le couvercle 120 m drone (cat. Ouverte), puis empiler les espaces (CTR puis AWY en haut). Ajouter les zones latérales (P, R, D). Faire remarquer : un drone reste presque toujours sous 120 m, donc rarement en CTR ou TMA, mais peut être au-dessous d'une CTR (« hors CTR »). C'est cette compréhension verticale qui fait la différence entre un pilote sûr et un débutant. Note : la TMA a été retirée du programme — on en parle juste rapidement pour culture générale.
+  </aside>
 
   <div class="slide-footer">
     <span>Module 6 — Vue globale espaces aériens</span>
@@ -230,7 +354,67 @@
       </ul>
     </div>
     <div class="col-visual">
-      <img src="assets/img/screenshots/Zone D.png" alt="Zone D sur carte OACI" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+      <!-- SVG : représentation Zone D avec activation jour/nuit + activités à risque -->
+      <svg viewBox="0 0 360 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:380px;">
+        <defs>
+          <pattern id="zdHatch" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="10" stroke="#F59E0B" stroke-width="1.2" opacity="0.4"/>
+          </pattern>
+        </defs>
+
+        <!-- Sky -->
+        <rect x="0" y="0" width="360" height="240" rx="8" fill="#F0F7FF"/>
+        <!-- Ground -->
+        <rect x="0" y="240" width="360" height="100" fill="#94A3B8"/>
+
+        <!-- Zone D (hexagone hachuré orange) -->
+        <polygon points="70,80 200,55 320,80 320,200 200,225 70,200" fill="url(#zdHatch)" stroke="#F59E0B" stroke-width="3" stroke-dasharray="0"/>
+        <text x="195" y="135" text-anchor="middle" font-family="Inter, sans-serif" font-size="42" font-weight="800" fill="#D97706" opacity="0.85">D</text>
+        <text x="195" y="158" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#D97706">Zone Dangereuse</text>
+        <!-- N° de zone -->
+        <text x="195" y="180" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#D97706" font-style="italic">ex : D54 / D118</text>
+
+        <!-- Icônes activités au sol -->
+        <!-- Stand de tir militaire (à gauche) -->
+        <g transform="translate(50,270)">
+          <rect x="-12" y="-3" width="24" height="6" rx="1" fill="#475569"/>
+          <line x1="-15" y1="0" x2="15" y2="0" stroke="#475569" stroke-width="1.5"/>
+          <circle cx="0" cy="-15" r="3" fill="#EF4444"/>
+          <text x="0" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white" font-weight="600">Tir</text>
+        </g>
+
+        <!-- Parachutiste (au milieu) -->
+        <g transform="translate(180,270)">
+          <path d="M -12 -8 Q 0 -20 12 -8" stroke="#0F172A" stroke-width="1.5" fill="rgba(14,116,218,0.3)"/>
+          <line x1="-10" y1="-8" x2="-3" y2="0" stroke="#0F172A" stroke-width="1"/>
+          <line x1="10" y1="-8" x2="3" y2="0" stroke="#0F172A" stroke-width="1"/>
+          <circle cx="0" cy="3" r="3" fill="#0F172A"/>
+          <line x1="0" y1="6" x2="0" y2="12" stroke="#0F172A" stroke-width="1.5"/>
+          <text x="0" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white" font-weight="600">Parachute</text>
+        </g>
+
+        <!-- Avion d'entraînement (à droite) -->
+        <g transform="translate(310,270)">
+          <path d="M -10 0 L 10 0 L 12 -2 L 14 0 L 12 2 L 10 0 M 0 0 L -3 -7 M 0 0 L -3 7" stroke="#475569" stroke-width="1.5" fill="#475569"/>
+          <text x="0" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white" font-weight="600">Voltige</text>
+        </g>
+
+        <!-- Bandeau "VÉRIFIER L'ACTIVATION" en haut -->
+        <rect x="10" y="10" width="340" height="32" rx="6" fill="#EF4444"/>
+        <text x="180" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white">⚠️ Activable → Consulter NOTAM / AZBA</text>
+        <text x="180" y="37" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="white" opacity="0.9">Si zone active → vol drone interdit</text>
+
+        <!-- Drone qui s'écarte (à gauche, hors zone) -->
+        <g transform="translate(35,140)">
+          <rect x="-8" y="-2" width="16" height="4" rx="2" fill="#10B981"/>
+          <line x1="-10" y1="-2" x2="-15" y2="-7" stroke="#10B981" stroke-width="1.2"/>
+          <line x1="10" y1="-2" x2="15" y2="-7" stroke="#10B981" stroke-width="1.2"/>
+          <line x1="-10" y1="2" x2="-15" y2="7" stroke="#10B981" stroke-width="1.2"/>
+          <line x1="10" y1="2" x2="15" y2="7" stroke="#10B981" stroke-width="1.2"/>
+        </g>
+        <text x="35" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#059669">✓ drone OK</text>
+        <text x="35" y="171" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#059669">(hors zone)</text>
+      </svg>
     </div>
   </div>
 
@@ -298,60 +482,102 @@
   <h2>VOLTAC &amp; SETBA — Entraînements militaires</h2>
 
   <div class="two-col">
-    <div class="col-text">
-      <ul class="icon-list">
-        <li>
-          <div class="icon">
-            <!-- helicopter icon -->
-            <svg viewBox="0 0 24 24"><path d="M4 15h16"/><path d="M12 15v4"/><path d="M8 19h8"/><circle cx="12" cy="10" r="4"/><path d="M12 6V2"/><path d="M6 2h12"/></svg>
-          </div>
-          <div class="text">
-            <h4>VOLTAC — Vols tactiques hélicoptères</h4>
-            <p>Zones dédiées aux <strong>hélicoptères militaires</strong> en transport tactique à très basse altitude. Trajectoires libres dans le secteur.</p>
-          </div>
-        </li>
-        <li>
-          <div class="icon">
-            <!-- zap icon -->
-            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <div class="text">
-            <h4>SETBA — Secteurs d'entraînement très basse altitude</h4>
-            <p>Entraînement <strong>chasse à très basse altitude</strong>. Vitesse élevée (jusqu'à 900 km/h), danger extrême pour les drones.</p>
-          </div>
-        </li>
-      </ul>
-      <div class="info-card" style="margin-top: 10px; font-size: 0.65em; background: rgba(245,158,11,0.08); border-left: 3px solid #F59E0B;">
-        <strong>⚠️ Vol drone</strong> : zones non interdites mais <strong>fortement déconseillées</strong>. Vérifier les horaires d'activation et privilégier les vols hors plages militaires.
+    <div class="col-text" style="font-size: 0.82em;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.85em;">
+        <thead>
+          <tr style="background: var(--dx-text-dark); color: white;">
+            <th style="padding: 6px 8px; text-align: left; border: 1px solid var(--dx-border);">Critère</th>
+            <th style="padding: 6px 8px; text-align: left; border: 1px solid var(--dx-border); background: #1E3A8A;">🚁 VOLTAC</th>
+            <th style="padding: 6px 8px; text-align: left; border: 1px solid var(--dx-border); background: #D97706;">✈️ SETBA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 600;">Aéronef</td>
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Hélicoptères militaires</td>
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Chasse (Rafale, Mirage)</td>
+          </tr>
+          <tr style="background: rgba(248,250,252,0.6);">
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 600;">Altitude</td>
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">&lt; 150 m / sol</td>
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">&lt; 75 m / sol</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 600;">Vitesse</td>
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">~ 200 km/h</td>
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">jusqu'à <strong>900 km/h</strong></td>
+          </tr>
+          <tr style="background: rgba(248,250,252,0.6);">
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 600;">Forme</td>
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Secteur libre</td>
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Couloir étroit</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 600;">Horaires</td>
+            <td style="padding: 5px 8px; border: 1px solid var(--dx-border);" colspan="2">Jours ouvrés, créneaux matinée/après-midi (voir AZBA &amp; SUP AIP)</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="info-card" style="margin-top: 10px; padding: 8px 12px; font-size: 0.78em; background: rgba(245,158,11,0.08); border-left: 3px solid #F59E0B;">
+        <strong>⚠️ Vol drone</strong> : zones non interdites mais <strong>fortement déconseillées</strong> en période d'activité. Réflexe : vérifier <strong>AZBA + NOTAM + SUP AIP</strong> avant chaque vol et privilégier le matin tôt ou les week-ends.
       </div>
-      <p style="margin-top: 8px; font-size: 0.6em;">📄 <a href="https://dvmfnwwovrzxlhmgdaey.supabase.co/storage/v1/object/public/public-resources/57a0b199-05bf-4af4-8ebc-3ee43823e243/VOLTAC___SETBA_1773069748401.pdf" target="_blank" style="color: var(--dx-primary); text-decoration: none;">Carte VOLTAC / SETBA officielle (PDF)</a></p>
+      <p style="margin-top: 6px; font-size: 0.65em;">📄 <a href="https://dvmfnwwovrzxlhmgdaey.supabase.co/storage/v1/object/public/public-resources/57a0b199-05bf-4af4-8ebc-3ee43823e243/VOLTAC___SETBA_1773069748401.pdf" target="_blank" style="color: var(--dx-primary); text-decoration: none;">Carte VOLTAC / SETBA officielle (PDF)</a></p>
     </div>
     <div class="col-visual">
-      <!-- SVG: Carte schématique VOLTAC/SETBA -->
-      <svg viewBox="0 0 360 320" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:360px;">
+      <!-- SVG amélioré : carte schématique avec aéronefs visibles -->
+      <svg viewBox="0 0 380 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:380px;">
         <!-- Fond carte -->
-        <rect x="0" y="0" width="360" height="320" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+        <rect x="0" y="0" width="380" height="340" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
         <!-- Grille géographique -->
-        <line x1="60" y1="0" x2="60" y2="320" stroke="#E2E8F0" stroke-width="1"/>
-        <line x1="180" y1="0" x2="180" y2="320" stroke="#E2E8F0" stroke-width="1"/>
-        <line x1="300" y1="0" x2="300" y2="320" stroke="#E2E8F0" stroke-width="1"/>
-        <line x1="0" y1="80" x2="360" y2="80" stroke="#E2E8F0" stroke-width="1"/>
-        <line x1="0" y1="160" x2="360" y2="160" stroke="#E2E8F0" stroke-width="1"/>
-        <line x1="0" y1="240" x2="360" y2="240" stroke="#E2E8F0" stroke-width="1"/>
-        <!-- Zone VOLTAC (polygone hélicoptères) -->
-        <path d="M 40 60 L 130 50 L 160 100 L 145 145 L 75 150 L 40 110 Z" fill="rgba(14,116,218,0.18)" stroke="#0E74DA" stroke-width="2"/>
-        <text x="95" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="800" fill="#0E74DA">VOLTAC</text>
-        <text x="95" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#0E74DA">Hélicoptères</text>
-        <!-- Zone SETBA (couloir chasse, plus long) -->
-        <path d="M 180 180 L 320 195 L 330 240 L 200 260 L 175 220 Z" fill="rgba(245,158,11,0.18)" stroke="#F59E0B" stroke-width="2"/>
-        <text x="245" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="800" fill="#D97706">SETBA</text>
-        <text x="245" y="235" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#D97706">Chasse TBA</text>
-        <!-- Légende -->
-        <rect x="10" y="280" width="14" height="14" rx="2" fill="rgba(14,116,218,0.18)" stroke="#0E74DA" stroke-width="1.5"/>
-        <text x="30" y="291" font-family="Inter, sans-serif" font-size="9" fill="#475569">VOLTAC (hélico)</text>
-        <rect x="120" y="280" width="14" height="14" rx="2" fill="rgba(245,158,11,0.18)" stroke="#F59E0B" stroke-width="1.5"/>
-        <text x="140" y="291" font-family="Inter, sans-serif" font-size="9" fill="#475569">SETBA (chasse)</text>
-        <text x="180" y="305" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8" font-style="italic">Schéma simplifié — voir PDF officiel</text>
+        <line x1="95" y1="0" x2="95" y2="340" stroke="#E2E8F0" stroke-width="1"/>
+        <line x1="190" y1="0" x2="190" y2="340" stroke="#E2E8F0" stroke-width="1"/>
+        <line x1="285" y1="0" x2="285" y2="340" stroke="#E2E8F0" stroke-width="1"/>
+        <line x1="0" y1="85" x2="380" y2="85" stroke="#E2E8F0" stroke-width="1"/>
+        <line x1="0" y1="170" x2="380" y2="170" stroke="#E2E8F0" stroke-width="1"/>
+        <line x1="0" y1="255" x2="380" y2="255" stroke="#E2E8F0" stroke-width="1"/>
+
+        <!-- Zone VOLTAC (secteur hélicoptères, polygone irrégulier) -->
+        <path d="M 40 50 L 145 40 L 170 95 L 155 145 L 80 155 L 40 105 Z" fill="rgba(14,116,218,0.20)" stroke="#0E74DA" stroke-width="2.5"/>
+        <text x="100" y="92" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#0E74DA">VOLTAC</text>
+        <text x="100" y="108" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#0E74DA">Hélicoptères militaires</text>
+        <text x="100" y="124" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#0E74DA" font-style="italic">&lt; 150 m sol · 200 km/h</text>
+        <!-- Hélicoptère stylisé -->
+        <g transform="translate(56,72)">
+          <circle cx="0" cy="0" r="5" fill="#0E74DA"/>
+          <line x1="-10" y1="-5" x2="10" y2="-5" stroke="#0E74DA" stroke-width="2"/>
+          <line x1="-3" y1="5" x2="3" y2="5" stroke="#0E74DA" stroke-width="1.5"/>
+        </g>
+
+        <!-- Zone SETBA (couloir chasse étroit, plus long) -->
+        <path d="M 185 195 L 350 200 L 360 245 L 195 255 L 175 230 Z" fill="rgba(245,158,11,0.22)" stroke="#F59E0B" stroke-width="2.5"/>
+        <text x="265" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#D97706">SETBA</text>
+        <text x="265" y="236" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#D97706">Chasse TBA</text>
+        <text x="265" y="248" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#D97706" font-style="italic">&lt; 75 m sol · 900 km/h</text>
+        <!-- Jet chasse stylisé -->
+        <g transform="translate(220,225)">
+          <path d="M -14 0 L 12 0 L 16 -2 L 18 0 L 16 2 L 12 0 M 0 0 L -3 -7 M 0 0 L -3 7" stroke="#D97706" stroke-width="1.8" fill="#D97706"/>
+          <!-- Trace de vitesse -->
+          <line x1="-22" y1="-1" x2="-14" y2="0" stroke="#D97706" stroke-width="1" opacity="0.4"/>
+          <line x1="-22" y1="1" x2="-14" y2="0" stroke="#D97706" stroke-width="1" opacity="0.4"/>
+        </g>
+
+        <!-- Drone télépilote (en haut à droite, hors zones) -->
+        <g transform="translate(330,55)">
+          <rect x="-10" y="-2.5" width="20" height="5" rx="2" fill="#10B981"/>
+          <line x1="-13" y1="-2.5" x2="-19" y2="-7" stroke="#10B981" stroke-width="1.5"/>
+          <line x1="13" y1="-2.5" x2="19" y2="-7" stroke="#10B981" stroke-width="1.5"/>
+          <line x1="-13" y1="2.5" x2="-19" y2="7" stroke="#10B981" stroke-width="1.5"/>
+          <line x1="13" y1="2.5" x2="19" y2="7" stroke="#10B981" stroke-width="1.5"/>
+        </g>
+        <text x="330" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#059669">✓ drone OK</text>
+        <text x="330" y="89" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#059669">(hors zones)</text>
+
+        <!-- Légende bas -->
+        <rect x="10" y="305" width="14" height="14" rx="2" fill="rgba(14,116,218,0.20)" stroke="#0E74DA" stroke-width="1.5"/>
+        <text x="30" y="316" font-family="Inter, sans-serif" font-size="9" fill="#475569" font-weight="500">VOLTAC</text>
+        <rect x="98" y="305" width="14" height="14" rx="2" fill="rgba(245,158,11,0.22)" stroke="#F59E0B" stroke-width="1.5"/>
+        <text x="118" y="316" font-family="Inter, sans-serif" font-size="9" fill="#475569" font-weight="500">SETBA</text>
+        <text x="370" y="316" text-anchor="end" font-family="Inter, sans-serif" font-size="8" fill="#94A3B8" font-style="italic">schéma simplifié — voir PDF</text>
       </svg>
     </div>
   </div>
@@ -508,6 +734,101 @@
 
 
 <!-- ============================================================
+     SLIDE 10c — TABLEAU RÉCAPITULATIF DE TOUTES LES ZONES
+     ============================================================ -->
+<section class="slide-table">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Récapitulatif — Toutes les zones aériennes</h2>
+
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.64em; margin-top: 6px;">
+    <thead>
+      <tr style="background: var(--dx-primary); color: white;">
+        <th style="padding: 6px 8px; text-align: left; border: 1px solid var(--dx-border);">Zone</th>
+        <th style="padding: 6px 8px; text-align: center; border: 1px solid var(--dx-border);">Vol drone</th>
+        <th style="padding: 6px 8px; text-align: left; border: 1px solid var(--dx-border);">Caractéristique</th>
+        <th style="padding: 6px 8px; text-align: left; border: 1px solid var(--dx-border);">Autorité / vérification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 700; color: var(--dx-primary);">CTR</td>
+        <td style="padding: 5px 8px; text-align: center; border: 1px solid var(--dx-border); color: #D97706;">⚠️ Conditionnel</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Contrôle aérodrome (SFC → plafond)</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Tour de contrôle · civil : &gt; 50 m / hors vue · militaire : tout vol</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 700; color: #DC2626;">P</td>
+        <td style="padding: 5px 8px; text-align: center; border: 1px solid var(--dx-border); color: #DC2626;">🚫 Interdit</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Centrales nucléaires, P23 Paris, défense</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Dérogation exceptionnelle uniquement · sanctions pénales</td>
+      </tr>
+      <tr>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 700; color: var(--dx-primary);">R</td>
+        <td style="padding: 5px 8px; text-align: center; border: 1px solid var(--dx-border); color: #D97706;">⚠️ Conditionnel</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Réglementée — usages militaires, activités à risque</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Gestionnaire indiqué sur carte OACI · protocole possible</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 700; color: #D97706;">D</td>
+        <td style="padding: 5px 8px; text-align: center; border: 1px solid var(--dx-border); color: #D97706;">⚠️ Si active</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Dangereuse — tir, parachutisme, voltige</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Activation à vérifier (NOTAM / AZBA / SIA)</td>
+      </tr>
+      <tr>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 700; color: #8B5CF6;">ZRT / ZIT</td>
+        <td style="padding: 5px 8px; text-align: center; border: 1px solid var(--dx-border); color: #DC2626;">🚫 / ⚠️</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Temporaires (événements, sommets, 14 juillet)</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">NOTAM / SUP AIP — à consulter quotidiennement</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 700; color: var(--dx-primary);">VOLTAC</td>
+        <td style="padding: 5px 8px; text-align: center; border: 1px solid var(--dx-border); color: #D97706;">⚠️ Déconseillé</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Vols tactiques hélicoptères (&lt; 150 m sol)</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Carte VOLTAC/SETBA · AZBA · SUP AIP</td>
+      </tr>
+      <tr>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 700; color: #D97706;">SETBA</td>
+        <td style="padding: 5px 8px; text-align: center; border: 1px solid var(--dx-border); color: #DC2626;">🚫 Très dangereux</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Entraînement chasse TBA (&lt; 75 m, ~900 km/h)</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Carte VOLTAC/SETBA · vérifier horaires</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 700; color: #DC2626;">RTBA</td>
+        <td style="padding: 5px 8px; text-align: center; border: 1px solid var(--dx-border); color: #DC2626;">🚫 Si active</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Réseau routes très basse altitude — couloirs chasse</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Carte <strong>AZBA</strong> du jour (SIA) — obligatoire</td>
+      </tr>
+      <tr>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 700; color: #DC2626;">ZICAD</td>
+        <td style="padding: 5px 8px; text-align: center; border: 1px solid var(--dx-border); color: #D97706;">⚠️ Captation interdite</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Survol possible · photo/vidéo/thermique interdit</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Cartes.gouv.fr (couche ZICAD) · 1 an / 75 000 €</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border); font-weight: 700; color: #059669;">Naturelles</td>
+        <td style="padding: 5px 8px; text-align: center; border: 1px solid var(--dx-border); color: #D97706;">⚠️ Encadré</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Parcs nationaux, réserves, Natura 2000</td>
+        <td style="padding: 5px 8px; border: 1px solid var(--dx-border);">Code env. · OFB &amp; préfectures (pas DGAC)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="info-card" style="margin-top: 10px; padding: 8px 14px; font-size: 0.66em; background: rgba(14,116,218,0.06); border-left: 3px solid var(--dx-primary);">
+    <strong>📌 Bon réflexe avant chaque vol :</strong> SIA (NOTAM + AIP + AZBA) → cartes.gouv.fr (UAS + ZICAD + naturel) → arrêtés préfectoraux locaux → carte OACI 1:500 000.
+  </div>
+
+  <aside class="notes">
+    Slide de référence à projeter en fin de Module 6 (cartographie) pour ancrer tous les types de zones. À utiliser aussi en début de J3 matin comme révision avant l'examen théorique. Tester en cours : « si je vois une zone D sur la carte, je fais quoi ? » → réponse attendue : vérifier l'activation avant de planifier mon vol (NOTAM/AZBA). Le tableau peut être imprimé en A4 et donné comme fiche mémo aux stagiaires.
+  </aside>
+
+  <div class="slide-footer">
+    <span>Module 6 — Récapitulatif zones</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
      SLIDE 11 — OUTILS SÉPARATEUR
      ============================================================ -->
 <section class="slide-module">
@@ -620,21 +941,209 @@
 
 
 <!-- ============================================================
+     SLIDE 15b — DroneKeeper
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>DroneKeeper — Carnet de vol numérique</h2>
+
+  <div class="two-col">
+    <div class="col-text" style="font-size: 0.82em;">
+      <ul>
+        <li><strong>Carnet de vol numérique</strong> tenu automatiquement à chaque mission</li>
+        <li><strong>Suivi de la flotte</strong> : heures par drone, par batterie, maintenance, cycles charge</li>
+        <li><strong>Préparation de mission</strong> intégrée : cartes aéronautiques, NOTAM, météo en un coup d'œil</li>
+        <li><strong>Traçabilité</strong> : documents et rapports exportables pour audits / contrôles DSAC</li>
+        <li><strong>Multi-télépilotes</strong> : utile pour exploitants gérant plusieurs pilotes et plusieurs drones</li>
+      </ul>
+      <div class="info-card" style="margin-top: 10px; padding: 8px 12px; font-size: 0.78em; background: rgba(14,116,218,0.06); border-left: 4px solid var(--dx-primary);">
+        <strong>📌 Pour qui ?</strong> Tout exploitant qui veut industrialiser le suivi de ses vols et de sa flotte. Particulièrement utile dès qu'on dépasse 2 drones ou 50 heures de vol par an.
+      </div>
+      <div class="info-card" style="margin-top: 8px; font-size: 0.78em;">
+        <strong>🌐 Site :</strong> <a href="https://dronekeeper.fr" target="_blank" style="color: var(--dx-primary);">dronekeeper.fr</a>
+      </div>
+    </div>
+    <div class="col-visual">
+      <img src="assets/img/screenshots/Dronekeeper.png" alt="DroneKeeper — interface" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Outils — DroneKeeper</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 15c — MaMissionDrone
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>MaMissionDrone — Déclaration officielle</h2>
+
+  <div class="two-col">
+    <div class="col-text" style="font-size: 0.82em;">
+      <ul>
+        <li><strong>Service en ligne DGAC</strong> dédié aux déclarations de mission obligatoires</li>
+        <li><strong>Cas d'usage</strong> : vol en zone peuplée, scénarios STS-01 / STS-02, dérogations spécifiques</li>
+        <li><strong>Délais</strong> : déclaration <strong>J-10</strong> minimum pour vol en zone peuplée (cat. Ouverte)</li>
+        <li><strong>Articulation</strong> avec AlphaTango (compte exploitant), Clearance (autorisations gestionnaire), CERFA (formulaires)</li>
+        <li><strong>Suivi des déclarations</strong> : historique, statut, accusés de réception</li>
+      </ul>
+      <div class="info-card" style="margin-top: 10px; padding: 8px 12px; font-size: 0.78em; background: rgba(245,158,11,0.08); border-left: 4px solid #F59E0B;">
+        <strong>⚠️ Différence avec Clearance :</strong> MaMissionDrone est la voie <strong>officielle DGAC pour les déclarations</strong>, Clearance est un outil tiers facilitant la demande d'autorisation auprès des gestionnaires d'espace (CTR, R, P…).
+      </div>
+      <div class="info-card" style="margin-top: 8px; font-size: 0.78em;">
+        <strong>🌐 Site :</strong> <a href="https://mamissiondrone.aviation-civile.gouv.fr" target="_blank" style="color: var(--dx-primary);">mamissiondrone.aviation-civile.gouv.fr</a>
+      </div>
+    </div>
+    <div class="col-visual">
+      <!-- Pas de screenshot — placeholder SVG -->
+      <svg viewBox="0 0 360 320" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:380px;">
+        <rect x="0" y="0" width="360" height="320" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+        <!-- Logo DGAC stylisé -->
+        <rect x="120" y="40" width="120" height="60" rx="6" fill="#1E3A8A"/>
+        <text x="180" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="white">DGAC</text>
+        <text x="180" y="84" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="white" opacity="0.8">Service officiel</text>
+        <!-- Flèche descendante -->
+        <line x1="180" y1="105" x2="180" y2="135" stroke="#0E74DA" stroke-width="2" stroke-dasharray="4 2"/>
+        <polygon points="180,135 175,128 185,128" fill="#0E74DA"/>
+        <!-- Formulaire schématique -->
+        <rect x="60" y="140" width="240" height="140" rx="8" fill="white" stroke="#0E74DA" stroke-width="2"/>
+        <text x="180" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#0E74DA">MaMissionDrone</text>
+        <line x1="75" y1="175" x2="285" y2="175" stroke="#E2E8F0" stroke-width="1"/>
+        <rect x="75" y="185" width="210" height="10" rx="2" fill="#E2E8F0"/>
+        <rect x="75" y="200" width="160" height="10" rx="2" fill="#E2E8F0"/>
+        <rect x="75" y="215" width="180" height="10" rx="2" fill="#E2E8F0"/>
+        <rect x="75" y="230" width="130" height="10" rx="2" fill="#E2E8F0"/>
+        <rect x="180" y="250" width="100" height="22" rx="4" fill="#10B981"/>
+        <text x="230" y="265" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="white">Déclarer</text>
+        <!-- Bandeau bas -->
+        <text x="180" y="305" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8" font-style="italic">J-10 min pour zone peuplée</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Outils — MaMissionDrone</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 15d — Formulaires CERFA drone
+     ============================================================ -->
+<section class="slide-table">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2>Formulaires CERFA — Démarches administratives</h2>
+
+  <p style="font-size: 0.7em; color: var(--dx-text-secondary); margin: 4px 0 8px 0;">Les principaux formulaires officiels pour les démarches drone en France.</p>
+
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.72em;">
+    <thead>
+      <tr style="background: var(--dx-primary); color: white;">
+        <th style="padding: 8px 10px; text-align: left; border: 1px solid var(--dx-border);">CERFA</th>
+        <th style="padding: 8px 10px; text-align: left; border: 1px solid var(--dx-border);">Intitulé</th>
+        <th style="padding: 8px 10px; text-align: left; border: 1px solid var(--dx-border);">Quand l'utiliser</th>
+        <th style="padding: 8px 10px; text-align: center; border: 1px solid var(--dx-border);">Délai</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 700;">15476*02</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Déclaration de vol en zone peuplée (cat. Ouverte)</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Vol exploitant déclaré, espace public, zone peuplée OACI</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);"><strong>J-10</strong></td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 700;">15810</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Déclaration d'activité d'exploitant UAS</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Devenir exploitant Spécifique (alternative AlphaTango)</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);">avant 1<sup>er</sup> vol pro</td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 700;">14997*02</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Demande de dérogation hauteur de vol &gt; 120 m</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Mission ponctuelle nécessitant un plafond exceptionnel</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);">≥ J-10</td>
+      </tr>
+      <tr style="background: rgba(248,250,252,0.6);">
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 700;">15994*03</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Déclaration d'incident / accident drone</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Crash, fly-away, blessure, intrusion zone — Fiche CRESUS</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);"><strong>72 h</strong></td>
+      </tr>
+      <tr>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border); font-weight: 700;">16151</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Demande de vol de nuit / dérogation préfectorale</td>
+        <td style="padding: 7px 10px; border: 1px solid var(--dx-border);">Vol entre crépuscule civil soir / matin (cat. Ouverte)</td>
+        <td style="padding: 7px 10px; text-align: center; border: 1px solid var(--dx-border);">≥ J-5 ouvrés</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="info-card" style="margin-top: 12px; padding: 10px 14px; font-size: 0.7em; background: rgba(14,116,218,0.06); border-left: 4px solid var(--dx-primary);">
+    <strong>🌐 Téléchargement :</strong> tous les CERFA sur <a href="https://www.service-public.fr/particuliers/recherche?keyword=drone&type=formulaire" target="_blank" style="color: var(--dx-primary);">service-public.fr</a> · dépôt en ligne via MaMissionDrone ou par voie postale auprès de la Préfecture.
+  </div>
+
+  <aside class="notes">
+    Le système CERFA évolue régulièrement (numéros révisés avec * suivi d'un index — par ex. 15476*02 indique la 2e révision). Recommander aux stagiaires de toujours télécharger la dernière version sur service-public.fr avant de remplir. Mentionner que MaMissionDrone simplifie le remplissage en ligne mais que le CERFA papier reste valide. Le délai J-10 zone peuplée est strict : 10 jours ouvrés avant le vol, sinon refus.
+  </aside>
+
+  <div class="slide-footer">
+    <span>Outils — CERFA drone</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
      SLIDE 16 — Altitude, Hauteur et Niveau de vol
      ============================================================ -->
 <section class="slide-two-col">
   <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>Altitude, Hauteur et Niveau de vol</h2>
+  <h2>Altitude, Hauteur, Niveau de vol — Lexique</h2>
 
   <div class="two-col">
-    <div class="col-text">
-      <ul>
-        <li><strong>Hauteur (AGL)</strong> : distance mesurée par rapport au sol (Above Ground Level)</li>
-        <li><strong>Altitude (AMSL)</strong> : distance mesurée par rapport au niveau de la mer (Above Mean Sea Level)</li>
-        <li><strong>AAL</strong> : hauteur par rapport à l'aérodrome (Above Aerodrome Level)</li>
-        <li><strong>ASFC</strong> : hauteur par rapport à la surface (Above SurFaCe) — sol naturel ou obstacle, équivalent fonctionnel d'AGL en aéronautique réglementaire</li>
-        <li><strong>FL (Flight Level)</strong> : niveau de vol exprimé en centaines de pieds, calé sur 1013,25 hPa</li>
-      </ul>
+    <div class="col-text" style="font-size: 0.78em;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.92em;">
+        <tbody>
+          <tr>
+            <td style="padding: 5px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #10B981; white-space: nowrap;">AGL</td>
+            <td style="padding: 5px 8px; border-bottom: 1px solid var(--dx-border);">Above Ground Level — <strong>hauteur</strong> par rapport au sol</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #059669; white-space: nowrap;">SFC</td>
+            <td style="padding: 5px 8px; border-bottom: 1px solid var(--dx-border);">SurFaCe — hauteur par rapport au sol ou obstacle (≈ AGL en pratique)</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #0E74DA; white-space: nowrap;">AAL</td>
+            <td style="padding: 5px 8px; border-bottom: 1px solid var(--dx-border);">Above Aerodrome Level — hauteur par rapport à la piste</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #3B82F6; white-space: nowrap;">AMSL</td>
+            <td style="padding: 5px 8px; border-bottom: 1px solid var(--dx-border);">Above Mean Sea Level — <strong>altitude</strong> par rapport au niveau moyen de la mer</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #64748B; white-space: nowrap;">FL</td>
+            <td style="padding: 5px 8px; border-bottom: 1px solid var(--dx-border);">Flight Level — niveau de vol (centaines de ft, calé sur 1013,25 hPa)</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 8px; font-weight: 700; color: #D97706; white-space: nowrap;">FT ↔ m</td>
+            <td style="padding: 5px 8px;"><strong>1 ft ≈ 0,30 m</strong> · <strong>100 ft ≈ 30 m</strong> · <strong>1 000 ft ≈ 305 m</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="info-card" style="margin-top: 10px; padding: 8px 12px; font-size: 0.82em; background: rgba(14,116,218,0.06); border-left: 4px solid var(--dx-primary);">
+        <strong style="color: var(--dx-primary);">📊 Exemple concret</strong><br>
+        Vol sur un plateau à <strong>200 m AMSL</strong>, drone à <strong>50 m au-dessus du sol</strong>.<br>
+        → <strong>Hauteur</strong> = 50 m AGL (= 50 m SFC) — c'est <em>celle de la réglementation drone</em>.<br>
+        → <strong>Altitude</strong> = 250 m AMSL = 820 ft AMSL — c'est <em>celle des cartes aéro</em>.<br>
+        Si une CTR plafonne à <strong>FL 30</strong> (3 000 ft ≈ 915 m AMSL), je suis très loin sous le plafond.
+      </div>
     </div>
     <div class="col-visual">
       <!-- SVG: Terrain diagram with AGL/AMSL/FL labels -->
