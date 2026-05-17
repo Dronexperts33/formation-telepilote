@@ -1845,170 +1845,144 @@
 
 
 <!-- ============================================================
-     SLIDE 27 — CARTE UAS CATÉGORIE OUVERTE
-     ============================================================ -->
-<section class="slide-two-col">
-  <a href="index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>Carte UAS — Zones de protection aérodrome</h2>
-
-  <div class="two-col">
-    <div class="col-text">
-      <p style="font-size: 0.75em; margin-bottom: 8px;"><strong>Code couleur des zones :</strong></p>
-      <table style="font-size: 0.68em; border-collapse: collapse; width: 100%;">
-        <tr>
-          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#E57373;border-radius:3px;vertical-align:middle;"></span></td>
-          <td style="padding: 3px 8px;"><strong>Rouge</strong> — Vol interdit</td>
-        </tr>
-        <tr>
-          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#F4A261;border-radius:3px;vertical-align:middle;"></span></td>
-          <td style="padding: 3px 8px;"><strong>Orange foncé</strong> — 30 m max</td>
-        </tr>
-        <tr>
-          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#F8B788;border-radius:3px;vertical-align:middle;"></span></td>
-          <td style="padding: 3px 8px;"><strong>Orange clair</strong> — 50 m max</td>
-        </tr>
-        <tr>
-          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#F9D77E;border-radius:3px;vertical-align:middle;"></span></td>
-          <td style="padding: 3px 8px;"><strong>Jaune</strong> — 60 m max</td>
-        </tr>
-        <tr>
-          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#FCE588;border-radius:3px;vertical-align:middle;"></span></td>
-          <td style="padding: 3px 8px;"><strong>Jaune clair</strong> — 100 m max</td>
-        </tr>
-        <tr>
-          <td style="padding: 3px 8px;"><span style="display:inline-block;width:14px;height:14px;background:#FFFFFF;border:1px solid #CBD5E1;border-radius:3px;vertical-align:middle;"></span></td>
-          <td style="padding: 3px 8px;"><strong>Sans couleur</strong> — 120 m max (au-dessus interdit)</td>
-        </tr>
-      </table>
-
-      <div class="info-card" style="margin-top: 10px; font-size: 0.62em; background: rgba(239,68,68,0.06); border-left: 3px solid #EF4444;">
-        <p style="margin: 0;"><strong>⚠️ Référence de hauteur :</strong> les hauteurs maximales sont mesurées par rapport au <strong>point le plus haut de la piste de l'aérodrome</strong>, pas par rapport à votre point de décollage !</p>
-        <p style="margin: 6px 0 0;">
-          <strong>Calcul :</strong> H<sub>utilisable</sub> = H<sub>zone</sub> − (Alt<sub>décollage</sub> − Alt<sub>piste</sub>)<br>
-          <em>Ex : zone 50 m, piste à 50 m AMSL, décollage à 80 m AMSL<br>
-          → H<sub>max</sub> = 50 − (80 − 50) = <strong style="color:#DC2626;">20 m AGL seulement !</strong></em>
-        </p>
-      </div>
-    </div>
-    <div class="col-visual" style="display:flex; flex-direction:column; gap:12px;">
-      <img src="assets/img/screenshots/Cartes.gouv_UAS.png" alt="Carte UAS catégorie ouverte — zones de protection aérodrome" style="max-width: 100%; max-height: 200px; object-fit: contain; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
-
-      <!-- SVG: Profil altimétrique — décollage PLUS HAUT que la piste -->
-      <svg viewBox="0 0 420 195" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:420px; flex-shrink:0;">
-
-        <!-- Terrain fill + outline -->
-        <path d="M0,125 L30,118 Q70,86 130,82 Q170,78 195,90 Q230,115 275,140 L350,140 L420,152 L420,195 L0,195 Z" fill="#F1F5F9"/>
-        <path d="M0,125 L30,118 Q70,86 130,82 Q170,78 195,90 Q230,115 275,140 L350,140 L420,152" fill="none" stroke="#94A3B8" stroke-width="2"/>
-
-        <!-- ===== PLAFOND ZONE (y=28) ===== -->
-        <line x1="15" y1="28" x2="405" y2="28" stroke="#EAB308" stroke-width="1.5" stroke-dasharray="6 3"/>
-        <rect x="260" y="10" width="148" height="16" rx="3" fill="white" stroke="#EAB308" stroke-width="1"/>
-        <text x="334" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#B45309">Plafond zone (100 m AMSL)</text>
-
-        <!-- ===== DÉCOLLAGE sur la colline (y=78) ===== -->
-        <circle cx="130" cy="78" r="5" fill="#0E74DA"/>
-        <rect x="5" y="70" width="108" height="16" rx="3" fill="white" opacity="0.9"/>
-        <text x="59" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#0E74DA">Décollage (80 m AMSL)</text>
-
-        <!-- ===== PISTE en contrebas (y=133) ===== -->
-        <rect x="285" y="133" width="55" height="8" rx="2" fill="#475569"/>
-        <rect x="258" y="118" width="108" height="14" rx="3" fill="white" opacity="0.9"/>
-        <text x="312" y="129" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#475569">Piste (50 m AMSL)</text>
-
-        <!-- ===== FLÈCHE 50 m : piste → plafond (droite) ===== -->
-        <line x1="390" y1="137" x2="390" y2="28" stroke="#EAB308" stroke-width="1.5"/>
-        <polygon points="390,137 387,131 393,131" fill="#EAB308"/>
-        <polygon points="390,28 387,34 393,34" fill="#EAB308"/>
-        <text x="398" y="86" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#B45309">50 m</text>
-
-        <!-- ===== FLÈCHE 20 m : décollage → plafond (rouge, courte !) ===== -->
-        <line x1="130" y1="73" x2="130" y2="33" stroke="#DC2626" stroke-width="2"/>
-        <polygon points="130,73 127,67 133,67" fill="#DC2626"/>
-        <polygon points="130,33 127,39 133,39" fill="#DC2626"/>
-
-        <!-- Drone au plafond -->
-        <circle cx="130" cy="28" r="3" fill="#0E74DA"/>
-        <line x1="123" y1="28" x2="137" y2="28" stroke="#0E74DA" stroke-width="1.5"/>
-
-        <!-- Encart rouge "Seulement 20 m AGL" -->
-        <rect x="140" y="40" width="74" height="24" rx="5" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
-        <text x="177" y="51" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" font-weight="700" fill="#DC2626">Seulement</text>
-        <text x="177" y="61" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#DC2626">20 m AGL !</text>
-
-        <!-- ===== DELTA 30 m entre décollage et piste ===== -->
-        <line x1="230" y1="82" x2="230" y2="137" stroke="#64748B" stroke-width="1" stroke-dasharray="3 2"/>
-        <polygon points="230,82 227,88 233,88" fill="#64748B"/>
-        <polygon points="230,137 227,131 233,131" fill="#64748B"/>
-        <rect x="236" y="101" width="40" height="14" rx="3" fill="white" opacity="0.85"/>
-        <text x="256" y="112" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#64748B">Δ 30 m</text>
-
-        <!-- Lignes de référence horizontales -->
-        <line x1="125" y1="78" x2="225" y2="78" stroke="#0E74DA" stroke-width="0.7" stroke-dasharray="3 3" opacity="0.3"/>
-        <line x1="275" y1="137" x2="225" y2="137" stroke="#475569" stroke-width="0.7" stroke-dasharray="3 3" opacity="0.3"/>
-      </svg>
-    </div>
-  </div>
-
-  <div class="slide-footer">
-    <span>Module 3 — Carte UAS &amp; Zones aérodrome</span>
-    <span>Jour 1 Matin</span>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     SLIDE 28 — Cartes.gouv.fr — Carte des restrictions drone
+     SLIDE 26b — EXEMPLE CONCRET : VOL PROCHE D'UNE FALAISE
      ============================================================ -->
 <section class="slide-two-col">
   <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2>Cartes.gouv.fr — Restrictions drone</h2>
-
-  <div class="highlight-box highlight-error" style="margin: 0 0 14px 0; padding: 10px 16px; max-width: 100%;">
-    <p style="margin: 0; font-size: 0.8em; font-weight: 800; color: #DC2626; text-align: center; letter-spacing: 0.02em;">⚠️ Carte INDICATIVE et INCOMPLÈTE</p>
-    <p style="margin: 4px 0 0 0; font-size: 0.62em; color: #475569; text-align: center;">Outil d'aide à la décision uniquement. La <strong>responsabilité du télépilote</strong> reste entière : croiser systématiquement avec le SIA (NOTAM, AIP, AZBA) et les arrêtés préfectoraux locaux.</p>
-  </div>
+  <h2>Exemple concret — Vol proche d'une falaise</h2>
 
   <div class="two-col">
-    <div class="col-text">
-      <ul>
-        <li><strong>Remplace Géoportail</strong> pour les cartes de restrictions drone</li>
-        <li><strong>Code couleur hauteur autorisée :</strong></li>
-      </ul>
-      <div style="margin: 8px 0 8px 16px; font-size: 0.75em;">
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
-          <span style="display:inline-block; width:16px; height:16px; background:#E57373; border-radius:3px;"></span> <strong>Rouge</strong> — Vol interdit
-        </div>
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
-          <span style="display:inline-block; width:16px; height:16px; background:#F4A261; border-radius:3px;"></span> <strong>Orange foncé</strong> — 30 m max
-        </div>
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
-          <span style="display:inline-block; width:16px; height:16px; background:#F8B788; border-radius:3px;"></span> <strong>Orange clair</strong> — 50 m max
-        </div>
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
-          <span style="display:inline-block; width:16px; height:16px; background:#F9D77E; border-radius:3px;"></span> <strong>Jaune</strong> — 60 m max
-        </div>
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
-          <span style="display:inline-block; width:16px; height:16px; background:#FCE588; border-radius:3px;"></span> <strong>Jaune clair</strong> — 100 m max
-        </div>
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
-          <span style="display:inline-block; width:16px; height:16px; background:#FFFFFF; border:1px solid #CBD5E1; border-radius:3px;"></span> <strong>Sans couleur</strong> — 120 m max (au-dessus interdit)
-        </div>
+    <div class="col-text" style="font-size: 0.82em;">
+      <p style="margin-bottom: 10px;">Le télépilote décolle de la <strong>plage</strong>, au pied d'une falaise de <strong>300 m</strong>. Il fait voler son drone près du <strong>sommet</strong> de la falaise.</p>
+
+      <div class="info-card" style="margin-bottom: 8px; padding: 8px 12px; background: rgba(16,185,129,0.08); border-left: 3px solid #059669;">
+        <p style="margin: 0 0 4px; font-weight: 700; color: #059669;">✅ Mesure correcte (point le plus proche)</p>
+        <p style="margin: 0; font-size: 0.92em;">Drone à <strong>120 m du sommet</strong> de la falaise → <strong>120 m AGL OK</strong></p>
       </div>
-      <p style="font-size: 0.62em; color: var(--dx-text-secondary); margin: 4px 0 8px 0; font-style: italic;">* Sauf conditions particulières publiées à l'arrêté « espaces » du 3 décembre 2020.</p>
-      <ul>
-        <li><strong>Vérification rapide avant vol</strong> : indispensable en complément du SIA</li>
-      </ul>
-      <div class="info-card" style="margin-top: 8px; font-size: 0.7em;">
-        <strong>Site :</strong> <a href="https://cartes.gouv.fr" target="_blank" style="color: var(--dx-primary);">cartes.gouv.fr</a>
+
+      <div class="info-card" style="margin-bottom: 8px; padding: 8px 12px; background: rgba(239,68,68,0.08); border-left: 3px solid #DC2626;">
+        <p style="margin: 0 0 4px; font-weight: 700; color: #DC2626;">❌ Mesure incorrecte (depuis décollage)</p>
+        <p style="margin: 0; font-size: 0.92em;">Drone à <strong>340 m de la plage</strong> (sol décollage) → si on prenait cette mesure, on dépasserait 120 m</p>
       </div>
+
+      <p style="font-size: 0.85em; margin-top: 8px;">→ La règle <strong>120 m AGL</strong> est respectée car la falaise (point le plus haut sous le drone) sert de référence. Cela permet d'inspecter falaises, cascades et reliefs.</p>
     </div>
     <div class="col-visual">
-      <img src="assets/img/screenshots/Cartes.gouv_UAS.png" alt="Cartes.gouv.fr — restrictions UAS" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+      <!-- SVG : vol proche falaise -->
+      <svg viewBox="0 0 480 380" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:500px;">
+        <defs>
+          <linearGradient id="skyFa" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#7DD3FC"/>
+            <stop offset="100%" stop-color="#DBEAFE"/>
+          </linearGradient>
+          <linearGradient id="rockFa" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#A8A29E"/>
+            <stop offset="50%" stop-color="#78716C"/>
+            <stop offset="100%" stop-color="#57534E"/>
+          </linearGradient>
+          <linearGradient id="sandFa" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FDE68A"/>
+            <stop offset="100%" stop-color="#D6A158"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Ciel -->
+        <rect x="0" y="0" width="480" height="340" rx="8" fill="url(#skyFa)"/>
+
+        <!-- Mer en bas à gauche -->
+        <rect x="0" y="320" width="120" height="60" fill="#3B82F6" opacity="0.6"/>
+        <path d="M 0 322 Q 30 325 60 322 T 120 322" stroke="white" stroke-width="1.5" fill="none" opacity="0.7"/>
+
+        <!-- Plage (sable) -->
+        <path d="M 0 340 L 220 340 L 320 320 L 480 320 L 480 380 L 0 380 Z" fill="url(#sandFa)"/>
+        <path d="M 0 340 L 220 340 L 320 320 L 480 320" stroke="#A16207" stroke-width="1.5" fill="none"/>
+
+        <!-- Falaise (rocheuse, montant à droite) -->
+        <path d="M 220 340 L 240 280 L 250 230 L 260 180 L 280 130 L 310 90 L 350 80 L 380 75 L 420 75 L 460 80 L 480 75 L 480 320 L 320 320 Z" fill="url(#rockFa)"/>
+        <path d="M 220 340 L 240 280 L 250 230 L 260 180 L 280 130 L 310 90 L 350 80 L 380 75 L 420 75 L 460 80 L 480 75" stroke="#44403C" stroke-width="2" fill="none"/>
+
+        <!-- Texture rocheuse -->
+        <g opacity="0.4" stroke="#3F3F46" stroke-width="0.8" fill="none">
+          <path d="M 240 280 L 260 290 M 270 220 L 290 230 M 290 180 L 310 195 M 340 130 L 360 145 M 390 100 L 410 115"/>
+        </g>
+
+        <!-- Cascade (eau qui tombe le long de la falaise) -->
+        <path d="M 410 80 L 405 200 L 410 280 L 420 310 L 415 320" stroke="white" stroke-width="6" fill="none" opacity="0.85"/>
+        <path d="M 405 100 L 405 250 M 412 150 L 412 280" stroke="#DBEAFE" stroke-width="2" fill="none" opacity="0.8"/>
+
+        <!-- Bassin au pied de la cascade -->
+        <ellipse cx="418" cy="322" rx="22" ry="5" fill="#3B82F6" opacity="0.4"/>
+
+        <!-- Télépilote sur la plage -->
+        <g transform="translate(85,318)">
+          <circle cx="0" cy="0" r="5" fill="#0F172A"/>
+          <line x1="0" y1="5" x2="0" y2="16" stroke="#0F172A" stroke-width="2"/>
+          <line x1="-6" y1="10" x2="6" y2="10" stroke="#0F172A" stroke-width="1.5"/>
+          <line x1="0" y1="16" x2="-3" y2="22" stroke="#0F172A" stroke-width="1.5"/>
+          <line x1="0" y1="16" x2="3" y2="22" stroke="#0F172A" stroke-width="1.5"/>
+          <!-- Radio commande -->
+          <rect x="-4" y="11" width="3" height="3" fill="#475569"/>
+        </g>
+
+        <!-- Drone près du sommet de la falaise -->
+        <g transform="translate(350,55)">
+          <rect x="-10" y="-3" width="20" height="6" rx="3" fill="#0F172A"/>
+          <line x1="-13" y1="-3" x2="-22" y2="-11" stroke="#0F172A" stroke-width="1.8"/>
+          <line x1="13" y1="-3" x2="22" y2="-11" stroke="#0F172A" stroke-width="1.8"/>
+          <line x1="-13" y1="3" x2="-22" y2="11" stroke="#0F172A" stroke-width="1.8"/>
+          <line x1="13" y1="3" x2="22" y2="11" stroke="#0F172A" stroke-width="1.8"/>
+          <ellipse cx="-22" cy="-11" rx="6" ry="1.8" fill="#0F172A" opacity="0.5"/>
+          <ellipse cx="22" cy="-11" rx="6" ry="1.8" fill="#0F172A" opacity="0.5"/>
+          <ellipse cx="-22" cy="11" rx="6" ry="1.8" fill="#0F172A" opacity="0.5"/>
+          <ellipse cx="22" cy="11" rx="6" ry="1.8" fill="#0F172A" opacity="0.5"/>
+        </g>
+
+        <!-- Flèche 120 m (vert, mesure correcte : drone → sommet falaise) -->
+        <line x1="380" y1="55" x2="420" y2="75" stroke="#059669" stroke-width="2.5" stroke-dasharray="0"/>
+        <polygon points="380,55 386,60 386,53" fill="#059669"/>
+        <polygon points="420,75 414,73 416,80" fill="#059669"/>
+        <rect x="396" y="40" width="42" height="18" rx="3" fill="white" stroke="#059669" stroke-width="1.5"/>
+        <text x="417" y="53" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#059669">120 m</text>
+
+        <!-- Flèche 300 m (rouge, hauteur falaise depuis plage au pied de la cascade) -->
+        <line x1="385" y1="80" x2="385" y2="318" stroke="#DC2626" stroke-width="2" stroke-dasharray="4 3"/>
+        <polygon points="385,80 381,88 389,88" fill="#DC2626"/>
+        <polygon points="385,318 381,310 389,310" fill="#DC2626"/>
+        <rect x="364" y="180" width="42" height="18" rx="3" fill="white" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="385" y="193" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#DC2626">300 m</text>
+
+        <!-- Flèche 340 m (rouge, depuis télépilote à la verticale du drone — INCORRECT) -->
+        <line x1="305" y1="55" x2="305" y2="330" stroke="#DC2626" stroke-width="2" stroke-dasharray="4 3"/>
+        <polygon points="305,55 301,63 309,63" fill="#DC2626"/>
+        <polygon points="305,330 301,322 309,322" fill="#DC2626"/>
+        <rect x="282" y="170" width="46" height="18" rx="3" fill="white" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="305" y="183" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#DC2626">340 m</text>
+
+        <!-- Croix sur 340m (mesure incorrecte) -->
+        <g transform="translate(305,250)">
+          <circle cx="0" cy="0" r="11" fill="white" stroke="#DC2626" stroke-width="2"/>
+          <line x1="-7" y1="-7" x2="7" y2="7" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="-7" y1="7" x2="7" y2="-7" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
+        </g>
+
+        <!-- Annotations -->
+        <text x="85" y="357" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#0F172A">Télépilote</text>
+
+        <!-- Encadré VLOS en haut à gauche -->
+        <rect x="10" y="10" width="170" height="38" rx="4" fill="white" stroke="#059669" stroke-width="1.5" opacity="0.95"/>
+        <text x="22" y="24" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#059669">⚠️ Bien rester en VLOS</text>
+        <text x="22" y="36" font-family="Inter, sans-serif" font-size="8" fill="#475569">+ vérifier le retour vidéo / GPS</text>
+      </svg>
+      <p style="text-align: center; font-size: 0.5em; color: var(--dx-text-muted); margin-top: 4px; font-style: italic;">Inspection de falaise / cascade — application concrète du « point le plus proche »</p>
     </div>
   </div>
 
+  <aside class="notes">
+    Cas pédagogique récurrent : un stagiaire demande « si je suis en bord de mer et que je veux filmer une falaise de 300 m, est-ce que je peux monter à 200 m ? ». Réponse : oui, si la falaise est sous le drone et que je reste à moins de 120 m de son sommet. Avantage de cette règle : permet de filmer reliefs, montagnes, falaises côtières (Bretagne, Normandie), cascades. Précautions : VLOS impératif (drone peut sembler proche mais distance horizontale réelle parfois trompeuse), vent latéral de la falaise (turbulences), retour vidéo à surveiller. Discussion : que se passe-t-il si le drone s'éloigne au-dessus de la mer ? → la mesure se prendrait alors depuis la surface de l'eau, qui peut être 200-300 m plus bas → vol vite illégal.
+  </aside>
+
   <div class="slide-footer">
-    <span>Module 3 — Cartes.gouv.fr</span>
+    <span>Module 3 — Exemple falaise</span>
     <span>Jour 1 Matin</span>
   </div>
 </section>
