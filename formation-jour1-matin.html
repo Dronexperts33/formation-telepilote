@@ -1255,91 +1255,148 @@
       </aside>
     </div>
     <div class="col-visual">
-      <!-- SVG amélioré : terrain accidenté avec mesure correcte (vert) vs incorrecte (rouge barré) -->
-      <svg viewBox="0 0 460 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:480px;">
+      <!-- SVG inspiré du schéma EASA : terrain en relief + obstacle artificiel + aéronef habité -->
+      <svg viewBox="0 0 540 380" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:560px;">
         <defs>
-          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#DBEAFE"/>
-            <stop offset="100%" stop-color="#F0F7FF"/>
+          <linearGradient id="skyGrad27" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4A6B8E"/>
+            <stop offset="100%" stop-color="#7B96B6"/>
           </linearGradient>
-          <linearGradient id="terrainGrad" x1="0" y1="0" x2="0" y2="1">
+          <linearGradient id="terrainGrad27" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#A7B6CC"/>
-            <stop offset="100%" stop-color="#64748B"/>
+            <stop offset="100%" stop-color="#5B6F87"/>
+          </linearGradient>
+          <linearGradient id="grassGrad27" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#7EB67E"/>
+            <stop offset="100%" stop-color="#3F7F3F"/>
           </linearGradient>
         </defs>
 
-        <!-- Sky -->
-        <rect x="0" y="0" width="460" height="260" fill="url(#skyGrad)" rx="8"/>
+        <!-- Ciel -->
+        <rect x="0" y="0" width="540" height="380" rx="8" fill="url(#skyGrad27)"/>
 
-        <!-- Terrain accentué avec colline -->
-        <path d="M0 260 L40 258 L80 255 Q110 252 140 235 Q175 215 220 200 Q260 190 290 195 Q320 200 350 220 Q385 245 420 258 L460 260 L460 340 L0 340 Z" fill="url(#terrainGrad)"/>
-        <path d="M0 260 L40 258 L80 255 Q110 252 140 235 Q175 215 220 200 Q260 190 290 195 Q320 200 350 220 Q385 245 420 258 L460 260" stroke="#475569" stroke-width="2" fill="none"/>
+        <!-- Zone INTERDITE >120m AGL (herbe verte à gauche, accentué bas) -->
+        <path d="M 0 380 L 0 220 Q 30 218 60 215 L 60 380 Z" fill="url(#grassGrad27)"/>
 
-        <!-- Arbres / végétation pour donner du contexte -->
-        <g opacity="0.7">
-          <path d="M60 255 L60 245 M55 250 L60 245 L65 250 M58 250 L58 255 M62 250 L62 255" stroke="#15803D" stroke-width="1.2" fill="none"/>
-          <path d="M105 248 L105 238 M100 243 L105 238 L110 243 M103 243 L103 248 M107 243 L107 248" stroke="#15803D" stroke-width="1.2" fill="none"/>
-          <path d="M380 240 L380 230 M375 235 L380 230 L385 235 M378 235 L378 240 M382 235 L382 240" stroke="#15803D" stroke-width="1.2" fill="none"/>
+        <!-- Terrain principal (gris) avec colline + vallée + plateau -->
+        <path d="M 0 220 L 60 215 Q 90 210 130 195 Q 175 175 220 165 Q 260 162 290 180 Q 320 200 360 220 L 410 230 L 540 240 L 540 380 L 60 380 L 60 215 Z" fill="url(#terrainGrad27)"/>
+        <path d="M 0 220 L 60 215 Q 90 210 130 195 Q 175 175 220 165 Q 260 162 290 180 Q 320 200 360 220 L 410 230 L 540 240" stroke="#475569" stroke-width="2" fill="none"/>
+
+        <!-- Étiquette ">120m INTERDIT" sur l'herbe -->
+        <text x="30" y="290" font-family="Inter, sans-serif" font-size="13" font-weight="800" fill="#F59E0B">&gt;120 m</text>
+        <text x="30" y="305" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#F59E0B">INTERDIT</text>
+
+        <!-- TÉLÉPILOTE sur la colline (sommet à gauche) -->
+        <g transform="translate(150,177)">
+          <circle cx="0" cy="0" r="6" fill="#0F172A"/>
+          <line x1="0" y1="6" x2="0" y2="20" stroke="#0F172A" stroke-width="2.5"/>
+          <line x1="-7" y1="12" x2="7" y2="12" stroke="#0F172A" stroke-width="2"/>
+          <line x1="0" y1="20" x2="-4" y2="32" stroke="#0F172A" stroke-width="2"/>
+          <line x1="0" y1="20" x2="4" y2="32" stroke="#0F172A" stroke-width="2"/>
         </g>
 
-        <!-- Pilote au décollage (à gauche) -->
-        <circle cx="60" cy="247" r="6" fill="#0F172A"/>
-        <line x1="60" y1="253" x2="60" y2="265" stroke="#0F172A" stroke-width="2"/>
-        <line x1="55" y1="259" x2="65" y2="259" stroke="#0F172A" stroke-width="1.5"/>
-        <text x="60" y="282" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#0F172A">Décollage</text>
-        <text x="60" y="294" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#64748B">Sol bas</text>
+        <!-- Cône VLOS partant du télépilote -->
+        <path d="M 150 175 L 280 90 L 280 175 Z" fill="rgba(16,185,129,0.18)" stroke="#10B981" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.7"/>
+        <text x="190" y="155" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#059669">VLOS</text>
 
-        <!-- Point le plus haut du terrain (au sommet) - marqueur -->
-        <circle cx="240" cy="195" r="4" fill="#059669"/>
-        <line x1="237" y1="192" x2="243" y2="198" stroke="white" stroke-width="1"/>
-        <line x1="237" y1="198" x2="243" y2="192" stroke="white" stroke-width="1"/>
-
-        <!-- Drone en haut, au-dessus du sommet -->
-        <g transform="translate(290,90)">
-          <rect x="-12" y="-3" width="24" height="6" rx="3" fill="#0E74DA"/>
-          <line x1="-16" y1="-3" x2="-26" y2="-12" stroke="#0E74DA" stroke-width="2"/>
-          <line x1="16" y1="-3" x2="26" y2="-12" stroke="#0E74DA" stroke-width="2"/>
-          <line x1="-16" y1="3" x2="-26" y2="12" stroke="#0E74DA" stroke-width="2"/>
-          <line x1="16" y1="3" x2="26" y2="12" stroke="#0E74DA" stroke-width="2"/>
-          <ellipse cx="-26" cy="-12" rx="6" ry="1.8" fill="#0E74DA" opacity="0.4"/>
-          <ellipse cx="26" cy="-12" rx="6" ry="1.8" fill="#0E74DA" opacity="0.4"/>
-          <ellipse cx="-26" cy="12" rx="6" ry="1.8" fill="#0E74DA" opacity="0.4"/>
-          <ellipse cx="26" cy="12" rx="6" ry="1.8" fill="#0E74DA" opacity="0.4"/>
+        <!-- DRONE en vol au-dessus de la colline -->
+        <g transform="translate(225,115)">
+          <rect x="-12" y="-3" width="24" height="6" rx="3" fill="#DC2626"/>
+          <line x1="-16" y1="-3" x2="-25" y2="-11" stroke="#DC2626" stroke-width="2"/>
+          <line x1="16" y1="-3" x2="25" y2="-11" stroke="#DC2626" stroke-width="2"/>
+          <line x1="-16" y1="3" x2="-25" y2="11" stroke="#DC2626" stroke-width="2"/>
+          <line x1="16" y1="3" x2="25" y2="11" stroke="#DC2626" stroke-width="2"/>
+          <ellipse cx="-25" cy="-11" rx="6" ry="1.8" fill="#DC2626" opacity="0.4"/>
+          <ellipse cx="25" cy="-11" rx="6" ry="1.8" fill="#DC2626" opacity="0.4"/>
+          <ellipse cx="-25" cy="11" rx="6" ry="1.8" fill="#DC2626" opacity="0.4"/>
+          <ellipse cx="25" cy="11" rx="6" ry="1.8" fill="#DC2626" opacity="0.4"/>
         </g>
-        <text x="290" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0E74DA">Drone</text>
 
-        <!-- ✅ Mesure CORRECTE : depuis le point le plus proche (sommet) -->
-        <line x1="240" y1="195" x2="240" y2="92" stroke="#059669" stroke-width="3" stroke-dasharray="0"/>
-        <polygon points="240,195 235,186 245,186" fill="#059669"/>
-        <polygon points="240,92 235,101 245,101" fill="#059669"/>
-        <!-- Label correcte -->
-        <rect x="148" y="125" width="82" height="38" rx="6" fill="white" stroke="#059669" stroke-width="2"/>
-        <text x="189" y="141" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="800" fill="#059669">120 m</text>
-        <text x="189" y="155" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#059669" font-weight="600">✅ max AGL</text>
+        <!-- Flèche 120m depuis le sommet de la colline (point le plus proche) -->
+        <line x1="220" y1="166" x2="220" y2="118" stroke="#059669" stroke-width="2.5" stroke-dasharray="0"/>
+        <polygon points="220,166 217,158 223,158" fill="#059669"/>
+        <polygon points="220,118 217,126 223,126" fill="#059669"/>
+        <rect x="172" y="132" width="48" height="20" rx="4" fill="white" stroke="#059669" stroke-width="1.5"/>
+        <text x="196" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="#059669">120 m</text>
 
-        <!-- ❌ Mesure INCORRECTE : depuis le décollage -->
-        <line x1="65" y1="245" x2="65" y2="92" stroke="#EF4444" stroke-width="2" stroke-dasharray="6 4" opacity="0.6"/>
-        <!-- Croix sur la mesure incorrecte -->
-        <g transform="translate(65,165)">
-          <circle cx="0" cy="0" r="14" fill="white" stroke="#EF4444" stroke-width="2.5"/>
-          <line x1="-9" y1="-9" x2="9" y2="9" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
-          <line x1="-9" y1="9" x2="9" y2="-9" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+        <!-- Flèche 120m depuis la vallée centrale (autre point bas) -->
+        <line x1="315" y1="208" x2="315" y2="105" stroke="#0E74DA" stroke-width="2" stroke-dasharray="5 3"/>
+        <polygon points="315,208 312,200 318,200" fill="#0E74DA"/>
+        <polygon points="315,105 312,113 318,113" fill="#0E74DA"/>
+        <text x="320" y="160" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0E74DA">120 m</text>
+
+        <!-- HÉLICOPTÈRE (aéronef habité) — au-dessus, à éviter -->
+        <g transform="translate(290,45)">
+          <!-- corps -->
+          <ellipse cx="0" cy="0" rx="20" ry="7" fill="#10B981"/>
+          <!-- vitre -->
+          <ellipse cx="-12" cy="-1" rx="6" ry="4" fill="#7DD3FC"/>
+          <!-- queue -->
+          <line x1="18" y1="0" x2="38" y2="-3" stroke="#10B981" stroke-width="3"/>
+          <line x1="36" y1="-3" x2="38" y2="-10" stroke="#10B981" stroke-width="2"/>
+          <!-- patins -->
+          <line x1="-15" y1="8" x2="15" y2="8" stroke="#0F172A" stroke-width="1.5"/>
+          <line x1="-10" y1="6" x2="-10" y2="8" stroke="#0F172A" stroke-width="1"/>
+          <line x1="10" y1="6" x2="10" y2="8" stroke="#0F172A" stroke-width="1"/>
+          <!-- rotor -->
+          <line x1="-25" y1="-12" x2="25" y2="-12" stroke="#0F172A" stroke-width="1.5"/>
+          <line x1="0" y1="-12" x2="0" y2="-7" stroke="#0F172A" stroke-width="2"/>
         </g>
-        <text x="65" y="195" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#DC2626">Pas depuis</text>
-        <text x="65" y="206" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#DC2626">le décollage !</text>
 
-        <!-- Flèche & étiquette pour "Point le plus proche" -->
-        <line x1="305" y1="200" x2="246" y2="195" stroke="#059669" stroke-width="1.2" stroke-dasharray="3 2"/>
-        <rect x="307" y="190" width="125" height="32" rx="4" fill="rgba(16,185,129,0.1)" stroke="#059669" stroke-width="1.5"/>
-        <text x="370" y="205" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#059669">Point le plus proche</text>
-        <text x="370" y="216" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#059669">du sol sous le drone</text>
+        <!-- Cercle barré "drone interdit" entre drone et hélico -->
+        <g transform="translate(258,80)">
+          <circle cx="0" cy="0" r="11" fill="white" stroke="#DC2626" stroke-width="2.5"/>
+          <line x1="-8" y1="-8" x2="8" y2="8" stroke="#DC2626" stroke-width="2.5"/>
+          <!-- mini drone à l'intérieur -->
+          <rect x="-4" y="-1" width="8" height="2" fill="#475569"/>
+        </g>
 
-        <!-- Légende -->
-        <rect x="10" y="310" width="14" height="14" rx="3" fill="rgba(16,185,129,0.15)" stroke="#059669" stroke-width="1.5"/>
-        <text x="30" y="321" font-family="Inter, sans-serif" font-size="9" fill="#475569" font-weight="500">Mesure correcte (point le plus proche)</text>
-        <rect x="248" y="310" width="14" height="14" rx="3" fill="rgba(239,68,68,0.1)" stroke="#EF4444" stroke-width="1.5"/>
-        <text x="268" y="321" font-family="Inter, sans-serif" font-size="9" fill="#475569" font-weight="500">Mesure incorrecte (depuis décollage)</text>
+        <!-- OBSTACLE ARTIFICIEL (château d'eau / pylône) à droite -->
+        <g transform="translate(450,170)">
+          <!-- réservoir -->
+          <ellipse cx="0" cy="-5" rx="22" ry="6" fill="white" stroke="#475569" stroke-width="1.5"/>
+          <rect x="-22" y="-5" width="44" height="22" fill="white" stroke="#475569" stroke-width="1.5"/>
+          <ellipse cx="0" cy="17" rx="22" ry="5" fill="#CBD5E1" stroke="#475569" stroke-width="1.5"/>
+          <!-- pieds -->
+          <line x1="-15" y1="22" x2="-18" y2="70" stroke="#475569" stroke-width="2"/>
+          <line x1="15" y1="22" x2="18" y2="70" stroke="#475569" stroke-width="2"/>
+          <line x1="-5" y1="22" x2="-5" y2="70" stroke="#475569" stroke-width="2"/>
+          <line x1="5" y1="22" x2="5" y2="70" stroke="#475569" stroke-width="2"/>
+          <!-- entrecroisements -->
+          <line x1="-18" y1="50" x2="-5" y2="35" stroke="#475569" stroke-width="1"/>
+          <line x1="-5" y1="50" x2="-18" y2="35" stroke="#475569" stroke-width="1"/>
+          <line x1="5" y1="50" x2="18" y2="35" stroke="#475569" stroke-width="1"/>
+          <line x1="18" y1="50" x2="5" y2="35" stroke="#475569" stroke-width="1"/>
+        </g>
+
+        <!-- Flèche +15 m au-dessus de l'obstacle -->
+        <line x1="450" y1="160" x2="450" y2="135" stroke="#DC2626" stroke-width="2"/>
+        <polygon points="450,160 446,153 454,153" fill="#DC2626"/>
+        <polygon points="450,135 446,142 454,142" fill="#DC2626"/>
+        <text x="458" y="151" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#DC2626">+ 15 m</text>
+
+        <!-- Flèche horizontale rayon 50 m de chaque côté -->
+        <line x1="402" y1="200" x2="498" y2="200" stroke="#0E74DA" stroke-width="2"/>
+        <polygon points="402,200 410,197 410,203" fill="#0E74DA"/>
+        <polygon points="498,200 490,197 490,203" fill="#0E74DA"/>
+        <rect x="418" y="190" width="64" height="20" rx="4" fill="white" stroke="#0E74DA" stroke-width="1.5"/>
+        <text x="450" y="204" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0E74DA">rayon 50 m</text>
+
+        <!-- Étiquette accord exploitant -->
+        <rect x="380" y="98" width="158" height="32" rx="4" fill="white" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="459" y="111" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#DC2626">⚠️ Accord obligatoire</text>
+        <text x="459" y="123" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#DC2626">du propriétaire</text>
+
+        <!-- Légende VLOS (haut gauche) -->
+        <rect x="12" y="10" width="190" height="36" rx="4" fill="white" stroke="#059669" stroke-width="1.5" opacity="0.95"/>
+        <text x="22" y="24" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#059669">VLOS dépend du drone</text>
+        <text x="22" y="36" font-family="Inter, sans-serif" font-size="8" fill="#475569">Plus le drone est petit, plus la portée est courte</text>
+
+        <!-- Mention "obstacle artificiel" à droite -->
+        <text x="450" y="252" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="white">Obstacle artificiel</text>
+        <text x="450" y="263" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#E2E8F0">(antenne, château d'eau…)</text>
       </svg>
+      <p style="text-align: center; font-size: 0.5em; color: var(--dx-text-muted); margin-top: 4px; font-style: italic;">D'après le schéma officiel EASA — Annexe Règlement (UE) 2019/947</p>
     </div>
   </div>
 
