@@ -71,7 +71,17 @@
     </thead>
     <tbody>
       <tr style="background: rgba(16,185,129,0.06);">
-        <td style="padding: 9px 14px; border: 1px solid var(--dx-border); font-weight: 600; color: #059669;">A1 / A2 / A3</td>
+        <td style="padding: 9px 14px; border: 1px solid var(--dx-border); font-weight: 600; color: #059669;">A1</td>
+        <td style="padding: 9px 14px; text-align: center; border: 1px solid var(--dx-border); font-weight: 700; color: #059669;">OUVERTE (OPEN)</td>
+        <td style="padding: 9px 14px; text-align: center; border: 1px solid var(--dx-border);">VLOS</td>
+      </tr>
+      <tr style="background: rgba(16,185,129,0.06);">
+        <td style="padding: 9px 14px; border: 1px solid var(--dx-border); font-weight: 600; color: #059669;">A2</td>
+        <td style="padding: 9px 14px; text-align: center; border: 1px solid var(--dx-border); font-weight: 700; color: #059669;">OUVERTE (OPEN)</td>
+        <td style="padding: 9px 14px; text-align: center; border: 1px solid var(--dx-border);">VLOS</td>
+      </tr>
+      <tr style="background: rgba(16,185,129,0.06);">
+        <td style="padding: 9px 14px; border: 1px solid var(--dx-border); font-weight: 600; color: #059669;">A3</td>
         <td style="padding: 9px 14px; text-align: center; border: 1px solid var(--dx-border); font-weight: 700; color: #059669;">OUVERTE (OPEN)</td>
         <td style="padding: 9px 14px; text-align: center; border: 1px solid var(--dx-border);">VLOS</td>
       </tr>
@@ -85,25 +95,15 @@
         <td style="padding: 9px 14px; text-align: center; border: 1px solid var(--dx-border); font-weight: 700; color: var(--dx-primary);">SPÉCIFIQUE (SPECIFIC)</td>
         <td style="padding: 9px 14px; text-align: center; border: 1px solid var(--dx-border);"><strong>BVLOS</strong></td>
       </tr>
-      <tr style="background: rgba(14,116,218,0.06);">
-        <td style="padding: 9px 14px; border: 1px solid var(--dx-border); font-weight: 600; color: var(--dx-primary);">PDRA-G02</td>
-        <td style="padding: 9px 14px; text-align: center; border: 1px solid var(--dx-border); font-weight: 700; color: var(--dx-primary);">SPÉCIFIQUE (SPECIFIC)</td>
-        <td style="padding: 9px 14px; text-align: center; border: 1px solid var(--dx-border);">BVLOS</td>
-      </tr>
-      <tr style="background: rgba(14,116,218,0.06);">
-        <td style="padding: 9px 14px; border: 1px solid var(--dx-border); font-weight: 600; color: var(--dx-primary);">SORA</td>
-        <td style="padding: 9px 14px; text-align: center; border: 1px solid var(--dx-border); font-weight: 700; color: var(--dx-primary);">SPÉCIFIQUE (SPECIFIC)</td>
-        <td style="padding: 9px 14px; text-align: center; border: 1px solid var(--dx-border);">Sur mesure</td>
-      </tr>
     </tbody>
   </table>
 
   <div class="info-card" style="margin-top: 14px; padding: 10px 16px; font-size: 0.72em; background: rgba(14,116,218,0.06); border-left: 4px solid var(--dx-primary);">
-    <strong>📌 À retenir</strong> — Deux grandes catégories d'exploitation : <strong style="color:#059669;">Ouverte (Open)</strong> pour les vols à faible risque (cat. Open A1/A2/A3) et <strong style="color:var(--dx-primary);">Spécifique (Specific)</strong> pour les vols à risque modéré nécessitant une analyse (STS-01/02, PDRA, SORA). Les détails des contraintes (zone, drone, équipement) seront vus dans les modules suivants.
+    <strong>📌 À retenir</strong> — Deux grandes catégories d'exploitation : <strong style="color:#059669;">Ouverte (Open)</strong> pour les vols à faible risque (A1 / A2 / A3) et <strong style="color:var(--dx-primary);">Spécifique (Specific)</strong> pour les vols à risque modéré nécessitant une analyse (STS-01 / STS-02). Les détails des contraintes (zone, drone, équipement) seront vus dans les modules suivants.
   </div>
 
   <aside class="notes">
-    Slide de rappel à projeter au début du module Catégorie Spécifique pour donner une vue d'ensemble. Insister sur la logique des 2 grands régimes : <strong>OPEN (Ouverte)</strong> = cadre simple, drone léger, VLOS, peu de démarches ; <strong>SPECIFIC (Spécifique)</strong> = analyse de risque obligatoire, déclaration/autorisation, MANEX, observateurs. Le choix du scénario découle de la mission : STS-01 = inspection toit immeuble (VLOS en agglo), STS-02 = surveillance pipeline (BVLOS), PDRA-G02 = cartographie agricole (sans marquage C6), SORA = livraison médicaments en milieu urbain (sur mesure). Les détails de chaque scénario (zone, classe drone, masse, hauteur) sont vus dans les slides suivantes — ici on reste sur la classification.
+    Slide de rappel à projeter au début du module Catégorie Spécifique pour donner une vue d'ensemble. Insister sur la logique des 2 grands régimes : <strong>OPEN (Ouverte)</strong> = cadre simple, drone léger, VLOS, peu de démarches (3 sous-catégories A1/A2/A3 selon distance aux tiers et classe drone) ; <strong>SPECIFIC (Spécifique)</strong> = analyse de risque obligatoire, déclaration/autorisation, MANEX, observateurs (STS-01 = VLOS en zone peuplée, STS-02 = BVLOS en zone faiblement peuplée). Exemples concrets : STS-01 = inspection toit immeuble en agglo ; STS-02 = surveillance pipeline / inspection linéaire BVLOS. PDRA et SORA sont des alternatives en catégorie Spécifique (vu en détail plus loin) — on les a retirés ici pour rester sur les 2 scénarios standards. Les détails de chaque scénario (zone, classe drone, masse, hauteur) sont vus dans les slides suivantes.
   </aside>
 
   <div class="slide-footer">
