@@ -354,67 +354,8 @@
       </ul>
     </div>
     <div class="col-visual">
-      <!-- SVG : représentation Zone D avec activation jour/nuit + activités à risque -->
-      <svg viewBox="0 0 360 340" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:380px;">
-        <defs>
-          <pattern id="zdHatch" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
-            <line x1="0" y1="0" x2="0" y2="10" stroke="#F59E0B" stroke-width="1.2" opacity="0.4"/>
-          </pattern>
-        </defs>
-
-        <!-- Sky -->
-        <rect x="0" y="0" width="360" height="240" rx="8" fill="#F0F7FF"/>
-        <!-- Ground -->
-        <rect x="0" y="240" width="360" height="100" fill="#94A3B8"/>
-
-        <!-- Zone D (hexagone hachuré orange) -->
-        <polygon points="70,80 200,55 320,80 320,200 200,225 70,200" fill="url(#zdHatch)" stroke="#F59E0B" stroke-width="3" stroke-dasharray="0"/>
-        <text x="195" y="135" text-anchor="middle" font-family="Inter, sans-serif" font-size="42" font-weight="800" fill="#D97706" opacity="0.85">D</text>
-        <text x="195" y="158" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#D97706">Zone Dangereuse</text>
-        <!-- N° de zone -->
-        <text x="195" y="180" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#D97706" font-style="italic">ex : D54 / D118</text>
-
-        <!-- Icônes activités au sol -->
-        <!-- Stand de tir militaire (à gauche) -->
-        <g transform="translate(50,270)">
-          <rect x="-12" y="-3" width="24" height="6" rx="1" fill="#475569"/>
-          <line x1="-15" y1="0" x2="15" y2="0" stroke="#475569" stroke-width="1.5"/>
-          <circle cx="0" cy="-15" r="3" fill="#EF4444"/>
-          <text x="0" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white" font-weight="600">Tir</text>
-        </g>
-
-        <!-- Parachutiste (au milieu) -->
-        <g transform="translate(180,270)">
-          <path d="M -12 -8 Q 0 -20 12 -8" stroke="#0F172A" stroke-width="1.5" fill="rgba(14,116,218,0.3)"/>
-          <line x1="-10" y1="-8" x2="-3" y2="0" stroke="#0F172A" stroke-width="1"/>
-          <line x1="10" y1="-8" x2="3" y2="0" stroke="#0F172A" stroke-width="1"/>
-          <circle cx="0" cy="3" r="3" fill="#0F172A"/>
-          <line x1="0" y1="6" x2="0" y2="12" stroke="#0F172A" stroke-width="1.5"/>
-          <text x="0" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white" font-weight="600">Parachute</text>
-        </g>
-
-        <!-- Avion d'entraînement (à droite) -->
-        <g transform="translate(310,270)">
-          <path d="M -10 0 L 10 0 L 12 -2 L 14 0 L 12 2 L 10 0 M 0 0 L -3 -7 M 0 0 L -3 7" stroke="#475569" stroke-width="1.5" fill="#475569"/>
-          <text x="0" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="white" font-weight="600">Voltige</text>
-        </g>
-
-        <!-- Bandeau "VÉRIFIER L'ACTIVATION" en haut -->
-        <rect x="10" y="10" width="340" height="32" rx="6" fill="#EF4444"/>
-        <text x="180" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white">⚠️ Activable → Consulter NOTAM / AZBA</text>
-        <text x="180" y="37" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="white" opacity="0.9">Si zone active → vol drone interdit</text>
-
-        <!-- Drone qui s'écarte (à gauche, hors zone) -->
-        <g transform="translate(35,140)">
-          <rect x="-8" y="-2" width="16" height="4" rx="2" fill="#10B981"/>
-          <line x1="-10" y1="-2" x2="-15" y2="-7" stroke="#10B981" stroke-width="1.2"/>
-          <line x1="10" y1="-2" x2="15" y2="-7" stroke="#10B981" stroke-width="1.2"/>
-          <line x1="-10" y1="2" x2="-15" y2="7" stroke="#10B981" stroke-width="1.2"/>
-          <line x1="10" y1="2" x2="15" y2="7" stroke="#10B981" stroke-width="1.2"/>
-        </g>
-        <text x="35" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#059669">✓ drone OK</text>
-        <text x="35" y="171" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#059669">(hors zone)</text>
-      </svg>
+      <img src="assets/img/screenshots/Zone D.png" alt="Zone D sur carte OACI — exemple D 18 A3 (plafond FL 095, fréquence 124.725 ARMOR) au large du Croisic" style="max-width: 100%; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+      <p style="text-align: center; font-size: 0.55em; color: var(--dx-text-muted); margin-top: 4px; font-style: italic;">Exemple — <strong>D 18 A3</strong> au large du Croisic · plafond <strong>FL 095</strong> · fréquence contact <strong>124.725 ARMOR</strong></p>
     </div>
   </div>
 
