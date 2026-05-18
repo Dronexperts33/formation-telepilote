@@ -526,34 +526,34 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="badge-sm badge-green">G01</span></td>
-        <td>VLOS</td>
-        <td>Peuplé</td>
-        <td>Alternative au STS-01 pour les drones sans marquage C5</td>
+        <td><span class="badge-sm badge-blue">G01</span></td>
+        <td>BVLOS</td>
+        <td>Faiblement peuplé</td>
+        <td>Espace aérien non contrôlé, hauteur max <strong>150 m</strong></td>
       </tr>
       <tr>
         <td><span class="badge-sm badge-blue">G02</span></td>
         <td>BVLOS</td>
         <td>Faiblement peuplé</td>
-        <td>Alternative au STS-02 pour les drones sans marquage C6</td>
+        <td>En <strong>zones dangereuses ou restreintes</strong> désignées UAS (D, R)</td>
       </tr>
       <tr>
         <td><span class="badge-sm badge-blue">G03</span></td>
         <td>BVLOS</td>
         <td>Faiblement peuplé</td>
-        <td>Inspection linéaire (lignes électriques, voies ferrées, pipelines)</td>
+        <td><strong>Inspection linéaire</strong> basse altitude (≤ 30 m / 15 m au-dessus obstacles, 50 m max) — lignes, pipelines, voies</td>
       </tr>
       <tr>
         <td><span class="badge-sm badge-orange">S01</span></td>
         <td>VLOS</td>
-        <td>Faiblement peuplé</td>
-        <td>Agriculture avec drones lourds (épandage, pulvérisation)</td>
+        <td>Peuplé (zone contrôlée)</td>
+        <td><strong>Alternative à STS-01</strong> pour drones <strong>sans marquage C5</strong> (max 120 m, &lt; 25 kg)</td>
       </tr>
       <tr>
         <td><span class="badge-sm badge-orange">S02</span></td>
         <td>BVLOS</td>
         <td>Faiblement peuplé</td>
-        <td>Agriculture BVLOS avec drones lourds</td>
+        <td><strong>Alternative à STS-02</strong> pour drones <strong>sans marquage C6</strong> (couloir 2 km, observateurs)</td>
       </tr>
     </tbody>
   </table>
@@ -566,8 +566,12 @@
   </div>
 
   <p style="margin-top: 10px; font-size: 0.5em;">
-    📄 <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_de_mise_en_oeuvre_SORA.pdf" target="_blank" style="color: var(--dx-primary); text-decoration: none;">Guide SORA (PDF)</a> · 📄 <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/Tableau_PDRA_S01.pdf" target="_blank" style="color: var(--dx-primary); text-decoration: none;">Exemple PDRA-S01 (PDF)</a>
+    📄 <a href="https://www.ecologie.gouv.fr/politiques-publiques/exploitation-drones-categorie-specifique" target="_blank" style="color: var(--dx-primary); text-decoration: none;">Référence officielle — ecologie.gouv.fr</a> · 📄 <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_de_mise_en_oeuvre_SORA.pdf" target="_blank" style="color: var(--dx-primary); text-decoration: none;">Guide SORA (PDF)</a>
   </p>
+
+  <aside class="notes">
+    Les PDRA (Pre-Defined Risk Assessment) sont des scénarios de risque pré-analysés par l'AESA, qui dispensent l'exploitant de produire une étude SORA complète. <strong>Distinction PDRA-G (Generic) vs PDRA-S (Standard) :</strong> les PDRA-G couvrent des opérations BVLOS génériques (haute altitude, zones D/R, inspection basse altitude) ; les PDRA-S sont des alternatives nationales aux STS européens, conçues pour les drones <strong>non encore marqués C5/C6</strong> (parc existant). Au 01/01/2026, les STS-01/02 sont devenus la norme principale, mais les PDRA-S01/S02 restent valables tant que le drone n'a pas le marquage de classe. <strong>Pièges fréquents :</strong> (1) confondre S01 et STS-01 — S01 = PDRA national, STS-01 = scénario européen (drone C5 obligatoire) ; (2) penser que PDRA = autorisation automatique — non, l'exploitant doit toujours déposer une déclaration en Préfecture et respecter le scénario à la lettre. Hors STS et hors PDRA → étude SORA (lourde) ou demande d'autorisation spécifique. Le LUC est réservé aux exploitants matures (industriels, expérience prouvée).
+  </aside>
 
   <div class="slide-footer">
     <span>Module 4 — PDRA &amp; SORA</span>
