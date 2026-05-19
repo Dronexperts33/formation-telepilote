@@ -119,6 +119,97 @@
 
 
 <!-- ============================================================
+     SLIDE 16 — Altitude, Hauteur et Niveau de vol
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2 style="font-size: 1.5em; margin-bottom: 4px;">Altitude, Hauteur, Niveau de vol <span style="font-size: 0.65em; color: var(--dx-text-secondary); font-weight: 400; text-transform: none;">— Lexique</span></h2>
+
+  <div class="two-col">
+    <div class="col-text" style="font-size: 0.7em;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.92em; line-height: 1.3;">
+        <tbody>
+          <tr>
+            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #10B981; white-space: nowrap;">AGL</td>
+            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border);">Above Ground Level — <strong>hauteur</strong> / sol</td>
+          </tr>
+          <tr>
+            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #059669; white-space: nowrap;">SFC</td>
+            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border);">SurFaCe — / sol ou obstacle (≈ AGL en pratique)</td>
+          </tr>
+          <tr>
+            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #0E74DA; white-space: nowrap;">AAL</td>
+            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border);">Above Aerodrome Level — / piste</td>
+          </tr>
+          <tr>
+            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #3B82F6; white-space: nowrap;">AMSL</td>
+            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border);">Above Mean Sea Level — <strong>altitude</strong> / niveau mer</td>
+          </tr>
+          <tr>
+            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #64748B; white-space: nowrap;">FL</td>
+            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border);">Flight Level — niveau de vol (centaines ft, 1013,25 hPa)</td>
+          </tr>
+          <tr>
+            <td style="padding: 3px 8px; font-weight: 700; color: #D97706; white-space: nowrap;">FT ↔ m</td>
+            <td style="padding: 3px 8px;"><strong>1 ft ≈ 0,30 m</strong> · <strong>100 ft ≈ 30 m</strong> · <strong>1 000 ft ≈ 305 m</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="info-card" style="margin-top: 8px; padding: 6px 10px; font-size: 0.76em; background: rgba(14,116,218,0.06); border-left: 4px solid var(--dx-primary); line-height: 1.4;">
+        <strong style="color: var(--dx-primary);">📊 Exemple</strong> — Plateau à <strong>200 m AMSL</strong>, drone à <strong>50 m au-dessus du sol</strong> :
+        → <strong>Hauteur</strong> = 50 m AGL (régle drone) · <strong>Altitude</strong> = 250 m AMSL = 820 ft (cartes aéro).
+        Si CTR plafonne à <strong>FL 30</strong> (≈ 915 m AMSL) → très loin sous le plafond.
+      </div>
+    </div>
+    <div class="col-visual">
+      <!-- SVG: Terrain diagram with AGL/AMSL/FL labels -->
+      <svg viewBox="0 0 420 350" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:440px;">
+        <!-- Sky -->
+        <rect x="0" y="0" width="420" height="270" rx="8" fill="#F0F7FF"/>
+        <!-- Sea level -->
+        <rect x="0" y="270" width="420" height="80" fill="#DBEAFE"/>
+        <text x="40" y="310" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#3B82F6">Niveau de la mer (MSL)</text>
+        <!-- Terrain -->
+        <path d="M0 270 L60 270 L120 220 L200 200 L280 230 L340 210 L420 270 L420 270 L0 270 Z" fill="#E2E8F0"/>
+        <path d="M0 270 L60 270 L120 220 L200 200 L280 230 L340 210 L420 270" fill="none" stroke="#94A3B8" stroke-width="2"/>
+        <!-- Drone -->
+        <circle cx="170" cy="70" r="6" fill="#0E74DA"/>
+        <line x1="158" y1="70" x2="182" y2="70" stroke="#0E74DA" stroke-width="2"/>
+        <line x1="170" y1="58" x2="170" y2="82" stroke="#0E74DA" stroke-width="2"/>
+        <text x="188" y="65" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0E74DA">Drone</text>
+        <!-- AGL arrow (green) — drone to terrain -->
+        <line x1="170" y1="85" x2="170" y2="198" stroke="#10B981" stroke-width="2.5" stroke-dasharray="6 3"/>
+        <polygon points="170,85 166,95 174,95" fill="#10B981"/>
+        <polygon points="170,198 166,188 174,188" fill="#10B981"/>
+        <!-- AGL label LEFT of arrow -->
+        <rect x="80" y="125" width="55" height="30" rx="4" fill="white" opacity="0.9"/>
+        <text x="107" y="140" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#10B981">AGL</text>
+        <text x="107" y="152" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#10B981">(hauteur)</text>
+        <!-- AMSL arrow (blue) — drone to sea level -->
+        <line x1="310" y1="80" x2="310" y2="268" stroke="#3B82F6" stroke-width="2.5" stroke-dasharray="6 3"/>
+        <polygon points="310,80 306,90 314,90" fill="#3B82F6"/>
+        <polygon points="310,268 306,258 314,258" fill="#3B82F6"/>
+        <!-- AMSL label RIGHT of arrow -->
+        <rect x="325" y="160" width="60" height="30" rx="4" fill="white" opacity="0.9"/>
+        <text x="355" y="175" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#3B82F6">AMSL</text>
+        <text x="355" y="187" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#3B82F6">(altitude)</text>
+        <!-- FL line (top) -->
+        <line x1="20" y1="25" x2="400" y2="25" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="8 4"/>
+        <rect x="160" y="12" width="100" height="22" rx="6" fill="rgba(148,163,184,0.15)"/>
+        <text x="210" y="27" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#64748B">FL (1013 hPa)</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span>Outils — Altitude, Hauteur &amp; FL</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
      SLIDE — PRÉSENTATION DE L'OACI
      ============================================================ -->
 <section class="slide-two-col">
@@ -1138,97 +1229,6 @@
 
   <div class="slide-footer">
     <span>Outils — CERFA drone</span>
-    <span>Jour 2 Matin</span>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     SLIDE 16 — Altitude, Hauteur et Niveau de vol
-     ============================================================ -->
-<section class="slide-two-col">
-  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
-  <h2 style="font-size: 1.5em; margin-bottom: 4px;">Altitude, Hauteur, Niveau de vol <span style="font-size: 0.65em; color: var(--dx-text-secondary); font-weight: 400; text-transform: none;">— Lexique</span></h2>
-
-  <div class="two-col">
-    <div class="col-text" style="font-size: 0.7em;">
-      <table style="width: 100%; border-collapse: collapse; font-size: 0.92em; line-height: 1.3;">
-        <tbody>
-          <tr>
-            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #10B981; white-space: nowrap;">AGL</td>
-            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border);">Above Ground Level — <strong>hauteur</strong> / sol</td>
-          </tr>
-          <tr>
-            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #059669; white-space: nowrap;">SFC</td>
-            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border);">SurFaCe — / sol ou obstacle (≈ AGL en pratique)</td>
-          </tr>
-          <tr>
-            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #0E74DA; white-space: nowrap;">AAL</td>
-            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border);">Above Aerodrome Level — / piste</td>
-          </tr>
-          <tr>
-            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #3B82F6; white-space: nowrap;">AMSL</td>
-            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border);">Above Mean Sea Level — <strong>altitude</strong> / niveau mer</td>
-          </tr>
-          <tr>
-            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border); font-weight: 700; color: #64748B; white-space: nowrap;">FL</td>
-            <td style="padding: 3px 8px; border-bottom: 1px solid var(--dx-border);">Flight Level — niveau de vol (centaines ft, 1013,25 hPa)</td>
-          </tr>
-          <tr>
-            <td style="padding: 3px 8px; font-weight: 700; color: #D97706; white-space: nowrap;">FT ↔ m</td>
-            <td style="padding: 3px 8px;"><strong>1 ft ≈ 0,30 m</strong> · <strong>100 ft ≈ 30 m</strong> · <strong>1 000 ft ≈ 305 m</strong></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="info-card" style="margin-top: 8px; padding: 6px 10px; font-size: 0.76em; background: rgba(14,116,218,0.06); border-left: 4px solid var(--dx-primary); line-height: 1.4;">
-        <strong style="color: var(--dx-primary);">📊 Exemple</strong> — Plateau à <strong>200 m AMSL</strong>, drone à <strong>50 m au-dessus du sol</strong> :
-        → <strong>Hauteur</strong> = 50 m AGL (régle drone) · <strong>Altitude</strong> = 250 m AMSL = 820 ft (cartes aéro).
-        Si CTR plafonne à <strong>FL 30</strong> (≈ 915 m AMSL) → très loin sous le plafond.
-      </div>
-    </div>
-    <div class="col-visual">
-      <!-- SVG: Terrain diagram with AGL/AMSL/FL labels -->
-      <svg viewBox="0 0 420 350" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:440px;">
-        <!-- Sky -->
-        <rect x="0" y="0" width="420" height="270" rx="8" fill="#F0F7FF"/>
-        <!-- Sea level -->
-        <rect x="0" y="270" width="420" height="80" fill="#DBEAFE"/>
-        <text x="40" y="310" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#3B82F6">Niveau de la mer (MSL)</text>
-        <!-- Terrain -->
-        <path d="M0 270 L60 270 L120 220 L200 200 L280 230 L340 210 L420 270 L420 270 L0 270 Z" fill="#E2E8F0"/>
-        <path d="M0 270 L60 270 L120 220 L200 200 L280 230 L340 210 L420 270" fill="none" stroke="#94A3B8" stroke-width="2"/>
-        <!-- Drone -->
-        <circle cx="170" cy="70" r="6" fill="#0E74DA"/>
-        <line x1="158" y1="70" x2="182" y2="70" stroke="#0E74DA" stroke-width="2"/>
-        <line x1="170" y1="58" x2="170" y2="82" stroke="#0E74DA" stroke-width="2"/>
-        <text x="188" y="65" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#0E74DA">Drone</text>
-        <!-- AGL arrow (green) — drone to terrain -->
-        <line x1="170" y1="85" x2="170" y2="198" stroke="#10B981" stroke-width="2.5" stroke-dasharray="6 3"/>
-        <polygon points="170,85 166,95 174,95" fill="#10B981"/>
-        <polygon points="170,198 166,188 174,188" fill="#10B981"/>
-        <!-- AGL label LEFT of arrow -->
-        <rect x="80" y="125" width="55" height="30" rx="4" fill="white" opacity="0.9"/>
-        <text x="107" y="140" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#10B981">AGL</text>
-        <text x="107" y="152" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#10B981">(hauteur)</text>
-        <!-- AMSL arrow (blue) — drone to sea level -->
-        <line x1="310" y1="80" x2="310" y2="268" stroke="#3B82F6" stroke-width="2.5" stroke-dasharray="6 3"/>
-        <polygon points="310,80 306,90 314,90" fill="#3B82F6"/>
-        <polygon points="310,268 306,258 314,258" fill="#3B82F6"/>
-        <!-- AMSL label RIGHT of arrow -->
-        <rect x="325" y="160" width="60" height="30" rx="4" fill="white" opacity="0.9"/>
-        <text x="355" y="175" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#3B82F6">AMSL</text>
-        <text x="355" y="187" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#3B82F6">(altitude)</text>
-        <!-- FL line (top) -->
-        <line x1="20" y1="25" x2="400" y2="25" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="8 4"/>
-        <rect x="160" y="12" width="100" height="22" rx="6" fill="rgba(148,163,184,0.15)"/>
-        <text x="210" y="27" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#64748B">FL (1013 hPa)</text>
-      </svg>
-    </div>
-  </div>
-
-  <div class="slide-footer">
-    <span>Outils — Altitude, Hauteur &amp; FL</span>
     <span>Jour 2 Matin</span>
   </div>
 </section>
