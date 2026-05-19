@@ -434,6 +434,99 @@
 
 
 <!-- ============================================================
+     SLIDE 3b — Carte UAS & Zones de protection aérodrome
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="https://dronexperts33.github.io/formation-telepilote/index-formation.html" title="Retour au sommaire" style="position:absolute;top:24px;right:32px;z-index:10;"><img src="assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo" style="position:static;"></a>
+  <h2 style="font-size: 1.45em; margin-bottom: 6px;">Carte UAS <span style="font-size: 0.7em; color: var(--dx-text-secondary); font-weight: 400; text-transform: none;">— Zones de protection aérodrome</span></h2>
+
+  <div class="two-col" style="grid-template-columns: 0.95fr 1.05fr; gap: 16px;">
+    <div class="col-text" style="font-size: 0.7em;">
+      <p style="margin: 0 0 6px 0; font-weight: 700;">Code couleur des zones :</p>
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.92em; margin: 0 0 6px 0; line-height: 1.25;">
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--dx-border);">
+            <td style="padding: 3px 8px;"><span style="display:inline-block;width:12px;height:12px;background:#E57373;border-radius:2px;vertical-align:middle;margin-right:6px;"></span><strong>Rouge</strong></td>
+            <td style="padding: 3px 8px; color:#DC2626; font-weight:700;">Vol interdit</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--dx-border);">
+            <td style="padding: 3px 8px;"><span style="display:inline-block;width:12px;height:12px;background:#F4A261;border-radius:2px;vertical-align:middle;margin-right:6px;"></span><strong>Orange foncé</strong></td>
+            <td style="padding: 3px 8px;"><strong>30 m max</strong></td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--dx-border);">
+            <td style="padding: 3px 8px;"><span style="display:inline-block;width:12px;height:12px;background:#F8B788;border-radius:2px;vertical-align:middle;margin-right:6px;"></span><strong>Orange clair</strong></td>
+            <td style="padding: 3px 8px;"><strong>50 m max</strong></td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--dx-border);">
+            <td style="padding: 3px 8px;"><span style="display:inline-block;width:12px;height:12px;background:#F9D77E;border-radius:2px;vertical-align:middle;margin-right:6px;"></span><strong>Jaune</strong></td>
+            <td style="padding: 3px 8px;"><strong>60 m max</strong></td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--dx-border);">
+            <td style="padding: 3px 8px;"><span style="display:inline-block;width:12px;height:12px;background:#FCE588;border-radius:2px;vertical-align:middle;margin-right:6px;"></span><strong>Jaune clair</strong></td>
+            <td style="padding: 3px 8px;"><strong>100 m max</strong></td>
+          </tr>
+          <tr>
+            <td style="padding: 3px 8px;"><span style="display:inline-block;width:12px;height:12px;background:#FFFFFF;border:1px solid #CBD5E1;border-radius:2px;vertical-align:middle;margin-right:6px;"></span><strong>Sans couleur</strong></td>
+            <td style="padding: 3px 8px;"><strong>120 m max</strong> <span style="color:var(--dx-text-secondary);">(au-dessus interdit)</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="info-card" style="margin-top: 6px; padding: 7px 11px; font-size: 0.86em; background: rgba(239,68,68,0.06); border-left: 3px solid #EF4444; line-height: 1.4;">
+        <p style="margin: 0 0 4px 0;"><strong>⚠️ Référence de hauteur</strong> : les hauteurs max sont mesurées par rapport au <strong>point le plus haut de la piste</strong> de l'aérodrome, <em>pas</em> par rapport à votre point de décollage !</p>
+        <p style="margin: 4px 0 2px 0;"><strong>Calcul :</strong> H<sub>utilisable</sub> = H<sub>zone</sub> − (Alt<sub>décollage</sub> − Alt<sub>piste</sub>)</p>
+        <p style="margin: 0; font-style: italic;">Ex : zone 50 m, piste à 50 m AMSL, décollage à 80 m AMSL → H<sub>max</sub> = 50 − (80 − 50) = <strong style="color:#DC2626;">20 m AGL seulement !</strong></p>
+      </div>
+    </div>
+    <div class="col-visual" style="display:flex; flex-direction:column; gap:8px;">
+      <img src="assets/img/screenshots/Cartes.gouv_UAS.png" alt="Carte UAS cat. Ouverte — cartes.gouv.fr" style="width: 100%; max-height: 200px; object-fit: contain; border-radius: var(--dx-radius); box-shadow: var(--dx-shadow-lg);">
+
+      <!-- SVG : Profil altimétrique — décollage PLUS HAUT que la piste -->
+      <svg viewBox="0 0 420 175" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:440px;">
+        <path d="M0,115 L30,108 Q70,76 130,72 Q170,68 195,80 Q230,105 275,130 L350,130 L420,142 L420,175 L0,175 Z" fill="#F1F5F9"/>
+        <path d="M0,115 L30,108 Q70,76 130,72 Q170,68 195,80 Q230,105 275,130 L350,130 L420,142" fill="none" stroke="#94A3B8" stroke-width="2"/>
+        <line x1="15" y1="22" x2="405" y2="22" stroke="#EAB308" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <rect x="260" y="6" width="148" height="14" rx="3" fill="white" stroke="#EAB308" stroke-width="1"/>
+        <text x="334" y="16" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#B45309">Plafond zone (100 m AMSL)</text>
+        <circle cx="130" cy="72" r="5" fill="#0E74DA"/>
+        <rect x="5" y="62" width="108" height="14" rx="3" fill="white" opacity="0.9"/>
+        <text x="59" y="73" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#0E74DA">Décollage (80 m AMSL)</text>
+        <rect x="285" y="123" width="55" height="8" rx="2" fill="#475569"/>
+        <rect x="258" y="108" width="108" height="14" rx="3" fill="white" opacity="0.9"/>
+        <text x="312" y="119" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#475569">Piste (50 m AMSL)</text>
+        <line x1="390" y1="127" x2="390" y2="22" stroke="#EAB308" stroke-width="1.5"/>
+        <polygon points="390,127 387,121 393,121" fill="#EAB308"/>
+        <polygon points="390,22 387,28 393,28" fill="#EAB308"/>
+        <text x="398" y="80" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#B45309">50 m</text>
+        <line x1="130" y1="67" x2="130" y2="27" stroke="#DC2626" stroke-width="2"/>
+        <polygon points="130,67 127,61 133,61" fill="#DC2626"/>
+        <polygon points="130,27 127,33 133,33" fill="#DC2626"/>
+        <circle cx="130" cy="22" r="3" fill="#0E74DA"/>
+        <line x1="123" y1="22" x2="137" y2="22" stroke="#0E74DA" stroke-width="1.5"/>
+        <rect x="140" y="34" width="74" height="22" rx="4" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+        <text x="177" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" font-weight="700" fill="#DC2626">Seulement</text>
+        <text x="177" y="54" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#DC2626">20 m AGL !</text>
+        <line x1="230" y1="76" x2="230" y2="127" stroke="#64748B" stroke-width="1" stroke-dasharray="3 2"/>
+        <polygon points="230,76 227,82 233,82" fill="#64748B"/>
+        <polygon points="230,127 227,121 233,121" fill="#64748B"/>
+        <rect x="236" y="94" width="40" height="13" rx="3" fill="white" opacity="0.85"/>
+        <text x="256" y="104" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#64748B">Δ 30 m</text>
+      </svg>
+    </div>
+  </div>
+
+  <aside class="notes">
+    Slide complémentaire à la CTR pour les vols à proximité des aérodromes en cat. Ouverte. La <strong>carte UAS</strong> (consultable sur cartes.gouv.fr) montre des zones colorées autour de chaque piste avec des plafonds de hauteur dégressifs. <strong>Confusion fréquente</strong> : la hauteur indiquée par la carte est mesurée depuis le <strong>point le plus haut de la piste</strong> (référence AMSL), pas depuis le point de décollage du télépilote. Exemple chiffré au tableau : si je décolle d'une colline plus haute que la piste, ma hauteur AGL utilisable diminue d'autant. Bonne pratique : toujours noter l'altitude AMSL de la piste (visible sur la carte VAC SIA ou base data) et celle de mon décollage, puis appliquer la formule H<sub>utilisable</sub> = H<sub>zone</sub> − (Alt<sub>décollage</sub> − Alt<sub>piste</sub>). Cas pratique : aérodrome de Marcillac (alt 240 m AMSL), zone 50 m, décollage depuis le plateau (alt 280 m AMSL) → H<sub>utilisable</sub> = 50 − 40 = 10 m AGL seulement. Vol quasi impossible.
+  </aside>
+
+  <div class="slide-footer">
+    <span>Module 6 — Carte UAS &amp; Zones aérodrome</span>
+    <span>Jour 2 Matin</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
      SLIDE 4 — Zone P — Zones interdites
      ============================================================ -->
 <section class="slide-two-col">
