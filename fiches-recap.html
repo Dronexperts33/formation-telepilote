@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiches récapitulatives apprenants — Formation Télépilote Dronexperts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       DRONEXPERTS — Fiches récapitulatives apprenants (5 pages A4)
+       Charte Graphique v2.3
+       ============================================================ */
+    :root {
+      --dx-primary: #0E74DA;
+      --dx-primary-dark: #0B5DB0;
+      --dx-gradient-start: #1E3A8A;
+      --dx-gradient-end: #04355D;
+      --dx-bg-light: #F9FAFC;
+      --dx-bg-white: #FFFFFF;
+      --dx-text-dark: #0F172A;
+      --dx-text-secondary: #475569;
+      --dx-text-muted: #94A3B8;
+      --dx-border: #E2E8F0;
+      --dx-success: #10B981;
+      --dx-warning: #F59E0B;
+      --dx-error: #EF4444;
+      --dx-info: #06B6D4;
+    }
+
+    @page { size: A4; margin: 0; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 8.8pt;
+      color: var(--dx-text-secondary);
+      line-height: 1.45;
+      background: #E8EDF3;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .sheet {
+      width: 210mm;
+      height: 296mm;
+      margin: 0 auto;
+      background: var(--dx-bg-white);
+      padding: 9mm 11mm 7mm;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+    @media screen {
+      .sheet { margin: 16px auto; box-shadow: 0 4px 24px rgba(15,23,42,0.15); }
+    }
+    @media print {
+      body { background: white; }
+      .sheet { break-after: page; }
+      .sheet:last-of-type { break-after: auto; }
+    }
+
+    /* ---- En-tête de fiche ---- */
+    .sheet-head {
+      background: linear-gradient(135deg, var(--dx-gradient-start) 0%, var(--dx-gradient-end) 100%);
+      color: white;
+      border-radius: 10px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+      flex-shrink: 0;
+    }
+    .sheet-head img { height: 30px; width: auto; filter: brightness(0) invert(1); }
+    .sheet-head .head-txt { flex: 1; }
+    .sheet-head .kicker {
+      font-size: 6.5pt; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(255,255,255,0.75);
+    }
+    .sheet-head h1 { font-size: 13pt; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+    .sheet-head .num {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: 9pt; font-weight: 700; white-space: nowrap;
+    }
+
+    /* ---- Pied de fiche ---- */
+    .sheet-foot {
+      margin-top: auto;
+      padding-top: 6px;
+      border-top: 1px solid var(--dx-border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 6.8pt;
+      color: var(--dx-text-muted);
+      flex-shrink: 0;
+    }
+
+    /* ---- Titres de sections ---- */
+    h2 {
+      font-size: 10pt; font-weight: 700; color: var(--dx-text-dark);
+      border-left: 4px solid var(--dx-primary);
+      padding-left: 8px;
+      margin: 9px 0 5px;
+      line-height: 1.2;
+    }
+    h2:first-of-type { margin-top: 0; }
+    h2 .ref { font-size: 6.8pt; font-weight: 500; color: var(--dx-text-muted); margin-left: 6px; }
+
+    p { margin-bottom: 4px; }
+    strong { color: var(--dx-text-dark); font-weight: 700; }
+
+    /* ---- Tableaux ---- */
+    table { width: 100%; border-collapse: collapse; font-size: 7.6pt; margin-bottom: 6px; }
+    th {
+      background: var(--dx-gradient-end); color: white;
+      font-weight: 600; text-align: left;
+      padding: 3px 6px; font-size: 7.2pt;
+    }
+    td { padding: 3px 6px; border-bottom: 1px solid var(--dx-border); vertical-align: top; }
+    tr:nth-child(even) td { background: var(--dx-bg-light); }
+    td.c, th.c { text-align: center; }
+    .tag {
+      display: inline-block; border-radius: 4px; padding: 0 5px;
+      font-weight: 700; font-size: 6.8pt; white-space: nowrap;
+    }
+    .tag-ok   { background: rgba(16,185,129,0.12); color: #067A57; }
+    .tag-warn { background: rgba(245,158,11,0.14); color: #A16207; }
+    .tag-no   { background: rgba(239,68,68,0.12); color: #B91C1C; }
+    .tag-info { background: rgba(6,182,212,0.12); color: #0E7490; }
+
+    /* ---- Grilles & encadrés ---- */
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px; }
+    .cols-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 6px; }
+    .box {
+      background: var(--dx-bg-light);
+      border: 1px solid var(--dx-border);
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: 7.8pt;
+    }
+    .box .box-title {
+      font-weight: 700; color: var(--dx-text-dark); font-size: 8.2pt; margin-bottom: 3px;
+    }
+    .box ul { margin: 0; padding-left: 13px; }
+    .box li { margin-bottom: 1.5px; }
+    .box-blue    { border-left: 4px solid var(--dx-primary); }
+    .box-green   { border-left: 4px solid var(--dx-success); }
+    .box-orange  { border-left: 4px solid var(--dx-warning); }
+    .box-red     { border-left: 4px solid var(--dx-error); background: #FEF5F5; }
+    .box-cyan    { border-left: 4px solid var(--dx-info); }
+
+    .callout {
+      border-radius: 8px; padding: 6px 10px; font-size: 7.8pt; margin-bottom: 6px;
+    }
+    .callout-warn { background: #FEF7EC; border: 1px solid #FBDFA8; color: #7C4A03; }
+    .callout-key  { background: rgba(14,116,218,0.07); border: 1px solid rgba(14,116,218,0.25); color: #0B5DB0; }
+
+    ul.tight { padding-left: 15px; margin-bottom: 5px; font-size: 8pt; }
+    ul.tight li { margin-bottom: 1.5px; }
+
+    /* ---- Pastilles code couleur ---- */
+    .swatches { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 6px; }
+    .swatch {
+      display: flex; align-items: center; gap: 5px;
+      border: 1px solid var(--dx-border); border-radius: 6px;
+      padding: 3px 7px; font-size: 7.2pt; background: white;
+    }
+    .swatch i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+
+    .no-print { text-align: center; padding: 14px; font-size: 9pt; color: var(--dx-text-secondary); }
+    @media print { .no-print { display: none; } }
+
+    /* Variante resserrée pour les fiches denses */
+    .sheet.compact { font-size: 8.4pt; }
+    .sheet.compact h2 { margin: 6px 0 4px; }
+    .sheet.compact .box { padding: 6px 9px; font-size: 7.6pt; }
+    .sheet.compact td { padding: 2.5px 6px; }
+    .sheet.compact th { padding: 2.5px 6px; }
+    .sheet.compact .cols, .sheet.compact .cols-3 { gap: 7px; margin-bottom: 5px; }
+    .sheet.compact ul.tight { margin-bottom: 4px; font-size: 7.8pt; }
+  </style>
+</head>
+<body>
+
+<div class="no-print">📄 Fiches récapitulatives apprenants — version imprimable (5 pages A4). Imprimer : <strong>Cmd/Ctrl + P</strong> → enregistrer en PDF.</div>
+
+<!-- ================================================================
+     FICHE 1 — Catégories d'exploitation & classes de drones
+     ================================================================ -->
+<section class="sheet">
+  <header class="sheet-head">
+    <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts">
+    <div class="head-txt">
+      <div class="kicker">Formation Télépilote de Drone — Fiches récapitulatives</div>
+      <h1>Catégories d'exploitation &amp; classes de drones</h1>
+    </div>
+    <div class="num">Fiche 1/5</div>
+  </header>
+
+  <h2>Les 3 catégories d'exploitation <span class="ref">Règlement (UE) 2019/947</span></h2>
+  <div class="cols-3">
+    <div class="box box-green">
+      <div class="box-title">Ouverte (Open) — risque maîtrisé</div>
+      <ul>
+        <li>Vol en vue directe (<strong>VLOS</strong>) obligatoire</li>
+        <li>Hauteur max <strong>120 m</strong> · drones <strong>&lt; 25 kg</strong></li>
+        <li>Pas d'autorisation préalable (sauf cas spécifiques depuis le 01/01/2026)</li>
+      </ul>
+    </div>
+    <div class="box box-orange">
+      <div class="box-title">Spécifique (Specific) — risque modéré</div>
+      <ul>
+        <li>Scénarios <strong>STS-01 / STS-02</strong></li>
+        <li>Vol <strong>BVLOS</strong> possible</li>
+        <li>Déclaration ou autorisation requise · <strong>MANEX</strong> obligatoire</li>
+      </ul>
+    </div>
+    <div class="box box-red">
+      <div class="box-title">Certifiée (Certified) — risque élevé</div>
+      <ul>
+        <li>Transport de personnes, marchandises dangereuses</li>
+        <li>Certification EASA du drone et de l'exploitant</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout callout-warn">⚠️ Ces niveaux décrivent le <strong>cadre réglementaire</strong>, pas le risque opérationnel : en agglomération, le risque reste élevé même en catégorie Ouverte. Toujours évaluer le risque réel de chaque mission.</div>
+
+  <h2>Sous-catégories de la catégorie Ouverte</h2>
+  <table>
+    <tr><th>Sous-cat.</th><th>Classes &amp; masse</th><th>Formation</th><th>Distance aux tiers</th><th>Agglomération</th></tr>
+    <tr>
+      <td class="c"><strong>A1</strong></td>
+      <td>C0 &lt; 250 g · C1 &lt; 900 g</td>
+      <td>C0 : aucune · C1 : A1/A3 en ligne (AlphaTango)</td>
+      <td>Survol de personnes isolées toléré · rassemblements interdits</td>
+      <td><span class="tag tag-ok">Privé ✓</span> <span class="tag tag-ok">Public hors ZP ✓</span> <span class="tag tag-warn">Public en ZP : J-10</span></td>
+    </tr>
+    <tr>
+      <td class="c"><strong>A2</strong></td>
+      <td>C2 &lt; 4 kg</td>
+      <td>A1/A3 + examen A2 (BAPD) + autoformation pratique déclarée</td>
+      <td><strong>30 m</strong> des personnes (5 m en mode basse vitesse) · survol interdit</td>
+      <td><span class="tag tag-ok">Privé ✓</span> <span class="tag tag-ok">Public hors ZP ✓</span> <span class="tag tag-warn">Public en ZP : J-10</span></td>
+    </tr>
+    <tr>
+      <td class="c"><strong>A3</strong></td>
+      <td>C2 / C3 / C4 &lt; 25 kg · drones sans classe</td>
+      <td>A1/A3 en ligne (AlphaTango)</td>
+      <td><strong>150 m</strong> des zones résidentielles, commerciales, industrielles, récréatives</td>
+      <td><span class="tag tag-no">Interdit</span></td>
+    </tr>
+  </table>
+  <div class="callout callout-key">⛔ <strong>Règle absolue :</strong> le survol des rassemblements de personnes est strictement interdit en catégorie Ouverte, quelle que soit la classe du drone. — Drones <strong>sans mention de classe</strong> (construits à titre privé ou mis sur le marché avant le 01/01/2024) : sous-catégorie A3, 30 m minimum des personnes non impliquées.</div>
+
+  <h2>Classes de drones — récapitulatif</h2>
+  <table>
+    <tr><th class="c">Classe</th><th>Poids max</th><th class="c">Sous-cat.</th><th>Règle / distance</th></tr>
+    <tr><td class="c"><strong>C0</strong></td><td>&lt; 250 g</td><td class="c">A1 / A3</td><td>Survol de personnes isolées toléré · interdit sur un rassemblement</td></tr>
+    <tr><td class="c"><strong>C1</strong></td><td>&lt; 900 g</td><td class="c">A1 / A3</td><td>Survol de personnes isolées autorisé · interdit sur un rassemblement</td></tr>
+    <tr><td class="c"><strong>C2</strong></td><td>&lt; 4 kg</td><td class="c">A2 / A3</td><td>Proche des gens : 30 m (5 m en vol basse vitesse)</td></tr>
+    <tr><td class="c"><strong>C3</strong></td><td>&lt; 25 kg</td><td class="c">A3</td><td>Loin des gens : 150 m des zones résidentielles / commerciales / industrielles</td></tr>
+    <tr><td class="c"><strong>C4</strong></td><td>&lt; 25 kg</td><td class="c">A3</td><td>Loin des gens : 150 m (drones sans automatismes — modélisme RC)</td></tr>
+    <tr><td class="c"><strong>C5</strong></td><td>&lt; 25 kg</td><td class="c">STS-01</td><td>Catégorie Spécifique — VLOS en zone peuplée</td></tr>
+    <tr><td class="c"><strong>C6</strong></td><td>&lt; 25 kg</td><td class="c">STS-02</td><td>Catégorie Spécifique — BVLOS en zone faiblement peuplée</td></tr>
+  </table>
+
+  <h2>Scénarios standard de la catégorie Spécifique</h2>
+  <div class="cols">
+    <div class="box box-blue">
+      <div class="box-title">STS-01 — VLOS en zone peuplée</div>
+      <ul>
+        <li><strong>VLOS obligatoire</strong> : contact visuel continu avec le drone</li>
+        <li>Zone peuplée autorisée · vitesse max <strong>5 m/s</strong> (18 km/h) · hauteur max 120 m</li>
+        <li>Drone classe <strong>C5</strong> · <strong>FTS</strong> (système d'interruption de vol) obligatoire</li>
+        <li>Zone contrôlée au sol (exclusion des tiers) · parachute pour limiter l'énergie à l'impact</li>
+      </ul>
+    </div>
+    <div class="box box-cyan">
+      <div class="box-title">STS-02 — BVLOS en zone faiblement peuplée</div>
+      <ul>
+        <li><strong>BVLOS</strong> : 1 km max, <strong>2 km avec observateurs</strong> de l'espace aérien</li>
+        <li>Survol des zones résidentielles, commerciales ou récréatives interdit</li>
+        <li>Drone classe <strong>C6</strong> · retour vidéo temps réel + <strong>FTS</strong> obligatoires</li>
+        <li>Hauteur max 120 m AGL · vitesse max 50 m/s · conditions VMC (visibilité ≥ 5 km)</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="sheet-foot">
+    <span>Dronexperts — Formation Télépilote de Drone (RS6982)</span>
+    <span>dronexperts.io · Fiche 1/5</span>
+  </footer>
+</section>
+
+<!-- ================================================================
+     FICHE 2 — Règles de vol essentielles
+     ================================================================ -->
+<section class="sheet compact">
+  <header class="sheet-head">
+    <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts">
+    <div class="head-txt">
+      <div class="kicker">Formation Télépilote de Drone — Fiches récapitulatives</div>
+      <h1>Règles de vol essentielles</h1>
+    </div>
+    <div class="num">Fiche 2/5</div>
+  </header>
+
+  <h2>Hauteur maximale de vol</h2>
+  <ul class="tight">
+    <li><strong>120 m AGL</strong>, mesurés par rapport au <strong>point le plus proche du sol</strong> (pas au point de décollage) — exemple falaise : le sommet sert de référence.</li>
+    <li><strong>Obstacle artificiel</strong> (pylône, antenne, éolienne) de plus de 105 m : vol autorisé à <strong>+15 m du sommet</strong>, dans un <strong>rayon de 50 m</strong>, avec accord de son exploitant.</li>
+    <li><strong>Proximité aérodrome</strong> : hauteur calculée par rapport à l'altitude de la piste (point le plus haut), pas au point de décollage.</li>
+  </ul>
+
+  <h2>VLOS, ALOS, DLOS &amp; FPV</h2>
+  <div class="cols">
+    <div class="box box-blue">
+      <ul>
+        <li><strong>VLOS</strong> (Visual Line of Sight) : vue directe à l'œil nu, sans aide optique</li>
+        <li><strong>ALOS</strong> : distance max pour distinguer l'orientation du drone — multirotor : <strong>327 × CD + 20 m</strong> · voilure fixe : <strong>490 × CD + 30 m</strong> (CD = dimension caractéristique)</li>
+        <li><strong>DLOS</strong> : distance max à laquelle le drone est discernable</li>
+      </ul>
+    </div>
+    <div class="box box-orange">
+      <ul>
+        <li><strong>FPV</strong> (lunettes vidéo) : n'est <strong>pas</strong> du vol hors vue — un <strong>observateur est obligatoire</strong> et maintient le contact VLOS en permanence</li>
+        <li><strong>Vol automatique</strong> (waypoints, télépilote supervise) : autorisé</li>
+        <li><strong>Vol autonome</strong> (décisions sans humain) : strictement <strong>interdit</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Agglomération &amp; zone peuplée <span class="ref">Arrêté du 23/12/2025, en vigueur au 01/01/2026</span></h2>
+  <div class="cols">
+    <div class="box">
+      <div class="box-title">Deux notions distinctes</div>
+      <ul>
+        <li><strong>Agglomération</strong> (art. R.110-2 du Code de la route) : espace d'immeubles bâtis rapprochés, délimité par les panneaux EB10 / EB20</li>
+        <li><strong>Zone peuplée</strong> (DSAC) : au sein ou à moins de <strong>50 m</strong> d'une agglomération figurant sur les cartes aéronautiques (zones jaunes OACI), ou à moins de <strong>150 m d'un rassemblement</strong> de personnes</li>
+        <li>📌 La <strong>carte aéronautique fait foi</strong> (SIA / cartes.gouv.fr), pas les panneaux</li>
+      </ul>
+    </div>
+    <div class="box">
+      <div class="box-title">Vol en agglomération (exploitants)</div>
+      <ul>
+        <li><strong>Terrain privé</strong> : autorisé avec accord du propriétaire, aucune déclaration</li>
+        <li><strong>Espace public en zone peuplée</strong> : exploitants déclarés, déclaration <strong>J-10 à la Préfecture</strong> (Cerfa)</li>
+        <li><strong>Espace public hors zone peuplée</strong> : autorisé, aucune déclaration</li>
+        <li><strong>Règle du 1:1</strong> : distance horizontale aux tiers ≥ hauteur de vol — ne s'applique pas à Paris (zone <strong>P23 : vol interdit</strong>)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Survol des voies &amp; infrastructures</h2>
+  <table>
+    <tr><th>Type de voie</th><th class="c">Cat. Ouverte</th><th>Règle / autorité à contacter</th></tr>
+    <tr><td>🚗 Route départementale / nationale</td><td class="c"><span class="tag tag-warn">Toléré</span></td><td>Mairie ou Préfecture si gêne / risque · règle du 1:1 vis-à-vis des véhicules (= tiers)</td></tr>
+    <tr><td>🛣️ Autoroute</td><td class="c"><span class="tag tag-ok">Autorisé</span></td><td>Autorisé en cat. Ouverte (amendement EASA automne 2025) · règle du 1:1 · prudence (chute, vent latéral)</td></tr>
+    <tr><td>🚆 Voie ferrée (SNCF)</td><td class="c"><span class="tag tag-no">Interdit</span></td><td>Bande de <strong>30 m de chaque côté</strong> interdite sans accord SNCF Réseau · protocole obligatoire</td></tr>
+    <tr><td>⚓ Voie navigable / canal / port</td><td class="c"><span class="tag tag-warn">Encadré</span></td><td>VNF pour canaux et fleuves · gestionnaire portuaire pour les ports</td></tr>
+    <tr><td>⚡ Lignes électriques HT</td><td class="c"><span class="tag tag-warn">DMA</span></td><td>DMA <strong>3 m</strong> (&lt; 50 kV) ou <strong>5 m</strong> (≥ 50 kV) · RTE / Enedis · risque d'arc électrique sans contact</td></tr>
+    <tr><td>📡 Pylônes / antennes télécom</td><td class="c"><span class="tag tag-warn">Encadré</span></td><td>Accord de l'opérateur · interférences GPS/RC possibles à proximité</td></tr>
+  </table>
+
+  <h2>Vol de nuit</h2>
+  <div class="cols">
+    <div class="box box-blue">
+      <div class="box-title">Catégorie Ouverte</div>
+      <ul>
+        <li><strong>Interdit par défaut</strong> (entre la fin du crépuscule civil du soir et le début du crépuscule civil du matin)</li>
+        <li>Possible sur <strong>dérogation préfectorale</strong> avec justification opérationnelle</li>
+        <li>Drone équipé d'un <strong>feu vert clignotant visible à 1 km</strong></li>
+      </ul>
+    </div>
+    <div class="box box-cyan">
+      <div class="box-title">Catégorie Spécifique (STS-01/02)</div>
+      <ul>
+        <li>Autorisé sans démarche si <strong>hauteur ≤ 50 m et masse &lt; 8 kg</strong> — au-delà : dérogation préfectorale</li>
+        <li>Feu vert clignotant + aire au sol <strong>balisée et éclairée</strong></li>
+        <li><strong>Reconnaissance de jour obligatoire</strong> · en STS-02 : observateurs équipés (jumelles, amplificateurs de lumière)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Volume opérationnel (catégorie Spécifique)</h2>
+  <div class="cols">
+    <div class="box">
+      <ul>
+        <li><strong>Géographie de vol</strong> : espace où le drone est censé évoluer</li>
+        <li><strong>Volume de contingence</strong> : zone tampon de <strong>minimum 10 m</strong> au-delà</li>
+        <li><strong>GRB</strong> (Ground Risk Buffer) : zone tampon au sol protégeant les tiers en cas de chute</li>
+        <li><strong>Zone contrôlée au sol</strong> = projection au sol du volume + GRB → exclusion des tiers, matérialisation obligatoire (cônes, rubalise), briefing + attestation signée</li>
+      </ul>
+    </div>
+    <div class="box">
+      <div class="box-title">GRB en STS-01 (mini selon hauteur / masse)</div>
+      <table style="margin-bottom:2px">
+        <tr><th>Hauteur max / sol</th><th class="c">≤ 10 kg</th><th class="c">&gt; 10 kg</th></tr>
+        <tr><td>30 m</td><td class="c">10 m</td><td class="c">20 m</td></tr>
+        <tr><td>60 m</td><td class="c">15 m</td><td class="c">30 m</td></tr>
+        <tr><td>90 m</td><td class="c">20 m</td><td class="c">45 m</td></tr>
+        <tr><td>120 m</td><td class="c">25 m</td><td class="c">60 m</td></tr>
+      </table>
+      <span style="font-size:6.8pt">En <strong>STS-02</strong> : pas de tableau fixe — distance de dérive après activation du FTS, spécifiée par le constructeur.</span>
+    </div>
+  </div>
+
+  <footer class="sheet-foot">
+    <span>Dronexperts — Formation Télépilote de Drone (RS6982)</span>
+    <span>dronexperts.io · Fiche 2/5</span>
+  </footer>
+</section>
+
+<!-- ================================================================
+     FICHE 3 — Espaces aériens & cartographie
+     ================================================================ -->
+<section class="sheet">
+  <header class="sheet-head">
+    <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts">
+    <div class="head-txt">
+      <div class="kicker">Formation Télépilote de Drone — Fiches récapitulatives</div>
+      <h1>Espaces aériens &amp; cartographie</h1>
+    </div>
+    <div class="num">Fiche 3/5</div>
+  </header>
+
+  <h2>Lexique — altitude, hauteur, niveau de vol</h2>
+  <div class="cols">
+    <div class="box">
+      <ul>
+        <li><strong>AGL</strong> (Above Ground Level) : hauteur par rapport au sol — la référence drone</li>
+        <li><strong>AMSL</strong> (Above Mean Sea Level) : altitude par rapport au niveau de la mer — la référence des cartes aéronautiques</li>
+        <li><strong>AAL</strong> : hauteur par rapport à la piste · <strong>SFC</strong> : surface (sol ou obstacle)</li>
+      </ul>
+    </div>
+    <div class="box">
+      <ul>
+        <li><strong>FL</strong> (Flight Level) : niveau de vol en centaines de pieds (calage 1013,25 hPa)</li>
+        <li>Conversions : <strong>1 ft ≈ 0,30 m</strong> · 100 ft ≈ 30 m · 1 000 ft ≈ 305 m</li>
+        <li>Exemple : plateau à 200 m AMSL, drone à 50 m du sol → 50 m AGL = 250 m AMSL = 820 ft</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Carte UAS &amp; cartes.gouv.fr — code couleur des hauteurs</h2>
+  <div class="swatches">
+    <span class="swatch"><i style="background:#EF4444"></i> Rouge : vol interdit</span>
+    <span class="swatch"><i style="background:#C2410C"></i> Orange foncé : 30 m max</span>
+    <span class="swatch"><i style="background:#FB923C"></i> Orange clair : 50 m max</span>
+    <span class="swatch"><i style="background:#EAB308"></i> Jaune : 60 m max</span>
+    <span class="swatch"><i style="background:#FDE047"></i> Jaune clair : 100 m max</span>
+    <span class="swatch"><i style="background:#FFFFFF"></i> Sans couleur : 120 m max</span>
+  </div>
+  <div class="callout callout-warn">⚠️ Près d'un aérodrome, les hauteurs max sont mesurées par rapport au <strong>point le plus haut de la piste</strong>, pas à votre point de décollage. <strong>H utilisable = H zone − (Alt. décollage − Alt. piste)</strong>. Exemple : zone 50 m, piste à 50 m AMSL, décollage à 80 m AMSL → 50 − 30 = <strong>20 m AGL seulement</strong>. La carte cartes.gouv.fr est indicative et incomplète : croiser avec SIA, NOTAM, AIP, AZBA et arrêtés préfectoraux.</div>
+
+  <h2>Zones réglementaires — que faire ?</h2>
+  <table>
+    <tr><th>Zone</th><th class="c">Vol drone</th><th>Caractéristique</th><th>Autorité / vérification</th></tr>
+    <tr><td><strong>CTR</strong></td><td class="c"><span class="tag tag-warn">Conditionnel</span></td><td>Contrôle d'aérodrome, du sol (SFC) au plafond</td><td>CTR civile : accord si vol &gt; 50 m ou hors vue · CTR militaire : accord pour <strong>tout vol</strong></td></tr>
+    <tr><td><strong>P</strong> — interdite</td><td class="c"><span class="tag tag-no">Interdit</span></td><td>Centrales nucléaires, P23 Paris, sites de défense</td><td>Dérogation exceptionnelle · sanctions pénales</td></tr>
+    <tr><td><strong>R</strong> — réglementée</td><td class="c"><span class="tag tag-warn">Conditionnel</span></td><td>Zones militaires d'entraînement, zones de tir</td><td>Gestionnaire identifié sur carte OACI / AIP · protocole possible</td></tr>
+    <tr><td><strong>D</strong> — dangereuse</td><td class="c"><span class="tag tag-warn">Si active</span></td><td>Tirs, parachutisme, voltige — <strong>potentiellement interdite si active</strong></td><td>Vérifier l'activation : NOTAM / SUP AIP / SIA</td></tr>
+    <tr><td><strong>ZRT / ZIT / ZDT</strong></td><td class="c"><span class="tag tag-no">Temporaire</span></td><td>Zones temporaires : réglementée / interdite / dangereuse (événements, exercices, 14 juillet…)</td><td>NOTAM / SUP AIP — vérification quotidienne</td></tr>
+    <tr><td><strong>VOLTAC / SETBA</strong></td><td class="c"><span class="tag tag-warn">Déconseillé</span></td><td>Entraînements militaires très basse altitude (SFC → 500 ft ≈ 150 m), même plage que les drones</td><td>Carte VOLTAC/SETBA · NOTAM · SUP AIP (AIP ENR 5.3)</td></tr>
+    <tr><td><strong>RTBA</strong></td><td class="c"><span class="tag tag-no">Si active</span></td><td>Couloirs de chasse très basse altitude — interdit si actif</td><td><strong>Carte AZBA du jour</strong> (SIA) — consultation obligatoire</td></tr>
+    <tr><td><strong>ZICAD</strong></td><td class="c"><span class="tag tag-info">Captation interdite</span></td><td>Survol autorisé, mais photo / vidéo / thermique / lidar interdits (1 an, 75 000 €)</td><td>Couche dédiée sur cartes.gouv.fr</td></tr>
+    <tr><td><strong>Zones naturelles</strong></td><td class="c"><span class="tag tag-warn">Encadré</span></td><td>Parcs nationaux (cœur : survol motorisé interdit &lt; 1 000 m), réserves, Natura 2000 — <strong>pas des zones R</strong></td><td>Code de l'environnement · OFB &amp; préfectures (pas la DGAC)</td></tr>
+  </table>
+
+  <h2>CTR — zone de contrôle d'aérodrome</h2>
+  <ul class="tight">
+    <li>Protège les arrivées et départs des aérodromes contrôlés · plancher à la surface (le sol).</li>
+    <li><strong>CTR civile</strong> : accord requis pour tout vol &gt; 50 m par rapport à la surface de décollage, ou tout vol hors vue · <strong>CTR militaire</strong> : accord requis pour tout vol, sans seuil. L'accord peut être conditionné à un protocole.</li>
+    <li>Hors CTR : les règles de distance aux pistes (carte UAS) ne s'appliquent plus.</li>
+  </ul>
+
+  <div class="callout callout-key">📌 <strong>Bon réflexe avant chaque vol :</strong> SIA (NOTAM + AIP + AZBA) → cartes.gouv.fr (UAS + ZICAD + espaces naturels) → arrêtés préfectoraux locaux → carte OACI 1:500 000.</div>
+
+  <footer class="sheet-foot">
+    <span>Dronexperts — Formation Télépilote de Drone (RS6982)</span>
+    <span>dronexperts.io · Fiche 3/5</span>
+  </footer>
+</section>
+
+<!-- ================================================================
+     FICHE 4 — Obligations & préparation de mission
+     ================================================================ -->
+<section class="sheet">
+  <header class="sheet-head">
+    <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts">
+    <div class="head-txt">
+      <div class="kicker">Formation Télépilote de Drone — Fiches récapitulatives</div>
+      <h1>Obligations &amp; préparation de mission</h1>
+    </div>
+    <div class="num">Fiche 4/5</div>
+  </header>
+
+  <h2>Obligations de l'exploitant, du télépilote et du drone</h2>
+  <div class="cols-3">
+    <div class="box box-blue">
+      <div class="box-title">Exploitant</div>
+      <ul>
+        <li>Déclaration AlphaTango avant tout vol en Spécifique — validité <strong>24 mois</strong></li>
+        <li>N° exploitant <strong>FRA + 13 caractères</strong> — validité <strong>5 ans</strong>, apposé visiblement sur tous les drones</li>
+        <li><strong>MANEX</strong> : organisation, procédures (+ ERP), matériel, formation</li>
+        <li>Assurance <strong>RC aérienne obligatoire</strong></li>
+        <li>Bilan annuel AlphaTango avant le <strong>31 janvier</strong> (même à 0 h de vol)</li>
+      </ul>
+    </div>
+    <div class="box box-green">
+      <div class="box-title">Télépilote</div>
+      <ul>
+        <li><strong>16 ans minimum</strong></li>
+        <li><strong>CATS</strong> : examen théorique en centre DGAC</li>
+        <li>Attestation de formation pratique délivrée par le centre</li>
+        <li>Documents sur soi à chaque vol : CATS, attestation, pièce d'identité</li>
+        <li>Compte AlphaTango personnel obligatoire</li>
+      </ul>
+    </div>
+    <div class="box box-orange">
+      <div class="box-title">Drone</div>
+      <ul>
+        <li>Enregistrement AlphaTango si <strong>&gt; 800 g ou équipé d'un capteur</strong> (caméra) · optionnel sinon</li>
+        <li>Plaque d'identification FRA lisible au sol</li>
+        <li>Signalement électronique 🇫🇷 (Wi-Fi, n° de série) si <strong>&gt; 800 g</strong></li>
+        <li>Remote ID 🇪🇺 (n° exploitant FRA) : classes C1/C2/C3 en Open + tous en Spécifique — les deux se cumulent</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout-key">🚨 <strong>Fiche CRESUS — 72 h :</strong> tout événement de sécurité (accident, incident grave, quasi-collision, fly-away) se déclare dans les <strong>72 heures</strong> sur le portail de notification de l'Aviation Civile. Démarche non punitive (« culture juste ») : le but est d'apprendre des erreurs.</div>
+
+  <h2>Les outils du télépilote</h2>
+  <table>
+    <tr><th>Outil</th><th>À quoi ça sert</th></tr>
+    <tr><td><strong>AlphaTango</strong> · alphatango.aviation-civile.gouv.fr</td><td>Portail DGAC : enregistrement des drones, déclaration d'activité exploitant, gestion des télépilotes, bilan annuel</td></tr>
+    <tr><td><strong>Cartes.gouv.fr</strong></td><td>Restrictions drone (code couleur), couches ZICAD et espaces naturels — indicatif, à croiser avec le SIA</td></tr>
+    <tr><td><strong>SIA</strong> · sia.aviation-civile.gouv.fr</td><td>Information aéronautique officielle : AIP, <strong>NOTAM</strong> (lecture obligatoire avant chaque vol), SUP AIP, carte AZBA, Sofia Briefing</td></tr>
+    <tr><td><strong>Clearance</strong> · clearance.aero</td><td>Outil tiers : analyse réglementaire automatisée, demandes d'autorisations aux gestionnaires (CTR, R, P…)</td></tr>
+    <tr><td><strong>MaMissionDrone</strong> · mamissiondrone.aviation-civile.gouv.fr</td><td>Voie officielle DGAC pour les déclarations de mission : zone peuplée (J-10 min), STS-01/02, dérogations</td></tr>
+    <tr><td><strong>DroneKeeper</strong> · dronekeeper.fr</td><td>Carnet de vol numérique, suivi de flotte et des batteries, rapports exportables pour les contrôles DSAC</td></tr>
+  </table>
+
+  <h2>Formulaires CERFA à connaître</h2>
+  <table>
+    <tr><th>CERFA</th><th>Intitulé</th><th class="c">Délai</th></tr>
+    <tr><td><strong>15476*02</strong></td><td>Déclaration de vol en zone peuplée (cat. Ouverte) — Préfecture</td><td class="c"><strong>J-10</strong></td></tr>
+    <tr><td><strong>15810</strong></td><td>Déclaration d'activité d'exploitant UAS (alternative AlphaTango)</td><td class="c">avant le 1<sup>er</sup> vol pro</td></tr>
+    <tr><td><strong>14997*02</strong></td><td>Demande de dérogation hauteur de vol &gt; 120 m</td><td class="c">≥ J-10</td></tr>
+    <tr><td><strong>15994*03</strong></td><td>Déclaration d'incident / accident drone (fiche CRESUS)</td><td class="c"><strong>72 h</strong></td></tr>
+    <tr><td><strong>16151</strong></td><td>Demande de vol de nuit / dérogation préfectorale (cat. Ouverte)</td><td class="c">≥ J-5 ouvrés</td></tr>
+  </table>
+
+  <h2>Préparer une mission en 6 étapes</h2>
+  <table>
+    <tr><th class="c">#</th><th>Étape</th><th>Action</th></tr>
+    <tr><td class="c"><strong>1</strong></td><td>Carte OACI</td><td>Identifier les zones traversées (CTR, P, R, D…)</td></tr>
+    <tr><td class="c"><strong>2</strong></td><td>Cartes.gouv.fr</td><td>Vérifier la hauteur autorisée par le code couleur</td></tr>
+    <tr><td class="c"><strong>3</strong></td><td>SIA</td><td>Lire les NOTAM du jour (ZRT, ZIT, activités) + carte AZBA</td></tr>
+    <tr><td class="c"><strong>4</strong></td><td>Météo</td><td>Vent, visibilité, plafond nuageux</td></tr>
+    <tr><td class="c"><strong>5</strong></td><td>Notification</td><td>AlphaTango si zone militaire active et drone &gt; 900 g · CERFA 15476 à la Préfecture (J-10) pour zone peuplée</td></tr>
+    <tr><td class="c"><strong>6</strong></td><td>Check-list</td><td>Finaliser la préparation pré-mission et valider</td></tr>
+  </table>
+
+  <footer class="sheet-foot">
+    <span>Dronexperts — Formation Télépilote de Drone (RS6982)</span>
+    <span>dronexperts.io · Fiche 4/5</span>
+  </footer>
+</section>
+
+<!-- ================================================================
+     FICHE 5 — Sécurité, BVLOS & facteur humain
+     ================================================================ -->
+<section class="sheet">
+  <header class="sheet-head">
+    <img src="assets/img/logo-dronexperts.svg" alt="Dronexperts">
+    <div class="head-txt">
+      <div class="kicker">Formation Télépilote de Drone — Fiches récapitulatives</div>
+      <h1>Sécurité, BVLOS &amp; facteur humain</h1>
+    </div>
+    <div class="num">Fiche 5/5</div>
+  </header>
+
+  <h2>Batteries LiPo &amp; Li-Ion</h2>
+  <ul class="tight">
+    <li>Ne jamais descendre <strong>sous 20 %</strong> de charge (cellules endommagées) — prévoir le retour avant ce seuil.</li>
+    <li>Charger à température ambiante (<strong>15-25 °C</strong>) · stockage à <strong>50 %</strong> dans un sac ignifugé.</li>
+    <li><strong>Batterie gonflée = ne plus utiliser</strong> (risque d'incendie) — éliminer selon les normes en vigueur. Extincteur <strong>classe D</strong> sur site.</li>
+  </ul>
+
+  <h2>Pannes &amp; paramétrage de sécurité</h2>
+  <div class="cols">
+    <div class="box box-red">
+      <div class="box-title">Les dangers en vol</div>
+      <ul>
+        <li><strong>Mineures</strong> : perte du retour vidéo (pilotage aux instruments), perte GPS (passage en mode ATTI)</li>
+        <li><strong>Majeures</strong> : perte liaison RC (failsafe → RTH), batterie critique (atterrissage d'urgence)</li>
+        <li><strong>Fly-away</strong> : perte de contrôle totale (interférences, perte boussole + GPS) — prévention : bon paramétrage du RTH</li>
+        <li>Lignes électriques : <strong>DMA 3 m</strong> (&lt; 50 kV) / <strong>5 m</strong> (≥ 50 kV) — arc électrique possible sans contact</li>
+      </ul>
+    </div>
+    <div class="box box-green">
+      <div class="box-title">Paramétrage avant vol</div>
+      <ul>
+        <li><strong>RTH</strong> : altitude de retour au-dessus des obstacles, point de retour vérifié</li>
+        <li><strong>Perte de signal</strong> : comportement configuré (RTH / atterrissage / stationnaire) selon la mission</li>
+        <li><strong>Batterie faible</strong> : seuil de RTH automatique adapté à la distance et au vent</li>
+        <li>Calibration <strong>boussole</strong> (loin des structures métalliques) et <strong>IMU</strong> (surface plane)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Vol BVLOS — points clés</h2>
+  <div class="cols">
+    <div class="box box-cyan">
+      <ul>
+        <li><strong>Observateurs de l'espace aérien obligatoires</strong> au-delà de 1 km (STS-02) — rôles définis : télépilote, observateur(s), assistant au sol</li>
+        <li><strong>Phraséologie standardisée + collationnement</strong> : l'observateur répète l'ordre pour confirmation</li>
+        <li><strong>Retour vidéo et télémétrie</strong> vérifiés avant décollage · le télépilote doit pouvoir reprendre le contrôle à tout moment</li>
+      </ul>
+    </div>
+    <div class="box box-orange">
+      <ul>
+        <li>Dangers spécifiques : perte du retour vidéo, portée RC, météo qui se dégrade, trafic basse altitude (hélicoptères de secours, ULM, parapentes)</li>
+        <li>💡 Chaque danger identifié = une <strong>mesure de mitigation</strong> dans la préparation (observateurs, redondance batterie, créneau horaire, plan B)</li>
+        <li><strong>ERP</strong> (plan d'urgence) : numéros d'urgence (112, 15, 18, 17), zone d'atterrissage de secours, procédures écrites — sur site et à jour</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Le facteur humain <span class="ref">&gt; 80 % des accidents de drone ont pour cause une erreur humaine</span></h2>
+  <div class="cols">
+    <div class="box">
+      <div class="box-title">Commandant de bord</div>
+      <ul>
+        <li>Seul responsable du vol · autorité finale <strong>Go / No-Go</strong></li>
+        <li>Savoir <strong>dire non au client</strong> si les conditions de sécurité ne sont pas réunies</li>
+        <li>Check-lists et préparation minutieuse = charge mentale réduite</li>
+      </ul>
+    </div>
+    <div class="box">
+      <div class="box-title">Stress &amp; fatigue</div>
+      <ul>
+        <li>Stress — 3 phases : <strong>alarme → résistance → épuisement</strong> (perte de lucidité) · antidotes : planification, confiance, entraînement</li>
+        <li>Creux de vigilance : <strong>14 h-16 h</strong> et <strong>2 h-5 h</strong> · après 12 h d'éveil, risque d'erreur multiplié</li>
+        <li>Le <strong>sommeil</strong> (7-8 h/nuit) est le seul vrai remède contre la fatigue</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cols">
+    <div class="box">
+      <div class="box-title">Les 5 types d'erreurs humaines</div>
+      <ul>
+        <li><strong>Routine</strong> : lapsus, oubli par excès de confiance</li>
+        <li><strong>Règles</strong> : mauvaise application d'une procédure connue</li>
+        <li><strong>Modèle</strong> : mauvaise décision par manque de connaissances</li>
+        <li><strong>Communication</strong> : incompréhension avec l'observateur ou l'équipe</li>
+        <li><strong>Représentation</strong> : mauvaise appréciation des distances — très fréquent en drone</li>
+      </ul>
+    </div>
+    <div class="box">
+      <div class="box-title">Les 5 attitudes dangereuses (et leurs antidotes)</div>
+      <ul>
+        <li><strong>Le Macho</strong> → « Prendre des risques est stupide »</li>
+        <li><strong>L'Impulsif</strong> → « Pas si vite, réfléchissons »</li>
+        <li><strong>L'Invulnérable</strong> → « Ça peut m'arriver aussi »</li>
+        <li><strong>L'Anti-autorité</strong> → « Les règles existent pour une raison »</li>
+        <li><strong>Le Résigné</strong> → « Je peux agir »</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout callout-warn">🩺 <strong>Santé :</strong> alcool <strong>0,0 g/l</strong> en service (8 h minimum entre le dernier verre et le vol) · stupéfiants strictement interdits · médicaments : vérifier les pictogrammes de somnolence (niveaux 1/2/3) · tabac et caféine masquent temporairement la fatigue.</div>
+
+  <footer class="sheet-foot">
+    <span>Dronexperts — Formation Télépilote de Drone (RS6982)</span>
+    <span>dronexperts.io · Fiche 5/5</span>
+  </footer>
+</section>
+
+</body>
+</html>
