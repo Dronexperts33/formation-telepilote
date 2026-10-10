@@ -673,10 +673,12 @@
   <p class="quiz-question">Spray L en captif, accroche de 30 m. Quel est le rayon de la zone contrôlée au sol ?</p>
   <div class="quiz-options">
     <div class="quiz-option"><span class="option-letter">A</span><span>30 m</span></div>
-    <div class="quiz-option"><span class="option-letter">B</span><span>35 m</span></div>
+    <div class="quiz-option" data-correct="true"><span class="option-letter">B</span><span>35 m</span></div>
     <div class="quiz-option"><span class="option-letter">C</span><span>60 m (tableau, MTOM &gt; 10 kg)</span></div>
     <div class="quiz-option"><span class="option-letter">D</span><span>Aucune zone en captif</span></div>
   </div>
+  <div class="quiz-reveal">Afficher la réponse</div>
+  <div class="quiz-explain"><strong>Réponse B — 35 m.</strong> En captif, la zone contrôlée au sol est un cercle de rayon égal à la longueur de l'accroche + 5 m, centré sur le point de fixation. Le tableau hauteur / masse ne concerne que le drone non captif.</div>
   <div class="slide-footer">
     <span>Quiz — Réglementation</span>
     <span>Jour 1</span>
@@ -1056,10 +1058,12 @@
   <p class="quiz-question">Vous êtes indépendant et achetez un algicide professionnel revendiqué TP2 et TP10. Le Certibiocide est-il obligatoire ?</p>
   <div class="quiz-options">
     <div class="quiz-option"><span class="option-letter">A</span><span>Non, le TP10 n'est pas concerné</span></div>
-    <div class="quiz-option"><span class="option-letter">B</span><span>Oui, certificat « désinfectants » (TP2)</span></div>
+    <div class="quiz-option" data-correct="true"><span class="option-letter">B</span><span>Oui, certificat « désinfectants » (TP2)</span></div>
     <div class="quiz-option"><span class="option-letter">C</span><span>Non, le Certiphyto suffit</span></div>
     <div class="quiz-option"><span class="option-letter">D</span><span>Oui, certificat « nuisibles »</span></div>
   </div>
+  <div class="quiz-reveal">Afficher la réponse</div>
+  <div class="quiz-explain"><strong>Réponse B.</strong> Dès que le produit revendique le TP2 et qu'il est réservé aux professionnels, celui qui le choisit et l'achète doit détenir le Certibiocide « désinfectants » (obligatoire depuis le 1<sup>er</sup> janvier 2026). Le Certiphyto ne le remplace pas.</div>
   <div class="slide-footer">
     <span>Quiz — Produits</span>
     <span>Jour 1</span>
@@ -1316,6 +1320,19 @@
     controls: true, controlsLayout: 'bottom-right', controlsTutorial: false, progress: true,
     center: false, help: true,
     plugins: [ RevealNotes ]
+  });
+
+  // Quiz : un clic sur une proposition (ou sur « Afficher la réponse ») révèle la bonne réponse
+  document.querySelectorAll('.slide-quiz').forEach(function (quiz) {
+    function reveal() {
+      quiz.classList.add('revealed');
+      quiz.querySelectorAll('.quiz-option').forEach(function (opt) {
+        opt.classList.add(opt.dataset.correct === 'true' ? 'reveal-correct' : 'reveal-wrong');
+      });
+    }
+    quiz.querySelectorAll('.quiz-option, .quiz-reveal').forEach(function (el) {
+      el.addEventListener('click', reveal);
+    });
   });
 </script>
 </body>

@@ -128,3 +128,14 @@
 .pe { display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: 0.5em; font-weight: 700; color: var(--dx-text-dark); background: #fff; border: 1px solid var(--dx-border); border-radius: 10px; padding: 9px 10px; min-width: 96px; text-align: center; line-height: 1.2; box-shadow: var(--dx-shadow); }
 .pe.pe-total { background: var(--dx-primary); color: #fff; border-color: var(--dx-primary); }
 .pe.pe-total .hico { background: rgba(255,255,255,0.2); color: #fff; }
+
+/* Quiz : réponse affichée au clic (même principe que le deck télépilote J3 après-midi) */
+.slide-quiz .quiz-option { cursor: pointer; transition: all 0.2s; }
+.slide-quiz .quiz-option.reveal-correct { border-color: var(--dx-success); background: rgba(16,185,129,0.08); }
+.slide-quiz .quiz-option.reveal-correct .option-letter { background: var(--dx-success); color: #fff; border-color: var(--dx-success); }
+.slide-quiz .quiz-option.reveal-wrong { border-color: var(--dx-error); background: rgba(239,68,68,0.04); opacity: 0.6; }
+.quiz-reveal { text-align: center; margin-top: 22px; font-size: 0.6em; color: var(--dx-primary); font-weight: 600; cursor: pointer; }
+.quiz-reveal:hover { text-decoration: underline; }
+.quiz-explain { display: none; max-width: 88%; margin: 22px auto 0; padding: 12px 18px; border-left: 5px solid var(--dx-success); background: rgba(16,185,129,0.08); border-radius: 8px; font-size: 0.6em; line-height: 1.45; color: var(--dx-text-dark); text-align: left; }
+.slide-quiz.revealed .quiz-explain { display: block; }
+.slide-quiz.revealed .quiz-reveal { display: none; }

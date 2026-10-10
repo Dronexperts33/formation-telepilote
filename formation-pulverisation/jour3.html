@@ -991,9 +991,11 @@
   <div class="quiz-options">
     <div class="quiz-option"><span class="option-letter">A</span><span>1 an</span></div>
     <div class="quiz-option"><span class="option-letter">B</span><span>2 ans, comme la déclaration</span></div>
-    <div class="quiz-option"><span class="option-letter">C</span><span>Au moins 3 ans</span></div>
+    <div class="quiz-option" data-correct="true"><span class="option-letter">C</span><span>Au moins 3 ans</span></div>
     <div class="quiz-option"><span class="option-letter">D</span><span>Jusqu'à la revente du drone</span></div>
   </div>
+  <div class="quiz-reveal">Afficher la réponse</div>
+  <div class="quiz-explain"><strong>Réponse C — au moins 3 ans</strong> (UAS.SPEC.050 du règlement (UE) 2019/947), comme les registres de vols et de qualifications.</div>
   <div class="slide-footer">
     <span>Quiz — Maintenance</span>
     <span>Jour 3</span>
@@ -1104,6 +1106,19 @@
     controls: true, controlsLayout: 'bottom-right', controlsTutorial: false, progress: true,
     center: false, help: true,
     plugins: [ RevealNotes ]
+  });
+
+  // Quiz : un clic sur une proposition (ou sur « Afficher la réponse ») révèle la bonne réponse
+  document.querySelectorAll('.slide-quiz').forEach(function (quiz) {
+    function reveal() {
+      quiz.classList.add('revealed');
+      quiz.querySelectorAll('.quiz-option').forEach(function (opt) {
+        opt.classList.add(opt.dataset.correct === 'true' ? 'reveal-correct' : 'reveal-wrong');
+      });
+    }
+    quiz.querySelectorAll('.quiz-option, .quiz-reveal').forEach(function (el) {
+      el.addEventListener('click', reveal);
+    });
   });
 </script>
 </body>
