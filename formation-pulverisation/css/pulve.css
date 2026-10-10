@@ -80,3 +80,51 @@
 .fig { text-align: center; }
 .fig svg { width: 100%; height: auto; }
 .fig-caption { font-size: 0.48em; color: var(--dx-text-secondary); font-weight: 500; margin-top: 4px; text-align: center; }
+
+/* Icônes de titres de cartes */
+.hico { width: 34px; height: 34px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; background: rgba(14,116,218,0.1); color: var(--dx-primary); flex-shrink: 0; }
+.hico svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.b-green .hico { background: rgba(16,185,129,0.12); color: #059669; }
+.b-orange .hico { background: rgba(245,158,11,0.14); color: #B45309; }
+.b-red .hico { background: rgba(239,68,68,0.1); color: var(--dx-error); }
+.b-cyan .hico { background: rgba(6,182,212,0.12); color: #0891B2; }
+
+/* Cartes photo */
+.photo-card { background: #fff; border: 1px solid var(--dx-border); border-radius: var(--dx-radius); box-shadow: var(--dx-shadow); overflow: hidden; display: flex; flex-direction: column; }
+.reveal .photo-card img { width: 100%; height: 190px; object-fit: cover; display: block; margin: 0; max-width: none; border-radius: 0; box-shadow: none; }
+.photo-card .pc-body { padding: 12px 16px 14px; font-size: 0.62em; line-height: 1.45; }
+.photo-card .pc-body h4 { font-size: 1.15em; font-weight: 700; color: var(--dx-text-dark); margin: 0 0 6px; display: flex; align-items: center; gap: 8px; }
+.photo-card .pc-body p { margin: 0; line-height: 1.45; }
+.photo-card .pc-body ul li { margin-bottom: 0.3em; line-height: 1.4; padding-left: 1.4em; }
+.photo-card .pc-body ul li::before { left: 0.2em; top: 0.5em; width: 6px; height: 6px; }
+.photo-card.b-blue   { border-top: 4px solid var(--dx-primary); }
+.photo-card.b-green  { border-top: 4px solid var(--dx-success); }
+.photo-card.b-orange { border-top: 4px solid var(--dx-warning); }
+.photo-card.b-red    { border-top: 4px solid var(--dx-error); }
+.photo-card.b-cyan   { border-top: 4px solid var(--dx-info); }
+
+/* Bandeau de photos */
+.photo-strip { display: grid; gap: 14px; margin-top: 14px; }
+.photo-strip figure { margin: 0; }
+.reveal .photo-strip img { width: 100%; height: 130px; object-fit: cover; border-radius: 10px; display: block; margin: 0; max-width: none; box-shadow: var(--dx-shadow); }
+.photo-strip figcaption { font-size: 0.42em; color: var(--dx-text-secondary); text-align: center; margin-top: 4px; font-weight: 500; }
+
+/* Tuiles d'infographie */
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.tile { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--dx-border); border-radius: 12px; padding: 14px 16px; box-shadow: var(--dx-shadow); font-size: 0.62em; line-height: 1.35; color: var(--dx-text-dark); }
+.tile.t-vol { border-left: 4px solid var(--dx-primary); }
+.tile.t-mat { border-left: 4px solid var(--dx-info); }
+.tile.t-mat .hico { background: rgba(6,182,212,0.12); color: #0891B2; }
+.reveal .tile img { margin: 0; }
+
+/* Crédits des illustrations */
+.credits { font-size: 0.42em; line-height: 1.45; columns: 2; column-gap: 32px; color: var(--dx-text-secondary); }
+.credits li { break-inside: avoid; margin-bottom: 4px !important; padding-left: 1.2em !important; line-height: 1.4 !important; }
+.credits li::before { width: 5px !important; height: 5px !important; top: 0.55em !important; left: 0.2em !important; }
+
+/* Équation du prix */
+.price-eq { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0 0 14px; }
+.price-eq b { font-size: 0.8em; color: var(--dx-text-muted); font-weight: 800; }
+.pe { display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: 0.5em; font-weight: 700; color: var(--dx-text-dark); background: #fff; border: 1px solid var(--dx-border); border-radius: 10px; padding: 9px 10px; min-width: 96px; text-align: center; line-height: 1.2; box-shadow: var(--dx-shadow); }
+.pe.pe-total { background: var(--dx-primary); color: #fff; border-color: var(--dx-primary); }
+.pe.pe-total .hico { background: rgba(255,255,255,0.2); color: #fff; }
