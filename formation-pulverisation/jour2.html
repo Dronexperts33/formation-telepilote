@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nettoyage & Traitement par Drone — Jour 2 — Dronexperts</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Dronexperts Theme -->
+  <link rel="stylesheet" href="../css/dronexperts-theme.css">
+  <link rel="stylesheet" href="css/pulve.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<!-- ============================================================
+     SLIDE 0 — TITRE
+     ============================================================ -->
+<section class="slide-title">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>Nettoyage & Traitement par Drone</h1>
+  <p class="subtitle">Jour 2 — Chimie des produits, MANEX & préparation de mission</p>
+  <span class="badge">Toitures · Façades · Panneaux solaires — 3 jours</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Nettoyage & Traitement par Drone</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 1 — RAPPEL & PROGRAMME
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Rappel du Jour 1 et programme du jour</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-green">
+      <h4>Hier</h4>
+      <ul>
+        <li>Pulvérisation = catégorie Spécifique, scénario <strong>STS-01</strong></li>
+        <li>Drone <strong>C5 captif</strong> : zone contrôlée = accroche + 5 m</li>
+        <li>Le <strong>Spray L</strong> et ses caractéristiques</li>
+        <li>Biocides <strong>TP2 / TP10</strong>, <strong>Certibiocide</strong>, pas de phyto</li>
+        <li>Sécurité, EPI, premiers gestes</li>
+      </ul>
+    </div>
+    <div class="box b-blue">
+      <h4>Aujourd'hui</h4>
+      <ul>
+        <li><strong>Module 1</strong> — Chimie : principes actifs, FDS, environnement</li>
+        <li><strong>Module 2</strong> — Techniques par surface et réglages du Spray L</li>
+        <li><strong>Module 3</strong> — Adapter le MANEX et le plan d'urgence</li>
+        <li><strong>Module 4</strong> — Préparer une mission (étude de cas)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Introduction</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 1 — CHIMIE
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 1</div>
+  <h2>La chimie des produits</h2>
+  <p class="module-desc">Les principes actifs des produits de traitement et de nettoyage, leurs dangers, la lecture de l'étiquette et de la FDS, et la protection de l'environnement.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><line x1="7" y1="15" x2="17" y2="15"/></svg>
+  <div class="slide-footer">
+    <span>Module 1 — Chimie</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PRINCIPES ACTIFS : VUE D'ENSEMBLE
+     ============================================================ -->
+<section class="slide-table">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Les principes actifs : vue d'ensemble</h2>
+  <table class="dx-table" style="font-size:0.58em;">
+    <thead><tr><th style="width:22%;">Famille</th><th style="width:28%;">Exemples</th><th style="width:25%;">Rôle</th><th>Usage type</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Ammoniums quaternaires</strong></td><td>Chlorure de benzalkonium (ADBAC), chlorure de didécyldiméthylammonium (DDAC)</td><td>Algicide, bactéricide, fongicide</td><td>Traitement de toitures et façades (biocide TP2 / TP10)</td></tr>
+      <tr><td><strong>Agents alcalins</strong></td><td>Hydroxyde de sodium (soude), hydroxyde de potassium (potasse), métasilicate de sodium</td><td>Dégraissant : attaque les graisses et salissures organiques</td><td>Dégraissage de façades, bardages</td></tr>
+      <tr><td><strong>Tensioactifs</strong></td><td>Anioniques, non ioniques</td><td>Mouillant, émulsionnant : décollent et mettent la salissure en suspension</td><td>Base des détergents et dégraissants</td></tr>
+      <tr><td><strong>Oxydants chlorés</strong></td><td>Hypochlorite de sodium (eau de Javel)</td><td>Désinfectant, blanchissant</td><td>Taches noires, salissures biologiques</td></tr>
+    </tbody>
+  </table>
+  <div class="callout c-blue">La composition exacte d'un produit se lit en <strong>rubrique 3 de la FDS</strong>, et les substances actives biocides figurent sur l'<strong>étiquette</strong> avec leur concentration.</div>
+  <p class="src">INRS — fiches toxicologiques FT 253 (chlorure de benzalkonium), FT 20 (hydroxyde de sodium), FT 157 (hypochlorite de sodium) · Règlement (UE) 528/2012, art. 69</p>
+  <div class="slide-footer">
+    <span>Module 1 — Principes actifs</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Apporter 3 ou 4 produits réels (anti-algues de toiture, dégraissant façade, Javel) et faire retrouver la famille de chaque principe actif à partir de l'étiquette.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     AMMONIUM QUATERNAIRE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Focus : l'ammonium quaternaire</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-blue">
+      <h4>Ce que c'est</h4>
+      <ul>
+        <li><strong>Tensioactif cationique</strong> aux propriétés <strong>bactéricides, fongicides et algicides</strong></li>
+        <li>Principe actif majeur des produits anti-algues / anti-lichens de toiture</li>
+        <li>Deux molécules courantes : <strong>chlorure de benzalkonium</strong> (ADBAC) et <strong>DDAC</strong></li>
+        <li>Le DDAC est approuvé en <strong>TP1 et TP2</strong> depuis le 1<sup>er</sup> février 2024, avec une attention particulière aux <strong>utilisateurs professionnels</strong></li>
+      </ul>
+    </div>
+    <div class="box b-red">
+      <h4>Ses dangers (chlorure de benzalkonium)</h4>
+      <ul>
+        <li><span class="pill p-red">H314</span> Provoque des brûlures de la peau et des lésions oculaires graves</li>
+        <li><span class="pill p-orange">H302 / H312</span> Nocif en cas d'ingestion / par contact cutané</li>
+        <li><span class="pill">H400</span> <strong>Très toxique pour les organismes aquatiques</strong></li>
+        <li>Pictogrammes : <strong>corrosif</strong>, <strong>point d'exclamation</strong>, <strong>environnement</strong></li>
+        <li>Risque d'<strong>asthme professionnel</strong> lors de pulvérisations</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout">Ces mentions concernent la <strong>substance pure</strong>. Le produit dilué prêt à l'emploi peut avoir une classification différente : <strong>c'est la FDS du produit qui fait foi</strong>.</div>
+  <p class="src">INRS, fiche toxicologique FT 253 · Règlement d'exécution (UE) 2022/1991 (approbation du DDAC)</p>
+  <div class="slide-footer">
+    <span>Module 1 — Ammonium quaternaire</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    La toxicité aquatique (H400) est l'argument central pour la gestion des eaux de ruissellement : un produit à base d'ammonium quaternaire ne doit jamais rejoindre un avaloir ou un cours d'eau. Le risque d'asthme est cité par l'INRS pour les désinfections par pulvérisation : c'est un argument fort pour que le télépilote reste hors du nuage de pulvérisation.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     DÉGRAISSANTS
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Les principes actifs des dégraissants</h2>
+  <div class="grid-3" style="margin-top:6px;">
+    <div class="box b-orange">
+      <h4>Alcalins</h4>
+      <ul>
+        <li>Soude, potasse, métasilicate</li>
+        <li>pH élevé : attaquent graisses et matières organiques</li>
+        <li>Soude : <span class="pill p-red">H314</span> corrosif</li>
+        <li>Attaquent aussi certains <strong>métaux</strong> et supports fragiles</li>
+      </ul>
+    </div>
+    <div class="box b-blue">
+      <h4>Tensioactifs</h4>
+      <ul>
+        <li>Anioniques, non ioniques</li>
+        <li>Abaissent la tension de surface : l'eau <strong>mouille</strong> mieux le support</li>
+        <li>Émulsionnent les graisses pour le rinçage</li>
+        <li>Classification : voir <strong>rubrique 2 de la FDS</strong></li>
+      </ul>
+    </div>
+    <div class="box b-red">
+      <h4>Hypochlorite (Javel)</h4>
+      <ul>
+        <li>Oxydant désinfectant et blanchissant</li>
+        <li><span class="pill p-red">H314</span> <span class="pill">H400</span> <span class="pill p-orange">H290</span></li>
+        <li><strong>EUH031</strong> : au contact d'un acide, dégage un gaz toxique</li>
+        <li>Corrosif pour les métaux</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout c-blue">Le <strong>pH</strong> du produit figure en <strong>rubrique 9 de la FDS</strong> : c'est le premier indicateur de son agressivité pour le support, le matériel et la peau.</div>
+  <p class="src">INRS — FT 20 (hydroxyde de sodium), FT 157 (hypochlorite de sodium) · Règlement (UE) 2020/878 (format de la FDS)</p>
+  <div class="slide-footer">
+    <span>Module 1 — Dégraissants</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Faire le lien avec le Jour 3 (corrosion) : les produits alcalins et chlorés sont les plus agressifs pour la pompe, les raccords, la visserie et les connecteurs du drone. Faire aussi le lien avec la vigilance « marchandises dangereuses » du Jour 1 : un dégraissant concentré classé corrosif pose question à bord.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     MÉLANGES DANGEREUX
+     ============================================================ -->
+<section class="slide-highlight">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="highlight-box highlight-error" style="max-width:88%;">
+    <div class="tag">Règle de sécurité</div>
+    <blockquote>Ne jamais mélanger les produits. Eau de Javel + acide (détartrant) = dégagement violent de chlore, gaz très toxique. Eau de Javel + ammoniaque = chloramines, irritantes pour les voies respiratoires.</blockquote>
+    <p class="source">INRS, fiche toxicologique FT 157 — Hypochlorite de sodium · Rincer la cuve et le circuit à l'eau claire entre deux produits</p>
+  </div>
+  <div class="slide-footer">
+    <span>Module 1 — Mélanges dangereux</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Sur un chantier, le risque vient souvent d'un circuit mal rincé : un fond de cuve d'un produit + un nouveau produit = mélange. Les incompatibilités de chaque produit se lisent en rubrique 10 de la FDS (stabilité et réactivité).
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     PICTOGRAMMES
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Les 9 pictogrammes de danger</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px 20px;margin-top:10px;">
+    <div class="box" style="display:flex;align-items:center;gap:14px;padding:12px 16px;"><span class="ghs"><span>01</span></span><div><strong>GHS01</strong> — Explosif</div></div>
+    <div class="box" style="display:flex;align-items:center;gap:14px;padding:12px 16px;"><span class="ghs"><span>02</span></span><div><strong>GHS02</strong> — Inflammable</div></div>
+    <div class="box" style="display:flex;align-items:center;gap:14px;padding:12px 16px;"><span class="ghs"><span>03</span></span><div><strong>GHS03</strong> — Comburant</div></div>
+    <div class="box" style="display:flex;align-items:center;gap:14px;padding:12px 16px;"><span class="ghs"><span>04</span></span><div><strong>GHS04</strong> — Gaz sous pression</div></div>
+    <div class="box" style="display:flex;align-items:center;gap:14px;padding:12px 16px;border:2px solid var(--dx-error);"><span class="ghs"><span>05</span></span><div><strong>GHS05</strong> — <strong>Corrosif</strong><br><span style="color:var(--dx-text-muted);">soude, Javel, quats purs</span></div></div>
+    <div class="box" style="display:flex;align-items:center;gap:14px;padding:12px 16px;"><span class="ghs"><span>06</span></span><div><strong>GHS06</strong> — Toxicité aiguë</div></div>
+    <div class="box" style="display:flex;align-items:center;gap:14px;padding:12px 16px;border:2px solid var(--dx-error);"><span class="ghs"><span>07</span></span><div><strong>GHS07</strong> — <strong>Nocif / irritant</strong><br><span style="color:var(--dx-text-muted);">quats</span></div></div>
+    <div class="box" style="display:flex;align-items:center;gap:14px;padding:12px 16px;"><span class="ghs"><span>08</span></span><div><strong>GHS08</strong> — Danger grave pour la santé</div></div>
+    <div class="box" style="display:flex;align-items:center;gap:14px;padding:12px 16px;border:2px solid var(--dx-error);"><span class="ghs"><span>09</span></span><div><strong>GHS09</strong> — <strong>Environnement</strong><br><span style="color:var(--dx-text-muted);">quats, Javel</span></div></div>
+  </div>
+  <p class="src">Règlement (CE) 1272/2008 (CLP) · INRS ED 4405 « Les pictogrammes de danger » — encadrés en rouge : les plus fréquents sur nos produits</p>
+  <div class="slide-footer">
+    <span>Module 1 — Pictogrammes</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Montrer les vrais pictogrammes (losange rouge, symbole noir sur fond blanc) sur les étiquettes des produits apportés, ou projeter l'affiche INRS ED 4405. Les trois pictogrammes encadrés sont ceux que les stagiaires rencontreront le plus.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     LIRE UNE FDS
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Lire une fiche de données de sécurité (FDS)</h2>
+  <p class="lead">16 rubriques obligatoires. Pour un chantier drone, <strong>huit sont à lire systématiquement</strong> :</p>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+    <div class="box b-red"><h4>2 · Dangers</h4><p>Pictogrammes, mentions H et P</p></div>
+    <div class="box b-red"><h4>4 · Premiers secours</h4><p>Gestes en cas d'exposition</p></div>
+    <div class="box b-orange"><h4>6 · Déversement</h4><p>Conduite à tenir en cas de fuite</p></div>
+    <div class="box b-blue"><h4>8 · Protection</h4><p>EPI : gants, lunettes, masque</p></div>
+    <div class="box b-blue"><h4>9 · Propriétés</h4><p>pH, aspect</p></div>
+    <div class="box b-orange"><h4>10 · Réactivité</h4><p>Incompatibilités, mélanges interdits</p></div>
+    <div class="box b-green"><h4>12 · Écologie</h4><p>Toxicité aquatique</p></div>
+    <div class="box b-cyan"><h4>14 · Transport</h4><p>Classement « marchandise dangereuse »</p></div>
+  </div>
+  <p class="src" style="margin-top:14px;">Les autres rubriques : 1 identification · 3 composition · 5 incendie · 7 manipulation et stockage · 11 toxicologie · 13 élimination · 15 réglementation · 16 autres informations — Règlement REACH, annexe II modifiée par le règlement (UE) 2020/878 · INRS ED 6483</p>
+  <div class="slide-footer">
+    <span>Module 1 — FDS</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Exercice (15 min) : distribuer une FDS réelle par binôme et faire remplir une fiche « produit » : pictogrammes, EPI, gestes d'urgence, pH, incompatibilités, toxicité aquatique, rubrique 14. Cette fiche sera reprise dans le MANEX. La FDS est fournie gratuitement par le fournisseur : l'exiger à chaque achat.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ENVIRONNEMENT
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Protéger l'eau et l'environnement</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-red">
+      <h4>Le cadre</h4>
+      <ul>
+        <li>Laisser s'écouler dans les eaux des substances nuisibles est un <strong>délit</strong> : jusqu'à <strong>2 ans d'emprisonnement et 75 000 €</strong> d'amende</li>
+        <li>Rejet d'eaux non domestiques au réseau public : <strong>autorisation de la collectivité</strong></li>
+        <li>Biocides : respecter les mesures de l'<strong>étiquette</strong> sur les risques pour l'eau</li>
+        <li>Le producteur du déchet est responsable de son élimination</li>
+      </ul>
+    </div>
+    <div class="box b-green">
+      <h4>Sur le chantier</h4>
+      <ul>
+        <li><strong>Obturer ou dériver les descentes de gouttières</strong> pendant le traitement</li>
+        <li>Protéger avaloirs, regards, bassins, potagers</li>
+        <li>Ne <strong>pas traiter avant la pluie</strong> ni par vent fort</li>
+        <li>Appliquer la <strong>dose de l'étiquette</strong>, pas plus</li>
+        <li>Fonds de cuve et emballages souillés : filière <strong>déchets dangereux</strong> (rubrique 13 de la FDS)</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">Code de l'environnement, art. L216-6 et L541-2 · Code de la santé publique, art. L1331-10 · Règlement (UE) 528/2012, art. 17.5 et 69</p>
+  <div class="slide-footer">
+    <span>Module 1 — Environnement</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Les zones non traitées (ZNT) réglementaires concernent les produits phytopharmaceutiques, pas les biocides : pour les biocides, il n'existe pas de distance générale aux cours d'eau, seules s'appliquent les conditions de l'étiquette. Le chemin typique de la pollution : toiture → gouttière → réseau pluvial → ruisseau. Les ammoniums quaternaires et la Javel sont très toxiques pour les organismes aquatiques (H400).
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     QUIZ CHIMIE
+     ============================================================ -->
+<section class="slide-quiz">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>
+    <svg style="width:28px;height:28px;vertical-align:middle;margin-right:8px;stroke:var(--dx-primary);fill:none;stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Question
+  </h2>
+  <p class="quiz-question">Dans quelle rubrique de la FDS trouvez-vous les gants et lunettes à porter ?</p>
+  <div class="quiz-options">
+    <div class="quiz-option"><span class="option-letter">A</span><span>Rubrique 2 — Dangers</span></div>
+    <div class="quiz-option"><span class="option-letter">B</span><span>Rubrique 4 — Premiers secours</span></div>
+    <div class="quiz-option"><span class="option-letter">C</span><span>Rubrique 8 — Protection individuelle</span></div>
+    <div class="quiz-option"><span class="option-letter">D</span><span>Rubrique 14 — Transport</span></div>
+  </div>
+  <div class="slide-footer">
+    <span>Quiz — Chimie</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">Réponse C : rubrique 8, « contrôles de l'exposition / protection individuelle ».</aside>
+</section>
+
+
+<!-- ============================================================
+     MODULE 2 — TECHNIQUES PAR SURFACE
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 2</div>
+  <h2>Techniques par surface</h2>
+  <p class="module-desc">Toitures, façades, panneaux solaires : diagnostic, précautions propres à chaque support et réglages du Spray L.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+  <div class="slide-footer">
+    <span>Module 2 — Techniques</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TOITURES
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Toitures : anti-algues et anti-lichens</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-blue">
+      <h4>Diagnostic avant devis</h4>
+      <ul>
+        <li>Nature du support : tuile terre cuite, béton, ardoise, fibres-ciment, bac acier</li>
+        <li>État : tuiles cassées, fissures, faîtage, gouttières</li>
+        <li>Type de salissure : algues, lichens, mousses</li>
+        <li>Abords : véhicules, jardin, bassin, voisins, lignes électriques</li>
+      </ul>
+    </div>
+    <div class="box b-green">
+      <h4>Application</h4>
+      <ul>
+        <li>Produit choisi selon le support et l'étiquette</li>
+        <li>Respect de la <strong>dose</strong> et du <strong>temps d'action</strong> indiqués</li>
+        <li>Rinçage <strong>uniquement si l'étiquette le prévoit</strong></li>
+        <li>Gouttières obturées ou dérivées pendant l'application</li>
+        <li>Photos <strong>avant</strong> au plus près (constat d'état)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout c-red"><strong>Fibres-ciment ancien</strong> : l'amiante est interdit en France depuis 1997, mais une toiture plus ancienne peut en contenir. Exiger le <strong>repérage amiante avant travaux</strong> du donneur d'ordre et proscrire toute action abrasive ou haute pression.</div>
+  <div class="slide-footer">
+    <span>Module 2 — Toitures</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Le démoussage par grattage ou haute pression abîme les tuiles : le traitement par drone en basse pression est précisément l'argument commercial. Le traitement agit souvent dans les semaines qui suivent : prévenir le client que le résultat n'est pas immédiat (photos après à programmer). Mousse = végétal : relire la slide « biocide ou phyto » du Jour 1.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     FAÇADES
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Façades : nettoyer et traiter</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-blue">
+      <h4>Avant</h4>
+      <ul>
+        <li>Identifier le support : enduit, pierre, brique, bardage, béton, verre</li>
+        <li><strong>Test sur une zone discrète</strong> : tenue de l'enduit, décoloration</li>
+        <li>Fermer et protéger <strong>menuiseries, vitrages, aérations</strong></li>
+        <li>Prévenir les occupants : fenêtres fermées</li>
+      </ul>
+    </div>
+    <div class="box b-green">
+      <h4>Pendant</h4>
+      <ul>
+        <li>Rampe <strong>verticale</strong> du Spray L</li>
+        <li>Application par bandes régulières, sans oubli ni surcharge</li>
+        <li>Dégraissant : respecter le temps d'action, puis rinçage si prévu</li>
+        <li>Surveiller le <strong>ruissellement</strong> au pied de façade</li>
+        <li>Distance de sécurité constante avec le mur</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout">Effet de proximité : près d'un mur, le souffle des hélices et les remous rendent le drone moins stable. Travailler à la distance recommandée par le fabricant et à vitesse lente.</div>
+  <div class="slide-footer">
+    <span>Module 2 — Façades</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Les produits alcalins peuvent tacher l'aluminium, le zinc et certains vitrages : le test sur zone discrète protège aussi l'entreprise en cas de litige (photo du test). Le radar façade proposé en option par Aeotic aide à maintenir la distance.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     PANNEAUX SOLAIRES
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Panneaux solaires et verrières</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-orange">
+      <h4>La règle : la notice du fabricant des panneaux</h4>
+      <ul>
+        <li>Produits, pression et fréquence <strong>autorisés par le fabricant</strong> : sinon, risque de perte de <strong>garantie</strong></li>
+        <li>Pas de produit agressif sur le verre et ses traitements de surface</li>
+        <li>Intervenir de préférence quand les panneaux sont <strong>froids</strong> (matin, temps couvert)</li>
+        <li>Ne jamais marcher ni poser le drone sur les modules</li>
+      </ul>
+    </div>
+    <div class="box b-red">
+      <h4>Risque électrique</h4>
+      <ul>
+        <li>Une installation photovoltaïque reste <strong>sous tension</strong> dès qu'elle est éclairée</li>
+        <li>Ne pas pulvériser sur les <strong>boîtiers, connecteurs et onduleurs</strong></li>
+        <li>Repérer les câbles et le coffret avec l'exploitant du site</li>
+        <li>Vérifier l'état des modules avant (casse, micro-fissures visibles)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 2 — Panneaux solaires</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Demander systématiquement au client la notice ou les conditions de garantie des panneaux. Sur les grandes centrales au sol ou les toitures industrielles, l'exploitant a ses propres consignes de sécurité électrique : les intégrer au plan de prévention.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     RÉGLAGES DU SPRAY L
+     ============================================================ -->
+<section class="slide-table">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Adapter le Spray L au chantier</h2>
+  <table class="dx-table" style="font-size:0.6em;">
+    <thead><tr><th style="width:24%;">Élément</th><th style="width:38%;">Options (catalogue Aeotic)</th><th>Choix selon le chantier</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Rampe</strong></td><td>4 jets horizontale, verticale, tangentielle ; télescopique mono ou tri-jets</td><td>Horizontale : toiture · Verticale : façade · Tangentielle : surfaces inclinées</td></tr>
+      <tr><td><strong>Buses</strong></td><td>Buse calibre 2, 110°, <strong>anti-dérive</strong></td><td>Anti-dérive dès qu'il y a des abords à protéger</td></tr>
+      <tr><td><strong>Alimentation produit</strong></td><td>Pompe basse pression 15 bar (démarrage à distance) ; tuyau 50 m produit chimique <strong>avec lien captif</strong></td><td>Mode captif : la longueur de l'accroche fixe la zone contrôlée</td></tr>
+      <tr><td><strong>Haute pression</strong></td><td>Tuyau HP 30 m, 180 bar</td><td>Uniquement si le support et l'étiquette le permettent</td></tr>
+      <tr><td><strong>Débit / pression</strong></td><td>Réglables sur la pompe</td><td>Selon la dose de l'étiquette et la vitesse d'avancement</td></tr>
+    </tbody>
+  </table>
+  <p class="src">Catalogue produits et pièces aeotic.com · Valeurs de débit et de capacité : manuel constructeur remis avec la machine</p>
+  <div class="slide-footer">
+    <span>Module 2 — Réglages Spray L</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Faire manipuler les rampes et les buses en salle si le matériel est disponible. La dérive augmente avec le vent, la hauteur et la finesse des gouttes : buse anti-dérive, vol bas et vent faible. Les seuils de vent sont ceux du manuel constructeur et de l'étiquette du produit.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     MODULE 3 — MANEX & PLAN D'URGENCE
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 3</div>
+  <h2>MANEX & plan d'urgence</h2>
+  <p class="module-desc">Adapter le manuel d'exploitation STS-01 et le plan d'intervention d'urgence à la pulvérisation de produits en mode captif.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+  <div class="slide-footer">
+    <span>Module 3 — MANEX</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTENU DU MANEX STS
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Le MANEX STS : contenu minimal</h2>
+  <div class="grid-3" style="margin-top:6px;">
+    <div class="box b-blue">
+      <h4>1 · Organisation</h4>
+      <ul>
+        <li>Déclaration de conformité et signature du responsable</li>
+        <li>Organisation de l'exploitant</li>
+        <li>Personnel : rôles, formation, maintien de compétences</li>
+      </ul>
+    </div>
+    <div class="box b-cyan">
+      <h4>2 · Principes d'exploitation</h4>
+      <ul>
+        <li>Nature des activités et <strong>risques associés</strong></li>
+        <li>Environnement : population, obstacles, espace aérien, météo</li>
+        <li>Volume d'exploitation, zones tampons</li>
+        <li>Moyens techniques et leurs limites</li>
+        <li><strong>Instructions d'entretien</strong></li>
+      </ul>
+    </div>
+    <div class="box b-orange">
+      <h4>3 · Procédures</h4>
+      <ul>
+        <li><strong>Normales</strong> : préparation, check-lists, zone contrôlée au sol</li>
+        <li><strong>D'intervention</strong> : tiers dans la zone, conditions dégradées</li>
+        <li><strong>D'urgence</strong> et plan d'intervention d'urgence</li>
+        <li>Sûreté, données personnelles, environnement</li>
+        <li>Comptes rendus d'événements, registres</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">Règlement (UE) 2019/947, appendice 5 (introduit par le règlement 2020/639) · Guide DSAC « Catégorie Spécifique », §16.3 · AMC1 / GM1 UAS.SPEC.030(3)(e)</p>
+  <div class="slide-footer">
+    <span>Module 3 — MANEX</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Le MANEX n'est pas joint à la déclaration AlphaTango mais doit pouvoir être présenté à tout moment. Il doit refléter la réalité du terrain : un MANEX « générique » non adapté à la pulvérisation de produits ne protège ni l'exploitant ni ses clients.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ADAPTER LE MANEX AU CAS D'USAGE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Adapter le MANEX à notre activité</h2>
+  <table class="dx-table t-sm" style="font-size:0.62em;">
+    <thead><tr><th style="width:30%;">Section du MANEX</th><th>Ce qu'il faut y ajouter pour notre activité</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Nature des activités et risques</strong></td><td>Traitement et nettoyage de toitures, façades, panneaux · risques chimiques, dérive, ruissellement</td></tr>
+      <tr><td><strong>Moyens techniques</strong></td><td>Spray L C5, rampes et buses, pompe, <strong>tuyau et lien captif</strong> (longueur, résistance, point de fixation)</td></tr>
+      <tr><td><strong>Zone contrôlée au sol</strong></td><td>Rayon = <strong>accroche + 5 m</strong> · balisage · accord des occupants · coordination mairie si voie publique</td></tr>
+      <tr><td><strong>Conditions environnementales</strong></td><td>Limites de vent et de pluie (constructeur + étiquette du produit) · pas de traitement avant la pluie</td></tr>
+      <tr><td><strong>Procédures normales</strong></td><td>Préparation et dilution des produits, EPI, protection des abords et gouttières, rinçage du circuit</td></tr>
+      <tr><td><strong>Personnel</strong></td><td>CATS + attestation STS-01 · <strong>Certibiocide</strong> si produit TP2 professionnel</td></tr>
+      <tr><td><strong>Environnement & déchets</strong></td><td>Gestion des eaux de ruissellement, fonds de cuve et emballages</td></tr>
+      <tr><td><strong>Annexes</strong></td><td>FDS et fiches « produit » · check-lists · plan d'urgence · registre d'entretien</td></tr>
+    </tbody>
+  </table>
+  <div class="slide-footer">
+    <span>Module 3 — Adapter le MANEX</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Les fiches « produit » réalisées pendant l'exercice FDS du module 1 sont à placer en annexe du MANEX. Chaque nouveau produit utilisé = une nouvelle fiche et une mise à jour du MANEX.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     PLAN D'URGENCE ADAPTÉ
+     ============================================================ -->
+<section class="slide-table">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Adapter le plan d'intervention d'urgence</h2>
+  <table class="dx-table t-sm" style="font-size:0.6em;">
+    <thead><tr><th style="width:26%;">Situation</th><th style="width:46%;">Actions réflexes</th><th>Qui alerter</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Chute du drone</strong></td><td>Couper la pompe · sécuriser la zone · ne pas toucher les batteries endommagées · récupérer le produit</td><td>Secours si blessé (112) · client</td></tr>
+      <tr><td><strong>Rupture du tuyau ou du lien captif</strong></td><td>Arrêt immédiat de la pompe · atterrissage d'urgence · baliser la zone de fuite</td><td>Équipe au sol</td></tr>
+      <tr><td><strong>Déversement de produit</strong></td><td>Absorbant · protéger avaloirs et regards · suivre la rubrique 6 de la FDS</td><td>Client · mairie si voie publique</td></tr>
+      <tr><td><strong>Exposition d'une personne</strong></td><td>Rinçage abondant · rubrique 4 de la FDS · garder l'étiquette</td><td>15 / 112 · centre antipoison</td></tr>
+      <tr><td><strong>Tiers dans la zone contrôlée</strong></td><td>Arrêt de la pulvérisation · stationnaire ou atterrissage · reprise après évacuation</td><td>Observateur · responsable du chantier</td></tr>
+      <tr><td><strong>Feu de batterie</strong></td><td>Éloigner les personnes · ne pas inhaler les fumées · laisser brûler en sécurité ou extincteur adapté</td><td>18 / 112</td></tr>
+    </tbody>
+  </table>
+  <p class="src">Règlement (UE) 2019/947, UAS.STS-01.030 (plan d'intervention d'urgence) et appendice 5, point 6) e) · Guide DSAC §16.4 (compte rendu d'événement, formulaire CRESUS)</p>
+  <div class="slide-footer">
+    <span>Module 3 — Plan d'urgence</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Les procédures d'urgence doivent avoir été validées par essais en vol ou par simulation (UAS.STS-01.030). Après tout incident : compte rendu d'événement à la DSAC territorialement compétente (formulaire CRESUS). Les numéros des centres antipoison régionaux sont à inscrire sur la fiche réflexe du chantier.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     TP : PLAN D'URGENCE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>TP — Rédiger sa fiche réflexe d'urgence</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-blue">
+      <h4>Consigne (30 min, par binôme)</h4>
+      <ul>
+        <li>À partir de la FDS travaillée ce matin, rédiger la <strong>fiche réflexe</strong> d'un chantier de toiture</li>
+        <li>Une page A4 maximum, lisible sur le terrain</li>
+        <li>Choisir 3 situations du tableau précédent et détailler les actions</li>
+      </ul>
+    </div>
+    <div class="box b-green">
+      <h4>La fiche doit contenir</h4>
+      <ul>
+        <li>Numéros d'urgence (112, 15, 18, centre antipoison)</li>
+        <li>Adresse exacte du chantier et point d'accès des secours</li>
+        <li>Produits présents, pictogrammes, premiers secours</li>
+        <li>Emplacement du kit absorbant, de l'eau et du rince-œil</li>
+        <li>Rôle de chaque membre de l'équipe</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 3 — TP plan d'urgence</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Corriger collectivement 2 ou 3 fiches. Points souvent oubliés : l'adresse exacte (lieu-dit, code d'accès), le rôle de chacun, le numéro du centre antipoison.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     MODULE 4 — PRÉPARATION DE MISSION
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 4</div>
+  <h2>Préparation de mission</h2>
+  <p class="module-desc">De la visite technique au jour J : démarches, check-lists, documents et étude de cas complète.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+  <div class="slide-footer">
+    <span>Module 4 — Préparation</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     VISITE TECHNIQUE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>La visite technique</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-blue">
+      <h4>Le bâtiment</h4>
+      <ul>
+        <li>Surface réelle à traiter, pente, hauteur</li>
+        <li>Support et état (photos d'état initial)</li>
+        <li>Amiante possible ? Repérage avant travaux</li>
+        <li>Gouttières, descentes, regards, avaloirs</li>
+      </ul>
+    </div>
+    <div class="box b-cyan">
+      <h4>Le site et l'espace aérien</h4>
+      <ul>
+        <li><strong>Point de fixation</strong> du captif et rayon <strong>accroche + 5 m</strong> : est-il tenable ?</li>
+        <li>Obstacles : lignes électriques, arbres, antennes</li>
+        <li>Voie publique, voisins, véhicules, passants</li>
+        <li>Zones géographiques UAS (Géoportail) · <strong>zone peuplée ?</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout c-blue"><strong>Zone peuplée</strong> (dans ou à moins de 50 m d'une agglomération) : déclaration au préfet <strong>10 jours ouvrables</strong> avant le vol. À intégrer dans le délai donné au client.</div>
+  <div class="slide-footer">
+    <span>Module 4 — Visite technique</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    La visite technique sert aussi au devis (Jour 3). Si la zone contrôlée ne peut pas être tenue (rue passante, voisins collés), prévoir un arrêté de circulation ou de stationnement de la mairie, ou renoncer au drone pour cette partie du chantier.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     CHECK-LISTS
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Check-lists de préparation</h2>
+  <div class="grid-3" style="margin-top:6px;">
+    <div class="box b-blue">
+      <h4>J-10 ouvrables et avant</h4>
+      <ul>
+        <li>Devis signé, accord écrit du client</li>
+        <li>Déclaration préfecture si zone peuplée</li>
+        <li>Demande d'arrêté mairie si voie publique</li>
+        <li>Produits commandés, FDS reçues</li>
+        <li>Information des voisins</li>
+      </ul>
+    </div>
+    <div class="box b-orange">
+      <h4>J-1</h4>
+      <ul>
+        <li>Météo : vent, pluie annoncée</li>
+        <li>Zones géographiques et NOTAM</li>
+        <li>Batteries chargées</li>
+        <li>Drone, tuyau, lien captif, pompe inspectés</li>
+        <li>EPI, kit absorbant, rince-œil, balisage</li>
+      </ul>
+    </div>
+    <div class="box b-green">
+      <h4>Jour J</h4>
+      <ul>
+        <li>Briefing équipe et personnes présentes</li>
+        <li>Balisage de la zone contrôlée</li>
+        <li>Gouttières et abords protégés</li>
+        <li>Test du circuit à l'<strong>eau claire</strong></li>
+        <li>Identification à distance active</li>
+        <li>Photos avant</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 4 — Check-lists</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Ces check-lists sont à intégrer au MANEX (procédures normales). Les stagiaires peuvent les compléter avec les check-lists Dronexperts de la formation télépilote (préparation de vol, zone de vol).
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     DOCUMENTS SUR LE CHANTIER
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Les documents à avoir sur le chantier</h2>
+  <div class="grid-3" style="margin-top:6px;">
+    <div class="box b-blue">
+      <h4>Télépilote & exploitant</h4>
+      <ul>
+        <li>CATS et attestation pratique STS-01</li>
+        <li>Preuve de la déclaration STS-01</li>
+        <li>N° d'exploitant affiché sur le drone</li>
+        <li>MANEX (version à jour)</li>
+        <li>Certibiocide si requis</li>
+      </ul>
+    </div>
+    <div class="box b-cyan">
+      <h4>Chantier</h4>
+      <ul>
+        <li>Récépissé de déclaration préfecture</li>
+        <li>Arrêté de la mairie le cas échéant</li>
+        <li>Devis signé, accord du client</li>
+        <li>Attestation d'assurance</li>
+      </ul>
+    </div>
+    <div class="box b-red">
+      <h4>Produits & sécurité</h4>
+      <ul>
+        <li>FDS de chaque produit</li>
+        <li>Fiche réflexe d'urgence</li>
+        <li>Fiche de chantier à remplir : heure, météo, produit, quantité, incidents</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 4 — Documents</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    La fiche de chantier alimente les registres que l'exploitant doit conserver au moins 3 ans (UAS.SPEC.050).
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ÉTUDE DE CAS
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Étude de cas : préparer la mission</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-blue">
+      <h4>Le chantier</h4>
+      <ul>
+        <li>Maison individuelle <strong>en agglomération</strong></li>
+        <li>Toiture en tuiles terre cuite, 2 pans, faîtage à 8 m</li>
+        <li>Lichens et algues, gouttières en zinc</li>
+        <li>Rue devant la maison, voiture du voisin garée le long du pignon</li>
+        <li>Petit potager côté jardin</li>
+      </ul>
+    </div>
+    <div class="box b-green">
+      <h4>À produire (45 min, par groupe)</h4>
+      <ul>
+        <li>Démarches et <strong>délais</strong></li>
+        <li>Point de fixation, longueur d'accroche et <strong>rayon de la zone contrôlée</strong></li>
+        <li>Choix du produit : TP, Certibiocide, EPI</li>
+        <li>Protection des abords et des eaux</li>
+        <li>Check-list du jour J et fiche réflexe</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 4 — Étude de cas</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Laisser les groupes travailler, puis présenter la correction (slide suivante). Les groupes peuvent utiliser Géoportail pour un vrai cas proche du centre de formation.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     CORRECTION
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Étude de cas : correction</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-blue">
+      <h4>Réglementaire</h4>
+      <ul>
+        <li>STS-01 déclaré · Spray L C5 en <strong>captif</strong></li>
+        <li>Zone peuplée → déclaration préfecture <strong>10 jours ouvrables</strong> avant</li>
+        <li>La zone contrôlée déborde sur la rue → <strong>arrêté de la mairie</strong> (circulation / stationnement)</li>
+        <li>Accroche de 20 m → zone contrôlée de <strong>25 m</strong> de rayon</li>
+        <li>Voisin informé, voiture déplacée ou bâchée</li>
+      </ul>
+    </div>
+    <div class="box b-green">
+      <h4>Produit & environnement</h4>
+      <ul>
+        <li>Anti-algues / anti-lichens biocide, application par drone compatible avec l'étiquette</li>
+        <li>TP2 professionnel → <strong>Certibiocide</strong> « désinfectants »</li>
+        <li>EPI selon la rubrique 8 de la FDS</li>
+        <li>Descentes de gouttières <strong>obturées</strong>, potager bâché</li>
+        <li>Buse anti-dérive, vent faible, pas de pluie annoncée</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 4 — Correction</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    La longueur d'accroche de 20 m est un exemple : la faire justifier par les groupes (hauteur du faîtage, distance entre le point de fixation et le pan le plus éloigné). Rappeler que la zinguerie peut réagir à certains produits : vérifier l'étiquette.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SYNTHÈSE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Synthèse du Jour 2</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-green">
+      <h4>À retenir</h4>
+      <ul>
+        <li><strong>Ammonium quaternaire</strong> : algicide, corrosif pur, très toxique pour l'eau</li>
+        <li>Dégraissants : <strong>alcalins</strong>, tensioactifs, hypochlorite — <strong>jamais de mélange</strong></li>
+        <li>La <strong>FDS</strong> guide les EPI, l'urgence, l'environnement, le transport</li>
+        <li>Chaque support a ses précautions : amiante, menuiseries, garantie des panneaux</li>
+        <li><strong>MANEX</strong> et <strong>plan d'urgence</strong> adaptés à la pulvérisation en captif</li>
+        <li>Zone peuplée : <strong>10 jours ouvrables</strong> de préavis</li>
+      </ul>
+    </div>
+    <div class="box b-blue">
+      <h4>Demain — Jour 3</h4>
+      <ul>
+        <li>Mise en pratique sur le terrain</li>
+        <li>Chiffrage et devis</li>
+        <li>Photos avant / après</li>
+        <li>Assurance drone spécifique</li>
+        <li>Entretien et maintenance</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Synthèse</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FIN
+     ============================================================ -->
+<section class="slide-conclusion">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Fin du Jour 2</h2>
+  <p>Demain : pratique terrain, devis, assurance et entretien du matériel.</p>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <a href="https://www.dronexperts.io">dronexperts.io</a>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <a href="mailto:contact@dronexperts.io">contact@dronexperts.io</a>
+    </div>
+  </div>
+  <div class="slide-footer slide-footer-dark">
+    <span>&copy; 2026 Dronexperts — Tous droits réservés</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280, height: 720, margin: 0, minScale: 0.2, maxScale: 2.0,
+    hash: true, history: true, slideNumber: false,
+    transition: 'slide', backgroundTransition: 'fade',
+    controls: true, controlsLayout: 'bottom-right', controlsTutorial: false, progress: true,
+    center: false, help: true,
+    plugins: [ RevealNotes ]
+  });
+</script>
+</body>
+</html>

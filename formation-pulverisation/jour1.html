@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nettoyage & Traitement par Drone — Jour 1 — Dronexperts</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Dronexperts Theme -->
+  <link rel="stylesheet" href="../css/dronexperts-theme.css">
+  <link rel="stylesheet" href="css/pulve.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<!-- ============================================================
+     SLIDE 0 — TITRE
+     ============================================================ -->
+<section class="slide-title">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>Nettoyage & Traitement par Drone</h1>
+  <p class="subtitle">Jour 1 — Réglementation STS-01, drone C5 captif & produits</p>
+  <span class="badge">Toitures · Façades · Panneaux solaires — 3 jours</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Nettoyage & Traitement par Drone</span>
+    <span>Jour 1</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 1 — DISCLAIMER ENREGISTREMENT
+     ============================================================ -->
+<section class="slide-highlight">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="highlight-box highlight-error" style="max-width:85%;">
+    <div class="tag" style="display:inline-flex;align-items:center;gap:8px;">
+      <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+      Avertissement
+    </div>
+    <blockquote>L'enregistrement audio et vidéo des cours est strictement interdit, sauf accord explicite de Dronexperts, du formateur et de l'ensemble des personnes présentes.</blockquote>
+    <p class="source">Merci de votre compréhension et de votre respect du cadre de la formation.</p>
+  </div>
+  <div class="slide-footer">
+    <span>Dronexperts — Formation Nettoyage & Traitement par Drone</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Projeter cette slide dès l'accueil, avant le tour de table. Rappeler oralement l'interdiction d'enregistrer (audio, vidéo, captation de l'écran) sans accord explicite de Dronexperts, du formateur et de toutes les personnes présentes (droit à l'image, propriété intellectuelle des supports).
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 2 — MODULE 1 : PRÉSENTATIONS
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 1</div>
+  <h2>Présentations & métier</h2>
+  <p class="module-desc">Faisons connaissance, découvrons le métier de nettoyage et de traitement par drone et le programme des 3 jours.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+  <div class="slide-footer">
+    <span>Module 1 — Présentations</span>
+    <span>Jour 1</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 3 — TOUR DE TABLE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Faisons connaissance</h2>
+  <ul class="icon-list">
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div class="text"><h4>Qui êtes-vous ?</h4><p>Nom, entreprise, métier actuel (couvreur, nettoyage, façadier, télépilote…).</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+      <div class="text"><h4>Votre expérience drone</h4><p>Brevets détenus (A1/A3, A2, CATS), heures de vol, matériel déjà utilisé.</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10l7-6 7 6v11"/><path d="M9 21v-6h6v6"/></svg></div>
+      <div class="text"><h4>Votre projet</h4><p>Toitures, façades, panneaux solaires ? Clientèle particuliers ou professionnels ?</p></div>
+    </li>
+    <li>
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <div class="text"><h4>Vos attentes</h4><p>Ce que vous voulez savoir faire à la fin des 3 jours.</p></div>
+    </li>
+  </ul>
+  <div class="slide-footer">
+    <span>Module 1 — Présentations</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    15 à 20 min. Noter les profils et les attentes au tableau : ils serviront à orienter les exemples (particuliers vs professionnels, toiture vs panneaux). Repérer qui détient déjà le CATS : c'est le prérequis théorique du STS-01.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 4 — PROGRAMME DES 3 JOURS
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Programme des 3 jours</h2>
+  <div class="grid-3" style="margin-top:12px;">
+    <div class="box b-blue">
+      <h4><span class="pill">Jour 1</span> Réglementation & produits</h4>
+      <ul>
+        <li>Le métier et ses applications</li>
+        <li>Pourquoi la catégorie Spécifique</li>
+        <li><strong>STS-01</strong> en détail</li>
+        <li>Classe <strong>C5</strong> et mode <strong>captif</strong></li>
+        <li>Le drone <strong>Spray L</strong></li>
+        <li><strong>Biocides</strong>, <strong>Certibiocide</strong>, produits phyto</li>
+        <li>Sécurité & EPI</li>
+      </ul>
+    </div>
+    <div class="box b-cyan">
+      <h4><span class="pill">Jour 2</span> Chimie, MANEX & mission</h4>
+      <ul>
+        <li>Principes actifs : <strong>ammonium quaternaire</strong>, dégraissants</li>
+        <li>Lire une étiquette et une FDS</li>
+        <li>Techniques par surface</li>
+        <li>Adapter le <strong>MANEX</strong> au cas d'usage</li>
+        <li>Adapter le <strong>plan d'urgence</strong></li>
+        <li><strong>Préparation de mission</strong></li>
+      </ul>
+    </div>
+    <div class="box b-green">
+      <h4><span class="pill p-green">Jour 3</span> Pratique & entreprise</h4>
+      <ul>
+        <li><strong>Mise en pratique</strong> terrain</li>
+        <li><strong>Chiffrage & devis</strong></li>
+        <li>Photos <strong>avant / après</strong></li>
+        <li><strong>Assurance</strong> drone spécifique</li>
+        <li><strong>Entretien & maintenance</strong> : corrosion, usure</li>
+        <li>Évaluation & clôture</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 1 — Programme</span>
+    <span>Jour 1</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 5 — LE MÉTIER : 3 APPLICATIONS
+     ============================================================ -->
+<section class="slide-diagram">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Le métier : trois familles de chantiers</h2>
+  <div class="diagram-container">
+    <div class="diagram-card card-green">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></div>
+      <h3>Toitures</h3>
+      <span class="tag tag-success" style="margin-bottom:10px;">Traitement</span>
+      <p>Application de produits anti-mousse, anti-lichen, anti-algues, puis éventuellement hydrofuge. Aucun accès sur le toit pour l'opérateur.</p>
+    </div>
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="1"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="11" x2="9" y2="11.01"/><line x1="15" y1="11" x2="15" y2="11.01"/><path d="M10 22v-4h4v4"/></svg></div>
+      <h3>Façades</h3>
+      <span class="tag tag-primary" style="margin-bottom:10px;">Nettoyage & traitement</span>
+      <p>Nettoyage, dégraissage et traitement des salissures biologiques sur enduits, bardages, verrières. Évite échafaudage et nacelle.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M3 21l3-9h12l3 9z"/><line x1="9" y1="12" x2="7.5" y2="21"/><line x1="15" y1="12" x2="16.5" y2="21"/><line x1="4.5" y1="16.5" x2="19.5" y2="16.5"/></svg></div>
+      <h3>Panneaux solaires</h3>
+      <span class="tag tag-warning" style="margin-bottom:10px;">Nettoyage</span>
+      <p>Lavage des modules photovoltaïques et verrières industrielles, selon les recommandations du fabricant des panneaux.</p>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 1 — Le métier</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Recentrer d'emblée : la formation porte exclusivement sur le bâtiment (toitures, façades, panneaux). La pulvérisation agricole (produits phytopharmaceutiques sur cultures) est un autre métier, avec un régime juridique différent, qui n'est pas traité ici.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 6 — POURQUOI LE DRONE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Pourquoi le drone ?</h2>
+  <div class="grid-2" style="margin-top:8px;">
+    <div class="box b-green">
+      <h4>Les atouts</h4>
+      <ul>
+        <li><strong>Suppression du travail en hauteur</strong> pour l'opérateur : il reste au sol</li>
+        <li>Pas de piétinement des tuiles ni d'échafaudage à monter</li>
+        <li>Accès aux zones difficiles : grandes toitures, verrières, façades hautes</li>
+        <li>Chantier plus court et moins d'emprise au sol</li>
+        <li>Image innovante auprès des clients</li>
+      </ul>
+    </div>
+    <div class="box b-orange">
+      <h4>Les contraintes</h4>
+      <ul>
+        <li>Activité <strong>réglementée</strong> : catégorie Spécifique, scénario STS-01</li>
+        <li>Télépilote formé : <strong>CATS + formation pratique STS-01</strong></li>
+        <li>Zone contrôlée au sol à établir et à garder libre de tiers</li>
+        <li>Produits chimiques : <strong>dérive</strong>, ruissellement, voisinage</li>
+        <li>Dépendance à la météo (vent, pluie)</li>
+        <li>Entretien rigoureux du matériel (corrosion)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 1 — Le métier</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Faire réagir les couvreurs/façadiers du groupe : le principal gain est la sécurité de l'opérateur (chute de hauteur). Ne pas vendre le drone comme « plus rapide dans tous les cas » : la préparation réglementaire et la mise en place de la zone contrôlée prennent du temps.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 7 — MODULE 2 : RÉGLEMENTATION
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 2</div>
+  <h2>Réglementation : STS-01 & C5 captif</h2>
+  <p class="module-desc">Pourquoi la pulvérisation relève de la catégorie Spécifique, les conditions du scénario STS-01 et les exigences de la classe C5 en mode captif.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+  <div class="slide-footer">
+    <span>Module 2 — Réglementation</span>
+    <span>Jour 1</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 8 — POURQUOI LA CATÉGORIE SPÉCIFIQUE
+     ============================================================ -->
+<section class="slide-diagram">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Pourquoi la catégorie Spécifique ?</h2>
+  <div class="diagram-container">
+    <div class="diagram-card card-red">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+      <h3>Ouverte (Open)</h3>
+      <span class="tag tag-error" style="margin-bottom:10px;">Impossible</span>
+      <p>Pendant le vol, le drone « ne transporte pas de marchandises dangereuses et <strong>ne laisse tomber aucune matière</strong> ». Pulvériser = laisser tomber une matière.</p>
+    </div>
+    <div class="diagram-card card-blue">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <h3>Spécifique — STS-01</h3>
+      <span class="tag tag-primary" style="margin-bottom:10px;">Notre cadre</span>
+      <p>Scénario standard européen : <strong>vue directe</strong>, zone contrôlée au sol, environnement peuplé possible, drone <strong>C5</strong>. Simple <strong>déclaration</strong> sur AlphaTango.</p>
+    </div>
+    <div class="diagram-card card-orange">
+      <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <h3>Spécifique — autorisation</h3>
+      <span class="tag tag-warning" style="margin-bottom:10px;">Hors scénario</span>
+      <p>Toute opération qui sort du STS-01 nécessite une <strong>autorisation d'exploitation</strong> délivrée par la DSAC (hors du champ de cette formation).</p>
+    </div>
+  </div>
+  <p class="src" style="text-align:center;">Règlement d'exécution (UE) 2019/947, art. 4 §1 f) — catégorie Ouverte · Guide DSAC « Catégorie Spécifique », éd. 2 v1.1 (09/03/2026)</p>
+  <div class="slide-footer">
+    <span>Module 2 — Catégories</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Point clé à faire retenir : la catégorie Ouverte interdit tout largage, donc toute pulvérisation. Les anciens scénarios nationaux S-1/S-2/S-3 n'existent plus : les déclarations nationales sont invalides depuis le 1er janvier 2026 (règlement UE 2022/425). Le STS-02 (drone C6, hors zone peuplée) n'est pas adapté aux chantiers de bâtiment en ville et n'est pas traité ici.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 9 — STS-01 : CONDITIONS D'EXPLOITATION
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>STS-01 : les conditions de vol</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-blue">
+      <h4>Le vol</h4>
+      <ul>
+        <li><strong>Vue directe (VLOS)</strong> en permanence</li>
+        <li>Hauteur max <strong>120 m</strong> au-dessus du point le plus proche de la surface</li>
+        <li>Environnement <strong>peuplé possible</strong>, au-dessus d'une <strong>zone contrôlée au sol</strong></li>
+        <li>Vitesse sol <strong>&lt; 5 m/s</strong> — <em>uniquement pour un drone non captif</em></li>
+        <li><strong>Un seul drone</strong> à la fois, pas depuis un véhicule en mouvement</li>
+        <li><strong>Aucune marchandise dangereuse</strong> transportée</li>
+      </ul>
+    </div>
+    <div class="box b-cyan">
+      <h4>Le matériel & les personnes</h4>
+      <ul>
+        <li>Drone marqué <strong>C5</strong> (ou C3 + kit C5), MTOM &lt; 25 kg</li>
+        <li><strong>Signalement électronique</strong> (identification à distance) actif et à jour</li>
+        <li>Télépilote : <strong>CATS</strong> + <strong>attestation de formation pratique STS-01</strong></li>
+        <li>Observateur possible, avec une communication claire</li>
+        <li>Vol conforme au <strong>MANEX</strong> de l'exploitant</li>
+        <li>Personnes dans la zone : <strong>informées, briefées et consentantes</strong></li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">Règlement (UE) 2019/947, appendice 1 — UAS.STS-01.010, .020, .030, .040 (introduit par le règlement 2020/639)</p>
+  <div class="slide-footer">
+    <span>Module 2 — STS-01</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Insister sur deux points propres à notre activité : 1) la limite de 5 m/s ne s'applique pas au drone captif ; 2) la règle « aucune marchandise dangereuse » est un vrai sujet avec les produits chimiques (voir slide de vigilance plus loin). Âge minimum du télépilote : 16 ans (art. 9 du règlement 2019/947).
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 10 — STS-01 : ZONE CONTRÔLÉE AU SOL
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>La zone contrôlée au sol</h2>
+  <div class="two-col" style="grid-template-columns: 1.05fr 1fr;">
+    <div class="col-text">
+      <p style="font-size:0.85em;"><strong>Drone non captif</strong> : zone de vol + zone d'intervention (≥ 10 m) + zone tampon selon la hauteur et la masse :</p>
+      <table class="dx-table t-sm" style="font-size:0.62em;">
+        <thead><tr><th>Hauteur max</th><th>MTOM ≤ 10 kg</th><th>MTOM &gt; 10 kg</th></tr></thead>
+        <tbody>
+          <tr><td>30 m</td><td>10 m</td><td>20 m</td></tr>
+          <tr><td>60 m</td><td>15 m</td><td>30 m</td></tr>
+          <tr><td>90 m</td><td>20 m</td><td>45 m</td></tr>
+          <tr><td>120 m</td><td>25 m</td><td>60 m</td></tr>
+        </tbody>
+      </table>
+      <div class="callout c-blue" style="font-size:0.7em;">
+        <strong>Drone captif</strong> : la zone contrôlée au sol est un <strong>cercle de rayon = longueur de l'accroche + 5 m</strong>, centré sur le point de fixation au sol. Pas de tableau, pas de zone d'intervention de 10 m.
+      </div>
+    </div>
+    <div class="col-visual">
+      <svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:470px;" font-family="Inter, sans-serif">
+        <text x="210" y="22" text-anchor="middle" font-size="16" font-weight="700" fill="#EF4444">Zone contrôlée au sol</text>
+        <text x="210" y="42" text-anchor="middle" font-size="14" fill="#475569">rayon = longueur de l'accroche + 5 m</text>
+        <circle cx="210" cy="200" r="150" fill="rgba(239,68,68,0.06)" stroke="#EF4444" stroke-width="2" stroke-dasharray="7 5"/>
+        <circle cx="210" cy="200" r="125" fill="rgba(14,116,218,0.05)" stroke="#0E74DA" stroke-width="2"/>
+        <rect x="105" y="110" width="105" height="58" rx="4" fill="#E2E8F0" stroke="#94A3B8"/>
+        <text x="157" y="144" text-anchor="middle" font-size="14" font-weight="600" fill="#475569">Bâtiment</text>
+        <line x1="210" y1="200" x2="262" y2="112" stroke="#0F172A" stroke-width="2.5"/>
+        <circle cx="262" cy="108" r="9" fill="#0E74DA"/>
+        <text x="276" y="104" font-size="14" font-weight="700" fill="#0E74DA">Drone</text>
+        <circle cx="210" cy="200" r="7" fill="#0F172A"/>
+        <text x="210" y="226" text-anchor="middle" font-size="13" font-weight="600" fill="#0F172A">Point de fixation</text>
+        <line x1="210" y1="200" x2="335" y2="200" stroke="#0E74DA" stroke-width="2"/>
+        <text x="290" y="192" text-anchor="middle" font-size="14" font-weight="700" fill="#0E74DA">accroche</text>
+        <line x1="335" y1="200" x2="360" y2="200" stroke="#EF4444" stroke-width="2"/>
+        <text x="348" y="222" text-anchor="middle" font-size="14" font-weight="700" fill="#EF4444">+5 m</text>
+      </svg>
+    </div>
+  </div>
+  <p class="src">Règlement (UE) 2019/947, UAS.STS-01.020 1) c) · Guide DSAC « Catégorie Spécifique », annexe 5</p>
+  <div class="slide-footer">
+    <span>Module 2 — STS-01 zone contrôlée</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Exemple : accroche de 30 m → cercle de 35 m de rayon autour du point de fixation, à garder libre de tiers pendant tout le vol (balisage, accord des occupants, coordination avec la mairie si voie publique). Comparer : le même drone non captif (MTOM &gt; 10 kg) à 30 m de haut demanderait zone de vol + 10 m + 20 m de zone tampon. Le Spray L pèse 13,2 à 15 kg au décollage : il est dans la colonne « &gt; 10 kg ».
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 11 — CLASSE C5 & MODE CAPTIF
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>La classe C5 et le mode captif</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-blue">
+      <h4>Exigences de la classe C5</h4>
+      <ul>
+        <li>Base : exigences de la classe <strong>C3</strong> — MTOM &lt; 25 kg, dimension &lt; 3 m, propulsion électrique, n° de série, alerte batterie, feux</li>
+        <li>Affichage de la <strong>hauteur</strong> pendant le vol</li>
+        <li>Mode <strong>basse vitesse ≤ 5 m/s</strong> sélectionnable</li>
+        <li><strong>Moyen d'interrompre le vol</strong> fiable et indépendant</li>
+        <li>Surveillance et alertes de la liaison de commande (C2)</li>
+        <li>Possible via un <strong>kit d'accessoires C5</strong> monté sur un C3</li>
+      </ul>
+    </div>
+    <div class="box b-green">
+      <h4>Ce que change le mode captif</h4>
+      <ul>
+        <li>Accroche de <strong>longueur &lt; 50 m</strong></li>
+        <li>Résistance de l'accroche ≥ <strong>10 × la masse maximale</strong> du drone</li>
+        <li><strong>Dispensé</strong> : mode basse vitesse, moyen d'interrompre le vol, surveillance C2, procédure de perte de liaison</li>
+        <li>Masse du moyen de retenue <strong>non comptée</strong> dans la MTOM</li>
+        <li>Moyen de captivité : <strong>suivre les recommandations du constructeur</strong></li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">Règlement délégué (UE) 2019/945, annexe parties 4 et 16 · Guide DSAC « Catégorie Spécifique », p. 16 et annexe 5</p>
+  <div class="slide-footer">
+    <span>Module 2 — Classe C5</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Le mode captif simplifie fortement l'exploitation : zone contrôlée réduite, pas de limite de vitesse STS, dispense du système d'interruption de vol. Contrepartie : l'accroche doit faire moins de 50 m et le drone ne peut pas s'éloigner au-delà. Vigilance : le texte du STS-01 exige l'identification à distance active, sans prévoir d'exemption pour le captif, alors que la classe C5 en dispense l'UA captif. En pratique, laisser le signalement électronique actif. La norme EN 4709-001 contient les critères techniques propres aux UAS captifs.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 12 — LE SPRAY L
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Notre drone : le Spray L (Aeotic)</h2>
+  <div class="two-col" style="grid-template-columns: 1.35fr 1fr;">
+    <div class="col-text">
+      <table class="dx-table t-sm" style="font-size:0.6em;margin-top:0;">
+        <tbody>
+          <tr><td><strong>Fabricant</strong></td><td>Aeotic — assemblé en France</td></tr>
+          <tr><td><strong>Classe EASA</strong></td><td><strong>C5</strong> (STS-01) et <strong>C6</strong> (STS-02)</td></tr>
+          <tr><td><strong>Architecture</strong></td><td>Hexarotor, châssis carbone, IP64</td></tr>
+          <tr><td><strong>Masse au décollage</strong></td><td>13,2 à 15,0 kg</td></tr>
+          <tr><td><strong>Envergure</strong></td><td>162 × 188 × 70 cm déployé</td></tr>
+          <tr><td><strong>Autonomie</strong></td><td>20 à 25 min (16 000 mAh) · ~35 min (22 000 mAh)</td></tr>
+          <tr><td><strong>Vitesse</strong></td><td>0,2 à 7 m/s</td></tr>
+          <tr><td><strong>Mode captif</strong></td><td>Tuyau 50 m « produit chimique » avec lien captif</td></tr>
+          <tr><td><strong>Pulvérisation</strong></td><td>Rampes 4 jets (horizontale, verticale, tangentielle), pompe à débit et pression réglables</td></tr>
+          <tr><td><strong>Puissance acoustique</strong></td><td>78 (fiche EASA)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-visual">
+      <img src="img/spray-l.png" alt="Drone Aeotic Spray L" style="max-height:400px;box-shadow:none;">
+    </div>
+  </div>
+  <p class="src">Fiche EASA PR-178 « Aerobotic Spray-L » (concepteur Aeotic, classes C5, C6) · Fiche produit aeotic.com — image © Aeotic</p>
+  <div class="slide-footer">
+    <span>Module 2 — Le Spray L</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Faire le lien avec la slide précédente : avec un MTOM de 13,2 à 15 kg, le Spray L est dans la colonne « &gt; 10 kg » s'il vole en non captif. En captif, la zone contrôlée = longueur de l'accroche + 5 m. Attention : le site du fabricant annonce une « hauteur de pulvérisation max 60 m », valeur qui ne peut concerner que le mode non captif (accroche C5 &lt; 50 m). Les données non publiées (capacité de cuve, débit en L/min, résistance du lien captif) sont à prendre dans le manuel constructeur remis avec la machine.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 13 — DÉMARCHES DE L'EXPLOITANT
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Les démarches pour opérer en STS-01</h2>
+  <div class="process-steps" style="margin-top:10px;">
+    <div class="process-step">
+      <div class="step-number">1</div>
+      <div class="step-label">CATS</div>
+      <div class="step-desc">Examen théorique<br>40 questions, 75 %<br>valable 5 ans</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">2</div>
+      <div class="step-label">Formation pratique</div>
+      <div class="step-desc">Attestation STS-01<br>par un exploitant<br>formateur déclaré</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">3</div>
+      <div class="step-label">MANEX</div>
+      <div class="step-desc">Rédigé selon<br>l'appendice 5<br>du règl. 2019/947</div>
+    </div>
+    <div class="process-step">
+      <div class="step-number">4</div>
+      <div class="step-label">Déclaration</div>
+      <div class="step-desc">Sur AlphaTango<br>valable 2 ans<br>aucun document joint</div>
+    </div>
+  </div>
+  <div class="callout c-blue" style="margin-top:22px;">
+    <strong>Vol en zone peuplée</strong> (agglomération ou à moins de 50 m) : déclaration au <strong>préfet</strong> avec un préavis de <strong>10 jours ouvrables</strong> (AlphaTango ou CERFA 15476). Sans réponse, le vol est réputé autorisé.
+  </div>
+  <p class="src">Guide DSAC « Catégorie Spécifique » éd. 2 v1.1 — §13.2 (CATS), §13.3 (formation pratique), §15 (déclaration), §16.3 (MANEX), §19.5 (zone peuplée)</p>
+  <div class="slide-footer">
+    <span>Module 2 — Démarches</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Le MANEX, le CATS et les attestations ne sont pas joints à la déclaration mais doivent être tenus à disposition des autorités. La déclaration n'est possible que si le MANEX couvre le scénario et qu'au moins un aéronef éligible (C5) est déclaré. Le CATT des scénarios nationaux n'est plus valide depuis le 1er janvier 2026. Vol de nuit : dérogation à demander au préfet au moins 30 jours avant.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 14 — OBLIGATIONS EXPLOITANT / TÉLÉPILOTE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Obligations de l'exploitant et du télépilote</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-blue">
+      <h4>L'exploitant</h4>
+      <ul>
+        <li>MANEX, volume d'exploitation, zone tampon et zone contrôlée au sol définis</li>
+        <li><strong>Plan d'intervention d'urgence</strong> (ERP) et procédures d'urgence validées</li>
+        <li>Zone contrôlée au sol établie <strong>avant</strong> le vol</li>
+        <li>Personnes présentes briefées et consentantes</li>
+        <li><strong>Registres conservés 3 ans</strong> : qualifications, entretien, vols</li>
+        <li>Entretien selon les instructions du fabricant</li>
+        <li>Déclaration UE de conformité C5 et étiquette C5 sur le drone</li>
+      </ul>
+    </div>
+    <div class="box b-cyan">
+      <h4>Le télépilote</h4>
+      <ul>
+        <li>Ni alcool ni substance psychotrope, apte à ses tâches</li>
+        <li>CATS et attestation pratique <strong>sur soi</strong></li>
+        <li>Connaît les instructions du fabricant</li>
+        <li>Avant le vol : zones géographiques, environnement, état du drone, <strong>identification à distance</strong> opérationnelle</li>
+        <li>En vol : VLOS, balayage de l'espace aérien, évitement des aéronefs</li>
+        <li>Applique les procédures d'urgence</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">Règlement (UE) 2019/947 — UAS.SPEC.050, UAS.SPEC.060, UAS.STS-01.030, UAS.STS-01.040</p>
+  <div class="slide-footer">
+    <span>Module 2 — Obligations</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Le plan d'intervention d'urgence sera adapté à notre cas d'usage le Jour 2 (déversement, exposition chimique, rupture du tuyau ou du lien captif). Le registre d'entretien sera détaillé le Jour 3.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 15 — VIGILANCE : MARCHANDISES DANGEREUSES
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Vigilance : les marchandises dangereuses</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-red">
+      <h4>Ce que disent les textes</h4>
+      <ul>
+        <li>STS-01 : le drone <strong>ne transporte pas de marchandises dangereuses</strong></li>
+        <li>Définition : substances dangereuses <strong>transportées comme charge utile</strong>, notamment <strong>toxiques</strong>, <strong>corrosives</strong>, inflammables, comburantes…</li>
+        <li>Liste de référence : instructions techniques <strong>OACI (Doc 9284)</strong></li>
+        <li>Si le transport est nécessaire : <strong>autorisation d'exploitation</strong> DSAC, voire certification</li>
+      </ul>
+    </div>
+    <div class="box b-green">
+      <h4>En pratique</h4>
+      <ul>
+        <li>Vérifier la <strong>rubrique 14 de la FDS</strong> (informations relatives au transport) de chaque produit</li>
+        <li>Privilégier les produits <strong>prêts à l'emploi ou dilués</strong> non classés pour le transport</li>
+        <li>Le <strong>mode captif alimenté depuis le sol</strong> limite la quantité de produit à bord</li>
+        <li>En cas de doute : <strong>interroger la DSAC</strong> avant d'opérer</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">Règlement (UE) 2019/947, art. 2 point 11) et UAS.STS-01.010 · Guide DSAC « Catégorie Spécifique », §6.4</p>
+  <div class="slide-footer">
+    <span>Module 2 — Marchandises dangereuses</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Point à traiter avec prudence : le règlement ne parle pas spécifiquement de pulvérisation de produits de nettoyage. Un dégraissant alcalin concentré (soude, potasse) est typiquement classé « corrosif » pour le transport. Ne pas affirmer qu'un produit est autorisé ou interdit à bord : renvoyer systématiquement à la rubrique 14 de la FDS et, en cas de doute, à la DSAC.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SLIDE 16 — QUIZ RÉGLEMENTATION
+     ============================================================ -->
+<section class="slide-quiz">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>
+    <svg style="width:28px;height:28px;vertical-align:middle;margin-right:8px;stroke:var(--dx-primary);fill:none;stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Question
+  </h2>
+  <p class="quiz-question">Spray L en captif, accroche de 30 m. Quel est le rayon de la zone contrôlée au sol ?</p>
+  <div class="quiz-options">
+    <div class="quiz-option"><span class="option-letter">A</span><span>30 m</span></div>
+    <div class="quiz-option"><span class="option-letter">B</span><span>35 m</span></div>
+    <div class="quiz-option"><span class="option-letter">C</span><span>60 m (tableau, MTOM &gt; 10 kg)</span></div>
+    <div class="quiz-option"><span class="option-letter">D</span><span>Aucune zone en captif</span></div>
+  </div>
+  <div class="slide-footer">
+    <span>Quiz — Réglementation</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Réponse B : longueur de l'accroche + 5 m, centré sur le point de fixation (UAS.STS-01.020 1) c) ii)). Le tableau hauteur/masse ne s'applique qu'au drone non captif.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     MODULE 3 — PRODUITS
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 3</div>
+  <h2>Biocides, Certibiocide & produits phyto</h2>
+  <p class="module-desc">Quel régime pour les produits de traitement de toitures et de façades, qui doit être certifié, et pourquoi ce n'est pas de la pulvérisation phytosanitaire.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><line x1="7" y1="15" x2="17" y2="15"/></svg>
+  <div class="slide-footer">
+    <span>Module 3 — Produits</span>
+    <span>Jour 1</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BIOCIDE OU PHYTO ?
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Biocide ou produit phytopharmaceutique ?</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-green">
+      <h4>Biocide — règlement (UE) 528/2012</h4>
+      <p>Produit destiné à <strong>détruire, repousser ou rendre inoffensifs les organismes nuisibles</strong>, par une action <strong>autre que physique ou mécanique</strong>.</p>
+      <ul>
+        <li>Algicides, anti-lichens, désinfectants de surface</li>
+        <li>Protection des matériaux de construction</li>
+        <li>→ <strong>Notre cas : toitures et façades</strong></li>
+      </ul>
+    </div>
+    <div class="box b-orange">
+      <h4>Phyto — règlement (CE) 1107/2009</h4>
+      <p>Produit destiné à <strong>protéger les végétaux</strong>, agir sur leur croissance, ou <strong>détruire des végétaux indésirables, à l'exception des algues</strong>.</p>
+      <ul>
+        <li>Herbicides, fongicides, insecticides agricoles</li>
+        <li>Pulvérisation aérienne <strong>interdite</strong> sauf dérogations agricoles</li>
+        <li>→ <strong>Hors champ de la formation</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>Le piège de la « mousse »</strong> : la mousse est un végétal. Un produit revendiqué « anti-mousse / démoussant » peut relever du régime phyto. C'est <strong>l'étiquette et l'autorisation de mise sur le marché</strong> du produit qui fixent son régime : vérifiez-les avant tout achat.
+  </div>
+  <p class="src">Règlement (UE) 528/2012, art. 2.2 i) et 3.1 a) · Règlement (CE) 1107/2009, art. 2.1 · Directive 2009/128, art. 9 · Code rural, art. L253-8</p>
+  <div class="slide-footer">
+    <span>Module 3 — Biocide ou phyto</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Un lavage à l'eau seule ou au brossage n'est pas un biocide (action purement mécanique). Plusieurs fabricants ont renommé leurs produits « anti-mousse » en « anti-algues / anti-lichens / anti-verdissures » pour rester dans le régime biocide ; aucun texte officiel français trouvé ne tranche explicitement ce point. Les dérogations récentes à l'interdiction de pulvérisation aérienne des phytos (loi n° 2025-365 du 23 avril 2025 et textes d'application de 2026) concernent uniquement l'agriculture (pentes ≥ 20 %, bananeraies, vignes-mères) : elles ne concernent pas les toitures.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     TYPES DE PRODUITS TP2 / TP10
+     ============================================================ -->
+<section class="slide-table">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Les types de produits biocides concernés</h2>
+  <p class="lead">Le règlement classe les biocides en <strong>4 groupes</strong> et <strong>22 types de produits (TP)</strong>. Pour le bâtiment, deux TP sont centraux :</p>
+  <table class="dx-table" style="font-size:0.6em;">
+    <thead><tr><th style="width:16%;">Type</th><th style="width:44%;">Définition (annexe V)</th><th>Usage sur nos chantiers</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="badge-sm badge-blue">TP2</span></td>
+        <td>Désinfectants et produits <strong>algicides</strong> non destinés à l'application directe sur l'homme ou l'animal — y compris pour le <strong>traitement curatif des matériaux de construction</strong></td>
+        <td>Traitement <strong>curatif</strong> d'une toiture ou d'une façade colonisée (algues, verdissures) ; désinfection de surfaces</td>
+      </tr>
+      <tr>
+        <td><span class="badge-sm badge-green">TP10</span></td>
+        <td>Produits de <strong>protection des matériaux de construction</strong> (maçonnerie, composites…) contre les attaques microbiologiques et les algues</td>
+        <td>Traitement <strong>préventif</strong> / rémanent après nettoyage</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout c-blue">Beaucoup de produits du commerce revendiquent <strong>TP2 et TP10</strong> à la fois : le type est indiqué sur l'étiquette et dans la FDS.</div>
+  <p class="src">Règlement (UE) 528/2012, annexe V — groupes 1 (TP1 à TP5) et 2 (TP6 à TP13)</p>
+  <div class="slide-footer">
+    <span>Module 3 — Types de produits</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Groupes : 1 désinfectants (TP1-5), 2 produits de protection (TP6-13), 3 lutte contre les nuisibles (TP14-20), 4 autres (TP21 antisalissure, TP22 embaumement). L'INRS cite le « traitement des toitures, dalles » parmi les usages du chlorure de benzalkonium (fiche toxicologique FT 253).
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     AUTORISATION & ÉTIQUETTE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Autorisation et étiquette : la règle d'or</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-blue">
+      <h4>Un produit autorisé…</h4>
+      <ul>
+        <li>Mise sur le marché avec une <strong>autorisation (AMM)</strong>, ou déclaration à l'inventaire national <strong>BioCID</strong> (ex-Simmbad) pendant la période transitoire</li>
+        <li>Étiquette : substances actives et concentration, n° d'autorisation, <strong>usages autorisés</strong>, mode d'emploi et <strong>dose</strong>, <strong>catégories d'utilisateurs</strong>, risques pour l'eau, élimination</li>
+        <li>Mentions <strong>interdites</strong> : « non toxique », « naturel », « respectueux de l'environnement »…</li>
+      </ul>
+    </div>
+    <div class="box b-red">
+      <h4>… utilisé conformément à son autorisation</h4>
+      <ul>
+        <li>Le produit doit être utilisé <strong>dans le respect des conditions de l'autorisation</strong> et de l'étiquette</li>
+        <li>Aucun texte n'interdit spécifiquement la pulvérisation de biocides par drone…</li>
+        <li>… mais si l'étiquette prévoit un autre mode d'application, l'usage par drone peut être <strong>non conforme</strong></li>
+        <li>→ Vérifier <strong>mode d'application, dose et utilisateurs</strong> avant de choisir un produit</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">Règlement (UE) 528/2012, art. 17.1, 17.5, 69 et 89 · Code de l'environnement, art. L522-1 et suivants · service-public.fr (BioCID)</p>
+  <div class="slide-footer">
+    <span>Module 3 — Autorisation & étiquette</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    L'interdiction européenne de pulvérisation aérienne (directive 2009/128, art. 9) ne vise que les produits phytopharmaceutiques (art. 2.1 de la directive). Pour les biocides, la contrainte vient de l'article 17.5 du règlement : usage conforme à l'autorisation et à l'étiquette. Conseil : demander au fournisseur une confirmation écrite que l'application par drone est compatible avec l'étiquette du produit.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     CERTIBIOCIDE
+     ============================================================ -->
+<section class="slide-table">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Le Certibiocide</h2>
+  <p class="lead">Certificat individuel obligatoire pour certains biocides <strong>réservés aux professionnels</strong>. Trois certificats depuis le 1<sup>er</sup> janvier 2024 :</p>
+  <table class="dx-table t-sm" style="font-size:0.58em;">
+    <thead><tr><th>Certificat</th><th>Types de produits</th><th>Qui doit l'avoir</th><th>Formation</th><th>Validité</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Désinfectants</strong></td><td><strong>TP2</strong>, TP3, TP4</td><td>Décideurs, acquéreurs, distributeurs</td><td>7 h</td><td>5 ans</td></tr>
+      <tr><td><strong>Nuisibles</strong></td><td>TP14, TP18, TP20</td><td>Utilisateurs, acquéreurs, distributeurs</td><td>21 h</td><td>5 ans</td></tr>
+      <tr><td><strong>Autres produits</strong></td><td>TP8, TP15, TP21</td><td>Utilisateurs, acquéreurs, distributeurs</td><td>7 h</td><td>5 ans</td></tr>
+    </tbody>
+  </table>
+  <div class="grid-2" style="margin-top:14px;">
+    <div class="callout c-green" style="margin-top:0;"><strong>TP10 seul</strong> : <strong>non concerné</strong> par le Certibiocide.</div>
+    <div class="callout c-red" style="margin-top:0;"><strong>TP2 professionnel</strong> : certificat « désinfectants » obligatoire depuis le <strong>1<sup>er</sup> janvier 2026</strong> pour qui choisit et achète le produit.</div>
+  </div>
+  <p class="src">Arrêté du 9 octobre 2013 modifié (arrêtés du 23/01/2023 et du 05/09/2025) · Notice explicative Certibiocide DGPR, février 2024</p>
+  <div class="slide-footer">
+    <span>Module 3 — Certibiocide</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Formation dans un organisme habilité (liste sur l'application Certibiocide), présentiel ou visio ; QCM de 30 questions, 20 bonnes réponses exigées. Le certificat est délivré à une personne physique ; l'entreprise déclare son activité et tient à jour la liste du personnel formé. Depuis 2024, plus de passerelle réduite pour les titulaires du Certiphyto. Si le produit professionnel est strictement identique au produit grand public (seul le conditionnement change), le Certibiocide n'est pas obligatoire.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     CERTIBIOCIDE : SUIS-JE CONCERNÉ ?
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Certibiocide : suis-je concerné ?</h2>
+  <div class="grid-3" style="margin-top:6px;">
+    <div class="box b-green">
+      <h4>Non obligatoire</h4>
+      <ul>
+        <li>Produit revendiqué <strong>TP10 uniquement</strong></li>
+        <li>Produit TP2 <strong>identique</strong> au produit vendu au grand public</li>
+        <li>Salarié qui <strong>applique</strong> le protocole sans choisir ni acheter le produit</li>
+      </ul>
+    </div>
+    <div class="box b-red">
+      <h4>Obligatoire</h4>
+      <ul>
+        <li>Produit <strong>TP2</strong> réservé aux professionnels</li>
+        <li>Vous <strong>choisissez</strong> le produit, l'<strong>achetez</strong> et définissez le protocole</li>
+        <li>Cas typique du <strong>droniste indépendant</strong> : décideur + acquéreur</li>
+      </ul>
+    </div>
+    <div class="box b-blue">
+      <h4>Recommandation</h4>
+      <ul>
+        <li>La plupart des produits sont <strong>TP2 + TP10</strong></li>
+        <li>Passer le Certibiocide « désinfectants » (7 h)</li>
+        <li>Le présenter au client avec l'attestation d'assurance</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">Notice explicative Certibiocide DGPR (février 2024), p. 4-5</p>
+  <div class="slide-footer">
+    <span>Module 3 — Certibiocide</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Faire l'exercice avec 2 ou 3 étiquettes réelles de produits de toiture apportées par le formateur : repérer le ou les TP revendiqués et la catégorie d'utilisateurs, puis conclure sur le Certibiocide.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     CERTIPHYTO & PHYTO
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Et les produits phyto ?</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-orange">
+      <h4>Le Certiphyto</h4>
+      <ul>
+        <li>Obligatoire pour utiliser, conseiller ou vendre des produits phytopharmaceutiques à titre professionnel</li>
+        <li>5 certificats : décideur (avec ou sans agrément), opérateur, conseil, vente</li>
+        <li>Valable <strong>5 ans</strong></li>
+        <li><strong>Distinct</strong> du Certibiocide : l'un ne remplace pas l'autre</li>
+      </ul>
+    </div>
+    <div class="box b-red">
+      <h4>Pulvérisation aérienne de phyto</h4>
+      <ul>
+        <li><strong>Interdite</strong> par principe</li>
+        <li>Dérogations pour les drones <strong>uniquement agricoles</strong> : pentes ≥ 20 %, bananeraies, vignes-mères, produits de biocontrôle / bio / faible risque</li>
+        <li>Les particuliers ne peuvent plus utiliser de phyto de synthèse (loi Labbé)</li>
+        <li>→ <strong>Pas de phyto sur nos chantiers</strong></li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">Code rural, art. R254-8 et suivants (Certiphyto), L253-7 (loi Labbé), L253-8 modifié par la loi n° 2025-365 du 23 avril 2025 · agriculture.gouv.fr</p>
+  <div class="slide-footer">
+    <span>Module 3 — Phyto</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Message simple pour les stagiaires : sur une toiture ou une façade, on utilise des biocides. Si un client demande de « désherber » une toiture ou un terrain, c'est du phyto : refuser par drone. Textes d'application des dérogations agricoles : décrets 2026-270 et 2026-422, arrêtés des 19 et 29 mai 2026.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     QUIZ PRODUITS
+     ============================================================ -->
+<section class="slide-quiz">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>
+    <svg style="width:28px;height:28px;vertical-align:middle;margin-right:8px;stroke:var(--dx-primary);fill:none;stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Question
+  </h2>
+  <p class="quiz-question">Vous êtes indépendant et achetez un algicide professionnel revendiqué TP2 et TP10. Le Certibiocide est-il obligatoire ?</p>
+  <div class="quiz-options">
+    <div class="quiz-option"><span class="option-letter">A</span><span>Non, le TP10 n'est pas concerné</span></div>
+    <div class="quiz-option"><span class="option-letter">B</span><span>Oui, certificat « désinfectants » (TP2)</span></div>
+    <div class="quiz-option"><span class="option-letter">C</span><span>Non, le Certiphyto suffit</span></div>
+    <div class="quiz-option"><span class="option-letter">D</span><span>Oui, certificat « nuisibles »</span></div>
+  </div>
+  <div class="slide-footer">
+    <span>Quiz — Produits</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Réponse B : dès que le produit revendique le TP2 et est réservé aux professionnels, le décideur/acquéreur doit détenir le certificat « désinfectants » (obligatoire depuis le 1er janvier 2026). Le Certiphyto ne remplace pas le Certibiocide.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     MODULE 4 — SÉCURITÉ & EPI
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 4</div>
+  <h2>Sécurité & EPI</h2>
+  <p class="module-desc">Les risques propres à la pulvérisation de produits par drone, les équipements de protection et les gestes d'urgence.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+  <div class="slide-footer">
+    <span>Module 4 — Sécurité & EPI</span>
+    <span>Jour 1</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     RISQUES
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Les risques du chantier</h2>
+  <div class="grid-3" style="margin-top:6px;">
+    <div class="box b-red">
+      <h4>Chimiques</h4>
+      <ul>
+        <li>Inhalation du brouillard de pulvérisation</li>
+        <li>Contact cutané avec le produit concentré</li>
+        <li>Projection dans les yeux</li>
+        <li>Mélange de produits incompatibles</li>
+      </ul>
+    </div>
+    <div class="box b-orange">
+      <h4>Opérationnels</h4>
+      <ul>
+        <li>Collision avec la façade, une cheminée, une ligne</li>
+        <li>Rupture ou arrachement du tuyau / lien captif</li>
+        <li>Fuite du circuit hydraulique</li>
+        <li>Tiers entrant dans la zone contrôlée</li>
+      </ul>
+    </div>
+    <div class="box b-cyan">
+      <h4>Environnement & voisinage</h4>
+      <ul>
+        <li><strong>Dérive</strong> sur véhicules, jardins, façades voisines</li>
+        <li>Ruissellement vers les gouttières et le réseau d'eaux pluviales</li>
+        <li>Végétaux, animaux, points d'eau</li>
+        <li>Sol glissant au pied du bâtiment</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 4 — Risques</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Demander aux stagiaires de citer un incident vécu ou imaginable sur un chantier de toiture classique, puis le transposer au drone. Les risques chimiques détaillés (pictogrammes, FDS) sont traités le Jour 2.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     EPI
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Équipements de protection individuelle</h2>
+  <p class="lead">Le choix des EPI se fait <strong>à partir de la FDS du produit</strong> (rubrique 8 : contrôles de l'exposition / protection individuelle).</p>
+  <div class="grid-2">
+    <div class="box b-blue">
+      <h4>Lors de la préparation (produit concentré)</h4>
+      <ul>
+        <li><strong>Gants</strong> résistants aux produits chimiques (matière indiquée par la FDS)</li>
+        <li><strong>Lunettes-masque</strong> ou écran facial contre les projections</li>
+        <li><strong>Combinaison</strong> ou tablier de protection chimique</li>
+        <li><strong>Protection respiratoire</strong> si la FDS l'exige</li>
+        <li>Bottes de sécurité</li>
+      </ul>
+    </div>
+    <div class="box b-green">
+      <h4>Pendant le vol</h4>
+      <ul>
+        <li>Télépilote placé <strong>hors du nuage de pulvérisation</strong>, dos au vent</li>
+        <li>Gilet haute visibilité pour l'équipe au sol</li>
+        <li>Casque si travail au pied du bâtiment</li>
+        <li>Eau claire et <strong>rince-œil</strong> à portée de main</li>
+        <li>FDS des produits disponibles sur le chantier</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 4 — EPI</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Ne pas donner de liste « universelle » : les EPI dépendent du produit. Faire le lien avec l'exercice de lecture de FDS du Jour 2.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     GESTES D'URGENCE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Premiers gestes : accident chimique</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-red">
+      <h4>Exposition d'une personne</h4>
+      <ul>
+        <li><strong>Peau</strong> : retirer les vêtements souillés, rincer abondamment à l'eau</li>
+        <li><strong>Yeux</strong> : rincer immédiatement et longuement, paupières écartées</li>
+        <li><strong>Inhalation</strong> : mettre la personne à l'air frais</li>
+        <li>Suivre la <strong>rubrique 4 de la FDS</strong> (premiers secours)</li>
+        <li>Appeler le <strong>15</strong> ou le <strong>112</strong>, ou un <strong>centre antipoison</strong>, avec l'étiquette du produit</li>
+      </ul>
+    </div>
+    <div class="box b-orange">
+      <h4>Déversement de produit</h4>
+      <ul>
+        <li>Arrêter la pompe, poser le drone</li>
+        <li>Baliser et éloigner les personnes</li>
+        <li>Contenir avec un <strong>absorbant</strong> ; protéger les regards et avaloirs</li>
+        <li>Suivre la <strong>rubrique 6 de la FDS</strong> (déversement accidentel)</li>
+        <li>Collecter les déchets dans un contenant étanche et étiqueté</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 4 — Urgence</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Ces gestes seront intégrés au plan d'intervention d'urgence du MANEX le Jour 2. Toujours avoir sur le chantier : FDS, kit absorbant, eau claire, rince-œil, téléphone chargé.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     SYNTHÈSE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Synthèse du Jour 1</h2>
+  <div class="grid-2" style="margin-top:4px;">
+    <div class="box b-green">
+      <h4>À retenir</h4>
+      <ul>
+        <li>Pulvériser = laisser tomber une matière → <strong>catégorie Spécifique</strong></li>
+        <li><strong>STS-01</strong> : VLOS, 120 m, zone contrôlée au sol, drone <strong>C5</strong>, CATS + attestation pratique, déclaration AlphaTango</li>
+        <li><strong>Captif</strong> : accroche &lt; 50 m, zone contrôlée = <strong>accroche + 5 m</strong></li>
+        <li>Toiture / façade = <strong>biocides</strong>, pas des produits phyto</li>
+        <li><strong>Certibiocide</strong> selon le type de produit</li>
+        <li>EPI et premiers gestes : <strong>toujours la FDS</strong></li>
+      </ul>
+    </div>
+    <div class="box b-blue">
+      <h4>Demain — Jour 2</h4>
+      <ul>
+        <li>Principes actifs : ammonium quaternaire, dégraissants</li>
+        <li>Lecture d'étiquette et de FDS</li>
+        <li>Techniques par surface</li>
+        <li>Adapter le MANEX et le plan d'urgence</li>
+        <li>Préparer une mission complète</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Synthèse</span>
+    <span>Jour 1</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FIN
+     ============================================================ -->
+<section class="slide-conclusion">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Fin du Jour 1</h2>
+  <p>À demain pour la chimie des produits, le MANEX et la préparation de mission.</p>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <a href="https://www.dronexperts.io">dronexperts.io</a>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <a href="mailto:contact@dronexperts.io">contact@dronexperts.io</a>
+    </div>
+  </div>
+  <div class="slide-footer slide-footer-dark">
+    <span>&copy; 2026 Dronexperts — Tous droits réservés</span>
+    <span>Jour 1</span>
+  </div>
+</section>
+
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280, height: 720, margin: 0, minScale: 0.2, maxScale: 2.0,
+    hash: true, history: true, slideNumber: false,
+    transition: 'slide', backgroundTransition: 'fade',
+    controls: true, controlsLayout: 'bottom-right', controlsTutorial: false, progress: true,
+    center: false, help: true,
+    plugins: [ RevealNotes ]
+  });
+</script>
+</body>
+</html>

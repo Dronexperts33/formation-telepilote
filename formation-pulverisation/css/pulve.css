@@ -1,0 +1,72 @@
+/* Compléments au thème Dronexperts pour la formation Pulvérisation & Nettoyage.
+   Les couleurs proviennent toutes de css/dronexperts-theme.css (variables --dx-*). */
+
+.box {
+  background: #fff;
+  border: 1px solid var(--dx-border);
+  border-radius: var(--dx-radius);
+  box-shadow: var(--dx-shadow);
+  padding: 16px 20px;
+  font-size: 0.7em;
+  line-height: 1.45;
+}
+.box h4 {
+  color: var(--dx-text-dark);
+  font-weight: 700;
+  font-size: 1.12em;
+  margin: 0 0 8px;
+  display: flex; align-items: center; gap: 8px;
+}
+.box p { margin: 0 0 6px; line-height: 1.45; }
+.box ul li { margin-bottom: 0.3em; line-height: 1.4; padding-left: 1.4em; }
+.box ul li::before { left: 0.2em; top: 0.5em; width: 6px; height: 6px; }
+.box.b-blue   { border-top: 4px solid var(--dx-primary); }
+.box.b-green  { border-top: 4px solid var(--dx-success); }
+.box.b-orange { border-top: 4px solid var(--dx-warning); }
+.box.b-red    { border-top: 4px solid var(--dx-error); }
+.box.b-cyan   { border-top: 4px solid var(--dx-info); }
+
+.lead { font-size: 0.72em; color: var(--dx-text-secondary); margin: -6px 0 16px; line-height: 1.45; }
+.list-sm { font-size: 0.66em; }
+.list-sm li { margin-bottom: 0.35em !important; line-height: 1.4 !important; }
+
+.src {
+  font-size: 0.4em;
+  color: var(--dx-text-muted);
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.callout {
+  border-left: 5px solid var(--dx-warning);
+  background: rgba(245,158,11,0.08);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.6em;
+  line-height: 1.45;
+  margin-top: 14px;
+  color: var(--dx-text-dark);
+}
+.callout.c-red  { border-color: var(--dx-error);   background: rgba(239,68,68,0.07); }
+.callout.c-blue { border-color: var(--dx-primary); background: rgba(14,116,218,0.07); }
+.callout.c-green{ border-color: var(--dx-success); background: rgba(16,185,129,0.08); }
+
+.dx-table.t-sm { font-size: 0.56em; }
+.dx-table.t-sm tbody td, .dx-table.t-sm thead th { padding: 8px 12px; }
+
+.pill {
+  display: inline-block; padding: 2px 10px; border-radius: 999px;
+  font-size: 0.85em; font-weight: 600;
+  background: rgba(14,116,218,0.1); color: var(--dx-primary);
+}
+.pill.p-red { background: rgba(239,68,68,0.1); color: var(--dx-error); }
+.pill.p-green { background: rgba(16,185,129,0.12); color: #047857; }
+.pill.p-orange { background: rgba(245,158,11,0.14); color: #B45309; }
+
+.ico { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+.home-link { position: absolute !important; top: 24px !important; right: 32px !important; left: auto !important; z-index: 10; }
+.home-link img { position: static !important; }
+
+.ghs { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; transform: rotate(45deg); border: 3px solid var(--dx-error); background: #fff; margin: 0 6px 0 4px; flex-shrink: 0; }
+.ghs span { transform: rotate(-45deg); font-size: 0.75em; font-weight: 800; color: var(--dx-text-dark); }
