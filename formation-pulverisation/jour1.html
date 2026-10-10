@@ -419,6 +419,80 @@
 
 
 <!-- ============================================================
+     SCHÉMA — LE DISPOSITIF CAPTIF
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Le dispositif captif sur un chantier</h2>
+  <div class="fig">
+    <svg viewBox="0 0 1100 420" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif" style="max-height:440px;">
+      <!-- sol -->
+      <rect x="0" y="360" width="1100" height="60" fill="#F1F5F9"/>
+      <line x1="0" y1="360" x2="1100" y2="360" stroke="#94A3B8" stroke-width="2"/>
+      <!-- zone contrôlée -->
+      <line x1="90" y1="398" x2="1010" y2="398" stroke="#EF4444" stroke-width="3" stroke-dasharray="10 6"/>
+      <text x="600" y="416" text-anchor="middle" font-size="15" font-weight="700" fill="#EF4444">Zone contrôlée au sol : rayon = longueur de l'accroche + 5 m autour du point de fixation</text>
+      <!-- maison -->
+      <rect x="560" y="230" width="300" height="130" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2"/>
+      <polygon points="540,232 710,120 880,232" fill="#B45309" opacity="0.85"/>
+      <polygon points="600,200 650,168 700,200" fill="#10B981" opacity="0.55"/>
+      <polygon points="720,175 760,150 800,175" fill="#10B981" opacity="0.55"/>
+      <rect x="690" y="290" width="40" height="70" fill="#94A3B8"/>
+      <rect x="600" y="260" width="45" height="35" fill="#fff" stroke="#94A3B8"/>
+      <rect x="775" y="260" width="45" height="35" fill="#fff" stroke="#94A3B8"/>
+      <text x="710" y="345" text-anchor="middle" font-size="14" font-weight="600" fill="#475569">Bâtiment à traiter</text>
+      <!-- gouttière -->
+      <rect x="854" y="232" width="8" height="128" fill="#64748B"/>
+      <!-- drone -->
+      <g transform="translate(640,70)">
+        <line x1="-55" y1="0" x2="55" y2="0" stroke="#0F172A" stroke-width="5"/>
+        <ellipse cx="-58" cy="-6" rx="26" ry="5" fill="#0E74DA" opacity="0.6"/>
+        <ellipse cx="58" cy="-6" rx="26" ry="5" fill="#0E74DA" opacity="0.6"/>
+        <rect x="-18" y="-10" width="36" height="20" rx="6" fill="#0F172A"/>
+        <line x1="-25" y1="14" x2="25" y2="14" stroke="#0F172A" stroke-width="3"/>
+        <path d="M-20 18 L-45 75 M0 18 L0 80 M20 18 L45 75" stroke="#06B6D4" stroke-width="3" stroke-dasharray="4 5" fill="none"/>
+      </g>
+      <text x="640" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#0E74DA">Spray L (C5)</text>
+      <!-- tuyau + lien captif -->
+      <path d="M290 330 C 380 250, 470 140, 640 84" stroke="#EF4444" stroke-width="5" fill="none"/>
+      <path d="M290 336 C 382 256, 474 146, 640 90" stroke="#0F172A" stroke-width="2" fill="none"/>
+      <text x="400" y="185" font-size="15" font-weight="700" fill="#0F172A" transform="rotate(-33 400 185)">Tuyau produit + lien captif</text>
+      <!-- point de fixation -->
+      <circle cx="290" cy="333" r="12" fill="#0F172A"/>
+      <path d="M278 345 L290 360 L302 345" stroke="#0F172A" stroke-width="4" fill="none"/>
+      <text x="300" y="380" text-anchor="middle" font-size="14" font-weight="700" fill="#0F172A">Point de fixation</text>
+      <!-- pompe + cuve -->
+      <rect x="110" y="300" width="80" height="60" rx="6" fill="#0E74DA"/>
+      <text x="150" y="336" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Cuve</text>
+      <rect x="196" y="320" width="44" height="40" rx="4" fill="#475569"/>
+      <text x="218" y="345" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Pompe</text>
+      <!-- télépilote -->
+      <g transform="translate(45,300)">
+        <circle cx="0" cy="0" r="11" fill="#F59E0B"/>
+        <rect x="-11" y="13" width="22" height="34" rx="6" fill="#F59E0B"/>
+        <rect x="-16" y="20" width="32" height="12" rx="3" fill="#0F172A"/>
+      </g>
+      <text x="45" y="280" text-anchor="middle" font-size="14" font-weight="700" fill="#B45309">Télépilote</text>
+      <!-- vent -->
+      <g stroke="#94A3B8" stroke-width="3" fill="none">
+        <path d="M940 110 h110"/><path d="M1035 100 l15 10 l-15 10"/>
+        <path d="M960 140 h90"/><path d="M1035 130 l15 10 l-15 10"/>
+      </g>
+      <text x="995" y="90" text-anchor="middle" font-size="14" font-weight="600" fill="#475569">Vent</text>
+    </svg>
+  </div>
+  <p class="fig-caption">Schéma de principe — drone C5 en mode captif, alimenté en produit depuis le sol, télépilote dos au vent et hors du nuage de pulvérisation</p>
+  <div class="slide-footer">
+    <span>Module 2 — Dispositif captif</span>
+    <span>Jour 1</span>
+  </div>
+  <aside class="notes">
+    Faire décrire le schéma par les stagiaires : où se place le télépilote (dos au vent, hors du nuage), où est la cuve, comment le tuyau et le lien captif sont déroulés, où commence la zone contrôlée. Le Spray L est alimenté par un tuyau de 50 m « produit chimique avec lien captif » (catalogue Aeotic) ; la longueur exacte de l'accroche détermine le rayon de la zone contrôlée. Rappel C5 : longueur de traction de l'accroche inférieure à 50 m (règlement 2019/945, partie 4, point 4) — vérifier avec le constructeur la longueur effective du lien captif fourni.
+  </aside>
+</section>
+
+
+<!-- ============================================================
      SLIDE 12 — LE SPRAY L
      ============================================================ -->
 <section class="slide-two-col">
@@ -889,7 +963,7 @@
   <h2>Les risques du chantier</h2>
   <div class="grid-3" style="margin-top:6px;">
     <div class="box b-red">
-      <h4>Chimiques</h4>
+      <h4><img class="h-ico" src="img/ghs/acid.svg" alt=""> Chimiques</h4>
       <ul>
         <li>Inhalation du brouillard de pulvérisation</li>
         <li>Contact cutané avec le produit concentré</li>
@@ -898,7 +972,7 @@
       </ul>
     </div>
     <div class="box b-orange">
-      <h4>Opérationnels</h4>
+      <h4><img class="h-ico" src="img/epi/danger-electrique.svg" alt=""> Opérationnels</h4>
       <ul>
         <li>Collision avec la façade, une cheminée, une ligne</li>
         <li>Rupture ou arrachement du tuyau / lien captif</li>
@@ -907,7 +981,7 @@
       </ul>
     </div>
     <div class="box b-cyan">
-      <h4>Environnement & voisinage</h4>
+      <h4><img class="h-ico" src="img/ghs/pollu.svg" alt=""> Environnement & voisinage</h4>
       <ul>
         <li><strong>Dérive</strong> sur véhicules, jardins, façades voisines</li>
         <li>Ruissellement vers les gouttières et le réseau d'eaux pluviales</li>
@@ -932,29 +1006,34 @@
 <section class="slide-content">
   <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
   <h2>Équipements de protection individuelle</h2>
-  <p class="lead">Le choix des EPI se fait <strong>à partir de la FDS du produit</strong> (rubrique 8 : contrôles de l'exposition / protection individuelle).</p>
+  <div class="picto-row">
+    <div class="picto"><img src="img/epi/gants.svg" alt="">Gants chimiques</div>
+    <div class="picto"><img src="img/epi/lunettes.svg" alt="">Lunettes-masque</div>
+    <div class="picto"><img src="img/epi/combinaison.svg" alt="">Combinaison</div>
+    <div class="picto"><img src="img/epi/respiratoire.svg" alt="">Protection respiratoire</div>
+    <div class="picto"><img src="img/epi/chaussures.svg" alt="">Bottes de sécurité</div>
+    <div class="picto"><img src="img/epi/gilet.svg" alt="">Gilet haute visibilité</div>
+    <div class="picto"><img src="img/epi/casque.svg" alt="">Casque</div>
+  </div>
   <div class="grid-2">
     <div class="box b-blue">
-      <h4>Lors de la préparation (produit concentré)</h4>
+      <h4>Préparation (produit concentré)</h4>
       <ul>
-        <li><strong>Gants</strong> résistants aux produits chimiques (matière indiquée par la FDS)</li>
-        <li><strong>Lunettes-masque</strong> ou écran facial contre les projections</li>
-        <li><strong>Combinaison</strong> ou tablier de protection chimique</li>
+        <li><strong>Gants</strong>, <strong>lunettes-masque</strong> et <strong>combinaison</strong> : matière indiquée par la FDS</li>
         <li><strong>Protection respiratoire</strong> si la FDS l'exige</li>
-        <li>Bottes de sécurité</li>
+        <li>Choix des EPI : <strong>rubrique 8 de la FDS</strong></li>
       </ul>
     </div>
     <div class="box b-green">
       <h4>Pendant le vol</h4>
       <ul>
-        <li>Télépilote placé <strong>hors du nuage de pulvérisation</strong>, dos au vent</li>
-        <li>Gilet haute visibilité pour l'équipe au sol</li>
-        <li>Casque si travail au pied du bâtiment</li>
-        <li>Eau claire et <strong>rince-œil</strong> à portée de main</li>
-        <li>FDS des produits disponibles sur le chantier</li>
+        <li>Télépilote <strong>hors du nuage</strong> de pulvérisation, dos au vent</li>
+        <li>Gilet haute visibilité ; casque au pied du bâtiment</li>
+        <li>Eau claire, <strong>rince-œil</strong> et FDS sur le chantier</li>
       </ul>
     </div>
   </div>
+  <p class="src">Signaux d'obligation ISO 7010 (M009, M004, M010, M017, M008, M015, M014)</p>
   <div class="slide-footer">
     <span>Module 4 — EPI</span>
     <span>Jour 1</span>
@@ -973,7 +1052,7 @@
   <h2>Premiers gestes : accident chimique</h2>
   <div class="grid-2" style="margin-top:4px;">
     <div class="box b-red">
-      <h4>Exposition d'une personne</h4>
+      <h4><img class="h-ico" src="img/epi/premiers-secours.svg" alt=""><img class="h-ico" src="img/epi/rince-oeil.svg" alt=""> Exposition d'une personne</h4>
       <ul>
         <li><strong>Peau</strong> : retirer les vêtements souillés, rincer abondamment à l'eau</li>
         <li><strong>Yeux</strong> : rincer immédiatement et longuement, paupières écartées</li>
@@ -983,7 +1062,7 @@
       </ul>
     </div>
     <div class="box b-orange">
-      <h4>Déversement de produit</h4>
+      <h4><img class="h-ico" src="img/ghs/pollu.svg" alt=""> Déversement de produit</h4>
       <ul>
         <li>Arrêter la pompe, poser le drone</li>
         <li>Baliser et éloigner les personnes</li>

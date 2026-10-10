@@ -70,3 +70,13 @@
 
 .ghs { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; transform: rotate(45deg); border: 3px solid var(--dx-error); background: #fff; margin: 0 6px 0 4px; flex-shrink: 0; }
 .ghs span { transform: rotate(-45deg); font-size: 0.75em; font-weight: 800; color: var(--dx-text-dark); }
+
+/* Pictogrammes officiels (SGH/CLP, ISO 7010) */
+.picto-row { display: flex; justify-content: center; gap: 22px; margin: 4px 0 14px; }
+.picto { text-align: center; font-size: 0.5em; font-weight: 600; color: var(--dx-text-dark); width: 110px; line-height: 1.25; }
+.picto img { width: 80px; height: 80px; display: block; margin: 0 auto 6px; }
+.h-ico { width: 40px !important; height: 40px !important; flex-shrink: 0; margin: 0 !important; }
+.ghs-img { width: 46px; height: 46px; vertical-align: middle; }
+.fig { text-align: center; }
+.fig svg { width: 100%; height: auto; }
+.fig-caption { font-size: 0.48em; color: var(--dx-text-secondary); font-weight: 500; margin-top: 4px; text-align: center; }
