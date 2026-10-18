@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photogrammétrie par Drone — Jour 3 — Dronexperts</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Dronexperts Theme -->
+  <link rel="stylesheet" href="../css/dronexperts-theme.css">
+  <link rel="stylesheet" href="css/photo.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<!-- ============================================================
+     TITRE
+     ============================================================ -->
+<section class="slide-title">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>Photogrammétrie par Drone</h1>
+  <p class="subtitle">Jour 3 — Corriger, modéliser en 3D & exploiter dans CloudCompare</p>
+  <span class="badge">Débrief · Vol 3D n°2 · Maillage · Cubature · Comparaison</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Photogrammétrie par Drone</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROGRAMME DU JOUR
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Le programme du jour</h2>
+  <div class="grid-3" style="gap:16px;">
+    <div class="box b-orange">
+      <h4><span class="hico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> 1. Débrief</h4>
+      <ul><li>Chaque binôme présente son modèle 3D n°1</li><li>Les 10 pièges de la modélisation</li><li>Du symptôme à la cause</li></ul>
+    </div>
+    <div class="box b-cyan">
+      <h4><span class="hico"><svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></span> 2. Vol 3D n°2</h4>
+      <ul><li>Les stratégies de vol 3D</li><li>Chaque binôme corrige son plan</li><li>Vol sur le terrain</li></ul>
+    </div>
+    <div class="box b-green">
+      <h4><span class="hico"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg></span> 3. Exploiter</h4>
+      <ul><li>Metashape : maillage et texture</li><li><strong>CloudCompare</strong> : mesures, cubature</li><li>Comparaison chiffrée n°1 / n°2</li><li>Rapport client, évaluation</li></ul>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Programme</span>
+    <span>Jour 3</span>
+  </div>
+  <aside class="notes">
+    Pendant que les binômes présentent, les traitements du matin peuvent tourner. Le vol 3D n°2 se fait de préférence avant midi pour lancer les traitements pendant la pause déjeuner.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     MODULE 11 — DÉBRIEF
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 11</div>
+  <h2>Débrief : les pièges de la modélisation 3D</h2>
+  <p class="module-desc">Vos modèles 3D n°1 à l'écran : ce qui a marché, ce qui a raté, et pourquoi. Puis les 10 pièges classiques et leurs solutions.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  <div class="slide-footer">
+    <span>Module 11 — Débrief</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MÉTHODE DU DÉBRIEF
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Chaque binôme présente son modèle</h2>
+  <div class="grid-2" style="grid-template-columns:1fr 1fr;gap:22px;">
+    <div class="steps">
+      <div class="step"><div><strong>Mes choix</strong> : type de vol, hauteur ou distance, angle de nacelle, recouvrement, vitesse, exposition, heure</div></div>
+      <div class="step"><div><strong>Mon résultat</strong> : photos alignées, trous, déformations, qualité de texture (fiche de constat)</div></div>
+      <div class="step"><div><strong>Le groupe cherche la cause</strong> de chaque défaut</div></div>
+      <div class="step"><div><strong>Le formateur complète</strong> avec la fiche d'observation et les métadonnées des photos</div></div>
+    </div>
+    <div>
+      <div class="kpi" style="margin-bottom:14px;"><b>3 min</b><span>par binôme, modèle 3D à l'écran</span></div>
+      <div class="callout c-blue" style="margin-top:0;font-size:0.66em;">On ne juge pas le binôme, on <strong>diagnostique</strong> le modèle. Le même défaut chez plusieurs binômes est un enseignement pour tout le groupe.</div>
+      <div class="callout c-green" style="font-size:0.66em;">Repérez les <strong>réussites</strong> aussi : un angle bien choisi, une façade parfaite. On les reproduira au vol n°2.</div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 11 — Méthode</span>
+    <span>Jour 3</span>
+  </div>
+  <aside class="notes">
+    Garder au tableau une colonne « symptôme » et une colonne « cause » : elles se remplissent au fil des présentations et servent de transition naturelle vers les 10 pièges. Les métadonnées des photos (angle de nacelle, vitesse d'obturation, hauteur relative) permettent d'objectiver les choix réels.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     PIÈGES 1-2
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Pièges 1 et 2 : couverture et hauteur</h2>
+  <div class="grid-2" style="gap:22px;">
+    <div class="box b-red">
+      <h4><span class="pill p-red">1</span> Couverture insuffisante</h4>
+      <svg viewBox="0 0 400 120" style="width:100%;height:110px;margin:4px 0 8px;">
+        <rect x="0" y="0" width="400" height="120" rx="8" fill="#F8FAFC"/>
+        <g fill="rgba(14,116,218,0.18)" stroke="#0E74DA"><rect x="20" y="20" width="100" height="80"/><rect x="140" y="20" width="100" height="80"/><rect x="260" y="20" width="100" height="80"/></g>
+        <g fill="#EF4444" opacity="0.7"><rect x="120" y="20" width="20" height="80"/><rect x="240" y="20" width="20" height="80"/></g>
+      </svg>
+      <p><strong>Symptôme :</strong> trous, zones non reconstruites, photos non alignées.</p>
+      <p><strong>Cause :</strong> recouvrement trop faible, parties de l'objet vues sur une seule photo.</p>
+      <p><strong>Solution :</strong> ≥ 80 % frontal et ≥ 70 % latéral, davantage dans les zones complexes.</p>
+    </div>
+    <div class="box b-orange">
+      <h4><span class="pill p-orange">2</span> Mauvais couple FOV / hauteur</h4>
+      <svg viewBox="0 0 400 120" style="width:100%;height:110px;margin:4px 0 8px;">
+        <rect x="0" y="0" width="400" height="120" rx="8" fill="#F8FAFC"/>
+        <polygon points="100,10 40,110 160,110" fill="rgba(239,68,68,0.15)" stroke="#EF4444"/><rect x="88" y="4" width="24" height="10" fill="#0F172A"/>
+        <polygon points="300,60 270,110 330,110" fill="rgba(16,185,129,0.2)" stroke="#10B981"/><rect x="288" y="54" width="24" height="10" fill="#0F172A"/>
+        <text x="100" y="70" text-anchor="middle" font-size="12" fill="#B91C1C" font-family="Inter">trop haut</text>
+        <text x="300" y="45" text-anchor="middle" font-size="12" fill="#047857" font-family="Inter">adapté au détail</text>
+      </svg>
+      <p><strong>Symptôme :</strong> détails flous ou « fondus », arêtes arrondies.</p>
+      <p><strong>Cause :</strong> trop haut ou trop loin : GSD trop grand pour l'objet.</p>
+      <p><strong>Solution :</strong> fixer le GSD voulu sur l'objet, en déduire la distance de vol. Petits objets : plus près, plus de photos.</p>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 11 — Pièges 1-2</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PIÈGES 3-4
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Pièges 3 et 4 : obturateur et météo</h2>
+  <div class="grid-2" style="gap:22px;">
+    <div class="box b-red">
+      <h4><span class="pill p-red">3</span> Obturateur électronique en mouvement</h4>
+      <svg viewBox="0 0 400 120" style="width:100%;height:110px;margin:4px 0 8px;">
+        <rect x="0" y="0" width="400" height="120" rx="8" fill="#F8FAFC"/>
+        <rect x="70" y="20" width="40" height="80" fill="#0E74DA"/><text x="90" y="114" text-anchor="middle" font-size="12" fill="#047857" font-family="Inter">réel</text>
+        <polygon points="270,20 310,20 340,100 300,100" fill="#EF4444" opacity="0.8"/><text x="305" y="114" text-anchor="middle" font-size="12" fill="#B91C1C" font-family="Inter">photo</text>
+      </svg>
+      <p><strong>Symptôme :</strong> géométrie faussée, alignement difficile, modèle « tordu ».</p>
+      <p><strong>Cause :</strong> lecture ligne par ligne du capteur pendant que le drone avance.</p>
+      <p><strong>Solution :</strong> obturateur mécanique ; sinon voler lentement ou en arrêt photo, et « Ajuster le rolling shutter » dans Metashape.</p>
+    </div>
+    <div class="box b-orange">
+      <h4><span class="pill p-orange">4</span> Conditions météo inadaptées</h4>
+      <svg viewBox="0 0 400 120" style="width:100%;height:110px;margin:4px 0 8px;">
+        <rect x="0" y="0" width="400" height="120" rx="8" fill="#F8FAFC"/>
+        <circle cx="70" cy="40" r="20" fill="#F59E0B"/>
+        <rect x="160" y="40" width="70" height="60" fill="#94A3B8"/><polygon points="230,100 230,40 330,100" fill="#0F172A" opacity="0.5"/>
+        <path d="M300 30 q15 -10 30 0 t30 0" fill="none" stroke="#06B6D4" stroke-width="3"/><path d="M300 50 q15 -10 30 0 t30 0" fill="none" stroke="#06B6D4" stroke-width="3"/>
+      </svg>
+      <p><strong>Symptôme :</strong> ombres « collées » dans la texture, trous dans les zones sombres, reflets.</p>
+      <p><strong>Cause :</strong> soleil rasant ou changeant, vent (mouvement du drone et de la végétation), pluie.</p>
+      <p><strong>Solution :</strong> lumière douce et diffuse (ciel voilé), vent faible, soleil haut en cas de grand beau temps.</p>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 11 — Pièges 3-4</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PIÈGES 5-6
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Pièges 5 et 6 : angles de vue et GCP</h2>
+  <div class="grid-2" style="gap:22px;">
+    <div class="box b-red">
+      <h4><span class="pill p-red">5</span> Angles de prise de vue insuffisants</h4>
+      <svg viewBox="0 0 400 120" style="width:100%;height:110px;margin:4px 0 8px;">
+        <rect x="0" y="0" width="400" height="120" rx="8" fill="#F8FAFC"/>
+        <rect x="150" y="50" width="100" height="60" fill="#CBD5E1"/><polygon points="150,50 200,20 250,50" fill="#94A3B8"/>
+        <g stroke="#0E74DA" stroke-width="2" stroke-dasharray="4 3"><line x1="200" y1="0" x2="200" y2="20"/><line x1="40" y1="20" x2="150" y2="80"/><line x1="360" y1="20" x2="250" y2="80"/></g>
+        <rect x="190" y="0" width="20" height="8" fill="#0F172A"/><rect x="30" y="14" width="20" height="8" fill="#0F172A"/><rect x="350" y="14" width="20" height="8" fill="#0F172A"/>
+      </svg>
+      <p><strong>Symptôme :</strong> toitures parfaites mais façades vides, déformées ou étirées.</p>
+      <p><strong>Cause :</strong> photos uniquement au nadir : les faces verticales ne sont vues qu'en biais extrême.</p>
+      <p><strong>Solution :</strong> combiner <strong>nadir + obliques</strong> (nacelle vers −45° à −60°), orbites autour de l'objet.</p>
+    </div>
+    <div class="box b-orange">
+      <h4><span class="pill p-orange">6</span> Mauvaise gestion des GCP</h4>
+      <svg viewBox="0 0 400 120" style="width:100%;height:110px;margin:4px 0 8px;">
+        <rect x="0" y="0" width="400" height="120" rx="8" fill="#F8FAFC"/>
+        <rect x="20" y="15" width="170" height="90" fill="none" stroke="#94A3B8" stroke-dasharray="4 3"/>
+        <g fill="#EF4444"><polygon points="40,90 48,104 32,104"/><polygon points="60,90 68,104 52,104"/><polygon points="80,90 88,104 72,104"/></g>
+        <text x="105" y="60" text-anchor="middle" font-size="12" fill="#B91C1C" font-family="Inter">regroupés</text>
+        <rect x="210" y="15" width="170" height="90" fill="none" stroke="#94A3B8" stroke-dasharray="4 3"/>
+        <g fill="#10B981"><polygon points="225,20 233,34 217,34"/><polygon points="365,20 373,34 357,34"/><polygon points="225,86 233,100 217,100"/><polygon points="365,86 373,100 357,100"/><polygon points="295,52 303,66 287,66"/></g>
+      </svg>
+      <p><strong>Symptôme :</strong> modèle bien formé mais décalé, basculé ou mal à l'échelle.</p>
+      <p><strong>Cause :</strong> pas de GCP, GCP regroupés, mal pointés ou mal nommés.</p>
+      <p><strong>Solution :</strong> GCP répartis sur toute la zone, pointés sur plusieurs photos, et des points de contrôle.</p>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 11 — Pièges 5-6</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PIÈGES 7-8
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Pièges 7 et 8 : vols multiples et exposition</h2>
+  <div class="grid-2" style="gap:22px;">
+    <div class="box b-red">
+      <h4><span class="pill p-red">7</span> Raccord insuffisant entre plusieurs vols</h4>
+      <svg viewBox="0 0 400 120" style="width:100%;height:110px;margin:4px 0 8px;">
+        <rect x="0" y="0" width="400" height="120" rx="8" fill="#F8FAFC"/>
+        <rect x="20" y="20" width="170" height="80" fill="rgba(14,116,218,0.18)" stroke="#0E74DA"/><text x="105" y="65" text-anchor="middle" font-size="13" fill="#0E74DA" font-family="Inter">batterie 1</text>
+        <rect x="195" y="20" width="185" height="80" fill="rgba(6,182,212,0.18)" stroke="#06B6D4"/><text x="290" y="65" text-anchor="middle" font-size="13" fill="#0891B2" font-family="Inter">batterie 2</text>
+        <rect x="186" y="20" width="14" height="80" fill="#EF4444" opacity="0.6"/>
+      </svg>
+      <p><strong>Symptôme :</strong> le modèle se coupe en deux blocs, ou une marche apparaît au raccord.</p>
+      <p><strong>Cause :</strong> chaque vol couvre sa zone sans recouvrement avec le précédent.</p>
+      <p><strong>Solution :</strong> reprendre chaque vol <strong>largement sur la zone précédente</strong> (reprise de mission au point d'arrêt).</p>
+    </div>
+    <div class="box b-orange">
+      <h4><span class="pill p-orange">8</span> Exposition automatique</h4>
+      <svg viewBox="0 0 400 120" style="width:100%;height:110px;margin:4px 0 8px;">
+        <rect x="0" y="0" width="400" height="120" rx="8" fill="#F8FAFC"/>
+        <rect x="20" y="25" width="80" height="70" fill="#CBD5E1"/><rect x="110" y="25" width="80" height="70" fill="#64748B"/><rect x="200" y="25" width="80" height="70" fill="#E2E8F0"/><rect x="290" y="25" width="80" height="70" fill="#94A3B8"/>
+      </svg>
+      <p><strong>Symptôme :</strong> texture en patchwork, couleurs différentes selon les faces, zones brûlées ou bouchées.</p>
+      <p><strong>Cause :</strong> l'appareil change l'exposition d'une photo à l'autre (ciel, façade à l'ombre…).</p>
+      <p><strong>Solution :</strong> régler et <strong>verrouiller l'exposition</strong> avant le vol à partir d'une photo test ; vitesse rapide fixe.</p>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 11 — Pièges 7-8</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PIÈGES 9-10
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Pièges 9 et 10 : positionnement et logiciel</h2>
+  <div class="grid-2" style="gap:22px;">
+    <div class="box b-red">
+      <h4><span class="pill p-red">9</span> Précision GNSS du drone insuffisante</h4>
+      <svg viewBox="0 0 400 120" style="width:100%;height:110px;margin:4px 0 8px;">
+        <rect x="0" y="0" width="400" height="120" rx="8" fill="#F8FAFC"/>
+        <circle cx="100" cy="60" r="40" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-dasharray="4 3"/><circle cx="100" cy="60" r="4" fill="#EF4444"/><text x="100" y="114" text-anchor="middle" font-size="12" fill="#B91C1C" font-family="Inter">GNSS seul : ± m</text>
+        <circle cx="300" cy="60" r="8" fill="rgba(16,185,129,0.25)" stroke="#10B981"/><circle cx="300" cy="60" r="3" fill="#10B981"/><text x="300" y="114" text-anchor="middle" font-size="12" fill="#047857" font-family="Inter">RTK fixé : ± cm</text>
+      </svg>
+      <p><strong>Symptôme :</strong> modèle impossible à superposer à un plan, deux levés qui ne se recalent pas.</p>
+      <p><strong>Cause :</strong> géotags métriques, perte du fix RTK, mauvais système déclaré.</p>
+      <p><strong>Solution :</strong> RTK fixé sur toute la mission (ou PPK), point connu, et GCP / points de contrôle.</p>
+    </div>
+    <div class="box b-orange">
+      <h4><span class="pill p-orange">10</span> Logiciel ou réglages inadaptés</h4>
+      <svg viewBox="0 0 400 120" style="width:100%;height:110px;margin:4px 0 8px;">
+        <rect x="0" y="0" width="400" height="120" rx="8" fill="#F8FAFC"/>
+        <rect x="40" y="20" width="320" height="80" rx="8" fill="#1E293B"/>
+        <g font-family="Inter" font-size="13" fill="#CBD5E1"><text x="60" y="48">Qualité : <tspan fill="#EF4444" font-weight="700">La plus basse</tspan></text><text x="60" y="76">Filtrage : <tspan fill="#EF4444" font-weight="700">Agressif</tspan> (sur un garde-corps)</text></g>
+      </svg>
+      <p><strong>Symptôme :</strong> modèle grossier, détails fins supprimés, temps de calcul démesurés.</p>
+      <p><strong>Cause :</strong> qualité trop basse ou trop haute, filtrage inadapté à l'objet, mauvais système.</p>
+      <p><strong>Solution :</strong> logiciel professionnel (Metashape, Pix4D, DJI Terra…) et réglages adaptés à l'objet et au livrable.</p>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 11 — Pièges 9-10</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SURFACES DIFFICILES
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Bonus : les surfaces qui piègent le logiciel</h2>
+  <div class="tiles" style="grid-template-columns:repeat(3,1fr);">
+    <div class="tile t-vol"><span class="hico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/></svg></span><div><strong>Vitres, métal poli</strong> : reflets changeants selon l'angle</div></div>
+    <div class="tile t-vol"><span class="hico"><svg viewBox="0 0 24 24"><path d="M2 12c3-3 5-3 8 0s5 3 8 0 3-3 4-2"/><path d="M2 17c3-3 5-3 8 0s5 3 8 0"/></svg></span><div><strong>Eau</strong> : surface mobile et réfléchissante</div></div>
+    <div class="tile t-vol"><span class="hico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></span><div><strong>Surfaces uniformes</strong> : enduit blanc, neige, tôle, ciel</div></div>
+    <div class="tile t-mat"><span class="hico"><svg viewBox="0 0 24 24"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h3v6h-2"/></svg></span><div><strong>Objets mobiles</strong> : véhicules, engins, personnes</div></div>
+    <div class="tile t-mat"><span class="hico"><svg viewBox="0 0 24 24"><path d="M12 22V12"/><path d="M12 12c-4 0-7-3-7-7 4 0 7 3 7 7z"/><path d="M12 12c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg></span><div><strong>Végétation au vent</strong>, câbles fins, grillages</div></div>
+    <div class="tile t-mat"><span class="hico"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span><div><strong>Motifs répétitifs</strong> : panneaux solaires, tuiles, granulats</div></div>
+  </div>
+  <div class="callout c-blue" style="font-size:0.62em;">Parades : plus de recouvrement, lumière diffuse, angles variés, masques dans Metashape pour exclure les zones problématiques, et accepter que certaines surfaces (eau, ciel) ne se reconstruisent pas.</div>
+  <div class="slide-footer">
+    <span>Module 11 — Surfaces difficiles</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     GRILLE DIAGNOSTIC
+     ============================================================ -->
+<section class="slide-table">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>La grille de diagnostic</h2>
+  <table class="dx-table t-sm" style="font-size:0.6em;">
+    <thead><tr><th style="width:30%;">Je vois…</th><th style="width:34%;">Cause probable</th><th>Je corrige…</th></tr></thead>
+    <tbody>
+      <tr><td>Photos non alignées</td><td>Recouvrement, flou, surface uniforme</td><td>au vol (recouvrement) ou en ajoutant des repères manuels</td></tr>
+      <tr><td>Trous dans les façades</td><td>Pas d'obliques, angle de nacelle</td><td>au vol : obliques, orbites</td></tr>
+      <tr><td>Surface « fondue », arêtes molles</td><td>GSD trop grand, flou de bougé, filtrage</td><td>au vol (plus près, plus lent) et au traitement (filtrage Léger)</td></tr>
+      <tr><td>Texture en patchwork</td><td>Exposition automatique, lumière changeante</td><td>au vol : exposition verrouillée, créneau homogène</td></tr>
+      <tr><td>Modèle décalé ou basculé</td><td>Pas de GCP, géotags faux, mauvais système</td><td>au traitement : repères, paramètres de référence</td></tr>
+      <tr><td>Marche au milieu du modèle</td><td>Raccord entre vols insuffisant</td><td>au vol : reprise avec recouvrement</td></tr>
+      <tr><td>Points flottants, bruit</td><td>Ciel, reflets, eau, objets mobiles</td><td>au traitement : nettoyage, filtrage par confiance</td></tr>
+    </tbody>
+  </table>
+  <div class="callout c-red" style="font-size:0.6em;">La plupart des défauts se corrigent <strong>au vol</strong>, pas au traitement : d'où l'intérêt de bien préparer… et de vérifier sur place.</div>
+  <div class="slide-footer">
+    <span>Module 11 — Diagnostic</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 12 — STRATÉGIES DE VOL 3D
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 12</div>
+  <h2>Réussir son vol 3D : le vol n°2</h2>
+  <p class="module-desc">Les trajectoires adaptées à chaque objet, le calcul de la distance de vol, puis votre plan de vol corrigé et le vol 3D n°2.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+  <div class="slide-footer">
+    <span>Module 12 — Vol 3D n°2</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     LES TRAJECTOIRES
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Trois trajectoires, trois objets</h2>
+  <div class="grid-3" style="gap:16px;">
+    <div class="box b-blue">
+      <svg viewBox="0 0 300 170" style="width:100%;height:150px;" font-family="Inter, sans-serif">
+        <rect x="0" y="0" width="300" height="170" rx="8" fill="#F8FAFC"/>
+        <rect x="100" y="60" width="100" height="60" fill="#CBD5E1"/>
+        <path d="M30 30 H270 V60 H30 V90 H270 V120 H30 V150 H270" fill="none" stroke="#0E74DA" stroke-width="2.5"/>
+        <path d="M40 20 V160 H80 V20 H120 V160 H160 V20 H200 V160 H240 V20 H260" fill="none" stroke="#06B6D4" stroke-width="1.5" stroke-dasharray="5 4"/>
+      </svg>
+      <h4>Double grille + obliques</h4>
+      <p>Deux grilles croisées, nacelle inclinée (−45° à −60°), éventuellement une grille nadir en plus.</p>
+      <p><strong>Pour :</strong> sites étendus, quartiers, carrières avec fronts, toitures + façades.</p>
+    </div>
+    <div class="box b-green">
+      <svg viewBox="0 0 300 170" style="width:100%;height:150px;" font-family="Inter, sans-serif">
+        <rect x="0" y="0" width="300" height="170" rx="8" fill="#F8FAFC"/>
+        <rect x="125" y="60" width="50" height="80" fill="#CBD5E1"/>
+        <ellipse cx="150" cy="120" rx="120" ry="30" fill="none" stroke="#10B981" stroke-width="2.5"/>
+        <ellipse cx="150" cy="80" rx="110" ry="26" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="6 4"/>
+        <ellipse cx="150" cy="40" rx="80" ry="18" fill="none" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3 3"/>
+      </svg>
+      <h4>Orbites à plusieurs hauteurs</h4>
+      <p>Cercles autour de l'objet (point d'intérêt), une photo tous les <strong>~10°</strong> (36 par tour), 2 à 3 hauteurs, nacelle adaptée.</p>
+      <p><strong>Pour :</strong> objets isolés : château d'eau, maison, pylône, monument, stock.</p>
+    </div>
+    <div class="box b-orange">
+      <svg viewBox="0 0 300 170" style="width:100%;height:150px;" font-family="Inter, sans-serif">
+        <rect x="0" y="0" width="300" height="170" rx="8" fill="#F8FAFC"/>
+        <rect x="40" y="30" width="220" height="120" fill="#CBD5E1"/>
+        <g fill="#94A3B8"><rect x="60" y="50" width="20" height="25"/><rect x="110" y="50" width="20" height="25"/><rect x="160" y="50" width="20" height="25"/><rect x="210" y="50" width="20" height="25"/><rect x="60" y="100" width="20" height="25"/><rect x="110" y="100" width="20" height="25"/><rect x="160" y="100" width="20" height="25"/><rect x="210" y="100" width="20" height="25"/></g>
+        <path d="M50 20 V160 M100 160 V20 M150 20 V160 M200 160 V20 M250 20 V160" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
+      </svg>
+      <h4>Façade en lignes</h4>
+      <p>Lignes verticales ou horizontales <strong>parallèles à la façade</strong>, caméra face au mur, distance constante.</p>
+      <p><strong>Pour :</strong> façades, ponts, murs, falaises, ortho de façade.</p>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 12 — Trajectoires</span>
+    <span>Jour 3</span>
+  </div>
+  <aside class="notes">
+    Les applications de vol professionnelles proposent des missions obliques automatiques et des modes de capture 3D selon le drone : les montrer sur la télécommande du Matrice 4E. Pour un objet complexe, on combine souvent : une grille nadir pour le contexte, des orbites pour l'objet, quelques passages manuels pour les zones masquées.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     DISTANCE DE VOL : GSD SUR L'OBJET
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Le GSD se calcule sur l'objet</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1fr;align-items:center;">
+    <div class="col-text">
+      <p>En 3D, la « hauteur » de la formule du GSD devient la <strong>distance entre la caméra et la surface</strong> photographiée.</p>
+      <div class="formula" style="font-size:0.7em;margin:10px 0;">Matrice 4E : GSD (cm) ≈ distance (m) ÷ 36,6</div>
+      <table class="dx-table t-sm" style="font-size:0.64em;">
+        <thead><tr><th>Distance à la façade</th><th>GSD</th><th>Usage</th></tr></thead>
+        <tbody>
+          <tr><td>10 m</td><td><strong>0,3 cm</strong></td><td>Fissures, joints, détails</td></tr>
+          <tr><td>20 m</td><td><strong>0,5 cm</strong></td><td>Relevé de façade, patrimoine</td></tr>
+          <tr><td>40 m</td><td><strong>1,1 cm</strong></td><td>Volume de bâtiment, contexte</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-visual">
+      <svg viewBox="0 0 460 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;" font-family="Inter, sans-serif">
+        <rect x="320" y="40" width="110" height="290" fill="#CBD5E1"/>
+        <g fill="#94A3B8"><rect x="340" y="70" width="25" height="35"/><rect x="385" y="70" width="25" height="35"/><rect x="340" y="150" width="25" height="35"/><rect x="385" y="150" width="25" height="35"/><rect x="340" y="230" width="25" height="35"/><rect x="385" y="230" width="25" height="35"/></g>
+        <rect x="60" y="160" width="50" height="22" rx="4" fill="#0F172A"/>
+        <polygon points="110,171 320,90 320,252" fill="rgba(14,116,218,0.12)" stroke="#0E74DA" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <line x1="110" y1="300" x2="320" y2="300" stroke="#0F172A" stroke-width="2"/>
+        <text x="215" y="292" text-anchor="middle" font-size="15" font-weight="700" fill="#0F172A">distance D</text>
+        <text x="215" y="330" text-anchor="middle" font-size="13" fill="#475569">caméra face à la façade, nacelle à 0°</text>
+      </svg>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 12 — Distance</span>
+    <span>Jour 3</span>
+  </div>
+  <aside class="notes">
+    Vérification : 3,36 µm × 20 m ÷ 12,29 mm = 5,5 mm. Pour l'oblique, la distance varie entre le haut et le bas de l'image : on raisonne sur la distance moyenne. Respecter une distance de sécurité suffisante avec l'obstacle : la précision ne justifie jamais de coller la façade.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     RÉGLAGES DU VOL 3D
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Les réglages d'un bon vol 3D</h2>
+  <div class="grid-2" style="grid-template-columns:repeat(4,1fr);gap:14px;">
+    <div class="box b-blue"><h4>Recouvrement</h4><p><strong>≥ 80 %</strong> entre photos voisines, dans toutes les directions. Une photo tous les ~10° en orbite.</p></div>
+    <div class="box b-cyan"><h4>Angles</h4><p>Nadir pour le dessus, <strong>−45° à −60°</strong> pour les faces, 0° face aux façades. Varier, sans changer brutalement.</p></div>
+    <div class="box b-green"><h4>Exposition</h4><p>Réglée sur une photo test puis <strong>verrouillée</strong>. Vitesse rapide (1/1000 s), ISO bas.</p></div>
+    <div class="box b-orange"><h4>Vitesse</h4><p>Lente : 2 à 5 m/s près de l'objet. Ou arrêt à chaque photo en vol manuel.</p></div>
+  </div>
+  <div class="grid-2" style="margin-top:16px;gap:16px;">
+    <div class="callout c-blue" style="margin-top:0;font-size:0.62em;"><strong>Transitions douces</strong> : entre deux séries (nadir → oblique → façade), garder des photos intermédiaires pour que le logiciel puisse relier les blocs.</div>
+    <div class="callout c-green" style="margin-top:0;font-size:0.62em;"><strong>Ajouter le contexte</strong> : quelques photos plus hautes englobant tout l'objet aident l'alignement et la mise à l'échelle.</div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 12 — Réglages</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TP : PLAN DU VOL N°2
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>À vous : corrigez votre plan de vol</h2>
+  <p><span class="tp-badge"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> TP en binômes · 20 min + vol</span></p>
+  <div class="grid-2" style="gap:22px;margin-top:10px;">
+    <div class="steps">
+      <div class="step"><div>Reprendre la <strong>fiche de constat</strong> du vol n°1</div></div>
+      <div class="step"><div>Pour chaque défaut : la <strong>cause</strong> (grille de diagnostic) et la <strong>correction</strong></div></div>
+      <div class="step"><div>Choisir la <strong>trajectoire</strong> et calculer la <strong>distance</strong> pour le GSD voulu</div></div>
+      <div class="step"><div>Fixer recouvrement, angles, vitesse, <strong>exposition</strong></div></div>
+      <div class="step"><div>Faire valider le plan par le formateur, puis <strong>voler</strong></div></div>
+    </div>
+    <div>
+      <div class="box b-green" style="margin-bottom:12px;">
+        <h4>Règle du vol n°2</h4>
+        <p>Même objet, même batterie, même durée : seule la <strong>méthode</strong> change. La comparaison n°1 / n°2 n'en sera que plus parlante.</p>
+      </div>
+      <div class="box b-orange">
+        <h4>Traitement</h4>
+        <p>Mêmes réglages Metashape que pour le vol n°1, plus des repères si des GCP sont visibles autour de l'objet.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 12 — TP vol n°2</span>
+    <span>Jour 3</span>
+  </div>
+  <aside class="notes">
+    Validation du plan : vérifier le calcul de distance, la sécurité (distance aux obstacles, tiers), la cohérence des angles. Pour cette fois, le formateur peut conseiller. Lancer le traitement par lot du vol n°2 dès le retour en salle.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     MODULE 13 — METASHAPE 3D
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 13</div>
+  <h2>Metashape : maillage et texture</h2>
+  <p class="module-desc">Construire, nettoyer et texturer le modèle 3D, l'exporter et le mesurer.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+  <div class="slide-footer">
+    <span>Module 13 — Maillage</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONSTRUIRE LE MODÈLE
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Construire et nettoyer le maillage</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1fr;align-items:start;">
+    <div class="col-text">
+      <div class="formula" style="font-size:0.62em;justify-content:flex-start;margin-bottom:12px;">Traitements › Construire le Modèle…</div>
+      <table class="dx-table t-sm">
+        <tbody>
+          <tr><td>Données source</td><td><strong>Cartes de profondeur</strong></td></tr>
+          <tr><td>Type de surface</td><td><strong>Arbitraire (3D)</strong> · Champ de hauteur (2.5D) pour un terrain</td></tr>
+          <tr><td>Qualité</td><td>Haute ou Moyenne</td></tr>
+          <tr><td>Nombre de faces</td><td>Haute, ou personnalisé selon l'usage</td></tr>
+          <tr><td>Interpolation</td><td>Activée (par défaut)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-text">
+      <div class="box b-orange" style="margin-bottom:12px;">
+        <h4>Nettoyer</h4>
+        <ul>
+          <li><strong>Sélection graduelle</strong> › Taille des composants connectés : supprimer les petits morceaux flottants</li>
+          <li>Outils de sélection + Suppr : retirer le ciel, les véhicules</li>
+          <li><strong>Fermer les trous…</strong> si l'objet doit être « étanche » (impression 3D, volume)</li>
+        </ul>
+      </div>
+      <div class="box b-blue">
+        <h4>Alléger</h4>
+        <p><strong>Décimer le maillage…</strong> : réduire le nombre de faces pour la visualisation web ou l'export vers d'autres logiciels.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 13 — Maillage</span>
+    <span>Jour 3</span>
+  </div>
+  <aside class="notes">
+    Le maillage « Arbitraire (3D) » reconstruit toutes les faces, y compris les surplombs (balcons, dessous de pont). Le « Champ de hauteur (2.5D) » ne garde qu'une altitude par position : parfait et plus léger pour un terrain ou une carrière vue du dessus.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     TEXTURE & EXPORT
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Texturer, mesurer, exporter</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1fr;align-items:center;">
+    <div class="col-text">
+      <div class="formula" style="font-size:0.62em;justify-content:flex-start;margin-bottom:12px;">Traitements › Construire la texture…</div>
+      <ul class="list-sm">
+        <li>Mode de mappage : <strong>Générique</strong> · Mode de fusion : <strong>Mosaïque</strong></li>
+        <li>Taille de la texture : 8192 px (ou plusieurs textures pour un gros objet)</li>
+        <li>Activer le remplissage des trous et le filtre fantôme</li>
+      </ul>
+      <div class="box b-green" style="margin-top:12px;">
+        <h4>Mesurer dans Metashape</h4>
+        <p><strong>Règle</strong> (distances), et clic droit sur une forme dessinée › <strong>Mesurer aire et volume…</strong></p>
+      </div>
+      <div class="box b-cyan" style="margin-top:12px;">
+        <h4>Exporter</h4>
+        <p><strong>Exporter le modèle…</strong> : OBJ, FBX, PLY ; <strong>Construire un modèle tuilé</strong> pour une diffusion web fluide (Cesium 3D Tiles).</p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <figure class="figure" style="width:100%;"><img src="img/rendus/propriete-3d.jpg" alt="Modèle 3D texturé d'une propriété" style="height:420px;"><figcaption>Maillage texturé : les photos sont « plaquées » sur les triangles</figcaption></figure>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 13 — Texture</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 14 — CLOUDCOMPARE
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 14</div>
+  <h2>CloudCompare : mesurer, cuber, comparer</h2>
+  <p class="module-desc">Le logiciel libre de référence pour exploiter les nuages de points : import, nettoyage, mesures, calcul de volumes et comparaison de deux modèles.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1"/><circle cx="9" cy="8" r="1"/><circle cx="13" cy="14" r="1"/><circle cx="17" cy="9" r="1"/><circle cx="19" cy="16" r="1"/><circle cx="8" cy="17" r="1"/><circle cx="14" cy="5" r="1"/></svg>
+  <div class="slide-footer">
+    <span>Module 14 — CloudCompare</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PRÉSENTATION + INTERFACE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>CloudCompare en bref</h2>
+  <div class="grid-2" style="grid-template-columns:1.4fr 1fr;gap:22px;align-items:center;">
+    <svg viewBox="0 0 740 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;" font-family="Inter, sans-serif">
+      <rect x="0" y="0" width="740" height="420" rx="10" fill="#E2E8F0"/>
+      <rect x="0" y="0" width="740" height="28" rx="10" fill="#CBD5E1"/>
+      <g font-size="12" fill="#0F172A"><text x="12" y="19">File</text><text x="46" y="19">Edit</text><text x="82" y="19" font-weight="700" fill="#0E74DA">Tools</text><text x="124" y="19">Display</text><text x="178" y="19">Plugins</text><text x="232" y="19">3D Views</text><text x="294" y="19">Help</text></g>
+      <rect x="8" y="36" width="200" height="200" rx="4" fill="#fff"/>
+      <text x="16" y="54" font-size="12" font-weight="700" fill="#0F172A">DB Tree</text>
+      <g font-size="11" fill="#475569"><text x="20" y="74">☑ vol3D_1.las</text><text x="20" y="92">☑ vol3D_2.las</text><text x="20" y="110">☑ stock_A (segment)</text></g>
+      <rect x="8" y="244" width="200" height="168" rx="4" fill="#fff"/>
+      <text x="16" y="262" font-size="12" font-weight="700" fill="#0F172A">Properties</text>
+      <g font-size="11" fill="#475569"><text x="20" y="282">Points : 24 512 380</text><text x="20" y="300">Global shift : (−1614000 ; −9293000)</text><text x="20" y="318">Scalar field : C2C distances</text></g>
+      <rect x="216" y="36" width="516" height="300" rx="4" fill="#0B1220"/>
+      <g opacity="0.95">
+        <path d="M250 290 Q330 200 420 240 T 700 210 L700 320 L250 320 Z" fill="url(#gr)"/>
+      </g>
+      <defs><linearGradient id="gr" x1="0" x2="1"><stop offset="0" stop-color="#1E3A8A"/><stop offset="0.35" stop-color="#06B6D4"/><stop offset="0.6" stop-color="#10B981"/><stop offset="0.8" stop-color="#F59E0B"/><stop offset="1" stop-color="#EF4444"/></linearGradient></defs>
+      <rect x="690" y="60" width="16" height="140" fill="url(#gr)" transform="rotate(180 698 130)"/>
+      <rect x="216" y="344" width="516" height="68" rx="4" fill="#fff"/>
+      <text x="224" y="362" font-size="12" font-weight="700" fill="#0F172A">Console</text>
+      <text x="224" y="384" font-size="11" fill="#475569">[C2C] Mean distance = 0.024 / std deviation = 0.031</text>
+      <g font-size="14" font-weight="800" fill="#fff">
+        <circle cx="196" cy="54" r="12" fill="#0E74DA"/><text x="196" y="59" text-anchor="middle">1</text>
+        <circle cx="196" cy="262" r="12" fill="#0E74DA"/><text x="196" y="267" text-anchor="middle">2</text>
+        <circle cx="236" cy="56" r="12" fill="#0E74DA"/><text x="236" y="61" text-anchor="middle">3</text>
+        <circle cx="720" cy="362" r="12" fill="#0E74DA"/><text x="720" y="367" text-anchor="middle">4</text>
+      </g>
+    </svg>
+    <div>
+      <ul class="list-sm" style="font-size:0.66em;">
+        <li>Logiciel <strong>libre et gratuit</strong>, né d'une collaboration avec EDF R&amp;D (cloudcompare.org)</li>
+        <li>Nuages de points et maillages : LAS/LAZ, E57, PLY, OBJ…</li>
+        <li>Interface en anglais : menus <strong>Edit</strong>, <strong>Tools</strong>, <strong>Plugins</strong></li>
+      </ul>
+      <div class="steps" style="margin-top:10px;">
+        <div class="step"><div><strong>DB Tree</strong> : les entités chargées (cocher pour afficher)</div></div>
+        <div class="step"><div><strong>Properties</strong> : infos et réglages de l'entité sélectionnée</div></div>
+        <div class="step"><div><strong>Vue 3D</strong> : navigation à la souris</div></div>
+        <div class="step"><div><strong>Console</strong> : résultats des calculs</div></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">Schéma simplifié de l'interface de CloudCompare</p>
+  <div class="slide-footer">
+    <span>Module 14 — Interface</span>
+    <span>Jour 3</span>
+  </div>
+  <aside class="notes">
+    Navigation : clic gauche = rotation, clic droit = translation, molette = zoom ; double-clic sur un point = centre de rotation. La plupart des outils s'appliquent à l'entité sélectionnée dans le DB Tree : toujours vérifier ce qui est sélectionné avant de lancer un calcul.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     IMPORT & GLOBAL SHIFT
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Importer un nuage : le « Global shift »</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1fr;align-items:center;">
+    <div class="col-text">
+      <p>À l'import d'un LAS en CC50 ou en Lambert 93, CloudCompare propose de <strong>décaler</strong> les coordonnées.</p>
+      <ul class="list-sm">
+        <li>Les coordonnées sont très grandes (E ≈ 1 614 740 m, N ≈ 9 293 145 m)</li>
+        <li>Pour les calculs et l'affichage, CloudCompare travaille mieux sur de petites valeurs</li>
+        <li>Il <strong>retire</strong> un décalage à l'import et le <strong>remet</strong> à l'export</li>
+      </ul>
+      <div class="callout c-red" style="font-size:0.64em;">Accepter le décalage proposé… et utiliser <strong>exactement le même</strong> pour tous les nuages du projet. Sinon, ils ne se superposent pas.</div>
+    </div>
+    <div class="col-visual">
+      <svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;" font-family="Inter, sans-serif">
+        <rect x="0" y="0" width="440" height="300" rx="10" fill="#F1F5F9" stroke="#CBD5E1"/>
+        <rect x="0" y="0" width="440" height="32" rx="10" fill="#CBD5E1"/>
+        <text x="16" y="21" font-size="13" font-weight="700" fill="#0F172A">Global shift/scale</text>
+        <text x="20" y="62" font-size="13" fill="#475569">Coordinates are too big (original precision may be lost)</text>
+        <g font-size="13" fill="#0F172A">
+          <text x="20" y="100">Shift X</text><rect x="140" y="84" width="160" height="24" rx="4" fill="#fff" stroke="#94A3B8"/><text x="150" y="101">-1614000</text>
+          <text x="20" y="136">Shift Y</text><rect x="140" y="120" width="160" height="24" rx="4" fill="#fff" stroke="#94A3B8"/><text x="150" y="137">-9293000</text>
+          <text x="20" y="172">Shift Z</text><rect x="140" y="156" width="160" height="24" rx="4" fill="#fff" stroke="#94A3B8"/><text x="150" y="173">0</text>
+        </g>
+        <rect x="220" y="240" width="90" height="32" rx="6" fill="#0E74DA"/><text x="265" y="261" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Yes to All</text>
+        <rect x="320" y="240" width="90" height="32" rx="6" fill="#fff" stroke="#94A3B8"/><text x="365" y="261" text-anchor="middle" font-size="13" fill="#0F172A">No</text>
+      </svg>
+      <p class="fig-caption">Boîte de dialogue simplifiée</p>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 14 — Import</span>
+    <span>Jour 3</span>
+  </div>
+  <aside class="notes">
+    Explication simple : CloudCompare stocke les coordonnées en précision « simple » pour aller vite ; avec 7 chiffres avant la virgule, il ne reste plus assez de chiffres pour les millimètres. Le décalage n'abîme rien : il est mémorisé et réappliqué à l'export (« global shift » visible dans les propriétés). « Yes to All » applique le même décalage à tous les fichiers ouverts ensemble.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     OUTILS DE BASE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Les outils de base</h2>
+  <div class="grid-3" style="gap:14px;">
+    <div class="box b-blue"><h4><span class="hico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span> Segmenter</h4><p>Icône <strong>ciseaux</strong> : dessiner un polygone, garder l'intérieur ou l'extérieur. Pour isoler un stock, un bâtiment.</p></div>
+    <div class="box b-cyan"><h4><span class="hico"><svg viewBox="0 0 24 24"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/></svg></span> Mesurer</h4><p><strong>Point picking</strong> : coordonnées d'un point, distance entre deux points, angle entre trois points.</p></div>
+    <div class="box b-green"><h4><span class="hico"><svg viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></span> Nettoyer</h4><p><strong>Tools › Clean › SOR filter</strong> : supprime les points isolés (bruit). <strong>Edit › Subsample</strong> : alléger le nuage.</p></div>
+    <div class="box b-orange"><h4><span class="hico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 4 5-7"/></svg></span> Profils et coupes</h4><p><strong>Tools › Segmentation › Cross Section</strong> : tranches pour lire un profil de terrain ou de façade.</p></div>
+    <div class="box b-red"><h4><span class="hico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></span> Rasteriser</h4><p><strong>Tools › Projection › Rasterize</strong> : transformer un nuage en grille d'altitudes (MNE) et en courbes de niveau.</p></div>
+    <div class="box b-blue"><h4><span class="hico"><svg viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg></span> Recaler</h4><p><strong>Tools › Registration</strong> : <em>Align (point pairs picking)</em> puis <em>Fine registration (ICP)</em>.</p></div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 14 — Outils</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CUBATURE 2.5D
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Calculer le volume d'un stock</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1fr;align-items:center;">
+    <div class="col-text">
+      <div class="steps">
+        <div class="step"><div><strong>Segmenter</strong> le stock avec une petite bande de sol autour</div></div>
+        <div class="step"><div><strong>Tools › Volume › Compute 2.5D volume</strong></div></div>
+        <div class="step"><div><strong>Sol</strong> (« Ground ») : une hauteur constante, ou un autre nuage (sol nu, levé précédent)</div></div>
+        <div class="step"><div><strong>Pas de grille</strong> : 2 à 5 × le GSD (ex. 10 cm) ; cellules vides : interpolées</div></div>
+        <div class="step"><div>Lire le <strong>volume</strong> (remblai / déblai) et la surface ; exporter le rapport</div></div>
+      </div>
+    </div>
+    <div class="col-visual">
+      <svg viewBox="0 0 460 330" xmlns="http://www.w3.org/2000/svg" style="width:100%;" font-family="Inter, sans-serif">
+        <rect x="0" y="0" width="460" height="330" rx="10" fill="#F8FAFC"/>
+        <path d="M40 240 Q130 90 230 80 Q330 90 420 240 Z" fill="#D6B98A" stroke="#92400E" stroke-width="2"/>
+        <line x1="20" y1="240" x2="440" y2="240" stroke="#06B6D4" stroke-width="3" stroke-dasharray="8 5"/>
+        <g stroke="#0E74DA" stroke-width="1" opacity="0.6">
+          <line x1="80" y1="240" x2="80" y2="178"/><line x1="120" y1="240" x2="120" y2="128"/><line x1="160" y1="240" x2="160" y2="101"/><line x1="200" y1="240" x2="200" y2="86"/><line x1="240" y1="240" x2="240" y2="81"/><line x1="280" y1="240" x2="280" y2="90"/><line x1="320" y1="240" x2="320" y2="110"/><line x1="360" y1="240" x2="360" y2="146"/><line x1="400" y1="240" x2="400" y2="205"/>
+        </g>
+        <text x="230" y="170" text-anchor="middle" font-size="18" font-weight="800" fill="#0F172A">V = Σ (hauteur × surface</text>
+        <text x="230" y="192" text-anchor="middle" font-size="18" font-weight="800" fill="#0F172A">de chaque cellule)</text>
+        <text x="230" y="270" text-anchor="middle" font-size="14" font-weight="700" fill="#0891B2">surface de référence du pied de stock</text>
+        <text x="230" y="300" text-anchor="middle" font-size="13" fill="#475569">grille de cellules (pas = 2 à 5 × GSD)</text>
+      </svg>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 14 — Cubature</span>
+    <span>Jour 3</span>
+  </div>
+  <aside class="notes">
+    La méthode « 2.5D » découpe le nuage en colonnes verticales : parfaite pour des stocks vus du dessus, inadaptée aux surplombs. Le choix de la surface de référence est déterminant : c'est celui convenu avec le client lors du briefing. Pour un inventaire entre deux dates, on prend comme « sol » le nuage du levé précédent : le résultat sépare ce qui a été ajouté et ce qui a été retiré. Faire comparer le résultat avec l'outil « Mesurer aire et volume » de Metashape sur le même stock.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     COMPARER DEUX MODÈLES
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Comparer deux modèles</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1fr;align-items:center;">
+    <div class="col-text">
+      <div class="steps">
+        <div class="step"><div>Ouvrir les deux nuages (même <strong>global shift</strong>)</div></div>
+        <div class="step"><div>S'ils sont bien géoréférencés, ils se superposent ; sinon : <strong>Align</strong> puis <strong>ICP</strong></div></div>
+        <div class="step"><div>Sélectionner le nuage à comparer puis la référence : <strong>Tools › Distances › Cloud/Cloud Dist.</strong> (ou Cloud/Mesh)</div></div>
+        <div class="step"><div>Lire la <strong>carte de couleurs</strong> et l'<strong>histogramme</strong> des écarts</div></div>
+      </div>
+      <div class="callout c-blue" style="font-size:0.62em;">Pour des mesures fines de déplacement (falaises, ouvrages), le plugin <strong>M3C2</strong> est plus robuste au bruit.</div>
+    </div>
+    <div class="col-visual">
+      <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;" font-family="Inter, sans-serif">
+        <defs><linearGradient id="gr2" x1="0" x2="0" y1="1" y2="0"><stop offset="0" stop-color="#1E3A8A"/><stop offset="0.35" stop-color="#06B6D4"/><stop offset="0.55" stop-color="#10B981"/><stop offset="0.8" stop-color="#F59E0B"/><stop offset="1" stop-color="#EF4444"/></linearGradient></defs>
+        <rect x="0" y="0" width="460" height="340" rx="10" fill="#0B1220"/>
+        <rect x="80" y="70" width="240" height="200" fill="#10B981" opacity="0.85"/>
+        <polygon points="80,70 200,20 320,70" fill="#06B6D4" opacity="0.85"/>
+        <rect x="80" y="180" width="70" height="90" fill="#F59E0B"/>
+        <rect x="250" y="70" width="70" height="60" fill="#EF4444" opacity="0.9"/>
+        <rect x="370" y="60" width="22" height="220" fill="url(#gr2)"/>
+        <g font-size="12" fill="#E2E8F0"><text x="398" y="68">≥ 10 cm</text><text x="398" y="172">0</text><text x="398" y="280">≤ −10 cm</text></g>
+        <text x="200" y="310" text-anchor="middle" font-size="13" fill="#E2E8F0">Vert : modèles d'accord · Orange/rouge : écarts</text>
+      </svg>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 14 — Comparaison</span>
+    <span>Jour 3</span>
+  </div>
+  <aside class="notes">
+    Distance « nuage / nuage » (C2C) : pour chaque point, distance au point le plus proche de la référence ; simple et rapide, sensible à la densité. Distance « nuage / maillage » (C2M) : plus juste si la référence est un maillage propre. Usages professionnels : suivi d'érosion, déformation d'ouvrage, contrôle de chantier, comparaison avec un levé LiDAR.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     TP CLOUDCOMPARE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>À vous : exploitez vos données</h2>
+  <p><span class="tp-badge"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> TP en binômes · 1 h 30</span></p>
+  <div class="grid-3" style="gap:14px;margin-top:10px;">
+    <div class="box b-orange"><h4>1. Cubature</h4><ul><li>Ouvrir le nuage du vol ortho</li><li>Isoler un tas, un talus ou une butte</li><li>Calculer son volume en 2.5D</li><li>Comparer avec Metashape</li></ul></div>
+    <div class="box b-blue"><h4>2. Comparaison n°1 / n°2</h4><ul><li>Ouvrir les deux modèles 3D</li><li>Recaler si nécessaire (Align + ICP)</li><li>Calculer les distances C2C</li><li>Repérer les zones en défaut du vol n°1</li></ul></div>
+    <div class="box b-green"><h4>3. Mesures</h4><ul><li>Une longueur et une hauteur de l'objet</li><li>Comparer avec une mesure au mètre ou au GNSS</li><li>Capturer les vues pour le rapport</li></ul></div>
+  </div>
+  <div class="callout c-blue" style="font-size:0.62em;">Livrable : 3 captures commentées (volume, carte des écarts, mesures) à intégrer dans le rapport de mission.</div>
+  <div class="slide-footer">
+    <span>Module 14 — TP CloudCompare</span>
+    <span>Jour 3</span>
+  </div>
+  <aside class="notes">
+    La comparaison n°1 / n°2 est le moment fort de la formation : les zones rouges correspondent presque toujours aux défauts identifiés au débrief (façades sans obliques, trous, déformations). Faire présenter une capture par binôme au groupe.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     QUIZ — CLOUDCOMPARE
+     ============================================================ -->
+<section class="slide-quiz">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>
+    <svg style="width:28px;height:28px;vertical-align:middle;margin-right:8px;stroke:var(--dx-primary);fill:none;stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Question
+  </h2>
+  <p class="quiz-question">Vous ouvrez deux nuages du même chantier en CC50 dans CloudCompare, mais ils apparaissent à des kilomètres l'un de l'autre. Cause probable ?</p>
+  <div class="quiz-options">
+    <div class="quiz-option"><span class="option-letter">A</span><span>Le filtrage de profondeur était différent</span></div>
+    <div class="quiz-option" data-correct="true"><span class="option-letter">B</span><span>Un « global shift » différent pour chaque nuage</span></div>
+    <div class="quiz-option"><span class="option-letter">C</span><span>L'indice Kp du jour</span></div>
+    <div class="quiz-option"><span class="option-letter">D</span><span>Le pas de grille du volume</span></div>
+  </div>
+  <div class="quiz-reveal">Afficher la réponse</div>
+  <div class="quiz-explain"><strong>Réponse B.</strong> CloudCompare retire un décalage aux grandes coordonnées à l'import. Si chaque nuage reçoit un décalage différent, leurs coordonnées locales ne correspondent plus. Il faut appliquer le même décalage à tous (« Yes to All »).</div>
+  <div class="slide-footer">
+    <span>Quiz — CloudCompare</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<section class="slide-quiz">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>
+    <svg style="width:28px;height:28px;vertical-align:middle;margin-right:8px;stroke:var(--dx-primary);fill:none;stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Question
+  </h2>
+  <p class="quiz-question">Pour connaître ce qui a été extrait d'un stock entre deux inventaires, quel « sol » choisissez-vous dans le calcul 2.5D ?</p>
+  <div class="quiz-options">
+    <div class="quiz-option"><span class="option-letter">A</span><span>Une hauteur constante égale au point le plus bas</span></div>
+    <div class="quiz-option"><span class="option-letter">B</span><span>L'orthophoto du jour</span></div>
+    <div class="quiz-option" data-correct="true"><span class="option-letter">C</span><span>Le nuage de points du levé précédent</span></div>
+    <div class="quiz-option"><span class="option-letter">D</span><span>Le MNT LiDAR de l'IGN</span></div>
+  </div>
+  <div class="quiz-reveal">Afficher la réponse</div>
+  <div class="quiz-explain"><strong>Réponse C.</strong> En prenant le levé précédent comme référence, le calcul donne directement les volumes ajoutés et retirés entre les deux dates. Condition : les deux levés doivent être dans le même référentiel, d'où l'importance du point connu et de la mission enregistrée.</div>
+  <div class="slide-footer">
+    <span>Quiz — CloudCompare</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 15 — LIVRER
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 15</div>
+  <h2>Livrer au client et conclure</h2>
+  <p class="module-desc">Le rapport de mission, les bonnes pratiques de livraison, l'évaluation et la suite de votre parcours.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+  <div class="slide-footer">
+    <span>Module 15 — Livrer</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     LE RAPPORT CLIENT
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Le rapport de mission</h2>
+  <div class="grid-2" style="gap:22px;">
+    <div class="steps">
+      <div class="step"><div><strong>Contexte</strong> : client, site, objet de la mission, date et heure</div></div>
+      <div class="step"><div><strong>Moyens</strong> : drone, capteur, RTK, base / réseau, GCP</div></div>
+      <div class="step"><div><strong>Référentiel</strong> : système, projection, altitudes (ex. RGF93 v2b / CC50 + NGF-IGN69)</div></div>
+      <div class="step"><div><strong>Méthode</strong> : plan de vol, GSD, recouvrements, traitement</div></div>
+      <div class="step"><div><strong>Précision</strong> : erreurs sur les <strong>points de contrôle</strong></div></div>
+      <div class="step"><div><strong>Résultats</strong> : volumes, surfaces, cartes, captures</div></div>
+      <div class="step"><div><strong>Limites</strong> : zones non couvertes, végétation, hypothèses (surface de référence)</div></div>
+    </div>
+    <div>
+      <div class="box b-blue" style="margin-bottom:12px;"><h4>Annexes</h4><ul><li>Rapport de traitement Metashape (PDF)</li><li>Fichier des points d'appui et de contrôle</li><li>Liste des fichiers livrés</li></ul></div>
+      <div class="box b-green"><h4>Livrer proprement</h4><ul><li>Noms de fichiers explicites et datés</li><li>Un « lisez-moi » : système, unités, contenu</li><li>Transfert sécurisé, archivage du projet complet</li></ul></div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 15 — Rapport</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SYNTHÈSE DES 3 JOURS
+     ============================================================ -->
+<section class="slide-diagram">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>La chaîne complète, en un coup d'œil</h2>
+  <svg viewBox="0 0 1160 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;" font-family="Inter, sans-serif">
+    <defs><marker id="arS" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#94A3B8"/></marker></defs>
+    <g text-anchor="middle">
+      <rect x="10" y="40" width="200" height="170" rx="14" fill="#DBEAFE" stroke="#0E74DA" stroke-width="2"/>
+      <text x="110" y="78" font-size="19" font-weight="800" fill="#0E74DA">Préparer</text>
+      <text x="110" y="108" font-size="14" fill="#0F172A">Livrable, précision</text><text x="110" y="128" font-size="14" fill="#0F172A">Système, GSD</text><text x="110" y="148" font-size="14" fill="#0F172A">Plan de vol, GCP</text><text x="110" y="168" font-size="14" fill="#0F172A">Contraintes</text>
+      <rect x="245" y="40" width="200" height="170" rx="14" fill="#E0F2FE" stroke="#06B6D4" stroke-width="2"/>
+      <text x="345" y="78" font-size="19" font-weight="800" fill="#0891B2">Acquérir</text>
+      <text x="345" y="108" font-size="14" fill="#0F172A">Base sur point connu</text><text x="345" y="128" font-size="14" fill="#0F172A">GCP et contrôles</text><text x="345" y="148" font-size="14" fill="#0F172A">Vols RTK</text><text x="345" y="168" font-size="14" fill="#0F172A">Contrôle sur site</text>
+      <rect x="480" y="40" width="200" height="170" rx="14" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+      <text x="580" y="78" font-size="19" font-weight="800" fill="#B45309">Traiter</text>
+      <text x="580" y="108" font-size="14" fill="#0F172A">Aligner, repères</text><text x="580" y="128" font-size="14" fill="#0F172A">Optimiser, contrôler</text><text x="580" y="148" font-size="14" fill="#0F172A">Nuage, MNE, ortho</text><text x="580" y="168" font-size="14" fill="#0F172A">Maillage, texture</text>
+      <rect x="715" y="40" width="200" height="170" rx="14" fill="#D1FAE5" stroke="#10B981" stroke-width="2"/>
+      <text x="815" y="78" font-size="19" font-weight="800" fill="#047857">Exploiter</text>
+      <text x="815" y="108" font-size="14" fill="#0F172A">Mesures</text><text x="815" y="128" font-size="14" fill="#0F172A">Cubatures</text><text x="815" y="148" font-size="14" fill="#0F172A">Comparaisons</text><text x="815" y="168" font-size="14" fill="#0F172A">CloudCompare</text>
+      <rect x="950" y="40" width="200" height="170" rx="14" fill="#0E74DA"/>
+      <text x="1050" y="78" font-size="19" font-weight="800" fill="#fff">Livrer</text>
+      <text x="1050" y="108" font-size="14" fill="#fff">Formats adaptés</text><text x="1050" y="128" font-size="14" fill="#fff">Rapport</text><text x="1050" y="148" font-size="14" fill="#fff">Précision prouvée</text><text x="1050" y="168" font-size="14" fill="#fff">Archivage</text>
+    </g>
+    <g stroke="#94A3B8" stroke-width="3" marker-end="url(#arS)"><line x1="212" y1="125" x2="241" y2="125"/><line x1="447" y1="125" x2="476" y2="125"/><line x1="682" y1="125" x2="711" y2="125"/><line x1="917" y1="125" x2="946" y2="125"/></g>
+    <text x="580" y="262" text-anchor="middle" font-size="17" font-weight="700" fill="#0F172A">Être précis… et savoir le prouver : c'est ce que le client achète.</text>
+  </svg>
+  <div class="slide-footer">
+    <span>Synthèse</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     POUR ALLER PLUS LOIN
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Pour aller plus loin</h2>
+  <div class="grid-3" style="gap:14px;">
+    <div class="box b-blue"><h4>QGIS</h4><p>SIG libre : ouvrir les orthos et MNE, superposer aux données IGN, produire des plans et des courbes de niveau.</p></div>
+    <div class="box b-cyan"><h4>Données IGN ouvertes</h4><p>Orthophotos, <strong>LiDAR HD</strong>, MNT : la référence gratuite pour préparer et contrôler vos levés (cartes.gouv.fr).</p></div>
+    <div class="box b-green"><h4>Multispectral</h4><p>Indices de végétation (NDVI, NDRE) pour l'agriculture et l'environnement.</p></div>
+    <div class="box b-orange"><h4>Autres logiciels</h4><p>DJI Terra, Pix4D, RealityScan… mêmes principes, autres interfaces : vous savez désormais ce que fait le logiciel.</p></div>
+    <div class="box b-red"><h4>LiDAR embarqué</h4><p>Pour le terrain sous végétation et les corridors : complément naturel de la photogrammétrie.</p></div>
+    <div class="box b-blue"><h4>Pratiquer</h4><p>Refaire un levé complet sur un site connu, et comparer à un plan de géomètre : le meilleur entraînement.</p></div>
+  </div>
+  <div class="slide-footer">
+    <span>Pour aller plus loin</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ÉVALUATION
+     ============================================================ -->
+<section class="slide-highlight">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="highlight-box highlight-success" style="max-width:88%;">
+    <div class="tag">Évaluation</div>
+    <blockquote>Test final de connaissances, évaluation de vos livrables pratiques (orthophoto, rapport, cubature, comparaison) et questionnaire de satisfaction.</blockquote>
+    <p class="source">Une attestation de formation est remise à chaque stagiaire.</p>
+  </div>
+  <div class="slide-footer">
+    <span>Évaluation</span>
+    <span>Jour 3</span>
+  </div>
+  <aside class="notes">
+    Utiliser l'évaluation finale (support séparé) et la grille d'évaluation pratique du livret instructeur. Faire remplir le questionnaire de satisfaction (exigence Qualiopi) avant le départ des stagiaires.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     CRÉDITS
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Crédits des illustrations</h2>
+  <ul class="credits">
+    <li>Modèles 3D, nuages de points, orthophotos et positions de caméras : Dronexperts</li>
+    <li>Schémas des interfaces Metashape et CloudCompare : représentations simplifiées Dronexperts</li>
+    <li>Agisoft Metashape est une marque d'Agisoft LLC ; CloudCompare est un logiciel libre (cloudcompare.org)</li>
+    <li>Schémas, pictogrammes et illustrations des pièges : Dronexperts</li>
+  </ul>
+  <div class="slide-footer">
+    <span>Crédits</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FIN
+     ============================================================ -->
+<section class="slide-conclusion">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Merci !</h2>
+  <p>Bons vols, et bonnes mesures.</p>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <a href="https://www.dronexperts.io">dronexperts.io</a>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <a href="mailto:contact@dronexperts.io">contact@dronexperts.io</a>
+    </div>
+  </div>
+  <div class="slide-footer slide-footer-dark">
+    <span>&copy; 2026 Dronexperts — Tous droits réservés</span>
+    <span>Jour 3</span>
+  </div>
+</section>
+
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280, height: 720, margin: 0, minScale: 0.2, maxScale: 2.0,
+    hash: true, history: true, slideNumber: false,
+    transition: 'slide', backgroundTransition: 'fade',
+    controls: true, controlsLayout: 'bottom-right', controlsTutorial: false, progress: true,
+    center: false, help: true,
+    plugins: [ RevealNotes ]
+  });
+
+  // Quiz : un clic sur une proposition (ou sur « Afficher la réponse ») révèle la bonne réponse
+  document.querySelectorAll('.slide-quiz').forEach(function (quiz) {
+    function reveal() {
+      quiz.classList.add('revealed');
+      quiz.querySelectorAll('.quiz-option').forEach(function (opt) {
+        opt.classList.add(opt.dataset.correct === 'true' ? 'reveal-correct' : 'reveal-wrong');
+      });
+    }
+    quiz.querySelectorAll('.quiz-option, .quiz-reveal').forEach(function (el) {
+      el.addEventListener('click', reveal);
+    });
+  });
+</script>
+</body>
+</html>
