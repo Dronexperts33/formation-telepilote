@@ -1,0 +1,188 @@
+/* Compléments au thème Dronexperts pour la formation Photogrammétrie par drone.
+   Les couleurs proviennent toutes de css/dronexperts-theme.css (variables --dx-*). */
+
+.box {
+  background: #fff;
+  border: 1px solid var(--dx-border);
+  border-radius: var(--dx-radius);
+  box-shadow: var(--dx-shadow);
+  padding: 16px 20px;
+  font-size: 0.7em;
+  line-height: 1.45;
+}
+.box h4 {
+  color: var(--dx-text-dark);
+  font-weight: 700;
+  font-size: 1.12em;
+  margin: 0 0 8px;
+  display: flex; align-items: center; gap: 8px;
+}
+.box p { margin: 0 0 6px; line-height: 1.45; }
+.box ul li { margin-bottom: 0.3em; line-height: 1.4; padding-left: 1.4em; }
+.box ul li::before { left: 0.2em; top: 0.5em; width: 6px; height: 6px; }
+.box.b-blue   { border-top: 4px solid var(--dx-primary); }
+.box.b-green  { border-top: 4px solid var(--dx-success); }
+.box.b-orange { border-top: 4px solid var(--dx-warning); }
+.box.b-red    { border-top: 4px solid var(--dx-error); }
+.box.b-cyan   { border-top: 4px solid var(--dx-info); }
+
+.lead { font-size: 0.72em; color: var(--dx-text-secondary); margin: -6px 0 16px; line-height: 1.45; }
+.list-sm { font-size: 0.66em; }
+.list-sm li { margin-bottom: 0.35em !important; line-height: 1.4 !important; }
+
+.src {
+  font-size: 0.4em;
+  color: var(--dx-text-muted);
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.callout {
+  border-left: 5px solid var(--dx-warning);
+  background: rgba(245,158,11,0.08);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.6em;
+  line-height: 1.45;
+  margin-top: 14px;
+  color: var(--dx-text-dark);
+}
+.callout.c-red  { border-color: var(--dx-error);   background: rgba(239,68,68,0.07); }
+.callout.c-blue { border-color: var(--dx-primary); background: rgba(14,116,218,0.07); }
+.callout.c-green{ border-color: var(--dx-success); background: rgba(16,185,129,0.08); }
+
+.dx-table.t-sm { font-size: 0.56em; }
+.dx-table.t-sm tbody td, .dx-table.t-sm thead th { padding: 8px 12px; }
+
+.pill {
+  display: inline-block; padding: 2px 10px; border-radius: 999px;
+  font-size: 0.85em; font-weight: 600;
+  background: rgba(14,116,218,0.1); color: var(--dx-primary);
+}
+.pill.p-red { background: rgba(239,68,68,0.1); color: var(--dx-error); }
+.pill.p-green { background: rgba(16,185,129,0.12); color: #047857; }
+.pill.p-orange { background: rgba(245,158,11,0.14); color: #B45309; }
+
+.ico { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+.home-link { position: absolute !important; top: 24px !important; right: 32px !important; left: auto !important; z-index: 10; }
+.home-link img { position: static !important; }
+
+.ghs { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; transform: rotate(45deg); border: 3px solid var(--dx-error); background: #fff; margin: 0 6px 0 4px; flex-shrink: 0; }
+.ghs span { transform: rotate(-45deg); font-size: 0.75em; font-weight: 800; color: var(--dx-text-dark); }
+
+/* Pictogrammes officiels (SGH/CLP, ISO 7010) */
+.picto-row { display: flex; justify-content: center; gap: 22px; margin: 4px 0 14px; }
+.picto { text-align: center; font-size: 0.5em; font-weight: 600; color: var(--dx-text-dark); width: 110px; line-height: 1.25; }
+.picto img { width: 80px; height: 80px; display: block; margin: 0 auto 6px; }
+.h-ico { width: 40px !important; height: 40px !important; flex-shrink: 0; margin: 0 !important; }
+.ghs-img { width: 46px; height: 46px; vertical-align: middle; }
+.fig { text-align: center; }
+.fig svg { width: 100%; height: auto; }
+.fig-caption { font-size: 0.48em; color: var(--dx-text-secondary); font-weight: 500; margin-top: 4px; text-align: center; }
+
+/* Icônes de titres de cartes */
+.hico { width: 34px; height: 34px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; background: rgba(14,116,218,0.1); color: var(--dx-primary); flex-shrink: 0; }
+.hico svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.b-green .hico { background: rgba(16,185,129,0.12); color: #059669; }
+.b-orange .hico { background: rgba(245,158,11,0.14); color: #B45309; }
+.b-red .hico { background: rgba(239,68,68,0.1); color: var(--dx-error); }
+.b-cyan .hico { background: rgba(6,182,212,0.12); color: #0891B2; }
+
+/* Cartes photo */
+.photo-card { background: #fff; border: 1px solid var(--dx-border); border-radius: var(--dx-radius); box-shadow: var(--dx-shadow); overflow: hidden; display: flex; flex-direction: column; }
+.reveal .photo-card img { width: 100%; height: 190px; object-fit: cover; display: block; margin: 0; max-width: none; border-radius: 0; box-shadow: none; }
+.photo-card .pc-body { padding: 12px 16px 14px; font-size: 0.62em; line-height: 1.45; }
+.photo-card .pc-body h4 { font-size: 1.15em; font-weight: 700; color: var(--dx-text-dark); margin: 0 0 6px; display: flex; align-items: center; gap: 8px; }
+.photo-card .pc-body p { margin: 0; line-height: 1.45; }
+.photo-card .pc-body ul li { margin-bottom: 0.3em; line-height: 1.4; padding-left: 1.4em; }
+.photo-card .pc-body ul li::before { left: 0.2em; top: 0.5em; width: 6px; height: 6px; }
+.photo-card.b-blue   { border-top: 4px solid var(--dx-primary); }
+.photo-card.b-green  { border-top: 4px solid var(--dx-success); }
+.photo-card.b-orange { border-top: 4px solid var(--dx-warning); }
+.photo-card.b-red    { border-top: 4px solid var(--dx-error); }
+.photo-card.b-cyan   { border-top: 4px solid var(--dx-info); }
+
+/* Bandeau de photos */
+.photo-strip { display: grid; gap: 14px; margin-top: 14px; }
+.photo-strip figure { margin: 0; }
+.reveal .photo-strip img { width: 100%; height: 130px; object-fit: cover; border-radius: 10px; display: block; margin: 0; max-width: none; box-shadow: var(--dx-shadow); }
+.photo-strip figcaption { font-size: 0.42em; color: var(--dx-text-secondary); text-align: center; margin-top: 4px; font-weight: 500; }
+
+/* Tuiles d'infographie */
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.tile { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--dx-border); border-radius: 12px; padding: 14px 16px; box-shadow: var(--dx-shadow); font-size: 0.62em; line-height: 1.35; color: var(--dx-text-dark); }
+.tile.t-vol { border-left: 4px solid var(--dx-primary); }
+.tile.t-mat { border-left: 4px solid var(--dx-info); }
+.tile.t-mat .hico { background: rgba(6,182,212,0.12); color: #0891B2; }
+.reveal .tile img { margin: 0; }
+
+/* Crédits des illustrations */
+.credits { font-size: 0.42em; line-height: 1.45; columns: 2; column-gap: 32px; color: var(--dx-text-secondary); }
+.credits li { break-inside: avoid; margin-bottom: 4px !important; padding-left: 1.2em !important; line-height: 1.4 !important; }
+.credits li::before { width: 5px !important; height: 5px !important; top: 0.55em !important; left: 0.2em !important; }
+
+/* Équation du prix */
+.price-eq { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0 0 14px; }
+.price-eq b { font-size: 0.8em; color: var(--dx-text-muted); font-weight: 800; }
+.pe { display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: 0.5em; font-weight: 700; color: var(--dx-text-dark); background: #fff; border: 1px solid var(--dx-border); border-radius: 10px; padding: 9px 10px; min-width: 96px; text-align: center; line-height: 1.2; box-shadow: var(--dx-shadow); }
+.pe.pe-total { background: var(--dx-primary); color: #fff; border-color: var(--dx-primary); }
+.pe.pe-total .hico { background: rgba(255,255,255,0.2); color: #fff; }
+
+/* Quiz : réponse affichée au clic (même principe que le deck télépilote J3 après-midi) */
+.slide-quiz .quiz-option { cursor: pointer; transition: all 0.2s; }
+.slide-quiz .quiz-option.reveal-correct { border-color: var(--dx-success); background: rgba(16,185,129,0.08); }
+.slide-quiz .quiz-option.reveal-correct .option-letter { background: var(--dx-success); color: #fff; border-color: var(--dx-success); }
+.slide-quiz .quiz-option.reveal-wrong { border-color: var(--dx-error); background: rgba(239,68,68,0.04); opacity: 0.6; }
+.quiz-reveal { text-align: center; margin-top: 22px; font-size: 0.6em; color: var(--dx-primary); font-weight: 600; cursor: pointer; }
+.quiz-reveal:hover { text-decoration: underline; }
+.quiz-explain { display: none; max-width: 88%; margin: 22px auto 0; padding: 12px 18px; border-left: 5px solid var(--dx-success); background: rgba(16,185,129,0.08); border-radius: 8px; font-size: 0.6em; line-height: 1.45; color: var(--dx-text-dark); text-align: left; }
+.slide-quiz.revealed .quiz-explain { display: block; }
+.slide-quiz.revealed .quiz-reveal { display: none; }
+
+/* ---- Spécifique photogrammétrie ---- */
+
+/* Formule mise en avant */
+.formula { display: flex; align-items: center; justify-content: center; gap: 14px; background: var(--dx-bg-light); border: 1px solid var(--dx-border); border-radius: var(--dx-radius); padding: 14px 20px; font-size: 0.78em; font-weight: 700; color: var(--dx-text-dark); }
+.formula .frac { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.15; }
+.formula .frac span:first-child { border-bottom: 2px solid var(--dx-text-dark); padding: 0 6px 3px; }
+.formula .frac span:last-child { padding: 3px 6px 0; }
+.formula .eq-name { color: var(--dx-primary); }
+
+/* Image avec légende */
+.figure { margin: 0; text-align: center; }
+.reveal .figure img { display: block; width: 100%; object-fit: cover; border-radius: 10px; box-shadow: var(--dx-shadow); margin: 0; max-width: none; }
+.figure figcaption { font-size: 0.46em; color: var(--dx-text-secondary); font-weight: 500; margin-top: 6px; line-height: 1.35; }
+
+/* Capture d'écran logicielle */
+.screen { border: 1px solid var(--dx-border); border-radius: 10px; overflow: hidden; box-shadow: var(--dx-shadow-lg, var(--dx-shadow)); background: #1E293B; }
+.screen .screen-bar { display: flex; align-items: center; gap: 6px; padding: 6px 10px; background: #0F172A; font-size: 0.4em; color: #CBD5E1; font-weight: 600; }
+.screen .screen-bar i { width: 9px; height: 9px; border-radius: 50%; background: #475569; display: inline-block; }
+.reveal .screen img { display: block; width: 100%; margin: 0; border-radius: 0; box-shadow: none; max-width: none; }
+
+/* Étapes numérotées compactes */
+.steps { display: grid; gap: 10px; counter-reset: st; }
+.step { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--dx-border); border-radius: 10px; padding: 10px 14px; font-size: 0.58em; line-height: 1.4; box-shadow: var(--dx-shadow); color: var(--dx-text-secondary); }
+.step::before { counter-increment: st; content: counter(st); flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--dx-primary); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 0.95em; }
+.step strong { color: var(--dx-text-dark); }
+
+/* Frise chronologique */
+.timeline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; position: relative; margin-top: 8px; }
+.timeline::before { content: ''; position: absolute; left: 4%; right: 4%; top: 15px; height: 3px; background: linear-gradient(90deg, var(--dx-gradient-start), var(--dx-primary)); border-radius: 2px; }
+.tl-item { position: relative; text-align: center; font-size: 0.55em; line-height: 1.4; color: var(--dx-text-secondary); }
+.tl-item .tl-dot { width: 32px; height: 32px; border-radius: 50%; background: #fff; border: 3px solid var(--dx-primary); margin: 0 auto 8px; position: relative; z-index: 1; }
+.tl-item .tl-year { font-size: 1.5em; font-weight: 800; color: var(--dx-primary); display: block; }
+.tl-item strong { color: var(--dx-text-dark); display: block; margin-bottom: 2px; }
+
+/* Chiffre clé */
+.kpi { text-align: center; background: #fff; border: 1px solid var(--dx-border); border-radius: var(--dx-radius); box-shadow: var(--dx-shadow); padding: 12px 10px; }
+.kpi b { display: block; font-size: 1.3em; font-weight: 800; color: var(--dx-primary); line-height: 1.1; }
+.kpi span { display: block; font-size: 0.5em; color: var(--dx-text-secondary); margin-top: 4px; line-height: 1.3; }
+
+/* TP */
+.tp-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--dx-success); color: #fff; font-weight: 700; font-size: 0.55em; padding: 4px 14px; border-radius: 999px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* Colonne visuelle : empiler image et légende */
+.two-col .col-visual { flex-direction: column; }
+.screen .dx-table { background: #fff; }
+.screen .dx-table td { color: var(--dx-text-secondary); }
