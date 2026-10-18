@@ -186,3 +186,9 @@
 .two-col .col-visual { flex-direction: column; }
 .screen .dx-table { background: #fff; }
 .screen .dx-table td { color: var(--dx-text-secondary); }
+
+/* Lisibilité : tailles minimales dans les colonnes et les cartes */
+.two-col .col-text .step { font-size: 0.7em; }
+.box .steps .step { font-size: 0.86em; }
+.two-col .col-text > .dx-table.t-sm { font-size: 0.64em !important; }
+.two-col .col-text > .list-sm { font-size: 0.78em !important; }

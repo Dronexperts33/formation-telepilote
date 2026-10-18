@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photogrammétrie par Drone — Jour 2 — Dronexperts</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+
+  <!-- Dronexperts Theme -->
+  <link rel="stylesheet" href="../css/dronexperts-theme.css">
+  <link rel="stylesheet" href="css/photo.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+
+<!-- ============================================================
+     TITRE
+     ============================================================ -->
+<section class="slide-title">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>Photogrammétrie par Drone</h1>
+  <p class="subtitle">Jour 2 — Terrain, orthophoto & traitement Metashape</p>
+  <span class="badge">GCP · Vol ortho · Vol 3D n°1 · Metashape Professional</span>
+  <div class="slide-footer slide-footer-dark">
+    <span>Dronexperts — Formation Photogrammétrie par Drone</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROGRAMME DU JOUR
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Le programme du jour</h2>
+  <div class="grid-2" style="gap:22px;">
+    <div class="box b-cyan">
+      <h4><span class="hico"><svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></span> Matin — sur le terrain</h4>
+      <div class="steps" style="margin-top:8px;">
+        <div class="step"><div><strong>Présentation du site</strong> et briefing sécurité</div></div>
+        <div class="step"><div><strong>Atelier GCP</strong> : poser les cibles, mesurer au D-RTK 3</div></div>
+        <div class="step"><div><strong>Vol orthophoto</strong> programmé, en RTK</div></div>
+        <div class="step"><div><strong>Vol 3D n°1</strong> : en autonomie complète</div></div>
+        <div class="step"><div><strong>Contrôle</strong> des images avant de quitter le site</div></div>
+      </div>
+    </div>
+    <div class="box b-blue">
+      <h4><span class="hico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span> Après-midi — Metashape</h4>
+      <div class="steps" style="margin-top:8px;">
+        <div class="step"><div><strong>Organiser</strong> son projet et ses données</div></div>
+        <div class="step"><div><strong>Aligner</strong> les photos, placer les <strong>repères</strong> (GCP)</div></div>
+        <div class="step"><div><strong>Contrôler</strong> la précision avec les points de contrôle</div></div>
+        <div class="step"><div><strong>Nuage dense, MNE, orthomosaïque</strong>, exports et rapport</div></div>
+        <div class="step"><div><strong>Lancer le traitement</strong> du vol 3D n°1</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Programme</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Si la météo empêche les vols, inverser : Metashape le matin sur le jeu de données de démonstration, terrain l'après-midi. Le vol 3D n°1 doit absolument avoir lieu aujourd'hui : c'est le support du débrief de demain matin.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     MODULE 8 — TERRAIN
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 8</div>
+  <h2>Sur le terrain : points d'appui et vols</h2>
+  <p class="module-desc">Présentation du site, rôles et sécurité, implantation et mesure des GCP, vol orthophoto, vol 3D n°1 et contrôle qualité avant de partir.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg>
+  <div class="slide-footer">
+    <span>Module 8 — Terrain</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     LE SITE DU JOUR (trame formateur)
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Notre site de vol</h2>
+  <p class="lead">Le formateur présente le site réel de la session en reprenant la trame de préparation du jour 1.</p>
+  <div class="grid-3" style="gap:14px;">
+    <div class="box b-blue"><h4><span class="hico"><svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/></svg></span> Le terrain</h4><ul><li>Localisation, surface, relief</li><li>Zone de l'orthophoto</li><li>Point de décollage, base RTK</li></ul></div>
+    <div class="box b-green"><h4><span class="hico"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10l7-6 7 6v11"/></svg></span> L'objet 3D</h4><ul><li>Bâtiment, tas, ouvrage…</li><li>Dimensions, hauteur</li><li>Obstacles autour</li></ul></div>
+    <div class="box b-orange"><h4><span class="hico"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg></span> Les contraintes</h4><ul><li>Catégorie, zones, autorisations</li><li>Tiers, accès, voies</li><li>Météo et Kp du jour</li></ul></div>
+  </div>
+  <div class="grid-2" style="margin-top:16px;gap:16px;">
+    <div class="box b-cyan"><h4>Le référentiel</h4><p>Système de coordonnées et référence d'altitude retenus : <strong>RGF93 v2b / CCxx + NGF-IGN69</strong> (ou Lambert 93 selon le site). Coordonnées du point connu ou réseau NRTK utilisé.</p></div>
+    <div class="box b-red"><h4>Les points d'appui</h4><p>Emplacements prévus des <strong>5 GCP</strong> et <strong>3 à 4 points de contrôle</strong>, numérotation des cibles.</p></div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 8 — Le site</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Slide-trame : chaque formateur projette en complément sa carte Géoportail du site (zone, décollage, points prévus) et ses photos de repérage. Rappeler la consigne du vol 3D n°1 sans donner de conseils techniques.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     BRIEFING SÉCURITÉ & RÔLES
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Briefing : rôles et sécurité</h2>
+  <div class="grid-2" style="grid-template-columns:repeat(4,1fr);gap:14px;">
+    <div class="kpi"><b style="font-size:1em;">Télépilote</b><span>Responsable du vol, de la check-list et de la décision de décoller</span></div>
+    <div class="kpi"><b style="font-size:1em;">Observateur</b><span>Surveille l'espace aérien et les tiers, garde le contact avec le télépilote</span></div>
+    <div class="kpi"><b style="font-size:1em;">Opérateur GNSS</b><span>Pose et mesure les cibles, remplit la fiche de relevé</span></div>
+    <div class="kpi"><b style="font-size:1em;">Contrôle qualité</b><span>Vérifie les photos sur l'ordinateur à chaque atterrissage</span></div>
+  </div>
+  <div class="grid-2" style="margin-top:18px;gap:18px;">
+    <div class="box b-red"><h4>Règles du terrain</h4><ul><li>Zone de décollage balisée, personne dessous pendant le vol</li><li>Jamais de pose de cible sous un drone en vol</li><li>Annonces claires : « décollage », « atterrissage », « drone en approche »</li></ul></div>
+    <div class="box b-blue"><h4>Rotation des rôles</h4><ul><li>Chaque stagiaire tient chaque rôle au moins une fois</li><li>Binômes conservés pour l'après-midi sur Metashape</li></ul></div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 8 — Briefing</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ATELIER 1 : POSER LES CIBLES
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Atelier 1 : poser les cibles</h2>
+  <div class="two-col" style="grid-template-columns:1.1fr 0.9fr;align-items:center;">
+    <div class="col-text">
+      <p><span class="tp-badge">Atelier terrain · 30 min</span></p>
+      <div class="steps" style="margin-top:6px;">
+        <div class="step"><div>Repérer l'emplacement prévu, vérifier qu'il est <strong>dégagé vers le ciel</strong> et <strong>stable</strong></div></div>
+        <div class="step"><div>Poser la cible <strong>à plat</strong>, la fixer (clous, poids), noter son numéro</div></div>
+        <div class="step"><div>Matérialiser le centre au sol si la cible doit être reposée plus tard (clou, peinture)</div></div>
+        <div class="step"><div>Photographier la cible et son environnement (aide au pointage)</div></div>
+        <div class="step"><div>Reporter la position sur le croquis de la fiche de relevé</div></div>
+      </div>
+    </div>
+    <div class="col-visual">
+      <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg" style="width:85%;" font-family="Inter, sans-serif">
+        <rect x="30" y="30" width="300" height="300" fill="#fff" stroke="#0F172A" stroke-width="3"/>
+        <rect x="30" y="30" width="150" height="150" fill="#0F172A"/><rect x="180" y="180" width="150" height="150" fill="#0F172A"/>
+        <circle cx="180" cy="180" r="6" fill="#EF4444"/>
+        <text x="180" y="22" text-anchor="middle" font-size="15" font-weight="700" fill="#0F172A">GCP03</text>
+        <line x1="30" y1="350" x2="330" y2="350" stroke="#0E74DA" stroke-width="2"/>
+        <text x="180" y="345" text-anchor="middle" font-size="13" font-weight="700" fill="#0E74DA">≥ 10 × GSD (ici 50 cm)</text>
+      </svg>
+      <p class="fig-caption">Cible damier : le centre est l'intersection des 4 carrés</p>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 8 — Atelier GCP</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ATELIER 1 : MESURER AU D-RTK 3
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Atelier 1 : mesurer les points au D-RTK 3</h2>
+  <div class="two-col" style="grid-template-columns:0.8fr 1.2fr;align-items:center;">
+    <div class="col-visual">
+      <figure class="figure" style="width:100%;"><img src="img/photos/canne-gcp-terrain.jpg" alt="Opérateur mesurant le centre d'une cible avec une canne GNSS" style="height:400px;object-position:center 30%;"><figcaption>Canne verticale, pointe au centre exact de la cible</figcaption></figure>
+    </div>
+    <div class="col-text">
+      <div class="steps">
+        <div class="step"><div>D-RTK 3 en <strong>mode mobile (levé)</strong> sur la canne, hauteur de canne saisie</div></div>
+        <div class="step"><div>Corrections reçues (base sur point connu ou réseau) : attendre le statut <strong>FIX</strong></div></div>
+        <div class="step"><div>Pointe <strong>au centre</strong> de la cible, bulle centrée (ou compensation d'inclinaison active)</div></div>
+        <div class="step"><div>Enregistrer quelques secondes ; vérifier la <strong>précision affichée</strong> (≤ 2 cm)</div></div>
+        <div class="step"><div>Nommer le point <strong>exactement</strong> comme la cible : GCP01… CP01…</div></div>
+        <div class="step"><div>En fin d'atelier : <strong>exporter</strong> les points en CSV dans le bon système</div></div>
+      </div>
+      <div class="callout c-red" style="font-size:0.62em;">Une erreur de hauteur de canne se retrouve <strong>telle quelle</strong> sur l'altitude de tous les points : la vérifier deux fois.</div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 8 — Mesure GCP</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Faire mesurer chaque point deux fois par deux stagiaires différents : l'écart entre les deux mesures donne une idée concrète de la répétabilité (souvent 1 à 2 cm). Vérifier sur l'application que le système de sortie est bien celui choisi pour le projet, et l'altitude en NGF-IGN69 si la grille est appliquée par le récepteur ; sinon, noter que les hauteurs sont ellipsoïdales et convertir au traitement.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ATELIER 2 : VOL ORTHO — CHECK-LIST
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Atelier 2 : le vol orthophoto</h2>
+  <div class="grid-2" style="gap:22px;">
+    <div class="box b-blue">
+      <h4><span class="hico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span> Avant le décollage</h4>
+      <ul>
+        <li>Base D-RTK 3 en place, liaison établie, <strong>RTK FIX</strong> sur le drone</li>
+        <li>Mission chargée : zone, hauteur, recouvrements <strong>80 / 70</strong>, vitesse</li>
+        <li>Caméra grand-angle, <strong>obturateur mécanique</strong>, carte mémoire vide</li>
+        <li><strong>Photo test</strong> : netteté, exposition, vitesse d'obturation</li>
+        <li>Batteries, vent, Kp, espace aérien, tiers : check-list prévol habituelle</li>
+      </ul>
+    </div>
+    <div class="box b-green">
+      <h4><span class="hico"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span> Pendant le vol</h4>
+      <ul>
+        <li>Garder le drone <strong>en vue</strong>, surveiller tiers et aéronefs</li>
+        <li>Suivre la progression, la batterie et le <strong>statut RTK</strong></li>
+        <li>Perte du FIX : noter l'heure et les lignes concernées</li>
+        <li>Coupure de mission : <strong>reprise au point d'arrêt</strong> avec la même mission (le recouvrement est conservé)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout c-blue" style="font-size:0.62em;">L'enregistrement de la mission permet de <strong>revoler exactement la même trajectoire</strong> lors d'un prochain passage : indispensable pour comparer deux dates.</div>
+  <div class="slide-footer">
+    <span>Module 8 — Vol ortho</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ATELIER 3 : VOL 3D N°1 EN AUTONOMIE
+     ============================================================ -->
+<section class="slide-highlight">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="highlight-box highlight-warning" style="max-width:92%;text-align:left;">
+    <div class="tag">Atelier 3 · Vol 3D n°1 · en autonomie</div>
+    <blockquote style="font-size:0.95em;">Modélisez l'objet en 3D. <strong>Vous décidez de tout</strong> : type de mission ou vol manuel, hauteur, angle de nacelle, nombre de passages, recouvrements, vitesse, réglages caméra. Le formateur n'intervient <strong>que pour la sécurité</strong>.</blockquote>
+    <div class="grid-3" style="gap:14px;margin-top:18px;">
+      <div class="kpi"><b>1 batterie</b><span>par binôme</span></div>
+      <div class="kpi"><b>45 min</b><span>préparation + vol</span></div>
+      <div class="kpi"><b>Fiche de vol</b><span>notez tous vos choix</span></div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 8 — Vol 3D n°1</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Ne donner AUCUN conseil technique, même si un binôme part sur une erreur manifeste (sauf sécurité). Remplir la fiche d'observation formateur pour chaque binôme : type de mission, hauteur, angle de nacelle, orbites, recouvrement, vitesse, mode d'exposition, heure (lumière, ombres), nombre de photos. Ces observations alimentent le débrief du jour 3. Garder une copie des photos de chaque binôme.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     CONTRÔLE QUALITÉ TERRAIN
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Avant de quitter le site : le contrôle qualité</h2>
+  <div class="tiles" style="grid-template-columns:repeat(3,1fr);">
+    <div class="tile t-vol"><span class="hico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><div><strong>Nombre de photos</strong> conforme au plan de vol</div></div>
+    <div class="tile t-vol"><span class="hico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span><div><strong>Netteté</strong> vérifiée à 100 % sur un échantillon</div></div>
+    <div class="tile t-vol"><span class="hico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg></span><div><strong>Exposition</strong> homogène, pas de zones brûlées</div></div>
+    <div class="tile t-mat"><span class="hico"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg></span><div><strong>Géotags RTK</strong> : statut fixé sur toutes les photos</div></div>
+    <div class="tile t-mat"><span class="hico"><svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/></svg></span><div><strong>Couverture</strong> : positions des photos sur la carte, aucun trou</div></div>
+    <div class="tile t-mat"><span class="hico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><div><strong>Fichier des points</strong> exporté, sauvegardé en double</div></div>
+  </div>
+  <div class="callout c-green" style="font-size:0.64em;">Le test ultime : un <strong>alignement rapide</strong> dans Metashape en précision « Basse » sur l'ordinateur de terrain. S'il réussit, on peut partir.</div>
+  <div class="slide-footer">
+    <span>Module 8 — Contrôle qualité</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Pour les photos du vol 3D n°1, faire le contrôle qualité mais sans commenter les choix de vol : laisser les éventuels défauts apparaître au traitement. Copier toutes les cartes mémoire sur deux supports avant de les formater.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     MODULE 9 — METASHAPE : DE L'IMAGE À L'ORTHO
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 9</div>
+  <h2>Metashape : de l'image à l'orthomosaïque</h2>
+  <p class="module-desc">La chaîne complète dans Agisoft Metashape Professional : organisation, alignement, repères, contrôle de précision, nuage dense, MNE, orthomosaïque, exports et rapport.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+  <div class="slide-footer">
+    <span>Module 9 — Metashape</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     POURQUOI METASHAPE PRO
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Agisoft Metashape : Standard ou Professional ?</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1fr;align-items:start;">
+    <div class="col-text">
+      <table class="dx-table t-sm" style="font-size:0.6em;">
+        <thead><tr><th>Fonction</th><th>Standard</th><th>Professional</th></tr></thead>
+        <tbody>
+          <tr><td>Alignement, nuage, maillage, texture</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Géoréférencement, <strong>repères (GCP)</strong></td><td>—</td><td>✓</td></tr>
+          <tr><td><strong>MNE</strong> et <strong>orthomosaïque</strong> géoréférencés</td><td>—</td><td>✓</td></tr>
+          <tr><td>Mesures de distances, surfaces, <strong>volumes</strong></td><td>—</td><td>✓</td></tr>
+          <tr><td>Classification du nuage (sol, bâti…)</td><td>—</td><td>✓</td></tr>
+          <tr><td>Rapport de traitement, traitement par lot, scripts Python</td><td>—</td><td>✓</td></tr>
+        </tbody>
+      </table>
+      <p class="src">Version utilisée en formation : Metashape Professional 2.3 (interface en français). Une licence d'essai de 30 jours est disponible chez l'éditeur.</p>
+    </div>
+    <div class="col-text">
+      <div class="box b-blue" style="margin-bottom:12px;"><h4>Pourquoi Metashape ?</h4><ul><li>Référence du marché en photogrammétrie aérienne et terrestre</li><li>Licence perpétuelle, fonctionne <strong>hors ligne</strong> sur votre ordinateur</li><li>Mac, Windows, Linux</li></ul></div>
+      <div class="box b-orange"><h4>Ordinateur conseillé</h4><ul><li>Carte graphique performante (calcul GPU)</li><li><strong>32 à 64 Go</strong> de mémoire vive</li><li>Disque SSD rapide, beaucoup d'espace : un projet de 600 photos peut dépasser 50 Go</li></ul></div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 9 — Le logiciel</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Le projet Meudon montré au jour 1 (658 images RGB + multispectral) occupe environ 58 Go dans son dossier Metashape : c'est un bon exemple pour faire comprendre l'importance du stockage. Les intitulés sont donnés en français (interface utilisée en formation) ; préciser l'équivalent anglais à l'oral pour les stagiaires qui ont l'interface en anglais.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     L'INTERFACE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>L'interface de Metashape</h2>
+  <div class="grid-2" style="grid-template-columns:1.45fr 1fr;gap:22px;align-items:center;">
+    <svg viewBox="0 0 760 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;" font-family="Inter, sans-serif">
+      <rect x="0" y="0" width="760" height="450" rx="10" fill="#1E293B"/>
+      <rect x="0" y="0" width="760" height="30" rx="10" fill="#0F172A"/>
+      <g font-size="12" fill="#CBD5E1"><text x="14" y="20">Fichier</text><text x="66" y="20">Editer</text><text x="112" y="20">Vue</text><text x="148" y="20" fill="#38BDF8" font-weight="700">Traitements</text><text x="232" y="20">Modèle</text><text x="286" y="20">Photo</text><text x="332" y="20">Ortho</text><text x="378" y="20">Outils</text><text x="426" y="20">Aide</text></g>
+      <!-- workspace -->
+      <rect x="8" y="38" width="190" height="200" rx="4" fill="#334155"/>
+      <text x="16" y="56" font-size="12" font-weight="700" fill="#fff">Espace de travail</text>
+      <g font-size="11" fill="#CBD5E1"><text x="20" y="76">▾ Morceau 1 (312 caméras)</text><text x="34" y="94">Caméras</text><text x="34" y="110">Repères</text><text x="34" y="126">Points de liaison</text><text x="34" y="142">Nuage de points</text><text x="34" y="158">MNE</text><text x="34" y="174">Orthomosaïque</text></g>
+      <!-- reference -->
+      <rect x="8" y="244" width="190" height="198" rx="4" fill="#334155"/>
+      <text x="16" y="262" font-size="12" font-weight="700" fill="#fff">Référence</text>
+      <g font-size="10" fill="#CBD5E1"><text x="16" y="282">☑ GCP01   0,012 m</text><text x="16" y="298">☑ GCP02   0,009 m</text><text x="16" y="314">☐ CP01    0,021 m</text><text x="16" y="330">☐ CP02    0,018 m</text><text x="16" y="360">Erreur totale</text></g>
+      <!-- model -->
+      <rect x="206" y="38" width="546" height="300" rx="4" fill="#0B1220"/>
+      <text x="214" y="56" font-size="12" font-weight="700" fill="#fff">Modèle</text>
+      <g fill="#38BDF8" opacity="0.9">
+        <rect x="270" y="90" width="22" height="15"/><rect x="310" y="90" width="22" height="15"/><rect x="350" y="90" width="22" height="15"/><rect x="390" y="90" width="22" height="15"/><rect x="430" y="90" width="22" height="15"/><rect x="470" y="90" width="22" height="15"/><rect x="510" y="90" width="22" height="15"/><rect x="550" y="90" width="22" height="15"/><rect x="590" y="90" width="22" height="15"/><rect x="630" y="90" width="22" height="15"/>
+        <rect x="270" y="125" width="22" height="15"/><rect x="310" y="125" width="22" height="15"/><rect x="350" y="125" width="22" height="15"/><rect x="390" y="125" width="22" height="15"/><rect x="430" y="125" width="22" height="15"/><rect x="470" y="125" width="22" height="15"/><rect x="510" y="125" width="22" height="15"/><rect x="550" y="125" width="22" height="15"/><rect x="590" y="125" width="22" height="15"/><rect x="630" y="125" width="22" height="15"/>
+      </g>
+      <path d="M240 300 Q340 230 460 270 T 730 250 L730 320 L240 320 Z" fill="#475569" opacity="0.8"/>
+      <g fill="#94A3B8"><circle cx="300" cy="280" r="2"/><circle cx="340" cy="262" r="2"/><circle cx="400" cy="258" r="2"/><circle cx="460" cy="268" r="2"/><circle cx="520" cy="262" r="2"/><circle cx="580" cy="250" r="2"/><circle cx="640" cy="252" r="2"/><circle cx="700" cy="255" r="2"/></g>
+      <g fill="#F59E0B"><polygon points="330,290 336,300 324,300"/><polygon points="610,268 616,278 604,278"/></g>
+      <!-- photos -->
+      <rect x="206" y="346" width="546" height="96" rx="4" fill="#334155"/>
+      <text x="214" y="364" font-size="12" font-weight="700" fill="#fff">Photos</text>
+      <g fill="#64748B"><rect x="214" y="374" width="80" height="58"/><rect x="302" y="374" width="80" height="58"/><rect x="390" y="374" width="80" height="58"/><rect x="478" y="374" width="80" height="58"/><rect x="566" y="374" width="80" height="58"/><rect x="654" y="374" width="80" height="58"/></g>
+      <!-- numéros -->
+      <g font-size="14" font-weight="800" fill="#fff">
+        <circle cx="185" cy="15" r="13" fill="#0E74DA"/><text x="185" y="20" text-anchor="middle">1</text>
+        <circle cx="185" cy="56" r="13" fill="#0E74DA"/><text x="185" y="61" text-anchor="middle">2</text>
+        <circle cx="185" cy="262" r="13" fill="#0E74DA"/><text x="185" y="267" text-anchor="middle">3</text>
+        <circle cx="738" cy="56" r="13" fill="#0E74DA"/><text x="738" y="61" text-anchor="middle">4</text>
+        <circle cx="738" cy="364" r="13" fill="#0E74DA"/><text x="738" y="369" text-anchor="middle">5</text>
+      </g>
+    </svg>
+    <div class="steps">
+      <div class="step"><div><strong>Menu Traitements</strong> : toutes les étapes, dans l'ordre, de haut en bas</div></div>
+      <div class="step"><div><strong>Espace de travail</strong> : le projet, ses morceaux (chunks) et leurs produits</div></div>
+      <div class="step"><div><strong>Référence</strong> : coordonnées et erreurs des caméras et des repères</div></div>
+      <div class="step"><div><strong>Modèle</strong> : la vue 3D (caméras, nuages, maillage) ; onglets Ortho et photo</div></div>
+      <div class="step"><div><strong>Photos</strong> : les images, leur qualité, le pointage des repères</div></div>
+    </div>
+  </div>
+  <p class="src">Schéma simplifié de l'interface de Metashape Professional 2.3 (intitulés de l'interface française)</p>
+  <div class="slide-footer">
+    <span>Module 9 — Interface</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Faire ouvrir Metashape à chaque binôme et retrouver les 5 zones. Si un panneau a disparu : menu Vue. Un « morceau » (chunk) est un sous-projet : on peut en dupliquer un (clic droit › Dupliquer…) pour tester des réglages sans perdre le traitement initial ; on s'en servira pour comparer avec et sans GCP.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ORGANISER SON PROJET
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Avant de cliquer : organiser son projet</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1fr;align-items:center;">
+    <div class="col-text">
+      <div class="screen">
+        <div class="screen-bar"><i></i><i></i><i></i>&nbsp; 2026-10-19_Site_Ortho</div>
+        <pre style="margin:0;padding:14px 18px;background:#0F172A;color:#E2E8F0;font-size:0.66em;line-height:1.7;box-shadow:none;width:100%;max-height:none;"><code>📁 01_RAW         photos brutes, par vol
+   📁 vol_ortho
+   📁 vol_3D_1
+📁 02_REF         points GCP / CP (.csv),
+                  fiche de relevé, croquis
+📁 03_METASHAPE   projet .psx
+📁 04_LIVRABLES   ortho, MNE, nuage, volumes
+📁 05_RAPPORT     rapport PDF, notes</code></pre>
+      </div>
+      <p class="src">Structure utilisée sur les projets Dronexperts</p>
+    </div>
+    <div class="col-text">
+      <ul class="list-sm" style="font-size:0.72em;">
+        <li>Un dossier par chantier, <strong>daté</strong>, toujours la même structure</li>
+        <li>Ne jamais renommer ni déplacer les photos <strong>après</strong> les avoir importées (le projet perd leur trace)</li>
+        <li>Enregistrer au format <strong>.psx</strong> (projet + dossier .files)</li>
+        <li>Dans <strong>Outils › Préférences</strong> : vérifier que le <strong>GPU</strong> est activé</li>
+        <li>Garder les photos brutes intactes : <strong>sauvegarde</strong> sur un second support</li>
+      </ul>
+      <div class="callout c-blue" style="font-size:0.64em;">Un dossier propre, c'est un projet que vous ou un collègue pourrez <strong>rouvrir dans un an</strong> pour le prochain inventaire.</div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 9 — Organisation</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     LA CHAÎNE DE TRAITEMENT
+     ============================================================ -->
+<section class="slide-diagram">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>La chaîne de traitement d'une orthophoto</h2>
+  <svg viewBox="0 0 1160 330" xmlns="http://www.w3.org/2000/svg" style="width:100%;" font-family="Inter, sans-serif">
+    <defs><marker id="arM" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#94A3B8"/></marker></defs>
+    <g font-size="15" font-weight="700" text-anchor="middle">
+      <rect x="10" y="30" width="160" height="80" rx="12" fill="#DBEAFE" stroke="#0E74DA" stroke-width="2"/><text x="90" y="64" fill="#0F172A">1. Ajouter</text><text x="90" y="86" fill="#0F172A">les photos</text>
+      <rect x="200" y="30" width="160" height="80" rx="12" fill="#DBEAFE" stroke="#0E74DA" stroke-width="2"/><text x="280" y="64" fill="#0F172A">2. Paramètres</text><text x="280" y="86" fill="#0F172A">de référence</text>
+      <rect x="390" y="30" width="160" height="80" rx="12" fill="#DBEAFE" stroke="#0E74DA" stroke-width="2"/><text x="470" y="64" fill="#0F172A">3. Aligner</text><text x="470" y="86" fill="#0F172A">les photos</text>
+      <rect x="580" y="30" width="160" height="80" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/><text x="660" y="64" fill="#0F172A">4. Placer</text><text x="660" y="86" fill="#0F172A">les repères</text>
+      <rect x="770" y="30" width="160" height="80" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/><text x="850" y="64" fill="#0F172A">5. Optimiser</text><text x="850" y="86" fill="#0F172A">et contrôler</text>
+      <rect x="960" y="30" width="190" height="80" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/><text x="1055" y="64" fill="#0F172A">6. Nettoyer les</text><text x="1055" y="86" fill="#0F172A">points de liaison</text>
+      <rect x="200" y="180" width="160" height="80" rx="12" fill="#D1FAE5" stroke="#10B981" stroke-width="2"/><text x="280" y="214" fill="#0F172A">7. Nuage</text><text x="280" y="236" fill="#0F172A">de points dense</text>
+      <rect x="390" y="180" width="160" height="80" rx="12" fill="#D1FAE5" stroke="#10B981" stroke-width="2"/><text x="470" y="214" fill="#0F172A">8. Construire</text><text x="470" y="236" fill="#0F172A">un MNE</text>
+      <rect x="580" y="180" width="160" height="80" rx="12" fill="#D1FAE5" stroke="#10B981" stroke-width="2"/><text x="660" y="214" fill="#0F172A">9. Construire une</text><text x="660" y="236" fill="#0F172A">orthomosaïque</text>
+      <rect x="770" y="180" width="160" height="80" rx="12" fill="#E0F2FE" stroke="#06B6D4" stroke-width="2"/><text x="850" y="214" fill="#0F172A">10. Exporter</text><text x="850" y="236" fill="#0F172A">les livrables</text>
+      <rect x="960" y="180" width="190" height="80" rx="12" fill="#E0F2FE" stroke="#06B6D4" stroke-width="2"/><text x="1055" y="214" fill="#0F172A">11. Générer</text><text x="1055" y="236" fill="#0F172A">le rapport</text>
+    </g>
+    <g stroke="#94A3B8" stroke-width="3" marker-end="url(#arM)"><line x1="172" y1="70" x2="196" y2="70"/><line x1="362" y1="70" x2="386" y2="70"/><line x1="552" y1="70" x2="576" y2="70"/><line x1="742" y1="70" x2="766" y2="70"/><line x1="932" y1="70" x2="956" y2="70"/><line x1="362" y1="220" x2="386" y2="220"/><line x1="552" y1="220" x2="576" y2="220"/><line x1="742" y1="220" x2="766" y2="220"/><line x1="932" y1="220" x2="956" y2="220"/></g>
+    <path d="M1055 112 Q1055 150 600 150 Q280 150 280 176" fill="none" stroke="#94A3B8" stroke-width="3" marker-end="url(#arM)"/>
+    <g font-size="14" font-weight="600"><rect x="10" y="290" width="16" height="16" rx="3" fill="#DBEAFE" stroke="#0E74DA"/><text x="34" y="303" fill="#475569">Préparer et aligner</text><rect x="230" y="290" width="16" height="16" rx="3" fill="#FEF3C7" stroke="#F59E0B"/><text x="254" y="303" fill="#475569">Géoréférencer et vérifier la précision</text><rect x="560" y="290" width="16" height="16" rx="3" fill="#D1FAE5" stroke="#10B981"/><text x="584" y="303" fill="#475569">Produire</text><rect x="700" y="290" width="16" height="16" rx="3" fill="#E0F2FE" stroke="#06B6D4"/><text x="724" y="303" fill="#475569">Livrer</text></g>
+  </svg>
+  <div class="slide-footer">
+    <span>Module 9 — Chaîne de traitement</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Message clé : les étapes 4 à 6 (orange) conditionnent la précision. Elles se font AVANT le nuage dense, qui est l'étape la plus longue : inutile de calculer un nuage dense sur un alignement mal calé. Enregistrer le projet à chaque étape.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ÉTAPE 1 : AJOUTER LES PHOTOS
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>1. Ajouter et vérifier les photos</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1fr;align-items:start;">
+    <div class="col-text">
+      <div class="formula" style="font-size:0.62em;justify-content:flex-start;margin-bottom:12px;">Traitements › Ajouter des photos…</div>
+      <ul class="list-sm" style="font-size:0.72em;">
+        <li>Sélectionner toutes les photos du vol (pas les vidéos ni les fichiers .MRK)</li>
+        <li>Les positions apparaissent dans le panneau <strong>Référence</strong> et dans la vue Modèle</li>
+        <li>Supprimer les photos de décollage et d'atterrissage, et celles hors zone</li>
+      </ul>
+      <div class="formula" style="font-size:0.62em;justify-content:flex-start;margin:14px 0 10px;">Photos › clic droit › Estimer la qualité d'image…</div>
+      <ul class="list-sm" style="font-size:0.72em;">
+        <li>Ajoute une colonne <strong>Qualité</strong> (vue Détails du panneau Photos)</li>
+        <li>Photos sous <strong>0,5</strong> : à <strong>désactiver</strong> (floues)</li>
+      </ul>
+    </div>
+    <div class="col-text">
+      <div class="box b-orange" style="margin-bottom:12px;">
+        <h4>Désactiver plutôt que supprimer</h4>
+        <p>Une photo désactivée n'est pas utilisée dans le calcul mais reste dans le projet : on peut la réactiver si besoin.</p>
+      </div>
+      <div class="box b-blue">
+        <h4>Vérifier les géotags</h4>
+        <p>Dans Référence : précision affichée par photo, positions cohérentes. Des photos à 0 m d'altitude ou décalées de plusieurs centaines de mètres signalent un problème de géotag.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 9 — Étape 1</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    L'indicateur de qualité de Metashape mesure la netteté relative de chaque image. Le seuil de 0,5 est la recommandation de l'éditeur ; sur des surfaces très homogènes (eau, sable), l'indicateur peut être bas sans que la photo soit floue : regarder la photo avant de la désactiver.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ÉTAPE 2 : PARAMÈTRES DE RÉFÉRENCE
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>2. Les paramètres de référence</h2>
+  <div class="two-col" style="grid-template-columns:1.05fr 1fr;align-items:start;">
+    <div class="col-text">
+      <div class="formula" style="font-size:0.62em;justify-content:flex-start;margin-bottom:12px;">Référence › Paramètres de référence…</div>
+      <table class="dx-table t-sm" style="font-size:0.56em;">
+        <thead><tr><th>Réglage</th><th>Valeur (exemple)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Système de coordonnées</strong> (projet)</td><td>RGF93 v2b / CC50 + NGF-IGN69</td></tr>
+          <tr><td>Référence de la caméra</td><td>système des géotags (géographique, hauteurs ellipsoïdales)</td></tr>
+          <tr><td>Référence du repère</td><td>système du fichier de points</td></tr>
+          <tr><td>Précision de la caméra (m)</td><td><strong>0,03</strong> en RTK · 5 à 10 sans RTK</td></tr>
+          <tr><td>Précision du repère (m)</td><td><strong>0,02</strong></td></tr>
+          <tr><td>Précision du repère (px)</td><td>0,5</td></tr>
+          <tr><td>Précision des points de liaison (px)</td><td>1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-text">
+      <div class="box b-blue" style="margin-bottom:12px;">
+        <h4>La précision, c'est un poids</h4>
+        <p>Elle dit au logiciel <strong>à qui faire confiance</strong> : aux géotags des photos, ou aux repères au sol. Des valeurs fausses faussent le calage.</p>
+      </div>
+      <div class="callout c-red" style="font-size:0.64em;margin-top:0;">Le système des géotags RTK est celui de la <strong>correction</strong> (base sur point RGF93, réseau NRTK) : à indiquer correctement, sinon décalage d'environ 1 m.</div>
+      <div class="callout c-green" style="font-size:0.64em;">Le passage des hauteurs ellipsoïdales aux altitudes NGF se fait automatiquement avec la grille <strong>RAF20</strong> intégrée.</div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 9 — Étape 2</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Point subtil à bien expliquer : un drone DJI écrit « WGS 84 » dans ses métadonnées, mais quand il est corrigé par une base posée sur un point RGF93 ou par un réseau NRTK français, ses positions sont en réalité dans le référentiel de la correction (RGF93). L'écart WGS 84 / RGF93 approche 1 m en 2026. Si la base est calée sur un point connu en RGF93, déclarer RGF93 v2b géographique 3D pour la référence de la caméra. Valeurs de précision : celles du tableau sont des points de départ ; la précision caméra en RTK peut aussi être reprise de l'écart-type RTK écrit dans chaque photo.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ÉTAPE 3 : ALIGNER LES PHOTOS
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>3. Aligner les photos</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1.05fr;align-items:start;">
+    <div class="col-text">
+      <div class="formula" style="font-size:0.62em;justify-content:flex-start;margin-bottom:12px;">Traitements › Aligner les photos…</div>
+      <table class="dx-table t-sm" style="font-size:0.56em;">
+        <thead><tr><th>Paramètre</th><th>Choix</th></tr></thead>
+        <tbody>
+          <tr><td>Précision</td><td><strong>Haute</strong> (images à pleine résolution)</td></tr>
+          <tr><td>Présélection générique</td><td>✓</td></tr>
+          <tr><td>Présélection par références</td><td>✓ <strong>Source</strong> (utilise les géotags)</td></tr>
+          <tr><td>Limites de points-clés et de liaison</td><td>valeurs par défaut</td></tr>
+          <tr><td>Exclure les points de liaison fixes</td><td>✓</td></tr>
+          <tr><td>Ajustement progressif du modèle de la caméra</td><td>✓</td></tr>
+        </tbody>
+      </table>
+      <div class="callout c-blue" style="font-size:0.64em;">« La plus haute » sur-échantillonne les images : plus long, rarement utile en aérien.</div>
+    </div>
+    <div class="col-visual">
+      <figure class="figure" style="width:100%;"><img src="img/rendus/metashape-cameras.jpg" alt="Positions des caméras alignées au-dessus du nuage de points" style="height:330px;"><figcaption>Résultat : positions et orientations des caméras (rectangles bleus) et nuage de points de liaison</figcaption></figure>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 9 — Étape 3</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Après l'alignement, vérifier : nombre de caméras alignées (clic droit sur le morceau › Afficher les infos), aucune caméra « perdue » sous le terrain ou très loin. Si des photos ne s'alignent pas : réinitialiser leur alignement et relancer sur la sélection, ou ajouter des repères manuels. Le nuage obtenu à ce stade (points de liaison) est épars : il sert au calcul, pas au livrable.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ÉTAPE 4 : PLACER LES REPÈRES
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>4. Importer et pointer les repères (GCP)</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1fr;align-items:center;">
+    <div class="col-text">
+      <div class="steps">
+        <div class="step"><div><strong>Référence › Importer la référence</strong> : le CSV des points (choisir le bon système, colonnes nom / X / Y / Z)</div></div>
+        <div class="step"><div>Les repères apparaissent ; sur chacun : clic droit › <strong>Filtrer les photos par repère</strong></div></div>
+        <div class="step"><div>Ouvrir chaque photo, <strong>glisser le drapeau</strong> exactement au centre de la cible (le drapeau devient vert)</div></div>
+        <div class="step"><div>Pointer sur <strong>6 à 10 photos</strong> par repère, bien réparties (centre et bords d'image)</div></div>
+        <div class="step"><div>Répéter pour chaque GCP <strong>et</strong> chaque point de contrôle</div></div>
+      </div>
+    </div>
+    <div class="col-visual">
+      <svg viewBox="0 0 460 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;" font-family="Inter, sans-serif">
+        <rect x="0" y="0" width="460" height="380" rx="10" fill="#6B7F4E"/>
+        <rect x="0" y="0" width="460" height="28" rx="10" fill="#0F172A"/>
+        <text x="14" y="19" font-size="12" font-weight="700" fill="#fff">DJI_0127.JPG — zoom 400 %</text>
+        <!-- cible -->
+        <rect x="140" y="110" width="180" height="180" fill="#fff"/>
+        <rect x="140" y="110" width="90" height="90" fill="#0F172A"/><rect x="230" y="200" width="90" height="90" fill="#0F172A"/>
+        <!-- drapeau -->
+        <line x1="230" y1="200" x2="230" y2="150" stroke="#10B981" stroke-width="3"/>
+        <polygon points="230,150 268,160 230,172" fill="#10B981"/>
+        <circle cx="230" cy="200" r="5" fill="#EF4444"/>
+        <text x="274" y="162" font-size="15" font-weight="800" fill="#fff">GCP03</text>
+        <!-- ancien drapeau projeté -->
+        <g opacity="0.8"><line x1="262" y1="232" x2="262" y2="196" stroke="#94A3B8" stroke-width="2" stroke-dasharray="3 3"/><polygon points="262,196 290,203 262,212" fill="#94A3B8"/></g>
+        <text x="230" y="335" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Gris : position estimée · Vert : position pointée</text>
+        <text x="230" y="356" text-anchor="middle" font-size="13" fill="#E2E8F0">On zoome fort et on vise l'intersection des carrés</text>
+      </svg>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 9 — Étape 4</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Astuce : après avoir pointé 2 ou 3 photos sur chaque repère, cliquer sur « Mettre à jour » dans le panneau Référence : Metashape recale le modèle et les drapeaux gris des autres photos tombent beaucoup plus près de la cible, ce qui accélère le pointage. Metashape sait aussi détecter automatiquement certaines cibles codées (Outils › Repères › Détecter les repères), mais pas les damiers simples.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ÉTAPE 5 : POINTS DE CONTRÔLE & OPTIMISATION
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>5. Optimiser et lire les erreurs</h2>
+  <div class="two-col" style="grid-template-columns:1.1fr 1fr;align-items:start;">
+    <div class="col-text">
+      <div class="screen">
+        <div class="screen-bar"><i></i><i></i><i></i>&nbsp; Référence — Repères</div>
+        <table class="dx-table t-sm" style="font-size:0.52em;margin:0;border-radius:0;">
+          <thead><tr><th></th><th>Repère</th><th>Erreur XY (m)</th><th>Erreur Z (m)</th><th>Projections</th><th>Erreur (px)</th></tr></thead>
+          <tbody>
+            <tr><td>☑</td><td>GCP01</td><td>0,008</td><td>0,011</td><td>9</td><td>0,41</td></tr>
+            <tr><td>☑</td><td>GCP02</td><td>0,006</td><td>0,009</td><td>8</td><td>0,38</td></tr>
+            <tr><td>☑</td><td>GCP03</td><td>0,010</td><td>0,014</td><td>10</td><td>0,52</td></tr>
+            <tr style="background:rgba(245,158,11,0.1);"><td>☐</td><td><strong>CP01</strong></td><td>0,017</td><td>0,026</td><td>8</td><td>0,47</td></tr>
+            <tr style="background:rgba(245,158,11,0.1);"><td>☐</td><td><strong>CP02</strong></td><td>0,021</td><td>0,031</td><td>7</td><td>0,55</td></tr>
+            <tr><td></td><td><strong>Total CP</strong></td><td><strong>0,019</strong></td><td><strong>0,029</strong></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="src">Valeurs d'exemple</p>
+    </div>
+    <div class="col-text">
+      <ul class="list-sm" style="font-size:0.7em;">
+        <li><strong>Décocher</strong> les points de contrôle (CP) : ils sont exclus du calcul</li>
+        <li><strong>Optimiser les caméras</strong> (bouton du panneau Référence) : paramètres par défaut</li>
+        <li>Erreur en <strong>pixels</strong> &lt; 1 : pointage cohérent</li>
+        <li>Erreur des <strong>CP</strong> = la précision réelle à annoncer</li>
+      </ul>
+      <div class="callout c-red" style="font-size:0.62em;">Un repère avec une erreur très supérieure aux autres : mauvais pointage, faute de nom, de hauteur de canne… ou cible déplacée. <strong>Enquêter avant de le supprimer.</strong></div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 9 — Étape 5</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Repère de lecture : avec un GSD de 2,5 cm, viser une erreur sur les points de contrôle de l'ordre de 1 à 2 GSD en XY (2,5 à 5 cm) et 1,5 à 3 GSD en Z. L'option « Ajuster le rolling shutter » ne se coche qu'avec un obturateur électronique. Toujours ré-optimiser après une modification des repères.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ÉTAPE 6 : NETTOYER LES POINTS DE LIAISON
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>6. Nettoyer les points de liaison</h2>
+  <div class="formula" style="font-size:0.6em;margin-bottom:14px;">Modèle › Sélection graduelle… › critère › Supprimer › puis Optimiser à nouveau</div>
+  <div class="grid-3" style="gap:14px;">
+    <div class="box b-blue"><h4>Erreur de reprojection</h4><p>Écart entre un point et sa position sur les photos. Supprimer les points au-delà de <strong>~0,5 à 1 px</strong>.</p></div>
+    <div class="box b-cyan"><h4>Incertitude de reconstruction</h4><p>Points mal « triangulés » (vus sous des angles trop proches). Seuil courant : <strong>10 à 15</strong>.</p></div>
+    <div class="box b-green"><h4>Précision de la projection</h4><p>Points détectés de façon imprécise sur les images. Seuil courant : <strong>3 à 5</strong>.</p></div>
+  </div>
+  <div class="grid-2" style="margin-top:16px;gap:16px;">
+    <div class="callout c-red" style="margin-top:0;font-size:0.62em;">Ne jamais supprimer plus de <strong>10 à 20 %</strong> des points à chaque passage, et garder assez de points sur chaque photo. Trop nettoyer décroche des caméras.</div>
+    <div class="callout c-blue" style="margin-top:0;font-size:0.62em;">Chaque passage est suivi d'une <strong>optimisation</strong>. On surveille l'évolution des erreurs sur les points de contrôle : elles doivent baisser ou rester stables.</div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 9 — Étape 6</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Les seuils sont des repères de pratique, pas des règles de l'éditeur : ils dépendent du jeu de données. Méthode : régler le curseur jusqu'à sélectionner 10 % des points au maximum, supprimer, optimiser, recommencer avec le critère suivant. Si le projet est déjà bon (erreurs CP faibles), cette étape peut rester légère.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ÉTAPE 7 : NUAGE DENSE
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>7. Construire le nuage de points dense</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1fr;align-items:start;">
+    <div class="col-text">
+      <div class="formula" style="font-size:0.62em;justify-content:flex-start;margin-bottom:12px;">Traitements › Construire un nuage de points…</div>
+      <table class="dx-table t-sm" style="font-size:0.56em;">
+        <thead><tr><th>Paramètre</th><th>Choix</th></tr></thead>
+        <tbody>
+          <tr><td>Données source</td><td>Cartes de profondeur</td></tr>
+          <tr><td>Qualité</td><td><strong>Haute</strong> (Moyenne pour aller vite)</td></tr>
+          <tr><td>Filtrage de la profondeur</td><td>voir ci-dessous</td></tr>
+          <tr><td>Calculer les couleurs des points</td><td>✓</td></tr>
+          <tr><td>Calculer la confiance des points</td><td>✓ (utile pour filtrer)</td></tr>
+        </tbody>
+      </table>
+      <table class="dx-table t-sm" style="font-size:0.54em;margin-top:10px;">
+        <thead><tr><th>Filtrage</th><th>Quand l'utiliser</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Agressif</strong></td><td>Terrains, ortho, cubatures : le moins de bruit</td></tr>
+          <tr><td><strong>Modéré</strong></td><td>Compromis courant</td></tr>
+          <tr><td><strong>Léger</strong></td><td>Petits détails 3D (garde-corps, arêtes fines)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-visual">
+      <figure class="figure" style="width:100%;"><img src="img/rendus/nuage-propriete.jpg" alt="Nuage de points dense coloré d'une propriété" style="height:380px;"><figcaption>Nuage dense : des dizaines de millions de points colorés</figcaption></figure>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 9 — Étape 7</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    C'est l'étape la plus longue : sur 300 photos de 20 MP en qualité Haute, compter de l'ordre d'une à plusieurs heures selon l'ordinateur. Pendant le calcul, faire le point sur les erreurs des repères. Après le calcul : Outils › Nuage de points › Filtrer par confiance… pour masquer les points de faible confiance (1 à 2), et supprimer manuellement les points aberrants (ciel, reflets).
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ÉTAPE 8 : MNE (et MNT)
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>8. Construire le MNE (et le MNT)</h2>
+  <div class="two-col" style="grid-template-columns:1.05fr 1fr;align-items:start;">
+    <div class="col-text">
+      <div class="formula" style="font-size:0.62em;justify-content:flex-start;margin-bottom:12px;">Traitements › Construire un MNE…</div>
+      <table class="dx-table t-sm" style="font-size:0.56em;">
+        <tbody>
+          <tr><td>Projection</td><td>le <strong>système du projet</strong> (CC50…)</td></tr>
+          <tr><td>Données source</td><td><strong>Nuage de points</strong></td></tr>
+          <tr><td>Interpolation</td><td>Activée (par défaut)</td></tr>
+          <tr><td>Classes des points</td><td>Tout → <strong>MNS</strong> · Sol → <strong>MNT</strong></td></tr>
+          <tr><td>Résolution</td><td>automatique (≈ 2 × GSD)</td></tr>
+        </tbody>
+      </table>
+      <div class="box b-cyan" style="margin-top:12px;">
+        <h4>Pour un MNT</h4>
+        <p>D'abord <strong>Outils › Nuage de points › Classifier les points de terrain…</strong>, contrôler visuellement la classe « Sol », puis construire le MNE sur cette seule classe.</p>
+      </div>
+    </div>
+    <div class="col-visual">
+      <figure class="figure" style="width:100%;"><img src="img/rendus/mne-propriete.jpg" alt="Modèle numérique d'élévation coloré par altitude" style="height:260px;object-fit:contain;background:#0B1220;"><figcaption>MNS coloré par altitude</figcaption></figure>
+      <div class="callout c-blue" style="font-size:0.62em;width:100%;">Le MNE sert aussi de <strong>surface de projection</strong> pour l'orthomosaïque à l'étape suivante.</div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 9 — Étape 8</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    La classification automatique du sol fonctionne bien sur des terrains dégagés ; elle se trompe sous la végétation dense et autour des bâtiments complexes. Toujours contrôler en coloration « par classe » dans la vue Modèle.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     ÉTAPE 9 : ORTHOMOSAÏQUE
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>9. Construire l'orthomosaïque</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1.1fr;align-items:start;">
+    <div class="col-text">
+      <div class="formula" style="font-size:0.62em;justify-content:flex-start;margin-bottom:12px;">Traitements › Construire une orthomosaïque…</div>
+      <table class="dx-table t-sm" style="font-size:0.56em;">
+        <tbody>
+          <tr><td>Projection</td><td>système du projet</td></tr>
+          <tr><td>Surface</td><td><strong>MNE</strong> (le MNS pour une « vraie ortho »)</td></tr>
+          <tr><td>Mode de fusion</td><td><strong>Mosaïque (par défaut)</strong></td></tr>
+          <tr><td>Activer le remplissage des trous</td><td>✓</td></tr>
+          <tr><td>Taille de pixel</td><td>automatique (= GSD)</td></tr>
+        </tbody>
+      </table>
+      <ul class="list-sm" style="font-size:0.66em;margin-top:12px;">
+        <li>Contrôler dans l'onglet <strong>Ortho</strong> : raccords, bâtiments, bords</li>
+        <li>Corriger si besoin les <strong>lignes de raccord</strong> (choisir une autre photo pour une zone)</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <figure class="figure" style="width:100%;"><img src="img/rendus/ortho-propriete-interface.jpg" alt="Orthomosaïque d'une propriété dans un outil de visualisation" style="height:330px;"><figcaption>Orthomosaïque géoréférencée superposée au fond de carte</figcaption></figure>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 9 — Étape 9</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ÉTAPES 10-11 : EXPORTS & RAPPORT
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>10-11. Exporter et générer le rapport</h2>
+  <div class="grid-2" style="gap:22px;">
+    <div class="box b-cyan">
+      <h4><span class="hico"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span> Fichier › Exporter</h4>
+      <ul>
+        <li><strong>Exporter l'orthomosaïque…</strong> : GeoTIFF (+ fichier de calage), compression JPEG ou LZW, format BigTIFF si très grande</li>
+        <li><strong>Exporter le MNE…</strong> : GeoTIFF 32 bits (altitudes réelles)</li>
+        <li><strong>Exporter le nuage de points…</strong> : LAS / LAZ pour CloudCompare</li>
+        <li>Toujours vérifier le <strong>système de coordonnées</strong> proposé à l'export</li>
+      </ul>
+    </div>
+    <div class="box b-green">
+      <h4><span class="hico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span> Fichier › Exporter › Générer un rapport…</h4>
+      <ul>
+        <li>Nombre d'images, <strong>GSD</strong> obtenu, surface couverte</li>
+        <li><strong>Carte de recouvrement</strong> : nombre d'images par zone (viser ≥ 9)</li>
+        <li>Erreurs des positions caméras</li>
+        <li>Erreurs des <strong>points d'appui</strong> et des <strong>points de contrôle</strong></li>
+        <li>Résolution du MNE, aperçus</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout c-blue" style="font-size:0.62em;">Le rapport PDF est la <strong>preuve de qualité</strong> remise au client : il accompagne toujours les livrables.</div>
+  <div class="slide-footer">
+    <span>Module 9 — Exports & rapport</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Ouvrir l'orthomosaïque exportée dans QGIS (si disponible) avec un fond IGN pour vérifier la superposition : c'est le contrôle le plus parlant pour les stagiaires. L'export LAS du nuage servira demain dans CloudCompare.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     TP : TRAITER LE VOL ORTHO
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>À vous : traitez le vol orthophoto</h2>
+  <p><span class="tp-badge"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> TP en binômes · 2 h</span></p>
+  <div class="grid-2" style="gap:22px;margin-top:10px;">
+    <div class="steps">
+      <div class="step"><div>Créer le dossier projet et y copier photos et fichier de points</div></div>
+      <div class="step"><div>Étapes 1 à 3 : photos, paramètres de référence, alignement</div></div>
+      <div class="step"><div>Étapes 4 à 6 : repères, points de contrôle, optimisation, nettoyage</div></div>
+      <div class="step"><div><strong>Point d'étape avec le formateur</strong> : erreurs des CP</div></div>
+      <div class="step"><div>Étapes 7 à 11 : nuage dense, MNE, ortho, exports, rapport</div></div>
+    </div>
+    <div>
+      <div class="box b-green" style="margin-bottom:12px;">
+        <h4>Livrables attendus</h4>
+        <ul><li>Orthomosaïque GeoTIFF</li><li>MNS GeoTIFF</li><li>Nuage de points LAS</li><li>Rapport PDF</li></ul>
+      </div>
+      <div class="box b-orange">
+        <h4>Critère de réussite</h4>
+        <p>Erreur sur les points de contrôle <strong>≤ 2 GSD</strong> en XY et <strong>≤ 3 GSD</strong> en Z, et ortho superposable au fond IGN.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 9 — TP ortho</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Pour gagner du temps, lancer le nuage dense en qualité Moyenne pendant le TP ; le formateur peut montrer en parallèle le résultat en qualité Haute calculé à l'avance sur le jeu de démonstration. Le point d'étape obligatoire après l'étape 6 évite que des binômes calculent un nuage dense sur un alignement faux.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     EXPÉRIENCE : AVEC / SANS GCP
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>L'expérience : RTK seul ou RTK + GCP ?</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1fr;align-items:center;">
+    <div class="col-text">
+      <ol style="font-size:0.72em;">
+        <li>Clic droit sur le morceau › <strong>Dupliquer…</strong> (après l'alignement)</li>
+        <li>Morceau A : <strong>tous les repères décochés</strong> (ils ne servent que de contrôle) → RTK seul</li>
+        <li>Morceau B : GCP cochés, CP décochés → RTK + GCP</li>
+        <li>Optimiser les deux, comparer les erreurs <strong>sur les mêmes points de contrôle</strong></li>
+      </ol>
+      <div class="callout c-blue" style="font-size:0.66em;">On mesure ainsi, sur nos propres données, ce qu'apportent réellement les GCP.</div>
+    </div>
+    <div class="col-visual">
+      <table class="dx-table t-sm" style="font-size:0.6em;width:100%;">
+        <thead><tr><th>Erreur sur les CP</th><th>A : RTK seul</th><th>B : RTK + GCP</th></tr></thead>
+        <tbody>
+          <tr><td>XY (m)</td><td>… à mesurer</td><td>… à mesurer</td></tr>
+          <tr><td>Z (m)</td><td>… à mesurer</td><td>… à mesurer</td></tr>
+          <tr><td>Total (m)</td><td>… à mesurer</td><td>… à mesurer</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.6em;margin-top:12px;">Ce que l'on observe souvent : RTK seul déjà bon en <strong>planimétrie</strong>, mais un <strong>biais vertical</strong> de quelques centimètres que les GCP corrigent.</p>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 9 — Expérience</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Remplir le tableau au tableau blanc avec les résultats des binômes. Si le morceau A montre un décalage vertical constant de l'ordre de 40 à 50 m, c'est l'occasion de revenir sur le piège de l'altitude (géoïde, RAF20) ; s'il montre un décalage horizontal d'environ 1 m, sur le piège WGS 84 / RGF93.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     QUIZ — METASHAPE
+     ============================================================ -->
+<section class="slide-quiz">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>
+    <svg style="width:28px;height:28px;vertical-align:middle;margin-right:8px;stroke:var(--dx-primary);fill:none;stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Question
+  </h2>
+  <p class="quiz-question">À quel moment pointe-t-on les repères (GCP) dans Metashape ?</p>
+  <div class="quiz-options">
+    <div class="quiz-option"><span class="option-letter">A</span><span>Avant d'ajouter les photos</span></div>
+    <div class="quiz-option" data-correct="true"><span class="option-letter">B</span><span>Après l'alignement, avant le nuage dense</span></div>
+    <div class="quiz-option"><span class="option-letter">C</span><span>Après l'orthomosaïque</span></div>
+    <div class="quiz-option"><span class="option-letter">D</span><span>Uniquement à l'export</span></div>
+  </div>
+  <div class="quiz-reveal">Afficher la réponse</div>
+  <div class="quiz-explain"><strong>Réponse B.</strong> Après l'alignement, Metashape sait projeter les repères sur les photos, ce qui facilite le pointage. On optimise ensuite les caméras : le calage est fait avant les étapes longues (nuage dense, MNE, ortho), qui en héritent.</div>
+  <div class="slide-footer">
+    <span>Quiz — Metashape</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<section class="slide-quiz">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>
+    <svg style="width:28px;height:28px;vertical-align:middle;margin-right:8px;stroke:var(--dx-primary);fill:none;stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Question
+  </h2>
+  <p class="quiz-question">Vos GCP affichent 0,8 cm d'erreur, vos points de contrôle 6 cm. Quelle précision annoncez-vous au client ?</p>
+  <div class="quiz-options">
+    <div class="quiz-option"><span class="option-letter">A</span><span>0,8 cm : c'est l'erreur des points d'appui</span></div>
+    <div class="quiz-option"><span class="option-letter">B</span><span>La moyenne des deux, environ 3 cm</span></div>
+    <div class="quiz-option" data-correct="true"><span class="option-letter">C</span><span>6 cm : l'erreur mesurée sur les points de contrôle</span></div>
+    <div class="quiz-option"><span class="option-letter">D</span><span>La précision RTK du constructeur</span></div>
+  </div>
+  <div class="quiz-reveal">Afficher la réponse</div>
+  <div class="quiz-explain"><strong>Réponse C.</strong> Les points d'appui participent au calcul : leur erreur est forcément flatteuse. Seuls les points de contrôle, indépendants, mesurent la précision réelle. Un tel écart entre les deux doit aussi faire chercher une cause (pointage, recouvrement, déformation).</div>
+  <div class="slide-footer">
+    <span>Quiz — Metashape</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<section class="slide-quiz">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>
+    <svg style="width:28px;height:28px;vertical-align:middle;margin-right:8px;stroke:var(--dx-primary);fill:none;stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Question
+  </h2>
+  <p class="quiz-question">Pour une cubature de stocks, quel filtrage de profondeur choisir pour le nuage dense ?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" data-correct="true"><span class="option-letter">A</span><span>Agressif</span></div>
+    <div class="quiz-option"><span class="option-letter">B</span><span>Léger</span></div>
+    <div class="quiz-option"><span class="option-letter">C</span><span>Désactivé</span></div>
+    <div class="quiz-option"><span class="option-letter">D</span><span>Peu importe</span></div>
+  </div>
+  <div class="quiz-reveal">Afficher la réponse</div>
+  <div class="quiz-explain"><strong>Réponse A.</strong> Sur des surfaces continues (sol, tas), le filtrage agressif supprime le bruit sans perte utile, ce qui donne un MNS propre pour le calcul de volume. Le filtrage léger se réserve aux objets avec de fins détails à conserver.</div>
+  <div class="slide-footer">
+    <span>Quiz — Metashape</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MODULE 10 — TRAITER LE VOL 3D N°1
+     ============================================================ -->
+<section class="slide-module">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <div class="module-number">Module 10</div>
+  <h2>Traiter le vol 3D n°1</h2>
+  <p class="module-desc">Lancer le traitement de votre propre vol 3D, observer le résultat et noter ce qui ne va pas. On corrige demain.</p>
+  <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+  <div class="slide-footer">
+    <span>Module 10 — Vol 3D n°1</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     LANCER LE 3D EN LOT
+     ============================================================ -->
+<section class="slide-two-col">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Lancer le traitement 3D</h2>
+  <div class="two-col" style="grid-template-columns:1fr 1fr;align-items:center;">
+    <div class="col-text">
+      <div class="formula" style="font-size:0.62em;justify-content:flex-start;margin-bottom:12px;">Traitements › Traitement par lot…</div>
+      <div class="steps">
+        <div class="step"><div><strong>Aligner les photos</strong> — Précision Haute</div></div>
+        <div class="step"><div><strong>Construire un nuage de points</strong> — Qualité Moyenne, filtrage Léger</div></div>
+        <div class="step"><div><strong>Construire le Modèle</strong> (maillage) — source : cartes de profondeur</div></div>
+        <div class="step"><div><strong>Construire la texture</strong></div></div>
+      </div>
+      <div class="callout c-blue" style="font-size:0.64em;">Le traitement par lot enchaîne les étapes sans intervention : on le lance en fin de journée, il tourne pendant la nuit.</div>
+    </div>
+    <div class="col-visual">
+      <figure class="figure" style="width:100%;"><img src="img/rendus/chateau-eau-cameras.jpg" alt="Positions des caméras autour d'un château d'eau modélisé en 3D" style="height:330px;"><figcaption>Un vol 3D : les caméras entourent l'objet</figcaption></figure>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>Module 10 — Traitement 3D</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Mêmes réglages pour tous les binômes : ainsi, les différences de résultat viendront uniquement des choix d'acquisition, ce qui rend le débrief de demain parlant. Si le temps le permet, laisser les binômes regarder l'alignement avant de partir.
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     FICHE DE CONSTAT
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Observez… sans corriger</h2>
+  <p class="lead">Pour chaque modèle, notez sur votre fiche ce que vous voyez. Les causes et les corrections seront l'objet du débrief de demain matin.</p>
+  <div class="tiles" style="grid-template-columns:repeat(3,1fr);">
+    <div class="tile t-vol"><span class="hico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span><div>Photos <strong>non alignées</strong> : combien, où ?</div></div>
+    <div class="tile t-vol"><span class="hico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span><div><strong>Trous</strong> dans le modèle : toits, façades, dessous ?</div></div>
+    <div class="tile t-vol"><span class="hico"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/></svg></span><div>Surfaces <strong>déformées</strong>, « fondues », bosses</div></div>
+    <div class="tile t-mat"><span class="hico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg></span><div>Texture <strong>floue</strong>, couleurs inégales, ombres</div></div>
+    <div class="tile t-mat"><span class="hico"><svg viewBox="0 0 24 24"><line x1="4" y1="20" x2="20" y2="4"/></svg></span><div>Arêtes <strong>arrondies</strong>, détails perdus</div></div>
+    <div class="tile t-mat"><span class="hico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></span><div><strong>Bruit</strong> : points flottants, ciel, reflets</div></div>
+  </div>
+  <div class="callout" style="font-size:0.62em;">Il n'y a pas de mauvaise note : un modèle raté est le <strong>meilleur support pédagogique</strong> de demain.</div>
+  <div class="slide-footer">
+    <span>Module 10 — Constat</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SYNTHÈSE
+     ============================================================ -->
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Ce qu'il faut retenir du jour 2</h2>
+  <div class="grid-3" style="gap:14px;">
+    <div class="box b-cyan"><h4>Terrain</h4><ul><li>Cibles stables, visibles, nommées</li><li>Mesure au <strong>FIX</strong>, hauteur de canne vérifiée</li><li>Contrôle des images <strong>avant</strong> de partir</li></ul></div>
+    <div class="box b-blue"><h4>Metashape</h4><ul><li>Bon <strong>système</strong> et bonnes <strong>précisions</strong> dès le départ</li><li>Repères pointés sur 6 à 10 photos</li><li>Optimiser, nettoyer, <strong>puis</strong> densifier</li></ul></div>
+    <div class="box b-green"><h4>Qualité</h4><ul><li>La précision se lit sur les <strong>points de contrôle</strong></li><li>Le <strong>rapport PDF</strong> accompagne toujours les livrables</li></ul></div>
+  </div>
+  <div class="callout c-blue" style="font-size:0.64em;"><strong>Demain :</strong> débrief des modèles 3D n°1, vol 3D n°2 corrigé, maillage et texture, puis CloudCompare : mesures, cubatures et comparaison des deux modèles.</div>
+  <div class="slide-footer">
+    <span>Synthèse</span>
+    <span>Jour 2</span>
+  </div>
+  <aside class="notes">
+    Faire le QCM du jour 2 (support séparé). Vérifier que chaque binôme a lancé son traitement par lot et que les ordinateurs restent allumés pour la nuit (alimentation, mise en veille désactivée).
+  </aside>
+</section>
+
+
+<!-- ============================================================
+     FIN
+     ============================================================ -->
+<section class="slide-conclusion">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Fin du Jour 2</h2>
+  <p>À demain : on corrige le vol 3D et on exploite les données dans CloudCompare.</p>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <a href="https://www.dronexperts.io">dronexperts.io</a>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <a href="mailto:contact@dronexperts.io">contact@dronexperts.io</a>
+    </div>
+  </div>
+  <div class="slide-footer slide-footer-dark">
+    <span>&copy; 2026 Dronexperts — Tous droits réservés</span>
+    <span>Jour 2</span>
+  </div>
+</section>
+
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({
+    width: 1280, height: 720, margin: 0, minScale: 0.2, maxScale: 2.0,
+    hash: true, history: true, slideNumber: false,
+    transition: 'slide', backgroundTransition: 'fade',
+    controls: true, controlsLayout: 'bottom-right', controlsTutorial: false, progress: true,
+    center: false, help: true,
+    plugins: [ RevealNotes ]
+  });
+
+  // Quiz : un clic sur une proposition (ou sur « Afficher la réponse ») révèle la bonne réponse
+  document.querySelectorAll('.slide-quiz').forEach(function (quiz) {
+    function reveal() {
+      quiz.classList.add('revealed');
+      quiz.querySelectorAll('.quiz-option').forEach(function (opt) {
+        opt.classList.add(opt.dataset.correct === 'true' ? 'reveal-correct' : 'reveal-wrong');
+      });
+    }
+    quiz.querySelectorAll('.quiz-option, .quiz-reveal').forEach(function (el) {
+      el.addEventListener('click', reveal);
+    });
+  });
+</script>
+</body>
+</html>
