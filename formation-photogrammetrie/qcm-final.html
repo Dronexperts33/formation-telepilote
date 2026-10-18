@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Évaluation finale — Formation Photogrammétrie — Dronexperts</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="../css/dronexperts-theme.css">
+  <link rel="stylesheet" href="css/photo.css">
+  <style>
+    .qcm-question {
+      font-size: 0.95em;
+      font-weight: 600;
+      color: var(--dx-text-dark);
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .qcm-options { list-style: none; padding: 0; margin: 0; }
+    .qcm-options li {
+      padding: 10px 16px;
+      margin-bottom: 8px;
+      background: var(--dx-bg-light, #F8FAFC);
+      border-left: 3px solid var(--dx-border);
+      border-radius: 6px;
+      font-size: 0.78em;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .qcm-options li .letter {
+      font-weight: 700;
+      color: var(--dx-primary);
+      flex-shrink: 0;
+      width: 22px;
+    }
+    .qcm-answer {
+      margin-top: 18px;
+      padding: 14px 18px;
+      background: rgba(16,185,129,0.08);
+      border-left: 4px solid #10B981;
+      border-radius: 6px;
+      font-size: 0.78em;
+    }
+    .qcm-answer .answer-tag {
+      display: inline-block;
+      background: #10B981;
+      color: white;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      margin-right: 8px;
+      letter-spacing: 0.05em;
+    }
+    .qcm-question-num {
+      display: inline-block;
+      background: var(--dx-primary);
+      color: white;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.7em;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section class="slide-title">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>Évaluation finale</h1>
+  <p class="subtitle">Test de connaissances des 3 jours — photogrammétrie, géoréférencement, Metashape, CloudCompare</p>
+  <span class="badge">20 questions · ~30 min</span>
+  <div class="slide-footer slide-footer-dark"><span>Dronexperts — Formation Photogrammétrie par Drone</span><span>Évaluation</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Consignes</h2>
+  <ul class="icon-list">
+    <li><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="text"><h4>Durée indicative : 30 minutes</h4><p>Environ 1 min 30 par question. Modulez selon le temps disponible.</p></div></li>
+    <li><div class="icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="text"><h4>Une seule bonne réponse par question</h4><p>Notez votre réponse avant la correction.</p></div></li>
+    <li><div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="text"><h4>Correction collective</h4><p>La réponse et son explication s'affichent au clic suivant.</p></div></li>
+  </ul>
+  <aside class="notes">Faire débattre le groupe avant de révéler chaque réponse. Noter les questions ratées par la majorité pour y revenir.</aside>
+  <div class="slide-footer"><span>Évaluation — Consignes</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 1 / 20</span>
+  <p class="qcm-question">Un client veut des volumes de stocks avec une tolérance de ± 3 %. Quelle est la première question à lui poser ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Veut-il une vidéo ?</li>
+    <li><span class="letter">B.</span> Quelle marque de drone préfère-t-il ?</li>
+    <li><span class="letter">C.</span> Quelle surface de référence pour le pied des stocks et quel système de coordonnées ?</li>
+    <li><span class="letter">D.</span> Combien de batteries prévoir ?</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> La surface de référence et le référentiel conditionnent le résultat et sa comparaison avec les inventaires suivants.</div>
+  <div class="slide-footer"><span>Évaluation — Q1</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 2 / 20</span>
+  <p class="qcm-question">Avec le Matrice 4E, à quelle distance d'une façade voler pour un GSD de 0,5 cm ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> ≈ 18 m</li>
+    <li><span class="letter">B.</span> ≈ 100 m</li>
+    <li><span class="letter">C.</span> ≈ 5 m</li>
+    <li><span class="letter">D.</span> ≈ 50 m</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE A</span> Distance ≈ GSD × 36,6 = 0,5 × 36,6 ≈ 18 m.</div>
+  <div class="slide-footer"><span>Évaluation — Q2</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 3 / 20</span>
+  <p class="qcm-question">Une texture « en patchwork » avec des couleurs différentes selon les faces vient le plus souvent…</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> D'un RTK fixé</li>
+    <li><span class="letter">B.</span> D'un recouvrement trop fort</li>
+    <li><span class="letter">C.</span> D'un GSD trop petit</li>
+    <li><span class="letter">D.</span> D'une exposition automatique ou d'une lumière changeante</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> Verrouiller l'exposition sur une photo test et voler sous une lumière homogène.</div>
+  <div class="slide-footer"><span>Évaluation — Q3</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 4 / 20</span>
+  <p class="qcm-question">Les façades d'un bâtiment sont vides ou déformées alors que le toit est parfait. Cause probable ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Trop de GCP</li>
+    <li><span class="letter">B.</span> Mauvaise zone CC</li>
+    <li><span class="letter">C.</span> Absence de photos obliques</li>
+    <li><span class="letter">D.</span> Indice Kp élevé</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> Au nadir seul, les faces verticales ne sont vues qu'en biais extrême : ajouter des obliques (−45° à −60°) et des orbites.</div>
+  <div class="slide-footer"><span>Évaluation — Q4</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 5 / 20</span>
+  <p class="qcm-question">Le modèle se coupe en deux blocs au niveau du changement de batterie. Correction ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Désactiver le RTK</li>
+    <li><span class="letter">B.</span> Monter plus haut</li>
+    <li><span class="letter">C.</span> Passer en filtrage agressif</li>
+    <li><span class="letter">D.</span> Reprendre la mission avec un large recouvrement sur la zone précédente</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> Chaque nouveau vol doit chevaucher largement le précédent pour que le logiciel relie les deux blocs.</div>
+  <div class="slide-footer"><span>Évaluation — Q5</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 6 / 20</span>
+  <p class="qcm-question">Quel réseau NRTK communautaire est gratuit en France ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> EGNOS</li>
+    <li><span class="letter">B.</span> Teria</li>
+    <li><span class="letter">C.</span> Centipède</li>
+    <li><span class="letter">D.</span> Orphéon</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> Centipède est un réseau ouvert ; Teria et Orphéon sont sur abonnement. EGNOS est un système d'augmentation satellitaire, pas un réseau RTK.</div>
+  <div class="slide-footer"><span>Évaluation — Q6</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 7 / 20</span>
+  <p class="qcm-question">Les géotags d'un drone corrigé par un réseau NRTK français sont en réalité dans quel référentiel ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> WGS 84 pur</li>
+    <li><span class="letter">B.</span> Lambert I</li>
+    <li><span class="letter">C.</span> Celui de la correction, RGF93</li>
+    <li><span class="letter">D.</span> NTF</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> Le drone écrit « WGS 84 » mais ses positions suivent le référentiel des corrections reçues : en France, RGF93 (écart avec WGS 84 proche d'un mètre).</div>
+  <div class="slide-footer"><span>Évaluation — Q7</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 8 / 20</span>
+  <p class="qcm-question">Dans CloudCompare, pourquoi le « global shift » est-il proposé à l'import ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Pour réduire le nombre de points</li>
+    <li><span class="letter">B.</span> Parce que les grandes coordonnées dégradent la précision de calcul</li>
+    <li><span class="letter">C.</span> Pour corriger le géoïde</li>
+    <li><span class="letter">D.</span> Pour changer de projection</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> CloudCompare retire un décalage aux grandes coordonnées pour travailler sur de petites valeurs, et le remet à l'export.</div>
+  <div class="slide-footer"><span>Évaluation — Q8</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 9 / 20</span>
+  <p class="qcm-question">Quel outil CloudCompare calcule un volume de stock ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Edit › Subsample</li>
+    <li><span class="letter">B.</span> Tools › Clean › SOR filter</li>
+    <li><span class="letter">C.</span> Tools › Distances › Cloud/Cloud Dist.</li>
+    <li><span class="letter">D.</span> Tools › Volume › Compute 2.5D volume</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> Le calcul 2.5D découpe en cellules et additionne hauteur × surface par rapport à un sol (hauteur constante ou autre nuage).</div>
+  <div class="slide-footer"><span>Évaluation — Q9</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 10 / 20</span>
+  <p class="qcm-question">Pour comparer les modèles 3D n°1 et n°2, on utilise…</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Subsample</li>
+    <li><span class="letter">B.</span> Rasterize</li>
+    <li><span class="letter">C.</span> Cloud/Cloud Dist. (C2C), après recalage si nécessaire</li>
+    <li><span class="letter">D.</span> Compute 2.5D volume</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> La distance nuage/nuage donne une carte de couleurs et un histogramme des écarts.</div>
+  <div class="slide-footer"><span>Évaluation — Q10</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 11 / 20</span>
+  <p class="qcm-question">Quel livrable remet-on toujours avec les données ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Une vidéo du vol</li>
+    <li><span class="letter">B.</span> Les photos brutes</li>
+    <li><span class="letter">C.</span> Le fichier projet Metashape</li>
+    <li><span class="letter">D.</span> Le rapport (précision sur points de contrôle, référentiel, méthode)</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> Le rapport est la preuve de qualité : référentiel, méthode, précision mesurée, limites.</div>
+  <div class="slide-footer"><span>Évaluation — Q11</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 12 / 20</span>
+  <p class="qcm-question">Le MNS photogrammétrique d'une zone boisée sert à…</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Remplacer un MNT LiDAR</li>
+    <li><span class="letter">B.</span> Connaître la hauteur de la canopée et de la surface visible</li>
+    <li><span class="letter">C.</span> Connaître le sol sous les arbres</li>
+    <li><span class="letter">D.</span> Mesurer les volumes de terre sous la forêt</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> La photogrammétrie ne voit que la surface visible : canopée, toits, stocks.</div>
+  <div class="slide-footer"><span>Évaluation — Q12</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 13 / 20</span>
+  <p class="qcm-question">Pour la cubature d'un stock, quel type de maillage Metashape est le plus adapté ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Modèle tuilé</li>
+    <li><span class="letter">B.</span> Champ de hauteur (2.5D)</li>
+    <li><span class="letter">C.</span> Arbitraire (3D)</li>
+    <li><span class="letter">D.</span> Aucun : seul le nuage compte</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> Un stock vu du dessus n'a pas de surplomb : le champ de hauteur est plus léger et adapté. (Le calcul peut aussi se faire sur le nuage dans CloudCompare.)</div>
+  <div class="slide-footer"><span>Évaluation — Q13</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 14 / 20</span>
+  <p class="qcm-question">Un GCP montre une erreur de 25 cm, les autres 1 cm. Que faire ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Ignorer, la moyenne reste bonne</li>
+    <li><span class="letter">B.</span> Enquêter : pointage, nom, hauteur de canne, cible déplacée</li>
+    <li><span class="letter">C.</span> Augmenter la précision du repère</li>
+    <li><span class="letter">D.</span> Le supprimer immédiatement</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> Une erreur isolée a presque toujours une cause identifiable ; on ne supprime qu'après avoir compris.</div>
+  <div class="slide-footer"><span>Évaluation — Q14</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 15 / 20</span>
+  <p class="qcm-question">Pourquoi enregistrer la mission de vol ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Pour la DGAC</li>
+    <li><span class="letter">B.</span> Pour réduire la taille des photos</li>
+    <li><span class="letter">C.</span> Pour revoler la même trajectoire lors d'un prochain inventaire</li>
+    <li><span class="letter">D.</span> Ce n'est pas utile</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> Revoler la même mission dans le même référentiel rend les comparaisons entre dates fiables.</div>
+  <div class="slide-footer"><span>Évaluation — Q15</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 16 / 20</span>
+  <p class="qcm-question">Quel est l'intérêt des coordonnées CC pour un chantier local ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Elles remplacent les altitudes</li>
+    <li><span class="letter">B.</span> Elles sont obligatoires pour le cadastre</li>
+    <li><span class="letter">C.</span> Elles sont en degrés</li>
+    <li><span class="letter">D.</span> L'altération des distances y est très faible (quelques cm/km)</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> ± 9 cm/km au maximum, contre jusqu'à 3 m/km en Lambert 93 aux extrémités du territoire.</div>
+  <div class="slide-footer"><span>Évaluation — Q16</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 17 / 20</span>
+  <p class="qcm-question">Un point vu par une seule photo…</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Est sans incidence</li>
+    <li><span class="letter">B.</span> Ne peut pas être positionné en 3D</li>
+    <li><span class="letter">C.</span> Est reconstruit avec moins de précision</li>
+    <li><span class="letter">D.</span> Est extrapolé par les voisins</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> Il faut au moins deux rayons qui se coupent.</div>
+  <div class="slide-footer"><span>Évaluation — Q17</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 18 / 20</span>
+  <p class="qcm-question">Quelle combinaison donne une précision à la fois rapide et prouvée ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Beaucoup de GCP regroupés au centre</li>
+    <li><span class="letter">B.</span> Ni RTK ni GCP</li>
+    <li><span class="letter">C.</span> RTK + points de contrôle (et quelques GCP si besoin)</li>
+    <li><span class="letter">D.</span> RTK seul</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> Le RTK limite le travail au sol ; les points de contrôle prouvent la précision.</div>
+  <div class="slide-footer"><span>Évaluation — Q18</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 19 / 20</span>
+  <p class="qcm-question">En vol 3D en orbite, quel espacement angulaire entre photos retient-on comme repère ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 180°</li>
+    <li><span class="letter">B.</span> 45°</li>
+    <li><span class="letter">C.</span> Environ 10° (36 photos par tour)</li>
+    <li><span class="letter">D.</span> 90°</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> Une photo tous les 10° environ assure un recouvrement suffisant entre vues voisines.</div>
+  <div class="slide-footer"><span>Évaluation — Q19</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 20 / 20</span>
+  <p class="qcm-question">Le meilleur moment pour corriger la plupart des défauts d'un modèle 3D, c'est…</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> À l'export</li>
+    <li><span class="letter">B.</span> Au traitement, avec des réglages plus forts</li>
+    <li><span class="letter">C.</span> Jamais, c'est le logiciel qui décide</li>
+    <li><span class="letter">D.</span> Au vol : préparation et contrôle sur site</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> Recouvrement, angles, exposition, flou : ces défauts se corrigent à l'acquisition, pas au traitement.</div>
+  <div class="slide-footer"><span>Évaluation — Q20</span><span>Jour 3</span></div>
+</section>
+
+<section class="slide-conclusion">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Fin du test final</h2>
+  <p>Merci ! Retour au sommaire de la formation avec le logo.</p>
+  <div class="slide-footer slide-footer-dark"><span>&copy; 2026 Dronexperts — Tous droits réservés</span><span>Évaluation</span></div>
+</section>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({ width: 1280, height: 720, margin: 0, minScale: 0.2, maxScale: 2.0, hash: true, history: true, slideNumber: false, transition: 'slide', backgroundTransition: 'fade', controls: true, controlsLayout: 'bottom-right', controlsTutorial: false, progress: true, center: false, help: true, plugins: [ RevealNotes ] });
+</script>
+</body>
+</html>

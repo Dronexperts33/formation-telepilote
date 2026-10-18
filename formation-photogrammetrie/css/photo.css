@@ -192,3 +192,9 @@
 .box .steps .step { font-size: 0.86em; }
 .two-col .col-text > .dx-table.t-sm { font-size: 0.64em !important; }
 .two-col .col-text > .list-sm { font-size: 0.78em !important; }
+
+/* Listes : toujours sous le titre (reveal.css met les ul en inline-block) */
+.reveal .icon-list { display: block; }
+.reveal .qcm-options { display: block; }
+.reveal .qcm-options li { padding-left: 16px; }
+.reveal .qcm-options li::before { display: none; }

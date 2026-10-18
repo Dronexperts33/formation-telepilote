@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livret instructeur — Photogrammétrie par Drone — Dronexperts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dx-primary: #0E74DA; --dx-gradient-start: #1E3A8A; --dx-gradient-end: #04355D;
+      --dx-bg-light: #F8FAFC; --dx-text-dark: #0F172A; --dx-text-secondary: #475569; --dx-text-muted: #94A3B8;
+      --dx-border: #E2E8F0; --dx-success: #10B981; --dx-warning: #F59E0B; --dx-error: #EF4444; --dx-info: #06B6D4;
+    }
+    @page { size: A4; margin: 16mm 14mm 18mm 14mm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; font-size: 10.5pt; color: var(--dx-text-secondary); line-height: 1.55; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { max-width: 210mm; margin: 0 auto; padding: 0 24px 40px; }
+    a { color: var(--dx-primary); text-decoration: none; font-weight: 500; }
+    .header { background: linear-gradient(135deg, var(--dx-gradient-start), var(--dx-gradient-end)); color: #fff; text-align: center; padding: 36px 28px 32px; border-radius: 0 0 16px 16px; margin-bottom: 26px; }
+    .header img { height: 60px; filter: brightness(0) invert(1); margin-bottom: 12px; }
+    .header h1 { font-size: 21pt; font-weight: 800; letter-spacing: -0.02em; }
+    .header p { color: rgba(255,255,255,0.8); font-size: 11pt; margin-top: 4px; }
+    .toolbar { display: flex; justify-content: flex-end; gap: 10px; margin: -8px 0 18px; }
+    .toolbar button { font: 600 9.5pt Inter, sans-serif; background: var(--dx-primary); color: #fff; border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+    h2 { display: flex; align-items: center; gap: 10px; font-size: 14pt; color: var(--dx-text-dark); border-bottom: 3px solid var(--dx-primary); padding-bottom: 8px; margin: 28px 0 14px; }
+    h2 .n { background: var(--dx-primary); color: #fff; border-radius: 8px; font-size: 10pt; padding: 2px 9px; }
+    h3 { font-size: 11pt; color: var(--dx-text-dark); margin: 16px 0 8px; }
+    p { margin-bottom: 8px; }
+    ul { padding-left: 18px; margin-bottom: 8px; }
+    li { margin-bottom: 3px; }
+    strong { color: var(--dx-text-dark); }
+    table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 6px 0 12px; }
+    th { background: var(--dx-text-dark); color: #fff; text-align: left; padding: 7px 9px; font-weight: 600; }
+    td { padding: 6px 9px; border-bottom: 1px solid var(--dx-border); vertical-align: top; }
+    tr:nth-child(even) td { background: var(--dx-bg-light); }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .card { border: 1px solid var(--dx-border); border-radius: 12px; padding: 14px 16px; background: #fff; break-inside: avoid; }
+    .card.blue { border-top: 4px solid var(--dx-primary); } .card.green { border-top: 4px solid var(--dx-success); } .card.orange { border-top: 4px solid var(--dx-warning); } .card.red { border-top: 4px solid var(--dx-error); }
+    .callout { border-left: 4px solid var(--dx-warning); background: rgba(245,158,11,0.08); border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 10pt; }
+    .callout.red { border-color: var(--dx-error); background: rgba(239,68,68,0.06); }
+    .callout.blue { border-color: var(--dx-primary); background: rgba(14,116,218,0.06); }
+    .tag { display: inline-block; font-size: 8.5pt; font-weight: 700; padding: 1px 8px; border-radius: 6px; background: rgba(14,116,218,0.1); color: var(--dx-primary); }
+    .form { border: 1.5px solid var(--dx-text-dark); border-radius: 10px; padding: 16px 18px; margin: 14px 0; break-inside: avoid; }
+    .form h3 { margin-top: 0; display: flex; justify-content: space-between; align-items: center; }
+    .line { border-bottom: 1px dotted var(--dx-text-muted); height: 24px; margin-bottom: 2px; }
+    .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 18px; font-size: 9.5pt; }
+    .fields div { border-bottom: 1px dotted var(--dx-text-muted); padding: 6px 0 2px; }
+    .box-sketch { border: 1px dashed var(--dx-text-muted); border-radius: 8px; height: 190px; margin-top: 8px; display: flex; align-items: flex-end; justify-content: flex-end; padding: 6px 10px; font-size: 8.5pt; color: var(--dx-text-muted); }
+    .form table td { height: 26px; }
+    .break { page-break-before: always; }
+    .footer { text-align: center; font-size: 9pt; color: var(--dx-text-muted); margin-top: 30px; border-top: 1px solid var(--dx-border); padding-top: 12px; }
+    @media print { .toolbar { display: none; } .header { border-radius: 0; } }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts">
+  <h1>Livret instructeur</h1>
+  <p>Formation Photogrammétrie par Drone — 3 jours / 21 h</p>
+</div>
+
+<div class="page">
+  <div class="toolbar"><a href="index.html"><button type="button">← Sommaire</button></a><button type="button" onclick="window.print()">Imprimer / PDF</button></div>
+
+  <!-- 1 -->
+  <h2><span class="n">1</span> La formation en bref</h2>
+  <div class="grid">
+    <div class="card blue">
+      <h3>Public & prérequis</h3>
+      <ul>
+        <li>Télépilotes déjà formés (certificat de catégorie Ouverte au minimum ; qualification Spécifique pour une activité professionnelle)</li>
+        <li>Aisance avec l'informatique (gestion de dossiers, installation de logiciels)</li>
+        <li>Effectif conseillé : <strong>4 à 6 stagiaires</strong>, en binômes</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <h3>Objectifs</h3>
+      <ul>
+        <li>Préparer une mission photogrammétrique (GSD, recouvrements, référentiel, GCP)</li>
+        <li>Acquérir orthophoto et modèle 3D au Matrice 4E RTK, relever des GCP au D-RTK 3</li>
+        <li>Traiter dans Metashape Professional, exploiter dans CloudCompare</li>
+        <li>Prouver la précision (points de contrôle) et livrer un rapport</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout blue"><strong>Principe pédagogique :</strong> le vol 3D n°1 (J2) se fait en <strong>autonomie complète</strong>. Ses défauts, observés au traitement, sont débriefés au J3 avant un vol n°2 corrigé, puis les deux modèles sont comparés dans CloudCompare.</div>
+
+  <!-- 2 -->
+  <h2><span class="n">2</span> Déroulé et timing</h2>
+  <table>
+    <thead><tr><th style="width:13%;">Jour</th><th style="width:16%;">Créneau</th><th>Contenu</th><th style="width:20%;">Support</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="4"><strong>Jour 1</strong><br>salle</td><td>9h00 – 10h30</td><td>Accueil, présentations, objectifs, méthode · Module 2 Fondamentaux</td><td><a href="jour1.html">Jour 1</a> · modules 1-2</td></tr>
+      <tr><td>10h45 – 12h30</td><td>Module 3 Capteur et prise de vue (GSD, recouvrements, plan de vol) · Module 4 Livrables</td><td>modules 3-4</td></tr>
+      <tr><td>13h30 – 15h30</td><td>Module 5 Géoréférencement et coordonnées · Module 6 RTK, PPK, GCP</td><td>modules 5-6</td></tr>
+      <tr><td>15h45 – 17h30</td><td>Module 7 Préparation de mission (carrière), TP préparation, présentation du site de J2 · QCM J1</td><td>module 7 · <a href="qcm-j1.html">QCM J1</a></td></tr>
+      <tr><td rowspan="4"><strong>Jour 2</strong><br>terrain + salle</td><td>8h30 – 10h30</td><td>Briefing, atelier GCP (pose + mesure au D-RTK 3), mise en place de la base</td><td><a href="jour2.html">Jour 2</a> · module 8</td></tr>
+      <tr><td>10h30 – 12h30</td><td>Vol orthophoto, <strong>vol 3D n°1 en autonomie</strong>, contrôle qualité</td><td>module 8</td></tr>
+      <tr><td>13h30 – 16h30</td><td>Module 9 Metashape : chaîne de traitement, TP ortho, expérience RTK seul / RTK + GCP</td><td>module 9</td></tr>
+      <tr><td>16h30 – 17h30</td><td>Module 10 : lancement du traitement 3D n°1 par lot, fiche de constat · QCM J2</td><td>module 10 · <a href="qcm-j2.html">QCM J2</a></td></tr>
+      <tr><td rowspan="4"><strong>Jour 3</strong><br>salle + terrain</td><td>8h30 – 10h00</td><td>Module 11 Débrief des modèles n°1, les 10 pièges, grille de diagnostic</td><td><a href="jour3.html">Jour 3</a> · module 11</td></tr>
+      <tr><td>10h00 – 12h30</td><td>Module 12 Stratégies de vol 3D, plan du vol n°2, <strong>vol 3D n°2</strong>, lancement du traitement</td><td>module 12</td></tr>
+      <tr><td>13h30 – 16h00</td><td>Module 13 Maillage et texture · Module 14 CloudCompare (cubature, comparaison n°1 / n°2), TP</td><td>modules 13-14</td></tr>
+      <tr><td>16h00 – 17h30</td><td>Module 15 Rapport de mission · évaluation finale · satisfaction · attestations</td><td>module 15 · <a href="qcm-final.html">Évaluation</a></td></tr>
+    </tbody>
+  </table>
+  <div class="callout">Météo défavorable : inverser terrain et salle (Metashape le matin sur le jeu de démonstration). Le vol 3D n°1 doit absolument avoir lieu au J2.</div>
+
+  <!-- 3 -->
+  <h2><span class="n">3</span> Préparer la session</h2>
+  <div class="grid">
+    <div class="card blue">
+      <h3>Matériel de vol et de topographie</h3>
+      <ul>
+        <li>DJI Matrice 4E RTK, batteries (au moins 1 par binôme et par vol + réserve), télécommande</li>
+        <li>DJI D-RTK 3, trépied, canne, batteries ; coordonnées du point connu ou identifiants NTRIP</li>
+        <li>8 à 10 cibles damier ≥ 50 cm numérotées, fixations, peinture, clous</li>
+        <li>Balisage, EPI, trousse de secours, radios</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <h3>Informatique</h3>
+      <ul>
+        <li>Un ordinateur par binôme : GPU, 32 Go de RAM minimum, 200 Go libres</li>
+        <li><strong>Metashape Professional</strong> (licences ou essai 30 jours activé avant la session), interface en français</li>
+        <li><strong>CloudCompare</strong> installé (cloudcompare.org)</li>
+        <li>QGIS (facultatif) ; lecteurs de cartes SD, disque de sauvegarde</li>
+        <li><strong>Jeu de données de secours</strong> (ortho + 3D + points) en cas de météo</li>
+      </ul>
+    </div>
+    <div class="card orange">
+      <h3>Site de vol</h3>
+      <ul>
+        <li>Terrain dégagé pour l'ortho (quelques hectares) + un objet 3D (bâtiment, tas…)</li>
+        <li>Préparation de mission complète (trame du module 7), autorisations, accord du propriétaire</li>
+        <li>Emplacements des 5 GCP et 3-4 points de contrôle repérés</li>
+        <li>Carte Géoportail et photos de repérage pour la slide « Notre site de vol »</li>
+      </ul>
+    </div>
+    <div class="card red">
+      <h3>Impressions</h3>
+      <ul>
+        <li>Annexe A : fiche de préparation de mission (1 par binôme)</li>
+        <li>Annexe B : fiche de relevé des points (1 par binôme)</li>
+        <li>Annexe C : fiche de vol 3D et d'observation (1 par binôme, 2 vols)</li>
+        <li>Annexe D : fiche de constat (1 par binôme)</li>
+        <li>Annexe E : grille d'évaluation pratique (1 par stagiaire)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <h2><span class="n">4</span> Points de vigilance pédagogique</h2>
+  <table>
+    <thead><tr><th style="width:30%;">Sujet</th><th>À retenir</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Zones CC</strong></td><td>Bandes de <strong>latitude</strong> (CC42 à 50° N pour CC50), méridien central 3° E. L'ancien support les décrivait à tort comme des bandes de longitude.</td></tr>
+      <tr><td><strong>Portée RTK</strong></td><td>Centimétrique jusqu'à 10-20 km de la base ; au-delà, l'erreur augmente (1 ppm = 1 cm / 10 km).</td></tr>
+      <tr><td><strong>Altitudes</strong></td><td>GNSS = hauteurs ellipsoïdales ; client = NGF-IGN69 ; N ≈ 45 à 55 m ; grille RAF20 intégrée à Metashape.</td></tr>
+      <tr><td><strong>WGS 84 / RGF93</strong></td><td>Écart proche d'un mètre en 2026 ; les géotags RTK sont dans le référentiel de la correction.</td></tr>
+      <tr><td><strong>Points de contrôle</strong></td><td>Seule preuve de précision ; toujours en prévoir 3 à 5, exclus du calcul.</td></tr>
+      <tr><td><strong>Vol 3D n°1</strong></td><td>Aucun conseil technique ; noter tous les choix sur la fiche d'observation (annexe C).</td></tr>
+      <tr><td><strong>Réglementation</strong></td><td>Rappel court seulement : catégorie selon le marquage du drone et la configuration du vol, carte des restrictions UAS, autorisations. Renvoyer à la formation télépilote.</td></tr>
+      <tr><td><strong>Cas d'étude carrière</strong></td><td>Données publiques IGN, site réel utilisé comme exercice : ne pas laisser entendre que Dronexperts y intervient.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ANNEXE A -->
+  <div class="break"></div>
+  <h2><span class="n">A</span> Fiche de préparation de mission</h2>
+  <div class="form">
+    <h3>Mission <span class="tag">Binôme : ......................................</span></h3>
+    <div class="fields">
+      <div>Client / site :</div><div>Date prévue :</div>
+      <div>Livrables attendus :</div><div>Précision demandée :</div>
+      <div>Système (projection) :</div><div>Référence d'altitude :</div>
+      <div>Surface de la zone (ha) :</div><div>Surface de référence (cubature) :</div>
+    </div>
+    <h3>Plan de vol</h3>
+    <div class="fields">
+      <div>GSD visé (cm) :</div><div>Hauteur H (m) = GSD × 36,6 :</div>
+      <div>Emprise photo (m × m) :</div><div>Recouvrements (frontal / latéral) :</div>
+      <div>Distance entre photos (m) :</div><div>Distance entre lignes (m) :</div>
+      <div>Vitesse (m/s) / intervalle (s) :</div><div>Flou de bougé (vitesse × pose) :</div>
+      <div>Nombre de lignes / de photos :</div><div>Durée de vol / batteries :</div>
+    </div>
+    <h3>Points d'appui et de contrôle</h3>
+    <div class="fields">
+      <div>Nombre de GCP :</div><div>Nombre de points de contrôle :</div>
+      <div>Base RTK (point connu / réseau) :</div><div>Point de décollage :</div>
+    </div>
+    <div class="box-sketch">Croquis : zone, GCP (▲), points de contrôle (○), décollage (H)</div>
+    <h3>Contraintes</h3>
+    <div class="line"></div><div class="line"></div><div class="line"></div>
+    <div class="fields"><div>Catégorie d'exploitation :</div><div>Autorisations / accords :</div><div>Météo / Kp :</div><div>EPI / sécurité site :</div></div>
+  </div>
+
+  <!-- ANNEXE B -->
+  <h2><span class="n">B</span> Fiche de relevé des points</h2>
+  <div class="form">
+    <h3>Relevé GNSS <span class="tag">Système : ...................... Altitude : ......................</span></h3>
+    <div class="fields"><div>Récepteur / mode :</div><div>Hauteur de canne :</div><div>Corrections (base / réseau) :</div><div>Opérateur :</div></div>
+    <table>
+      <thead><tr><th>Nom</th><th>Type (appui / contrôle)</th><th>Statut FIX</th><th>Précision H / V</th><th>Photo n°</th><th>Remarques</th></tr></thead>
+      <tbody>
+        <tr><td>GCP01</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>GCP02</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>GCP03</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>GCP04</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>GCP05</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CP01</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CP02</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CP03</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>CP04</td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ANNEXE C -->
+  <div class="break"></div>
+  <h2><span class="n">C</span> Fiche de vol 3D et d'observation formateur</h2>
+  <div class="form">
+    <h3>Vol 3D <span class="tag">n°1 ☐ &nbsp; n°2 ☐ &nbsp;·&nbsp; Binôme : ..........................</span></h3>
+    <table>
+      <thead><tr><th style="width:36%;">Choix</th><th>Noté par le binôme</th><th>Observé par le formateur</th></tr></thead>
+      <tbody>
+        <tr><td>Type de vol (grille, obliques, orbites, façade, manuel)</td><td></td><td></td></tr>
+        <tr><td>Hauteur / distance à l'objet (m) — GSD obtenu</td><td></td><td></td></tr>
+        <tr><td>Angle(s) de nacelle</td><td></td><td></td></tr>
+        <tr><td>Nombre de passages / d'orbites, espacement</td><td></td><td></td></tr>
+        <tr><td>Recouvrement</td><td></td><td></td></tr>
+        <tr><td>Vitesse</td><td></td><td></td></tr>
+        <tr><td>Exposition (auto / verrouillée), vitesse d'obturation, ISO</td><td></td><td></td></tr>
+        <tr><td>Heure, lumière, ombres, vent</td><td></td><td></td></tr>
+        <tr><td>Nombre de photos, batteries</td><td></td><td></td></tr>
+        <tr><td>Incidents (perte RTK, reprise, obstacle)</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ANNEXE D -->
+  <h2><span class="n">D</span> Fiche de constat du modèle 3D</h2>
+  <div class="form">
+    <h3>Constat <span class="tag">Modèle n°1 ☐ &nbsp; n°2 ☐</span></h3>
+    <table>
+      <thead><tr><th style="width:34%;">Observation</th><th>Où ? Combien ?</th><th>Cause supposée (J3)</th></tr></thead>
+      <tbody>
+        <tr><td>Photos non alignées</td><td></td><td></td></tr>
+        <tr><td>Trous dans le modèle</td><td></td><td></td></tr>
+        <tr><td>Surfaces déformées, « fondues »</td><td></td><td></td></tr>
+        <tr><td>Texture floue, couleurs inégales</td><td></td><td></td></tr>
+        <tr><td>Arêtes arrondies, détails perdus</td><td></td><td></td></tr>
+        <tr><td>Bruit, points flottants</td><td></td><td></td></tr>
+        <tr><td>Autre</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ANNEXE E -->
+  <div class="break"></div>
+  <h2><span class="n">E</span> Grille d'évaluation pratique</h2>
+  <div class="form">
+    <h3>Stagiaire : ...................................................... <span class="tag">Acquis / En cours / Non acquis</span></h3>
+    <table>
+      <thead><tr><th style="width:52%;">Compétence observée</th><th>Acquis</th><th>En cours</th><th>Non acquis</th><th style="width:22%;">Commentaire</th></tr></thead>
+      <tbody>
+        <tr><td>Calcule GSD, hauteur, recouvrements et nombre de photos</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Choisit et justifie le système de coordonnées et d'altitude</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Implante et mesure des GCP au D-RTK 3 (FIX, hauteur de canne, nommage)</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Prépare et réalise un vol orthophoto en sécurité</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Contrôle la qualité des images avant de quitter le site</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Aligne, place les repères, optimise et lit les erreurs dans Metashape</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Produit nuage dense, MNE, orthomosaïque et rapport</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Diagnostique les défauts d'un modèle 3D et propose une correction</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Réalise un vol 3D corrigé</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Calcule un volume et compare deux modèles dans CloudCompare</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Rédige un rapport de mission avec la précision sur points de contrôle</td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    <div class="fields"><div>Résultat évaluation finale (/20) :</div><div>Signature formateur :</div></div>
+  </div>
+
+  <div class="footer">&copy; 2026 Dronexperts — Livret instructeur, Formation Photogrammétrie par Drone — <a href="index.html">Retour au sommaire</a></div>
+</div>
+</body>
+</html>

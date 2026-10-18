@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCM — Jour 1 — Formation Photogrammétrie — Dronexperts</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="../css/dronexperts-theme.css">
+  <link rel="stylesheet" href="css/photo.css">
+  <style>
+    .qcm-question {
+      font-size: 0.95em;
+      font-weight: 600;
+      color: var(--dx-text-dark);
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .qcm-options { list-style: none; padding: 0; margin: 0; }
+    .qcm-options li {
+      padding: 10px 16px;
+      margin-bottom: 8px;
+      background: var(--dx-bg-light, #F8FAFC);
+      border-left: 3px solid var(--dx-border);
+      border-radius: 6px;
+      font-size: 0.78em;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .qcm-options li .letter {
+      font-weight: 700;
+      color: var(--dx-primary);
+      flex-shrink: 0;
+      width: 22px;
+    }
+    .qcm-answer {
+      margin-top: 18px;
+      padding: 14px 18px;
+      background: rgba(16,185,129,0.08);
+      border-left: 4px solid #10B981;
+      border-radius: 6px;
+      font-size: 0.78em;
+    }
+    .qcm-answer .answer-tag {
+      display: inline-block;
+      background: #10B981;
+      color: white;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      margin-right: 8px;
+      letter-spacing: 0.05em;
+    }
+    .qcm-question-num {
+      display: inline-block;
+      background: var(--dx-primary);
+      color: white;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.7em;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section class="slide-title">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>QCM — Jour 1</h1>
+  <p class="subtitle">Principes, capteur, livrables, coordonnées, RTK et GCP, préparation de mission</p>
+  <span class="badge">20 questions · ~25 min</span>
+  <div class="slide-footer slide-footer-dark"><span>Dronexperts — Formation Photogrammétrie par Drone</span><span>QCM J1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Consignes</h2>
+  <ul class="icon-list">
+    <li><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="text"><h4>Durée indicative : 25 minutes</h4><p>Environ 1 min 30 par question. Modulez selon le temps disponible.</p></div></li>
+    <li><div class="icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="text"><h4>Une seule bonne réponse par question</h4><p>Notez votre réponse avant la correction.</p></div></li>
+    <li><div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="text"><h4>Correction collective</h4><p>La réponse et son explication s'affichent au clic suivant.</p></div></li>
+  </ul>
+  <aside class="notes">Faire débattre le groupe avant de révéler chaque réponse. Noter les questions ratées par la majorité pour y revenir.</aside>
+  <div class="slide-footer"><span>QCM J1 — Consignes</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 1 / 20</span>
+  <p class="qcm-question">Qu'est-ce que la photogrammétrie ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Une méthode de navigation par satellites</li>
+    <li><span class="letter">B.</span> Une technique de mesure à partir de photos prises sous des points de vue différents</li>
+    <li><span class="letter">C.</span> Une technique de balayage laser depuis un drone</li>
+    <li><span class="letter">D.</span> Un traitement des couleurs d'une photo aérienne</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> La photogrammétrie mesure dimensions, positions et volumes à partir de photos qui se recouvrent, prises de positions différentes.</div>
+  <div class="slide-footer"><span>QCM J1 — Q1</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 2 / 20</span>
+  <p class="qcm-question">Combien de photos au minimum faut-il pour calculer la position 3D d'un point ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 1</li>
+    <li><span class="letter">B.</span> 2</li>
+    <li><span class="letter">C.</span> 4</li>
+    <li><span class="letter">D.</span> 10</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> Il faut au moins deux rayons qui se coupent. En pratique, on vise bien plus grâce au recouvrement (une quinzaine de photos par point en cartographie 80/70).</div>
+  <div class="slide-footer"><span>QCM J1 — Q2</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 3 / 20</span>
+  <p class="qcm-question">Que signifie un GSD de 2 cm ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> La précision absolue du modèle est de 2 cm</li>
+    <li><span class="letter">B.</span> Les photos sont espacées de 2 cm</li>
+    <li><span class="letter">C.</span> Le drone vole à 2 cm près de sa trajectoire</li>
+    <li><span class="letter">D.</span> Un pixel de l'image représente 2 cm au sol</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> Le GSD est la taille au sol d'un pixel. Il conditionne le niveau de détail, pas directement la précision absolue (qui dépend aussi du géoréférencement).</div>
+  <div class="slide-footer"><span>QCM J1 — Q3</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 4 / 20</span>
+  <p class="qcm-question">Avec le Matrice 4E (GSD ≈ H ÷ 36,6), quel GSD obtient-on à 110 m ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> ≈ 1 cm</li>
+    <li><span class="letter">B.</span> ≈ 4 cm</li>
+    <li><span class="letter">C.</span> ≈ 3 cm</li>
+    <li><span class="letter">D.</span> ≈ 2 cm</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> 110 ÷ 36,6 ≈ 3,0 cm par pixel.</div>
+  <div class="slide-footer"><span>QCM J1 — Q4</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 5 / 20</span>
+  <p class="qcm-question">Quels recouvrements minimaux retient-on pour une cartographie courante ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 50 % frontal / 30 % latéral</li>
+    <li><span class="letter">B.</span> 60 % / 60 %</li>
+    <li><span class="letter">C.</span> 95 % / 95 %</li>
+    <li><span class="letter">D.</span> 80 % frontal / 70 % latéral</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> 80 % frontal et 70 % latéral sont des minimums de pratique ; on augmente sur la végétation, l'eau ou les surfaces homogènes.</div>
+  <div class="slide-footer"><span>QCM J1 — Q5</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 6 / 20</span>
+  <p class="qcm-question">Drone à 8 m/s, temps de pose 1/400 s. Quel est le flou de bougé ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 2 cm</li>
+    <li><span class="letter">B.</span> 1 cm</li>
+    <li><span class="letter">C.</span> 4 cm</li>
+    <li><span class="letter">D.</span> 0,5 cm</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE A</span> 8 m/s × 1/400 s = 0,02 m = 2 cm. Avec un GSD de 2 cm, l'image serait floue d'un pixel : il faut une pose plus courte ou voler moins vite.</div>
+  <div class="slide-footer"><span>QCM J1 — Q6</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 7 / 20</span>
+  <p class="qcm-question">Pourquoi préfère-t-on un obturateur mécanique ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Il permet des photos plus lumineuses</li>
+    <li><span class="letter">B.</span> Il est obligatoire réglementairement</li>
+    <li><span class="letter">C.</span> Il consomme moins de batterie</li>
+    <li><span class="letter">D.</span> Il capture toute l'image en même temps, sans déformation liée au mouvement</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> L'obturateur électronique (rolling shutter) lit le capteur ligne par ligne : si le drone avance, l'image est cisaillée et la géométrie faussée.</div>
+  <div class="slide-footer"><span>QCM J1 — Q7</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 8 / 20</span>
+  <p class="qcm-question">Quelle est la différence entre MNS et MNT ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Le MNT est plus précis que le MNS</li>
+    <li><span class="letter">B.</span> Le MNS est en couleur, le MNT en noir et blanc</li>
+    <li><span class="letter">C.</span> Aucune, ce sont deux noms du même produit</li>
+    <li><span class="letter">D.</span> Le MNS inclut bâtiments et végétation, le MNT représente le sol nu</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> Le modèle numérique de surface décrit tout ce qui est visible ; le modèle numérique de terrain retire les objets pour ne garder que le sol.</div>
+  <div class="slide-footer"><span>QCM J1 — Q8</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 9 / 20</span>
+  <p class="qcm-question">Sous un couvert forestier dense, quel capteur permet d'obtenir le sol ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Une caméra RGB à haute résolution</li>
+    <li><span class="letter">B.</span> Un LiDAR, grâce à ses échos multiples</li>
+    <li><span class="letter">C.</span> Aucun capteur aéroporté</li>
+    <li><span class="letter">D.</span> Une caméra thermique</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> La photogrammétrie ne voit que la canopée ; le LiDAR enregistre plusieurs échos par impulsion, dont certains atteignent le sol.</div>
+  <div class="slide-footer"><span>QCM J1 — Q9</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 10 / 20</span>
+  <p class="qcm-question">Une orthophoto est…</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Une photo panoramique à 360°</li>
+    <li><span class="letter">B.</span> Une photo prise exactement à la verticale</li>
+    <li><span class="letter">C.</span> Une image rectifiée, superposable à une carte, à échelle constante</li>
+    <li><span class="letter">D.</span> Une image en fausses couleurs</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> Une photo nadir n'est pas une ortho : relief, inclinaison et distorsions doivent être corrigés par orthorectification sur un modèle d'élévation.</div>
+  <div class="slide-footer"><span>QCM J1 — Q10</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 11 / 20</span>
+  <p class="qcm-question">Les zones CC (coniques conformes 9 zones) sont découpées…</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Par département</li>
+    <li><span class="letter">B.</span> Par bandes de latitude, de CC42 à CC50</li>
+    <li><span class="letter">C.</span> Par bandes de longitude</li>
+    <li><span class="letter">D.</span> Par régions administratives</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> Chaque zone CCxx a pour parallèle d'origine xx° N, avec un méridien central à 3° E. Bordeaux est en CC45, Lille en CC50.</div>
+  <div class="slide-footer"><span>QCM J1 — Q11</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 12 / 20</span>
+  <p class="qcm-question">Quel est le système d'altitudes officiel en France continentale ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> WGS 84</li>
+    <li><span class="letter">B.</span> EGM96</li>
+    <li><span class="letter">C.</span> NGF-IGN69</li>
+    <li><span class="letter">D.</span> Lambert 93</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> Les altitudes NGF-IGN69 se rapportent au géoïde ; le GNSS fournit des hauteurs ellipsoïdales qu'on convertit avec la grille RAF20 de l'IGN.</div>
+  <div class="slide-footer"><span>QCM J1 — Q12</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 13 / 20</span>
+  <p class="qcm-question">Dans un relevé GNSS, la hauteur ellipsoïdale h, l'altitude H et l'ondulation du géoïde N sont liées par :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> H = h + N</li>
+    <li><span class="letter">B.</span> h = H − N</li>
+    <li><span class="letter">C.</span> h = H × N</li>
+    <li><span class="letter">D.</span> h = H + N</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> h = H + N, avec N d'environ 45 à 55 m en France métropolitaine.</div>
+  <div class="slide-footer"><span>QCM J1 — Q13</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 14 / 20</span>
+  <p class="qcm-question">En Lambert 93 à 50,8° N, un stock de 100 m mesuré sur le plan est faux d'environ :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 2 cm</li>
+    <li><span class="letter">B.</span> 0,2 cm</li>
+    <li><span class="letter">C.</span> 20 cm</li>
+    <li><span class="letter">D.</span> 2 m</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> L'altération linéaire du Lambert 93 y atteint environ +2 m/km, soit 20 cm sur 100 m. En CC50, elle n'est que de quelques millimètres par 100 m.</div>
+  <div class="slide-footer"><span>QCM J1 — Q14</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 15 / 20</span>
+  <p class="qcm-question">Une base RTK posée au hasard, sans point connu ni réseau, donne un levé…</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Cohérent en relatif mais décalé d'environ 1 à 2 m</li>
+    <li><span class="letter">B.</span> Précis au centimètre en absolu</li>
+    <li><span class="letter">C.</span> Inutilisable même pour mesurer une distance</li>
+    <li><span class="letter">D.</span> Précis uniquement en altitude</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE A</span> Le drone est corrigé par rapport à la base, dont la position n'est connue qu'au mètre près : tout le levé est décalé d'autant.</div>
+  <div class="slide-footer"><span>QCM J1 — Q15</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 16 / 20</span>
+  <p class="qcm-question">Que signifie le statut RTK « FIX » ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> La base est fixée sur un trépied</li>
+    <li><span class="letter">B.</span> Le signal GNSS est perdu</li>
+    <li><span class="letter">C.</span> La solution centimétrique est obtenue</li>
+    <li><span class="letter">D.</span> Le drone est en vol stationnaire</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> FIX = ambiguïtés résolues, solution centimétrique. FLOAT = solution flottante, décimétrique, insuffisante pour la cartographie précise.</div>
+  <div class="slide-footer"><span>QCM J1 — Q16</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 17 / 20</span>
+  <p class="qcm-question">À partir de quel indice Kp faut-il être vigilant pour un vol de précision ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 0</li>
+    <li><span class="letter">B.</span> 4</li>
+    <li><span class="letter">C.</span> 9 uniquement</li>
+    <li><span class="letter">D.</span> 2</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> Repère de terrain : vigilance à partir de 4, report du vol de précision en cas de tempête géomagnétique (Kp ≥ 5).</div>
+  <div class="slide-footer"><span>QCM J1 — Q17</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 18 / 20</span>
+  <p class="qcm-question">À quoi sert un point de contrôle (check point) ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> À servir de point de décollage</li>
+    <li><span class="letter">B.</span> À mesurer la précision réelle sans participer au calcul</li>
+    <li><span class="letter">C.</span> À caler le modèle</li>
+    <li><span class="letter">D.</span> À remplacer la base RTK</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> Mesuré comme un GCP mais exclu du calcul, il donne l'erreur réelle à annoncer au client.</div>
+  <div class="slide-footer"><span>QCM J1 — Q18</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 19 / 20</span>
+  <p class="qcm-question">Quelle taille minimale pour une cible GCP avec un GSD de 3 cm ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 30 cm</li>
+    <li><span class="letter">B.</span> 10 cm</li>
+    <li><span class="letter">C.</span> 3 cm</li>
+    <li><span class="letter">D.</span> 3 m</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE A</span> Repère : au moins 10 × le GSD, soit 30 cm ; 50 à 60 cm sont plus confortables pour le pointage.</div>
+  <div class="slide-footer"><span>QCM J1 — Q19</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 20 / 20</span>
+  <p class="qcm-question">Qui choisit le système de coordonnées de livraison ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Le logiciel, automatiquement</li>
+    <li><span class="letter">B.</span> La DGAC</li>
+    <li><span class="letter">C.</span> Le client, avant la mission</li>
+    <li><span class="letter">D.</span> Le télépilote, selon son logiciel</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> On livre dans le système dans lequel travaille le client (son géomètre, son SIG). On le demande au briefing, avant la mission.</div>
+  <div class="slide-footer"><span>QCM J1 — Q20</span><span>Jour 1</span></div>
+</section>
+
+<section class="slide-conclusion">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Fin du QCM du Jour 1</h2>
+  <p>Merci ! Retour au sommaire de la formation avec le logo.</p>
+  <div class="slide-footer slide-footer-dark"><span>&copy; 2026 Dronexperts — Tous droits réservés</span><span>QCM J1</span></div>
+</section>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({ width: 1280, height: 720, margin: 0, minScale: 0.2, maxScale: 2.0, hash: true, history: true, slideNumber: false, transition: 'slide', backgroundTransition: 'fade', controls: true, controlsLayout: 'bottom-right', controlsTutorial: false, progress: true, center: false, help: true, plugins: [ RevealNotes ] });
+</script>
+</body>
+</html>

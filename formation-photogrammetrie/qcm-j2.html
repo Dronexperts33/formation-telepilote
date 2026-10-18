@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCM — Jour 2 — Formation Photogrammétrie — Dronexperts</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="../css/dronexperts-theme.css">
+  <link rel="stylesheet" href="css/photo.css">
+  <style>
+    .qcm-question {
+      font-size: 0.95em;
+      font-weight: 600;
+      color: var(--dx-text-dark);
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .qcm-options { list-style: none; padding: 0; margin: 0; }
+    .qcm-options li {
+      padding: 10px 16px;
+      margin-bottom: 8px;
+      background: var(--dx-bg-light, #F8FAFC);
+      border-left: 3px solid var(--dx-border);
+      border-radius: 6px;
+      font-size: 0.78em;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .qcm-options li .letter {
+      font-weight: 700;
+      color: var(--dx-primary);
+      flex-shrink: 0;
+      width: 22px;
+    }
+    .qcm-answer {
+      margin-top: 18px;
+      padding: 14px 18px;
+      background: rgba(16,185,129,0.08);
+      border-left: 4px solid #10B981;
+      border-radius: 6px;
+      font-size: 0.78em;
+    }
+    .qcm-answer .answer-tag {
+      display: inline-block;
+      background: #10B981;
+      color: white;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      margin-right: 8px;
+      letter-spacing: 0.05em;
+    }
+    .qcm-question-num {
+      display: inline-block;
+      background: var(--dx-primary);
+      color: white;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.7em;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section class="slide-title">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h1>QCM — Jour 2</h1>
+  <p class="subtitle">Terrain, GCP au D-RTK 3, chaîne de traitement Metashape</p>
+  <span class="badge">15 questions · ~20 min</span>
+  <div class="slide-footer slide-footer-dark"><span>Dronexperts — Formation Photogrammétrie par Drone</span><span>QCM J2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <h2>Consignes</h2>
+  <ul class="icon-list">
+    <li><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="text"><h4>Durée indicative : 20 minutes</h4><p>Environ 1 min 30 par question. Modulez selon le temps disponible.</p></div></li>
+    <li><div class="icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="text"><h4>Une seule bonne réponse par question</h4><p>Notez votre réponse avant la correction.</p></div></li>
+    <li><div class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="text"><h4>Correction collective</h4><p>La réponse et son explication s'affichent au clic suivant.</p></div></li>
+  </ul>
+  <aside class="notes">Faire débattre le groupe avant de révéler chaque réponse. Noter les questions ratées par la majorité pour y revenir.</aside>
+  <div class="slide-footer"><span>QCM J2 — Consignes</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 1 / 15</span>
+  <p class="qcm-question">Avant de mesurer un GCP à la canne, il faut impérativement :</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Désactiver le RTK</li>
+    <li><span class="letter">B.</span> Retourner la cible</li>
+    <li><span class="letter">C.</span> Faire décoller le drone</li>
+    <li><span class="letter">D.</span> Attendre le statut FIX et vérifier la hauteur de canne</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> Sans FIX, la mesure n'est pas centimétrique ; une hauteur de canne fausse décale l'altitude de tous les points.</div>
+  <div class="slide-footer"><span>QCM J2 — Q1</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 2 / 15</span>
+  <p class="qcm-question">Le vol 3D n°1 se fait…</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Sans contrôle des images</li>
+    <li><span class="letter">B.</span> En autonomie complète, le formateur n'intervenant que pour la sécurité</li>
+    <li><span class="letter">C.</span> Uniquement en vol automatique imposé</li>
+    <li><span class="letter">D.</span> Avec les conseils détaillés du formateur</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> Le principe pédagogique : les défauts constatés au traitement deviennent le support du débrief du jour 3.</div>
+  <div class="slide-footer"><span>QCM J2 — Q2</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 3 / 15</span>
+  <p class="qcm-question">Dans Metashape, quelle édition permet les repères, le MNE et l'orthomosaïque géoréférencés ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Standard</li>
+    <li><span class="letter">B.</span> Les deux</li>
+    <li><span class="letter">C.</span> Professional</li>
+    <li><span class="letter">D.</span> Aucune</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> L'édition Standard ne gère pas le géoréférencement par repères, ni le MNE et l'orthomosaïque géoréférencés.</div>
+  <div class="slide-footer"><span>QCM J2 — Q3</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 4 / 15</span>
+  <p class="qcm-question">Quel seuil de qualité d'image retient-on pour désactiver une photo floue ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Sous 0,9</li>
+    <li><span class="letter">B.</span> Au-dessus de 1</li>
+    <li><span class="letter">C.</span> Sous 2</li>
+    <li><span class="letter">D.</span> Sous 0,5</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> Metashape estime une qualité relative ; sous 0,5, la photo est en général trop floue (à vérifier visuellement sur les surfaces homogènes).</div>
+  <div class="slide-footer"><span>QCM J2 — Q4</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 5 / 15</span>
+  <p class="qcm-question">Quelle précision de caméra déclarer pour des géotags RTK fixés ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 100 m</li>
+    <li><span class="letter">B.</span> 0 m</li>
+    <li><span class="letter">C.</span> 5 à 10 m</li>
+    <li><span class="letter">D.</span> Environ 3 cm</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> La précision déclarée pondère la confiance accordée aux géotags : quelques centimètres en RTK, plusieurs mètres en GNSS seul.</div>
+  <div class="slide-footer"><span>QCM J2 — Q5</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 6 / 15</span>
+  <p class="qcm-question">Dans quel ordre se font ces étapes ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Repères → orthomosaïque → alignement</li>
+    <li><span class="letter">B.</span> Alignement → repères → optimisation → nuage dense</li>
+    <li><span class="letter">C.</span> Nuage dense → alignement → repères</li>
+    <li><span class="letter">D.</span> Orthomosaïque → MNE → alignement</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> On cale et on vérifie la précision avant les étapes longues (nuage dense, MNE, ortho), qui en héritent.</div>
+  <div class="slide-footer"><span>QCM J2 — Q6</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 7 / 15</span>
+  <p class="qcm-question">Sur combien de photos pointer chaque repère, idéalement ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> 1</li>
+    <li><span class="letter">B.</span> 6 à 10, bien réparties</li>
+    <li><span class="letter">C.</span> Toutes les photos du vol</li>
+    <li><span class="letter">D.</span> 2</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE B</span> Plusieurs photos réparties (centre et bords d'image) rendent le calage robuste ; Metashape projette ensuite le repère sur les autres.</div>
+  <div class="slide-footer"><span>QCM J2 — Q7</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 8 / 15</span>
+  <p class="qcm-question">Comment transformer un repère en point de contrôle dans Metashape ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Le décocher dans le panneau Référence</li>
+    <li><span class="letter">B.</span> Le renommer en CP</li>
+    <li><span class="letter">C.</span> Changer son système de coordonnées</li>
+    <li><span class="letter">D.</span> Le supprimer</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE A</span> Décoché, il n'intervient plus dans l'optimisation, mais son erreur reste calculée et affichée.</div>
+  <div class="slide-footer"><span>QCM J2 — Q8</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 9 / 15</span>
+  <p class="qcm-question">Quelle erreur annonce-t-on au client ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> L'erreur des points d'appui</li>
+    <li><span class="letter">B.</span> La précision constructeur du RTK</li>
+    <li><span class="letter">C.</span> L'erreur de reprojection des points de liaison</li>
+    <li><span class="letter">D.</span> L'erreur des points de contrôle</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> Les points d'appui sont utilisés dans le calcul : leur erreur est flatteuse. Les points de contrôle mesurent la précision réelle.</div>
+  <div class="slide-footer"><span>QCM J2 — Q9</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 10 / 15</span>
+  <p class="qcm-question">La sélection graduelle sert à…</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Choisir les meilleures photos</li>
+    <li><span class="letter">B.</span> Choisir la résolution de l'ortho</li>
+    <li><span class="letter">C.</span> Classer le nuage en sol et bâti</li>
+    <li><span class="letter">D.</span> Supprimer les points de liaison de mauvaise qualité avant une nouvelle optimisation</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> Critères : erreur de reprojection, incertitude de reconstruction, précision de la projection, en supprimant au plus 10 à 20 % des points par passage.</div>
+  <div class="slide-footer"><span>QCM J2 — Q10</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 11 / 15</span>
+  <p class="qcm-question">Pour une cubature, quel filtrage de profondeur pour le nuage dense ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Désactivé</li>
+    <li><span class="letter">B.</span> Léger</li>
+    <li><span class="letter">C.</span> Agressif</li>
+    <li><span class="letter">D.</span> Peu importe</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> Sur des surfaces continues (sol, tas), le filtrage agressif supprime le bruit sans perte utile.</div>
+  <div class="slide-footer"><span>QCM J2 — Q11</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 12 / 15</span>
+  <p class="qcm-question">Pour obtenir un MNT dans Metashape, on construit le MNE…</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Sur toutes les classes de points</li>
+    <li><span class="letter">B.</span> Sur les points de liaison</li>
+    <li><span class="letter">C.</span> Sur l'orthomosaïque</li>
+    <li><span class="letter">D.</span> Sur la seule classe « Sol », après classification</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> Outils › Nuage de points › Classifier les points de terrain, contrôle visuel, puis MNE sur la classe Sol.</div>
+  <div class="slide-footer"><span>QCM J2 — Q12</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 13 / 15</span>
+  <p class="qcm-question">Que montre la carte de recouvrement du rapport Metashape ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> La température du capteur</li>
+    <li><span class="letter">B.</span> Les zones interdites de vol</li>
+    <li><span class="letter">C.</span> Le nombre d'images voyant chaque zone</li>
+    <li><span class="letter">D.</span> La trajectoire du drone</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE C</span> On vise au moins 9 images par zone ; les bords et les zones complexes sont souvent moins couverts.</div>
+  <div class="slide-footer"><span>QCM J2 — Q13</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 14 / 15</span>
+  <p class="qcm-question">Un décalage vertical constant d'environ 48 m sur tout le modèle indique…</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Des hauteurs ellipsoïdales non converties en altitudes NGF</li>
+    <li><span class="letter">B.</span> Un filtrage trop agressif</li>
+    <li><span class="letter">C.</span> Un mauvais recouvrement</li>
+    <li><span class="letter">D.</span> Un obturateur électronique</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE A</span> C'est l'ondulation du géoïde : il faut un système avec référence d'altitude NGF-IGN69 (grille RAF20).</div>
+  <div class="slide-footer"><span>QCM J2 — Q14</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-content">
+  <a href="index.html" title="Retour au sommaire" class="home-link"><img src="../assets/img/logo-dronexperts.svg" alt="Sommaire" class="slide-logo"></a>
+  <span class="qcm-question-num">Question 15 / 15</span>
+  <p class="qcm-question">Pourquoi lancer le traitement 3D par lot ?</p>
+  <ul class="qcm-options">
+    <li><span class="letter">A.</span> Pour obtenir une meilleure qualité</li>
+    <li><span class="letter">B.</span> Parce que c'est obligatoire en Professional</li>
+    <li><span class="letter">C.</span> Pour réduire le nombre de photos</li>
+    <li><span class="letter">D.</span> Pour enchaîner les étapes sans intervention, par exemple la nuit</li>
+  </ul>
+  <div class="fragment qcm-answer"><span class="answer-tag">RÉPONSE D</span> Le traitement par lot enchaîne alignement, nuage, maillage et texture : on le lance en fin de journée.</div>
+  <div class="slide-footer"><span>QCM J2 — Q15</span><span>Jour 2</span></div>
+</section>
+
+<section class="slide-conclusion">
+  <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts" class="slide-logo-large">
+  <h2>Fin du QCM du Jour 2</h2>
+  <p>Merci ! Retour au sommaire de la formation avec le logo.</p>
+  <div class="slide-footer slide-footer-dark"><span>&copy; 2026 Dronexperts — Tous droits réservés</span><span>QCM J2</span></div>
+</section>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({ width: 1280, height: 720, margin: 0, minScale: 0.2, maxScale: 2.0, hash: true, history: true, slideNumber: false, transition: 'slide', backgroundTransition: 'fade', controls: true, controlsLayout: 'bottom-right', controlsTutorial: false, progress: true, center: false, help: true, plugins: [ RevealNotes ] });
+</script>
+</body>
+</html>
