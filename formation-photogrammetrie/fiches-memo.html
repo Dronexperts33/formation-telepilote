@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiches mémo apprenants — Formation Photogrammétrie Dronexperts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       DRONEXPERTS — Fiches mémo apprenants — Photogrammétrie (6 pages A4)
+       Charte Graphique v2.3
+       ============================================================ */
+    :root {
+      --dx-primary: #0E74DA;
+      --dx-primary-dark: #0B5DB0;
+      --dx-gradient-start: #1E3A8A;
+      --dx-gradient-end: #04355D;
+      --dx-bg-light: #F9FAFC;
+      --dx-bg-white: #FFFFFF;
+      --dx-text-dark: #0F172A;
+      --dx-text-secondary: #475569;
+      --dx-text-muted: #94A3B8;
+      --dx-border: #E2E8F0;
+      --dx-success: #10B981;
+      --dx-warning: #F59E0B;
+      --dx-error: #EF4444;
+      --dx-info: #06B6D4;
+    }
+
+    @page { size: A4; margin: 0; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 8.8pt;
+      color: var(--dx-text-secondary);
+      line-height: 1.45;
+      background: #E8EDF3;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .sheet {
+      width: 210mm;
+      height: 296mm;
+      margin: 0 auto;
+      background: var(--dx-bg-white);
+      padding: 9mm 11mm 7mm;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+    @media screen {
+      .sheet { margin: 16px auto; box-shadow: 0 4px 24px rgba(15,23,42,0.15); }
+    }
+    @media print {
+      body { background: white; }
+      .sheet { break-after: page; }
+      .sheet:last-of-type { break-after: auto; }
+    }
+
+    /* ---- En-tête de fiche ---- */
+    .sheet-head {
+      background: linear-gradient(135deg, var(--dx-gradient-start) 0%, var(--dx-gradient-end) 100%);
+      color: white;
+      border-radius: 10px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+      flex-shrink: 0;
+    }
+    .sheet-head img { height: 30px; width: auto; filter: brightness(0) invert(1); }
+    .sheet-head .head-txt { flex: 1; }
+    .sheet-head .kicker {
+      font-size: 6.5pt; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(255,255,255,0.75);
+    }
+    .sheet-head h1 { font-size: 13pt; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+    .sheet-head .num {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: 9pt; font-weight: 700; white-space: nowrap;
+    }
+
+    /* ---- Pied de fiche ---- */
+    .sheet-foot {
+      margin-top: auto;
+      padding-top: 6px;
+      border-top: 1px solid var(--dx-border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 6.8pt;
+      color: var(--dx-text-muted);
+      flex-shrink: 0;
+    }
+
+    /* ---- Titres de sections ---- */
+    h2 {
+      font-size: 10pt; font-weight: 700; color: var(--dx-text-dark);
+      border-left: 4px solid var(--dx-primary);
+      padding-left: 8px;
+      margin: 9px 0 5px;
+      line-height: 1.2;
+    }
+    h2:first-of-type { margin-top: 0; }
+    h2 .ref { font-size: 6.8pt; font-weight: 500; color: var(--dx-text-muted); margin-left: 6px; }
+
+    p { margin-bottom: 4px; }
+    strong { color: var(--dx-text-dark); font-weight: 700; }
+
+    /* ---- Tableaux ---- */
+    table { width: 100%; border-collapse: collapse; font-size: 7.6pt; margin-bottom: 6px; }
+    th {
+      background: var(--dx-gradient-end); color: white;
+      font-weight: 600; text-align: left;
+      padding: 3px 6px; font-size: 7.2pt;
+    }
+    td { padding: 3px 6px; border-bottom: 1px solid var(--dx-border); vertical-align: top; }
+    tr:nth-child(even) td { background: var(--dx-bg-light); }
+    td.c, th.c { text-align: center; }
+    .tag {
+      display: inline-block; border-radius: 4px; padding: 0 5px;
+      font-weight: 700; font-size: 6.8pt; white-space: nowrap;
+    }
+    .tag-ok   { background: rgba(16,185,129,0.12); color: #067A57; }
+    .tag-warn { background: rgba(245,158,11,0.14); color: #A16207; }
+    .tag-no   { background: rgba(239,68,68,0.12); color: #B91C1C; }
+    .tag-info { background: rgba(6,182,212,0.12); color: #0E7490; }
+
+    /* ---- Grilles & encadrés ---- */
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px; }
+    .cols-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 6px; }
+    .box {
+      background: var(--dx-bg-light);
+      border: 1px solid var(--dx-border);
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: 7.8pt;
+    }
+    .box .box-title {
+      font-weight: 700; color: var(--dx-text-dark); font-size: 8.2pt; margin-bottom: 3px;
+    }
+    .box ul { margin: 0; padding-left: 13px; }
+    .box li { margin-bottom: 1.5px; }
+    .box-blue    { border-left: 4px solid var(--dx-primary); }
+    .box-green   { border-left: 4px solid var(--dx-success); }
+    .box-orange  { border-left: 4px solid var(--dx-warning); }
+    .box-red     { border-left: 4px solid var(--dx-error); background: #FEF5F5; }
+    .box-cyan    { border-left: 4px solid var(--dx-info); }
+
+    .callout {
+      border-radius: 8px; padding: 6px 10px; font-size: 7.8pt; margin-bottom: 6px;
+    }
+    .callout-warn { background: #FEF7EC; border: 1px solid #FBDFA8; color: #7C4A03; }
+    .callout-key  { background: rgba(14,116,218,0.07); border: 1px solid rgba(14,116,218,0.25); color: #0B5DB0; }
+
+    ul.tight { padding-left: 15px; margin-bottom: 5px; font-size: 8pt; }
+    ul.tight li { margin-bottom: 1.5px; }
+
+    /* ---- Pastilles code couleur ---- */
+    .swatches { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 6px; }
+    .swatch {
+      display: flex; align-items: center; gap: 5px;
+      border: 1px solid var(--dx-border); border-radius: 6px;
+      padding: 3px 7px; font-size: 7.2pt; background: white;
+    }
+    .swatch i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+
+    .no-print { text-align: center; padding: 14px; font-size: 9pt; color: var(--dx-text-secondary); }
+    @media print { .no-print { display: none; } }
+
+    /* Variante resserrée pour les fiches denses */
+    .sheet.compact { font-size: 8.4pt; }
+    .sheet.compact h2 { margin: 6px 0 4px; }
+    .sheet.compact .box { padding: 6px 9px; font-size: 7.6pt; }
+    .sheet.compact td { padding: 2.5px 6px; }
+    .sheet.compact th { padding: 2.5px 6px; }
+    .sheet.compact .cols, .sheet.compact .cols-3 { gap: 7px; margin-bottom: 5px; }
+    .sheet.compact ul.tight { margin-bottom: 4px; font-size: 7.8pt; }
+
+    /* Fiches mémo photogrammétrie : texte agrandi */
+    body { font-size: 9.6pt; }
+    table { font-size: 8.4pt; } th { font-size: 8pt; padding: 4px 7px; } td { padding: 4px 7px; }
+    .box { font-size: 8.6pt; padding: 8px 11px; } .box .box-title { font-size: 9pt; }
+    .callout { font-size: 8.6pt; } ul.tight { font-size: 8.8pt; } h2 { font-size: 11pt; margin: 11px 0 6px; }
+    .sheet.compact { font-size: 9.2pt; } .sheet.compact .box { font-size: 8.4pt; } .sheet.compact ul.tight { font-size: 8.5pt; }
+    .sheet.compact td, .sheet.compact th { padding: 3.5px 7px; } .sheet.compact table { font-size: 8.2pt; }
+    .swatch { font-size: 8pt; }
+    .no-print a { color: var(--dx-primary); font-weight: 600; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="no-print">📄 Fiches mémo apprenants — Photogrammétrie par drone (6 pages A4). <a href="fiches-memo.pdf">Télécharger le PDF</a> · Imprimer : <strong>Cmd/Ctrl + P</strong> · <a href="index.html">Retour au sommaire</a></div>
+
+<!-- ================================================================
+     FICHE 1 — PRINCIPES & PRISE DE VUE
+     ================================================================ -->
+<section class="sheet">
+  <header class="sheet-head">
+    <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts">
+    <div class="head-txt">
+      <div class="kicker">Formation Photogrammétrie par Drone — Fiches mémo · Jour 1</div>
+      <h1>Principes & prise de vue</h1>
+    </div>
+    <div class="num">Fiche 1/6</div>
+  </header>
+
+  <h2>Le principe</h2>
+  <div class="cols">
+    <div class="box box-blue">
+      <div class="box-title">Photogrammétrie</div>
+      <ul>
+        <li>Mesurer dimensions, positions et volumes à partir de <strong>photos prises sous des points de vue différents</strong></li>
+        <li>Un point doit être vu sur <strong>au moins 2 photos</strong> pour être positionné en 3D (intersection des rayons)</li>
+        <li><strong>Parallaxe</strong> : plus un objet est haut (proche), plus il « bouge » entre deux photos → c'est ce décalage qui donne la hauteur</li>
+      </ul>
+    </div>
+    <div class="box box-cyan">
+      <div class="box-title">La chaîne de calcul (aérotriangulation / SfM)</div>
+      <ul>
+        <li><strong>Détection</strong> de points caractéristiques sur chaque image</li>
+        <li><strong>Appariement</strong> : points homologues entre images voisines</li>
+        <li><strong>Aérotriangulation</strong> : position et orientation de chaque photo + nuage épars</li>
+        <li><strong>Densification</strong> : nuage dense → MNE → orthomosaïque, maillage</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout callout-warn">⚠️ Le logiciel ne rattrape <strong>jamais</strong> une mauvaise acquisition : photos floues, recouvrement insuffisant, surfaces uniformes (eau, neige, tôle, vitres) ou objets mobiles.</div>
+
+  <h2>Le GSD : la taille d'un pixel au sol</h2>
+  <div class="cols">
+    <div>
+      <div class="callout callout-key"><strong>GSD = taille du pixel du capteur × H ÷ focale réelle</strong><br>Matrice 4E (grand-angle, pixel 3,36 µm, focale 12,29 mm) : <strong>GSD (cm) ≈ H (m) ÷ 36,6</strong><br>H = hauteur <strong>au-dessus du terrain</strong> (en 3D : distance à la surface)</div>
+      <ul class="tight">
+        <li>GSD petit = plus de détails… et plus de photos, de stockage et de calcul</li>
+        <li><strong>Définition</strong> = nombre de pixels (20 MP) · <strong>résolution au sol</strong> = GSD</li>
+        <li>Relief : au sommet d'un stock de 20 m, le drone est 20 m plus près → GSD plus petit</li>
+      </ul>
+    </div>
+    <table>
+      <tr><th>Hauteur</th><th>GSD (M4E)</th><th>Emprise d'une photo</th></tr>
+      <tr><td>40 m</td><td><strong>1,1 cm</strong></td><td>58 × 43 m</td></tr>
+      <tr><td>60 m</td><td><strong>1,6 cm</strong></td><td>87 × 65 m</td></tr>
+      <tr><td>80 m</td><td><strong>2,2 cm</strong></td><td>115 × 87 m</td></tr>
+      <tr><td>100 m</td><td><strong>2,7 cm</strong></td><td>144 × 108 m</td></tr>
+      <tr><td>120 m</td><td><strong>3,3 cm</strong></td><td>173 × 130 m</td></tr>
+    </table>
+  </div>
+
+  <h2>Recouvrements & plan de vol</h2>
+  <div class="cols">
+    <div class="box box-green">
+      <div class="box-title">Les minimums</div>
+      <ul>
+        <li><strong>Frontal ≥ 80 %</strong> (entre photos d'une même ligne)</li>
+        <li><strong>Latéral ≥ 70 %</strong> (entre lignes voisines)</li>
+        <li>Végétation, eau, surfaces homogènes : <strong>85 / 75 %</strong></li>
+        <li><strong>Jamais sous 70 %</strong> · marge d'une demi-emprise autour de la zone</li>
+      </ul>
+    </div>
+    <div class="box box-orange">
+      <div class="box-title">Le calcul (exemple : H = 100 m, emprise 144 × 108 m)</div>
+      <ul>
+        <li>Entre photos = (1 − 0,80) × 108 = <strong>21,6 m</strong></li>
+        <li>Entre lignes = (1 − 0,70) × 144 = <strong>43 m</strong></li>
+        <li>Intervalle à 10 m/s = 21,6 ÷ 10 = <strong>2,2 s</strong> (mini M4E : 0,5 s)</li>
+        <li>Nombre de photos ≈ nb de lignes × photos par ligne</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Netteté & capteur</h2>
+  <div class="cols-3">
+    <div class="box box-red">
+      <div class="box-title">Flou de bougé</div>
+      <p><strong>Flou = vitesse × temps de pose</strong>. 10 m/s × 1/500 s = 2 cm. Il doit rester <strong>nettement sous le GSD</strong> (idéalement &lt; ½ GSD). Lumière faible : <strong>ralentir le drone</strong>, garder une pose courte.</p>
+    </div>
+    <div class="box box-blue">
+      <div class="box-title">Triangle d'exposition</div>
+      <p>1 · <strong>vitesse</strong> rapide (netteté) · 2 · <strong>ouverture</strong> moyenne · 3 · <strong>ISO</strong> le plus bas (bruit). Exposition <strong>stable</strong> sur tout le vol.</p>
+    </div>
+    <div class="box box-cyan">
+      <div class="box-title">Obturateur</div>
+      <p><strong>Mécanique</strong> : toute l'image en même temps → géométrie fidèle. <strong>Électronique</strong> (rolling shutter) : lecture ligne par ligne → image cisaillée en mouvement.</p>
+    </div>
+  </div>
+
+  <footer class="sheet-foot">
+    <span>Dronexperts — Formation Photogrammétrie par Drone</span>
+    <span>dronexperts.io · Fiche 1/6</span>
+  </footer>
+</section>
+
+
+<!-- ================================================================
+     FICHE 2 — LIVRABLES & PRÉCISION
+     ================================================================ -->
+<section class="sheet">
+  <header class="sheet-head">
+    <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts">
+    <div class="head-txt">
+      <div class="kicker">Formation Photogrammétrie par Drone — Fiches mémo · Jour 1</div>
+      <h1>Livrables & précision</h1>
+    </div>
+    <div class="num">Fiche 2/6</div>
+  </header>
+
+  <h2>Les livrables</h2>
+  <table>
+    <tr><th style="width:18%;">Livrable</th><th>Ce que c'est</th><th style="width:28%;">Usages</th></tr>
+    <tr><td><strong>Orthophoto</strong> / orthomosaïque</td><td>Image <strong>rectifiée</strong> (relief, inclinaison, distorsions corrigés), à échelle constante, superposable à une carte. Une photo nadir n'est <strong>pas</strong> une ortho.</td><td>Distances, surfaces, fond de plan, SIG, suivi de chantier</td></tr>
+    <tr><td><strong>MNS</strong> (DSM)</td><td>Modèle de <strong>surface</strong> : une altitude par pixel, sommet de tout ce qui est visible (bâti, arbres, stocks)</td><td><strong>Volumes</strong>, hauteurs, urbanisme, canopée</td></tr>
+    <tr><td><strong>MNT</strong> (DTM)</td><td>Modèle de <strong>terrain</strong> : le sol nu, objets retirés par classification</td><td>Topographie, courbes de niveau, hydrologie</td></tr>
+    <tr><td><strong>Nuage de points</strong></td><td>Millions de points <strong>XYZ + couleur</strong> ; modèle discontinu</td><td>La donnée de mesure de référence</td></tr>
+    <tr><td><strong>Maillage</strong> (mesh)</td><td>Triangles reliant les points, surface fermée, <strong>texturée</strong> avec les photos</td><td>Visualisation, inspection, impression 3D</td></tr>
+  </table>
+  <div class="callout callout-key">💡 « Vraie ortho » (true ortho) : orthorectifiée sur le <strong>MNS</strong>, les toits sont exactement au-dessus de leurs façades.</div>
+
+  <h2>Photogrammétrie ou LiDAR ?</h2>
+  <table>
+    <tr><th style="width:18%;"></th><th>Photogrammétrie</th><th>LiDAR</th></tr>
+    <tr><td><strong>Principe</strong></td><td>Pixels de photos, triangulation</td><td>Impulsions laser, temps de retour</td></tr>
+    <tr><td><strong>Végétation</strong></td><td><span class="tag tag-no">canopée seulement</span></td><td><span class="tag tag-ok">traverse</span> échos multiples → MNT sous forêt</td></tr>
+    <tr><td><strong>Couleur / texture</strong></td><td><span class="tag tag-ok">oui, réaliste</span></td><td>non (ou caméra associée)</td></tr>
+    <tr><td><strong>Lumière</strong></td><td>dépend de l'éclairage</td><td>peu sensible</td></tr>
+    <tr><td><strong>Coût</strong></td><td>abordable</td><td>capteur et traitement plus chers</td></tr>
+  </table>
+
+  <h2>Les formats de livraison</h2>
+  <table>
+    <tr><th style="width:22%;">Livrable</th><th style="width:38%;">Formats</th><th>Pour qui</th></tr>
+    <tr><td>Orthomosaïque</td><td>GeoTIFF (.tif), JPEG + calage (.jgw), KMZ</td><td>SIG (QGIS, ArcGIS), DAO, Google Earth</td></tr>
+    <tr><td>MNS / MNT</td><td>GeoTIFF 32 bits, ASCII Grid, .xyz</td><td>Bureaux d'études, hydrologues</td></tr>
+    <tr><td>Courbes de niveau</td><td>.dxf, .shp</td><td>Géomètres, AutoCAD / Covadis</td></tr>
+    <tr><td>Nuage de points</td><td><strong>.las / .laz</strong>, .e57, .ply</td><td>CloudCompare, topographie, BIM</td></tr>
+    <tr><td>Maillage 3D</td><td>.obj, .fbx, .ply, Cesium 3D Tiles</td><td>Web, architecture, impression 3D</td></tr>
+    <tr><td>Rapport</td><td>PDF (rapport de traitement)</td><td>Le client : <strong>preuve de la précision</strong></td></tr>
+  </table>
+  <div class="callout callout-warn">⚠️ Toujours demander au client <strong>quel logiciel</strong> ouvrira le fichier et <strong>dans quel système de coordonnées</strong> il travaille.</div>
+
+  <h2>La précision finale dépend de 4 facteurs</h2>
+  <div class="cols">
+    <div class="box box-blue">
+      <ul>
+        <li><strong>Le GSD</strong> : on ne mesure pas plus fin que 1 à 3 pixels</li>
+        <li><strong>Le géotag</strong> : GNSS seul (1 à 5 m) ou RTK (cm)</li>
+        <li><strong>Le recouvrement</strong> : un point vu sur beaucoup de photos est robuste</li>
+        <li><strong>Les points au sol</strong> : GCP pour caler, points de contrôle pour prouver</li>
+      </ul>
+    </div>
+    <div class="box box-green">
+      <ul>
+        <li><strong>Précision relative</strong> : les mesures <strong>dans</strong> le modèle (longueur, volume) sont justes</li>
+        <li><strong>Précision absolue</strong> : chaque point est à sa <strong>vraie position</strong> dans le référentiel (superposable au cadastre, à un levé précédent)</li>
+        <li>Repère avec RTK et/ou GCP : <strong>1 à 2 GSD en XY, 1,5 à 3 GSD en Z</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="sheet-foot">
+    <span>Dronexperts — Formation Photogrammétrie par Drone</span>
+    <span>dronexperts.io · Fiche 2/6</span>
+  </footer>
+</section>
+
+
+<!-- ================================================================
+     FICHE 3 — COORDONNÉES & ALTITUDES
+     ================================================================ -->
+<section class="sheet">
+  <header class="sheet-head">
+    <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts">
+    <div class="head-txt">
+      <div class="kicker">Formation Photogrammétrie par Drone — Fiches mémo · Jour 1</div>
+      <h1>Systèmes de coordonnées & altitudes</h1>
+    </div>
+    <div class="num">Fiche 3/6</div>
+  </header>
+
+  <h2>Deux familles de coordonnées</h2>
+  <div class="cols">
+    <div class="box box-blue">
+      <div class="box-title">Géographiques — en degrés</div>
+      <ul>
+        <li>Latitude φ et longitude λ, sur l'ellipsoïde</li>
+        <li>Ex. : <strong>WGS 84</strong> (GPS, drones), <strong>RGF93</strong> (France)</li>
+        <li>DMS 50° 49′ 52,3″ N = DD <strong>50,83120°</strong> · DD = d + m/60 + s/3600</li>
+        <li>Garder <strong>8 décimales</strong> pour un GCP (6ᵉ décimale ≈ 0,1 m)</li>
+      </ul>
+    </div>
+    <div class="box box-green">
+      <div class="box-title">Projetées — en mètres</div>
+      <ul>
+        <li>X (Est), Y (Nord) sur un plan</li>
+        <li>Ex. : <strong>Lambert 93</strong>, <strong>CC 9 zones</strong>, UTM</li>
+        <li>Projections conformes : angles conservés, <strong>distances légèrement altérées</strong></li>
+        <li>Pour les plans, la topographie, les mesures</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Les systèmes à connaître en France</h2>
+  <table>
+    <tr><th style="width:22%;">Système</th><th style="width:13%;">Type</th><th>À retenir</th><th style="width:20%;">EPSG</th></tr>
+    <tr><td><strong>WGS 84</strong></td><td>Géographique</td><td>Système mondial du GPS et des drones</td><td>4326</td></tr>
+    <tr><td><strong>RGF93 v2b</strong> (ETRS89)</td><td>Géographique</td><td>Référentiel officiel français, fixé à la plaque eurasienne</td><td>9782</td></tr>
+    <tr><td><strong>Lambert 93</strong></td><td>Projeté</td><td>Projection officielle (cadastre, IGN, administrations)</td><td>2154 (v1) · 9794 (v2b)</td></tr>
+    <tr><td><strong>CC42 à CC50</strong></td><td>Projeté</td><td>9 bandes de <strong>latitude</strong>, altération très faible : chantiers de précision</td><td>3942-3950 (v1) · 9842-9850 (v2b)</td></tr>
+    <tr><td><strong>NGF-IGN69</strong></td><td>Altitude</td><td>Altitudes officielles (continent) · Corse : NGF-IGN78</td><td>5720</td></tr>
+  </table>
+  <div class="callout callout-warn">⚠️ WGS 84 et RGF93 s'écartent d'environ <strong>2,5 cm par an</strong> depuis 1989 : <strong>près d'1 m</strong> aujourd'hui. Les géotags d'un drone corrigé en RTK sont dans le référentiel de la <strong>correction</strong> (RGF93 avec un réseau ou un point connu français).</div>
+
+  <h2>Les coniques conformes 9 zones (CC)</h2>
+  <div class="cols">
+    <div>
+      <ul class="tight">
+        <li>Zone <strong>CCxx</strong> : parallèle d'origine <strong>xx° N</strong>, méridien central <strong>3° E</strong></li>
+        <li>On choisit la zone dont le parallèle est <strong>le plus proche</strong> du chantier (utilisable sur ± 1°)</li>
+        <li>E ≈ 1 700 000 m · N ≈ n° de zone × 1 000 000 + 200 000 m</li>
+      </ul>
+      <div class="swatches">
+        <span class="swatch"><i style="background:#0E74DA"></i>Lille → CC50</span>
+        <span class="swatch"><i style="background:#0E74DA"></i>Paris, Strasbourg → CC49</span>
+        <span class="swatch"><i style="background:#0E74DA"></i>Nantes → CC47</span>
+        <span class="swatch"><i style="background:#0E74DA"></i>Lyon → CC46</span>
+        <span class="swatch"><i style="background:#0E74DA"></i>Bordeaux → CC45</span>
+        <span class="swatch"><i style="background:#0E74DA"></i>Toulouse → CC44</span>
+        <span class="swatch"><i style="background:#0E74DA"></i>Marseille → CC43</span>
+      </div>
+    </div>
+    <table>
+      <tr><th>Altération des distances</th><th>Lambert 93</th><th>CC</th></tr>
+      <tr><td>Sur la zone</td><td>−1 à +3 m/km</td><td><strong>± 9 cm/km</strong></td></tr>
+      <tr><td>Exemple à 50,8° N</td><td>+2 m/km</td><td>−8 cm/km</td></tr>
+      <tr><td>Erreur sur 100 m</td><td><span class="tag tag-no">+20 cm</span></td><td><span class="tag tag-ok">−0,8 cm</span></td></tr>
+    </table>
+  </div>
+  <div class="callout callout-key">🎯 <strong>Règle d'or :</strong> c'est le <strong>client</strong> qui choisit le système (celui de son géomètre, de son SIG), et on le lui demande <strong>avant</strong> la mission.</div>
+
+  <h2>Le piège du Z : hauteur ou altitude ?</h2>
+  <div class="cols">
+    <div class="box box-red">
+      <ul>
+        <li>Le GNSS mesure une <strong>hauteur ellipsoïdale h</strong></li>
+        <li>Les plans utilisent l'<strong>altitude NGF-IGN69 H</strong> (niveau moyen des mers)</li>
+        <li><strong>h = H + N</strong> · N (ondulation du géoïde) ≈ <strong>45 à 55 m</strong> en métropole</li>
+        <li>Conversion avec la grille IGN <strong>RAF20</strong> (intégrée à Metashape)</li>
+      </ul>
+    </div>
+    <div class="box box-orange">
+      <div class="box-title">Symptômes à reconnaître</div>
+      <ul>
+        <li>Modèle ~<strong>50 m trop haut</strong> → hauteurs ellipsoïdales non converties</li>
+        <li>Décalage horizontal ~<strong>1 m</strong> → confusion WGS 84 / RGF93</li>
+        <li>Modèle à des centaines de km → <strong>X et Y inversés</strong> ou mauvaise zone CC</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout callout-key">🪪 Une coordonnée se livre avec sa « carte d'identité » : <strong>système · projection · unité · référence d'altitude</strong>. Ex. : RGF93 v2b / CC50 (EPSG:9850) + NGF-IGN69 (EPSG:5720).</div>
+
+  <footer class="sheet-foot">
+    <span>Dronexperts — Formation Photogrammétrie par Drone</span>
+    <span>dronexperts.io · Fiche 3/6</span>
+  </footer>
+</section>
+
+
+<!-- ================================================================
+     FICHE 4 — RTK, GCP & PRÉPARATION DE MISSION
+     ================================================================ -->
+<section class="sheet compact">
+  <header class="sheet-head">
+    <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts">
+    <div class="head-txt">
+      <div class="kicker">Formation Photogrammétrie par Drone — Fiches mémo · Jours 1 et 2</div>
+      <h1>RTK, points d'appui & préparation de mission</h1>
+    </div>
+    <div class="num">Fiche 4/6</div>
+  </header>
+
+  <h2>Le RTK : la correction en temps réel</h2>
+  <div class="cols">
+    <div class="box box-blue">
+      <ul>
+        <li>Une <strong>base</strong> fixe sur un <strong>point connu</strong> calcule les erreurs GNSS du moment et les envoie au drone</li>
+        <li>Statut <strong>FIX</strong> = centimétrique · FLOAT = décimétrique (insuffisant)</li>
+        <li>Matrice 4E en RTK : <strong>1 cm + 1 ppm</strong> H · 1,5 cm + 1 ppm V</li>
+        <li>Rester à moins de <strong>10 à 20 km</strong> de la base</li>
+        <li><strong>PPK</strong> : correction calculée après le vol (sans liaison)</li>
+      </ul>
+    </div>
+    <div class="box box-orange">
+      <ul>
+        <li><strong>Base locale D-RTK 3</strong> : radio, sans 4G ; précision absolue seulement si posée sur un point connu ou calée sur un réseau</li>
+        <li><strong>Réseau NRTK</strong> (NTRIP, 4G) : coordonnées directement en RGF93 · Teria, Orphéon (payants), Centipède (gratuit)</li>
+        <li><strong>Base posée au hasard</strong> : levé cohérent mais <strong>décalé de 1 à 2 m</strong></li>
+        <li><strong>Indice Kp</strong> : vigilance à partir de 4, report si tempête (≥ 5)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>GCP et points de contrôle</h2>
+  <div class="cols">
+    <div class="box box-green">
+      <div class="box-title">Placement</div>
+      <ul>
+        <li><strong>≥ 5 GCP</strong> (5 à 10 sur un site courant), un à chaque angle + un au centre</li>
+        <li>En bordure, aux points hauts et bas · repère : <strong>400 m max</strong> entre deux points</li>
+        <li><strong>+ 3 à 5 points de contrôle</strong> intercalés</li>
+        <li>Visibles du ciel, sol <strong>stable</strong> (jamais sur un stock qui bouge)</li>
+        <li>Cible damier ≥ <strong>10 × GSD</strong> (50-60 cm conseillés), à plat, fixée</li>
+      </ul>
+    </div>
+    <div class="box box-cyan">
+      <div class="box-title">Mesure au D-RTK 3 (mode mobile)</div>
+      <ul>
+        <li>Hauteur de canne saisie et <strong>vérifiée deux fois</strong></li>
+        <li>Attendre le <strong>FIX</strong>, pointe au centre exact, bulle centrée</li>
+        <li>Quelques secondes d'enregistrement, précision ≤ 2 cm</li>
+        <li>Nom du point = numéro de la cible (GCP01, CP01…)</li>
+        <li>Export CSV : nom ; X ; Y ; Z dans le bon système</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout callout-key">🎯 <strong>GCP</strong> = utilisés dans le calcul (ils calent). <strong>Points de contrôle</strong> = exclus du calcul : leur écart est la <strong>seule preuve</strong> de la précision à annoncer au client.</div>
+
+  <table>
+    <tr><th>Stratégie</th><th>Avantages</th><th>Limites</th><th class="c">Précision type</th></tr>
+    <tr><td>Ni RTK ni GCP</td><td>Rapide</td><td>Position et échelle approximatives</td><td class="c"><span class="tag tag-no">1 à 5 m</span></td></tr>
+    <tr><td>GCP seuls</td><td>N'importe quel drone</td><td>Long sur grande surface</td><td class="c"><span class="tag tag-ok">1-3 GSD</span></td></tr>
+    <tr><td>RTK seul</td><td>Peu de travail au sol</td><td>Aucune preuve, biais vertical possible</td><td class="c"><span class="tag tag-warn">quelques cm</span></td></tr>
+    <tr><td><strong>RTK + points de contrôle</strong></td><td><strong>Rapide et prouvé</strong></td><td>Matériel plus coûteux</td><td class="c"><span class="tag tag-ok">1-2 GSD vérifiée</span></td></tr>
+  </table>
+
+  <h2>Préparer une mission : le briefing client</h2>
+  <div class="cols-3">
+    <div class="box box-blue"><div class="box-title">Livrable & précision</div><ul><li>Volumes, ortho, MNS, plan ?</li><li>Tolérance (ex. ± 3 %)</li><li><strong>Surface de référence</strong> du pied de stock</li></ul></div>
+    <div class="box box-green"><div class="box-title">Référentiel & formats</div><ul><li>Système + altitude (CC50 + NGF-IGN69…)</li><li>Points connus sur site ?</li><li>Logiciel du client, formats</li></ul></div>
+    <div class="box box-red"><div class="box-title">Site & sécurité</div><ul><li>Carte UAS, catégorie, autorisations</li><li>Obstacles, voies, engins, tirs de mines</li><li>Protocole sécurité, EPI</li></ul></div>
+  </div>
+
+  <h2>Le jour J</h2>
+  <div class="cols">
+    <div class="box box-orange">
+      <div class="box-title">Avant de décoller</div>
+      <ul>
+        <li>Base en place, <strong>RTK FIX</strong> sur le drone</li>
+        <li>Mission chargée : hauteur, 80/70 %, vitesse, obturateur mécanique</li>
+        <li><strong>Photo test</strong> : netteté, exposition, vitesse d'obturation</li>
+        <li>Vent, lumière homogène, Kp, tiers, espace aérien</li>
+      </ul>
+    </div>
+    <div class="box box-green">
+      <div class="box-title">Avant de quitter le site</div>
+      <ul>
+        <li>Nombre de photos, <strong>netteté à 100 %</strong>, exposition</li>
+        <li>Géotags RTK fixés, couverture sans trou</li>
+        <li>Fichier des points exporté, <strong>sauvegarde en double</strong></li>
+        <li>Idéal : alignement rapide sur l'ordinateur de terrain</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="sheet-foot">
+    <span>Dronexperts — Formation Photogrammétrie par Drone</span>
+    <span>dronexperts.io · Fiche 4/6</span>
+  </footer>
+</section>
+
+
+<!-- ================================================================
+     FICHE 5 — METASHAPE PAS À PAS
+     ================================================================ -->
+<section class="sheet compact">
+  <header class="sheet-head">
+    <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts">
+    <div class="head-txt">
+      <div class="kicker">Formation Photogrammétrie par Drone — Fiches mémo · Jours 2 et 3</div>
+      <h1>Metashape Professional pas à pas</h1>
+    </div>
+    <div class="num">Fiche 5/6</div>
+  </header>
+
+  <h2>Avant de commencer</h2>
+  <ul class="tight">
+    <li>Un dossier daté par chantier : <strong>01_RAW · 02_REF · 03_METASHAPE · 04_LIVRABLES · 05_RAPPORT</strong> · ne jamais déplacer les photos après import</li>
+    <li>Outils › Préférences : <strong>GPU activé</strong> · enregistrer en .psx · un « morceau » se duplique pour tester sans perdre le travail</li>
+  </ul>
+
+  <h2>La chaîne de l'orthophoto <span class="ref">intitulés de l'interface française 2.3</span></h2>
+  <table>
+    <tr><th class="c" style="width:4%;">#</th><th style="width:28%;">Commande</th><th>Réglages clés</th></tr>
+    <tr><td class="c">1</td><td>Traitements › <strong>Ajouter des photos…</strong></td><td>Retirer décollage/atterrissage · clic droit › <strong>Estimer la qualité d'image</strong> : désactiver sous <strong>0,5</strong></td></tr>
+    <tr><td class="c">2</td><td>Référence › <strong>Paramètres de référence…</strong></td><td>Système du projet (ex. RGF93 v2b / CC50 + NGF-IGN69) · précision caméra <strong>0,03 m</strong> en RTK (5-10 m sans) · repère <strong>0,02 m</strong> · repère 0,5 px · points de liaison 1 px</td></tr>
+    <tr><td class="c">3</td><td>Traitements › <strong>Aligner les photos…</strong></td><td>Précision <strong>Haute</strong> · présélection générique + par références (Source) · exclure les points de liaison fixes · ajustement progressif du modèle de caméra</td></tr>
+    <tr><td class="c">4</td><td>Référence › <strong>Importer la référence</strong></td><td>CSV des points · clic droit › <strong>Filtrer les photos par repère</strong> · glisser le drapeau au centre sur <strong>6 à 10 photos</strong> (« Mettre à jour » après 2-3)</td></tr>
+    <tr><td class="c">5</td><td><strong>Optimiser les caméras</strong></td><td><strong>Décocher les points de contrôle</strong> · paramètres par défaut · erreur (px) &lt; 1 · lire l'erreur des CP</td></tr>
+    <tr><td class="c">6</td><td>Modèle › <strong>Sélection graduelle…</strong></td><td>Erreur de reprojection ~0,5-1 · incertitude de reconstruction ~10-15 · précision de la projection ~3-5 · <strong>≤ 10-20 %</strong> par passage, puis ré-optimiser</td></tr>
+    <tr><td class="c">7</td><td>Traitements › <strong>Construire un nuage de points…</strong></td><td>Qualité Haute (Moyenne pour aller vite) · filtrage <strong>Agressif</strong> (terrain, cubature) / Modéré / <strong>Léger</strong> (détails fins) · calculer la confiance</td></tr>
+    <tr><td class="c">8</td><td>Traitements › <strong>Construire un MNE…</strong></td><td>Source : nuage de points · interpolation activée · MNT : <strong>Classifier les points de terrain</strong> puis classe Sol</td></tr>
+    <tr><td class="c">9</td><td>Traitements › <strong>Construire une orthomosaïque…</strong></td><td>Surface : MNE · mode de fusion <strong>Mosaïque</strong> · remplissage des trous · pixel = GSD · contrôler les lignes de raccord</td></tr>
+    <tr><td class="c">10</td><td>Fichier › <strong>Exporter</strong></td><td>Ortho GeoTIFF · MNE GeoTIFF 32 bits · nuage LAS/LAZ · <strong>vérifier le système</strong> à l'export</td></tr>
+    <tr><td class="c">11</td><td>Fichier › Exporter › <strong>Générer un rapport…</strong></td><td>GSD, carte de recouvrement (≥ 9 images), erreurs caméras, <strong>erreurs GCP et CP</strong> → joint aux livrables</td></tr>
+  </table>
+  <div class="callout callout-warn">⚠️ Les étapes 4 à 6 conditionnent la précision : on les fait <strong>avant</strong> le nuage dense (l'étape la plus longue). Un repère avec une erreur très supérieure aux autres : <strong>enquêter</strong> (pointage, nom, hauteur de canne, cible déplacée) avant de le supprimer.</div>
+
+  <h2>Le modèle 3D</h2>
+  <div class="cols">
+    <div class="box box-blue">
+      <div class="box-title">Traitements › Construire le Modèle…</div>
+      <ul>
+        <li>Source : <strong>cartes de profondeur</strong></li>
+        <li>Type de surface : <strong>Arbitraire (3D)</strong> pour un objet · <strong>Champ de hauteur (2.5D)</strong> pour un terrain</li>
+        <li>Nettoyer : sélection graduelle › taille des composants connectés · <strong>Fermer les trous…</strong> · <strong>Décimer</strong> pour alléger</li>
+      </ul>
+    </div>
+    <div class="box box-green">
+      <div class="box-title">Traitements › Construire la texture…</div>
+      <ul>
+        <li>Mappage <strong>Générique</strong> · fusion <strong>Mosaïque</strong> · 8192 px</li>
+        <li>Mesures : <strong>Règle</strong>, <strong>Mesurer aire et volume…</strong></li>
+        <li>Export : OBJ / FBX / PLY · <strong>modèle tuilé</strong> pour le web</li>
+        <li><strong>Traitement par lot</strong> pour enchaîner la nuit</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="sheet-foot">
+    <span>Dronexperts — Formation Photogrammétrie par Drone</span>
+    <span>dronexperts.io · Fiche 5/6</span>
+  </footer>
+</section>
+
+
+<!-- ================================================================
+     FICHE 6 — VOL 3D & CLOUDCOMPARE
+     ================================================================ -->
+<section class="sheet compact">
+  <header class="sheet-head">
+    <img src="../assets/img/logo-dronexperts.svg" alt="Dronexperts">
+    <div class="head-txt">
+      <div class="kicker">Formation Photogrammétrie par Drone — Fiches mémo · Jour 3</div>
+      <h1>Réussir son vol 3D & exploiter dans CloudCompare</h1>
+    </div>
+    <div class="num">Fiche 6/6</div>
+  </header>
+
+  <h2>Les trajectoires du vol 3D</h2>
+  <div class="cols-3">
+    <div class="box box-blue"><div class="box-title">Double grille + obliques</div><p>Grilles croisées, nacelle <strong>−45° à −60°</strong> (+ nadir). Sites étendus, quartiers, fronts de carrière.</p></div>
+    <div class="box box-green"><div class="box-title">Orbites</div><p>Une photo tous les <strong>~10°</strong> (36 par tour), <strong>2 à 3 hauteurs</strong>. Objets isolés : bâtiment, château d'eau, stock.</p></div>
+    <div class="box box-orange"><div class="box-title">Façade en lignes</div><p>Lignes parallèles au mur, caméra face à la façade, <strong>distance constante</strong>. Façades, ponts, falaises.</p></div>
+  </div>
+  <ul class="tight">
+    <li><strong>GSD sur l'objet</strong> : GSD (cm) ≈ distance (m) ÷ 36,6 → 0,5 cm à 18-20 m d'une façade</li>
+    <li>Recouvrement ≥ 80 % dans toutes les directions · exposition <strong>verrouillée</strong> · 2 à 5 m/s près de l'objet · transitions douces entre séries · quelques photos de contexte plus hautes</li>
+  </ul>
+
+  <h2>Grille de diagnostic d'un modèle 3D</h2>
+  <table>
+    <tr><th style="width:27%;">Je vois…</th><th style="width:36%;">Cause probable</th><th>Je corrige…</th></tr>
+    <tr><td>Photos non alignées, trous</td><td>Recouvrement insuffisant, flou, surface uniforme</td><td>au vol : ≥ 80/70 %, plus près, plus lent</td></tr>
+    <tr><td>Façades vides ou étirées</td><td>Photos uniquement au nadir</td><td>au vol : obliques et orbites</td></tr>
+    <tr><td>Surface « fondue », arêtes molles</td><td>GSD trop grand, flou de bougé, filtrage</td><td>au vol + filtrage Léger</td></tr>
+    <tr><td>Géométrie tordue</td><td>Obturateur électronique en mouvement</td><td>obturateur mécanique / « Ajuster le rolling shutter »</td></tr>
+    <tr><td>Texture en patchwork</td><td>Exposition automatique, lumière changeante</td><td>exposition verrouillée, ciel homogène</td></tr>
+    <tr><td>Ombres, reflets, trous sombres</td><td>Soleil rasant, vent, pluie</td><td>lumière diffuse, soleil haut, vent faible</td></tr>
+    <tr><td>Marche au milieu du modèle</td><td>Raccord entre batteries insuffisant</td><td>reprise avec large recouvrement</td></tr>
+    <tr><td>Modèle décalé ou basculé</td><td>Pas de GCP, GCP regroupés, mauvais système</td><td>GCP répartis + points de contrôle</td></tr>
+  </table>
+  <div class="callout callout-key">🎯 La plupart des défauts se corrigent <strong>au vol</strong>, pas au traitement : bien préparer… et vérifier sur place.</div>
+
+  <h2>CloudCompare : l'essentiel</h2>
+  <div class="cols">
+    <div class="box box-red">
+      <div class="box-title">À l'import : le « Global shift »</div>
+      <ul>
+        <li>Grandes coordonnées (CC50, Lambert 93) → CloudCompare propose un décalage</li>
+        <li>Accepter, et utiliser <strong>le même décalage pour tous les nuages</strong> (« Yes to All »)</li>
+        <li>Le décalage est remis à l'export</li>
+      </ul>
+    </div>
+    <div class="box box-cyan">
+      <div class="box-title">Outils de base</div>
+      <ul>
+        <li><strong>Ciseaux</strong> : segmenter · <strong>Point picking</strong> : coordonnées, distances, angles</li>
+        <li>Tools › Clean › <strong>SOR filter</strong> (bruit) · Edit › <strong>Subsample</strong></li>
+        <li>Tools › Segmentation › <strong>Cross Section</strong> · Tools › Projection › <strong>Rasterize</strong></li>
+        <li>Tools › Registration › <strong>Align</strong> puis <strong>Fine registration (ICP)</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="cols">
+    <div class="box box-orange">
+      <div class="box-title">Cubature — Tools › Volume › Compute 2.5D volume</div>
+      <ul>
+        <li>Segmenter le stock avec une bande de sol autour</li>
+        <li>Sol : hauteur constante, ou <strong>levé précédent</strong> (volumes ajoutés / retirés)</li>
+        <li>Pas de grille <strong>2 à 5 × GSD</strong>, cellules vides interpolées</li>
+        <li>Surface de référence = celle convenue avec le client</li>
+      </ul>
+    </div>
+    <div class="box box-green">
+      <div class="box-title">Comparer — Tools › Distances › Cloud/Cloud Dist.</div>
+      <ul>
+        <li>Même global shift, recaler si besoin (Align + ICP)</li>
+        <li>Carte de couleurs + histogramme des écarts</li>
+        <li>Cloud/Mesh si la référence est un maillage · plugin <strong>M3C2</strong> pour les déformations fines</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Le rapport de mission</h2>
+  <p style="font-size:7.8pt;">Contexte et date · drone, capteur, RTK, base / réseau · <strong>référentiel</strong> (système + altitude) · plan de vol, GSD, recouvrements · <strong>précision sur les points de contrôle</strong> · résultats (volumes, cartes) · <strong>limites</strong> (zones non couvertes, hypothèses) · annexes : rapport Metashape, fichier des points, liste des fichiers.</p>
+
+  <footer class="sheet-foot">
+    <span>Dronexperts — Formation Photogrammétrie par Drone</span>
+    <span>dronexperts.io · Fiche 6/6</span>
+  </footer>
+</section>
+
+</body>
+</html>
